@@ -4,17 +4,25 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>WOK IN — Where Chinese meets Indian Spices</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+@font-face {
+  font-family: 'DonalMoty';
+  src: url('https://creativefonts.org/wp-content/uploads/2024/donal-moty/DonalMoty.woff2') format('woff2'),
+       url('https://creativefonts.org/wp-content/uploads/2024/donal-moty/DonalMoty.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--red:#C41E3A;--red2:#a01830;--orange:#E8521A;--cream:#FFF8F0;--dark:#1a1a1a;--muted:#6b7280;--border:#f0f0f0;--bg:#ffffff;--light:#fafafa}
 body{font-family:'Inter',sans-serif;background:#fff;color:var(--dark);min-height:100vh}
+.display-font{font-family:'DonalMoty','Inter',serif}
 
 nav{background:#fff;border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px;position:sticky;top:0;z-index:100}
-.nlogo{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none}
+.nlogo{display:flex;align-items:center;gap:10px;cursor:pointer}
 .nlogo img{height:40px;width:auto;object-fit:contain}
 .nlogo-fb{height:40px;width:40px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#fff}
-.nbrand{font-family:'Playfair Display',serif;font-weight:800;font-size:20px;color:var(--red)}
+.nbrand{font-family:'DonalMoty','Inter',serif;font-size:24px;color:var(--red);letter-spacing:1px}
 .nlinks{display:flex;align-items:center;gap:8px}
 .nlink{background:transparent;border:none;color:var(--muted);font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;padding:8px 14px;border-radius:8px;transition:color .15s}
 .nlink:hover{color:var(--dark)}
@@ -26,9 +34,9 @@ nav{background:#fff;border-bottom:1px solid var(--border);padding:0 5%;display:f
 
 /* HERO */
 .hero{padding:5rem 5% 4rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1200px;margin:0 auto}
-@media(max-width:768px){.hero{grid-template-columns:1fr;text-align:center}.hero-img{display:none}}
+@media(max-width:768px){.hero{grid-template-columns:1fr;text-align:center}}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:#FFF0EC;color:var(--orange);font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:1.2rem;text-transform:uppercase;letter-spacing:.06em}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:800;line-height:1.15;margin-bottom:1rem;color:var(--dark)}
+.hero h1{font-family:'DonalMoty','Inter',serif;font-size:clamp(2.8rem,5vw,5rem);line-height:1.1;margin-bottom:1rem;color:var(--dark)}
 .hero h1 span{color:var(--red)}
 .hero-sub{font-size:1rem;color:var(--muted);line-height:1.7;margin-bottom:2rem;max-width:460px}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
@@ -36,36 +44,52 @@ nav{background:#fff;border-bottom:1px solid var(--border);padding:0 5%;display:f
 .btn-primary:hover{background:var(--red2);transform:translateY(-1px)}
 .btn-outline{background:#fff;color:var(--dark);border:2px solid var(--border);padding:14px 28px;border-radius:30px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s}
 .btn-outline:hover{border-color:var(--dark)}
-.hero-img{display:flex;align-items:center;justify-content:center}
-.hero-img-circle{width:420px;height:420px;border-radius:50%;background:linear-gradient(135deg,#FFF0EC,#FFEBE0);display:flex;align-items:center;justify-content:center;font-size:160px;position:relative}
-.hero-badge{position:absolute;bottom:40px;right:20px;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0,0,0.1);display:flex;align-items:center;gap:10px}
-.hero-badge .hb-num{font-size:22px;font-weight:800;color:var(--red)}
-.hero-badge .hb-txt{font-size:11px;color:var(--muted);line-height:1.3}
 
-/* STATS */
+/* PEEPS ILLUSTRATION AREA */
+.hero-visual{position:relative;display:flex;align-items:flex-end;justify-content:center;height:420px}
+.peep-wrap{display:flex;align-items:flex-end;gap:-20px}
+.hero-badge{background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0,0,0.1);position:absolute;top:40px;right:0;display:flex;align-items:center;gap:10px}
+.hb-num{font-family:'DonalMoty',serif;font-size:24px;color:var(--red)}
+.hb-txt{font-size:11px;color:var(--muted);line-height:1.3}
+.float-badge{background:var(--red);color:#fff;border-radius:12px;padding:10px 14px;position:absolute;bottom:60px;left:0;font-size:12px;font-weight:700}
+
 .stats{background:var(--light);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .stats-inner{max-width:1200px;margin:0 auto;padding:2rem 5%;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .stat-item{text-align:center;padding:1.5rem}
-.stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--red);margin-bottom:4px}
+.stat-num{font-family:'DonalMoty','Inter',serif;font-size:2.5rem;color:var(--red);margin-bottom:4px}
 .stat-label{font-size:13px;color:var(--muted);font-weight:500}
 
-/* SECTION */
 .section{max-width:1200px;margin:0 auto;padding:4rem 5%}
 .section-header{text-align:center;margin-bottom:3rem}
-.section-header h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;margin-bottom:.6rem}
+.section-header h2{font-family:'DonalMoty','Inter',serif;font-size:clamp(2rem,3.5vw,3.2rem);margin-bottom:.6rem;color:var(--dark)}
 .section-header p{color:var(--muted);font-size:15px}
 
-/* FEATURE CARDS */
+/* FEAT CARDS */
 .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
-.feat-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:2rem 1.5rem;text-align:center;transition:transform .2s,box-shadow .2s;cursor:default}
-.feat-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}
+.feat-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:2rem 1.5rem;text-align:center;transition:transform .2s}
+.feat-card:hover{transform:translateY(-4px)}
 .feat-icon{width:60px;height:60px;border-radius:16px;background:#FFF0EC;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:26px}
-.feat-card h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.feat-card h3{font-family:'DonalMoty','Inter',serif;font-size:18px;margin-bottom:8px;color:var(--dark)}
 .feat-card p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* TESTIMONIAL / PEOPLE SECTION */
+.people-section{background:var(--light);padding:4rem 5%}
+.people-inner{max-width:1200px;margin:0 auto}
+.people-inner h2{font-family:'DonalMoty','Inter',serif;font-size:clamp(2rem,3.5vw,3rem);text-align:center;margin-bottom:.5rem}
+.people-inner p{text-align:center;color:var(--muted);margin-bottom:3rem;font-size:15px}
+.people-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.person-card{background:#fff;border-radius:20px;padding:2rem;border:1px solid var(--border);text-align:center}
+.person-card .peep{margin:0 auto 1rem;display:block}
+.person-card h4{font-family:'DonalMoty','Inter',serif;font-size:16px;margin-bottom:4px;color:var(--dark)}
+.person-card .role{font-size:12px;color:var(--red);font-weight:600;margin-bottom:10px}
+.person-card .quote{font-size:13px;color:var(--muted);line-height:1.6;font-style:italic}
 
 /* SURVEY */
 .survey-section{background:var(--light);padding:4rem 5%}
 .survey-inner{max-width:760px;margin:0 auto}
+.survey-hero{text-align:center;margin-bottom:2.5rem}
+.survey-hero h2{font-family:'DonalMoty','Inter',serif;font-size:clamp(2rem,3.5vw,3rem);margin-bottom:.5rem}
+.survey-hero p{color:var(--muted);font-size:15px}
 
 .age-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2rem;padding:8px;background:#fff;border-radius:16px;border:1px solid var(--border)}
 .atab{flex:1;min-width:130px;padding:12px 10px;border-radius:10px;border:none;background:transparent;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;color:var(--muted);transition:all .15s;text-align:center;line-height:1.4}
@@ -77,7 +101,7 @@ nav{background:#fff;border-bottom:1px solid var(--border);padding:0 5%;display:f
 .form-card-header{background:var(--red);padding:1.8rem 2rem;display:flex;align-items:center;gap:1rem}
 .fch-logo{width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;color:#fff;overflow:hidden;flex-shrink:0}
 .fch-logo img{width:100%;height:100%;object-fit:cover;border-radius:14px}
-.form-card-header h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:800;color:#fff;margin-bottom:4px}
+.form-card-header h2{font-family:'DonalMoty','Inter',serif;font-size:24px;color:#fff;margin-bottom:4px}
 .form-card-header p{font-size:13px;color:rgba(255,255,255,.8)}
 
 .prog-wrap{padding:1.5rem 2rem 0}
@@ -86,10 +110,9 @@ nav{background:#fff;border-bottom:1px solid var(--border);padding:0 5%;display:f
 .prog-fill{height:100%;background:var(--red);border-radius:3px;transition:width .4s ease}
 
 .form-body{padding:1.5rem 2rem 2rem}
-
 .qblock{margin-bottom:1.2rem;padding:1.4rem 1.6rem;background:var(--light);border-radius:16px;border:1px solid var(--border)}
 .qlabel{font-size:10px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
-.qtext{font-size:15px;font-weight:600;color:var(--dark);margin-bottom:1rem;line-height:1.5}
+.qtext{font-family:'DonalMoty','Inter',serif;font-size:17px;color:var(--dark);margin-bottom:1rem;line-height:1.4}
 .qgrid{display:flex;flex-wrap:wrap;gap:8px}
 
 .qopt{padding:9px 18px;border:1.5px solid #e5e7eb;border-radius:25px;background:#fff;font-size:13px;font-weight:500;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .15s;-webkit-tap-highlight-color:transparent;user-select:none;outline:none}
@@ -118,20 +141,35 @@ textarea{resize:vertical;min-height:75px}
 
 .ty{text-align:center;padding:4rem 2rem;background:#fff;border-radius:24px;border:1px solid var(--border)}
 .tycheck{width:80px;height:80px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 1.5rem}
-.ty h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:800;margin-bottom:10px}
+.ty h2{font-family:'DonalMoty','Inter',serif;font-size:2.5rem;margin-bottom:10px}
 .ty p{color:var(--muted);font-size:15px;line-height:1.7;max-width:400px;margin:0 auto}
 
+/* PIN GATE */
+.pin-gate{min-height:100vh;background:var(--light);display:flex;align-items:center;justify-content:center;padding:2rem}
+.pin-card{background:#fff;border-radius:24px;border:1px solid var(--border);padding:3rem 2.5rem;max-width:400px;width:100%;text-align:center}
+.pin-card h2{font-family:'DonalMoty','Inter',serif;font-size:2rem;margin-bottom:.5rem;color:var(--dark)}
+.pin-card p{color:var(--muted);font-size:14px;margin-bottom:2rem}
+.pin-dots{display:flex;justify-content:center;gap:12px;margin-bottom:2rem}
+.pin-dot{width:16px;height:16px;border-radius:50%;background:#e5e7eb;transition:background .2s}
+.pin-dot.filled{background:var(--red)}
+.pin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:240px;margin:0 auto 1rem}
+.pin-btn{padding:16px;border:1.5px solid var(--border);border-radius:14px;background:#fff;font-size:20px;font-weight:700;cursor:pointer;font-family:'DonalMoty','Inter',serif;color:var(--dark);transition:all .15s}
+.pin-btn:hover{border-color:var(--red);color:var(--red);background:#FFF0EC}
+.pin-btn:active{transform:scale(.96)}
+.pin-error{color:var(--red);font-size:13px;font-weight:600;margin-top:.5rem;min-height:20px}
+.pin-clear{background:transparent;border:none;color:var(--muted);font-size:13px;cursor:pointer;font-family:inherit;margin-top:.5rem;text-decoration:underline}
+
 /* ADMIN */
-.admin-section{background:var(--light);min-height:100vh;padding:2.5rem 5%}
-.admin-inner{max-width:1200px;margin:0 auto}
+.admin-wrap{max-width:1200px;margin:0 auto;padding:2.5rem 5% 5rem}
 .ahdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
-.ahdr h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:800}
+.ahdr h2{font-family:'DonalMoty','Inter',serif;font-size:2.2rem;color:var(--dark)}
 .ahdr p{font-size:14px;color:var(--muted);margin-top:4px}
 .rfbtn{background:var(--red);color:#fff;border:none;padding:11px 22px;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.logout-btn{background:transparent;border:1.5px solid var(--border);color:var(--muted);padding:10px 18px;border-radius:12px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
 .sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:2rem}
 .sc{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.3rem 1.5rem}
 .sc .sl{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
-.sc .sv{font-size:30px;font-weight:800;color:var(--red);font-family:'Playfair Display',serif}
+.sc .sv{font-family:'DonalMoty','Inter',serif;font-size:2.2rem;color:var(--red)}
 .filtrow{display:flex;gap:8px;margin-bottom:1.5rem;flex-wrap:wrap}
 .fbtn{padding:8px 18px;border-radius:20px;border:1.5px solid var(--border);background:#fff;font-size:13px;color:var(--muted);cursor:pointer;font-family:inherit;font-weight:600;transition:all .15s}
 .fbtn.active{background:var(--red);color:#fff;border-color:var(--red)}
@@ -142,10 +180,8 @@ td{padding:12px 14px;border-bottom:1px solid #f7f7f7;color:var(--dark);vertical-
 tr:last-child td{border-bottom:none}
 tr:hover td{background:#fafafa}
 .badge{display:inline-block;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:800;letter-spacing:.04em}
-.bt{background:#EBF5FF;color:#1565C0}
-.by{background:#E8F5E9;color:#2E7D32}
-.bp{background:#FFF3E0;color:#E65100}
-.ba{background:#FCE4EC;color:#C62828}
+.bt{background:#EBF5FF;color:#1565C0}.by{background:#E8F5E9;color:#2E7D32}
+.bp{background:#FFF3E0;color:#E65100}.ba{background:#FCE4EC;color:#C62828}
 .empty{text-align:center;padding:3rem;color:var(--muted);font-size:15px}
 </style>
 </head>
@@ -160,7 +196,6 @@ tr:hover td{background:#fafafa}
   <div class="nlinks">
     <button class="nlink" id="nb-landing" onclick="goTo('landing')">Home</button>
     <button class="nlink" id="nb-survey" onclick="goTo('survey')">Survey</button>
-    <button class="nlink" id="nb-admin" onclick="goTo('admin')">Admin</button>
     <button class="nbtn" onclick="goTo('survey')">Take Survey</button>
   </div>
 </nav>
@@ -169,25 +204,99 @@ tr:hover td{background:#fafafa}
 <div id="pg-landing" class="page on">
   <div style="max-width:1200px;margin:0 auto">
     <div class="hero">
-      <div class="hero-left">
-        <div class="hero-eyebrow">
-          <span style="font-size:14px">🌶️</span> New Food Brand · IT Parks First
-        </div>
-        <h1>Savor the Flavor<br>of <span>WOK IN</span><br>Indian Spice Fusion</h1>
+      <div>
+        <div class="hero-eyebrow">🌶️ New Food Brand · IT Parks First</div>
+        <h1>Savor the<br><span>WOK IN</span><br>Experience</h1>
         <p class="hero-sub">Where Chinese wok cooking meets Indian spices. Bold flavors, fast service, and a menu built around what you actually crave. Help us shape it.</p>
         <div class="hero-btns">
           <button class="btn-primary" onclick="goTo('survey')">Share Your Taste →</button>
-          <button class="btn-outline" onclick="goTo('survey')">View Survey</button>
+          <button class="btn-outline" onclick="goTo('survey')">Take Survey</button>
         </div>
       </div>
-      <div class="hero-img">
-        <div class="hero-img-circle">
-          🥢
-          <div class="hero-badge">
-            <div class="hb-num">4</div>
-            <div class="hb-txt">Age group<br>surveys</div>
-          </div>
-        </div>
+      <div class="hero-visual">
+        <!-- Open Peeps SVG illustration: person holding food bowl -->
+        <svg width="380" height="400" viewBox="0 0 380 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Background circle -->
+          <circle cx="200" cy="220" r="160" fill="#FFF0EC"/>
+          <!-- Person 1 - Chef with wok -->
+          <g transform="translate(80,60)">
+            <!-- Head -->
+            <circle cx="100" cy="60" r="36" fill="#FDBCB4"/>
+            <!-- Chef hat -->
+            <rect x="74" y="20" width="52" height="16" rx="4" fill="#fff" stroke="#e5e7eb" stroke-width="1.5"/>
+            <rect x="82" y="8" width="36" height="16" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1.5"/>
+            <!-- Eyes -->
+            <circle cx="90" cy="58" r="4" fill="#1a1a1a"/>
+            <circle cx="110" cy="58" r="4" fill="#1a1a1a"/>
+            <circle cx="92" cy="56" r="1.5" fill="#fff"/>
+            <circle cx="112" cy="56" r="1.5" fill="#fff"/>
+            <!-- Smile -->
+            <path d="M88 70 Q100 80 112 70" stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <!-- Body - chef coat -->
+            <rect x="68" y="96" width="64" height="80" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1.5"/>
+            <!-- Red buttons -->
+            <circle cx="100" cy="112" r="3" fill="#C41E3A"/>
+            <circle cx="100" cy="126" r="3" fill="#C41E3A"/>
+            <circle cx="100" cy="140" r="3" fill="#C41E3A"/>
+            <!-- Left arm holding wok -->
+            <path d="M68 110 Q30 120 20 150" stroke="#FDBCB4" stroke-width="18" stroke-linecap="round" fill="none"/>
+            <!-- Right arm -->
+            <path d="M132 110 Q165 120 170 140" stroke="#FDBCB4" stroke-width="18" stroke-linecap="round" fill="none"/>
+            <!-- Wok -->
+            <ellipse cx="22" cy="158" rx="30" ry="12" fill="#2C2C2C"/>
+            <path d="M-8 158 Q22 180 52 158" fill="#3a3a3a"/>
+            <!-- Steam -->
+            <path d="M10 145 Q14 135 10 125" stroke="#ccc" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M22 142 Q26 130 22 118" stroke="#ccc" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M34 145 Q38 135 34 125" stroke="#ccc" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <!-- Legs -->
+            <rect x="78" y="174" width="20" height="60" rx="10" fill="#C41E3A"/>
+            <rect x="102" y="174" width="20" height="60" rx="10" fill="#C41E3A"/>
+            <!-- Shoes -->
+            <ellipse cx="88" cy="236" rx="16" ry="8" fill="#1a1a1a"/>
+            <ellipse cx="112" cy="236" rx="16" ry="8" fill="#1a1a1a"/>
+          </g>
+          <!-- Person 2 - Customer -->
+          <g transform="translate(210,100)">
+            <!-- Head -->
+            <circle cx="70" cy="55" r="32" fill="#C68642"/>
+            <!-- Hair -->
+            <path d="M38 45 Q70 15 102 45 Q102 30 70 25 Q38 30 38 45" fill="#1a1a1a"/>
+            <!-- Eyes -->
+            <circle cx="60" cy="52" r="3.5" fill="#1a1a1a"/>
+            <circle cx="80" cy="52" r="3.5" fill="#1a1a1a"/>
+            <circle cx="61.5" cy="50.5" r="1.2" fill="#fff"/>
+            <circle cx="81.5" cy="50.5" r="1.2" fill="#fff"/>
+            <!-- Happy mouth -->
+            <path d="M58 64 Q70 74 82 64" stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <!-- Body -->
+            <rect x="42" y="87" width="56" height="72" rx="12" fill="#E8521A"/>
+            <!-- Arms -->
+            <path d="M42 100 Q10 115 8 140" stroke="#C68642" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <path d="M98 100 Q124 108 128 128" stroke="#C68642" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <!-- Bowl in hands -->
+            <ellipse cx="10" cy="148" rx="22" ry="10" fill="#fff" stroke="#e5e7eb" stroke-width="1.5"/>
+            <path d="M-12 148 Q10 165 32 148" fill="#FFDAB9"/>
+            <!-- Food in bowl -->
+            <ellipse cx="10" cy="145" rx="16" ry="6" fill="#F4A460"/>
+            <!-- Legs -->
+            <rect x="52" y="157" width="18" height="55" rx="9" fill="#1a1a1a"/>
+            <rect x="74" y="157" width="18" height="55" rx="9" fill="#1a1a1a"/>
+            <!-- Shoes -->
+            <ellipse cx="61" cy="214" rx="14" ry="7" fill="#333"/>
+            <ellipse cx="83" cy="214" rx="14" ry="7" fill="#333"/>
+          </g>
+          <!-- Floating badge -->
+          <rect x="20" y="60" width="130" height="54" rx="14" fill="#fff" stroke="#f0f0f0" stroke-width="1"/>
+          <text x="35" y="84" font-family="Inter" font-size="11" fill="#6b7280">Responses collected</text>
+          <text x="35" y="103" font-family="Inter" font-size="22" font-weight="800" fill="#C41E3A">Live!</text>
+          <!-- Spice dots decorative -->
+          <circle cx="50" cy="340" r="6" fill="#C41E3A" opacity=".2"/>
+          <circle cx="320" cy="80" r="8" fill="#E8521A" opacity=".2"/>
+          <circle cx="340" cy="320" r="5" fill="#C41E3A" opacity=".3"/>
+          <circle cx="30" cy="280" r="4" fill="#E8521A" opacity=".25"/>
+        </svg>
+        <div class="float-badge">🌶️ IT Park Launch</div>
       </div>
     </div>
   </div>
@@ -206,37 +315,199 @@ tr:hover td{background:#fafafa}
       <p>Your feedback directly shapes what WOK IN serves at your workplace</p>
     </div>
     <div class="feat-grid">
-      <div class="feat-card"><div class="feat-icon">🥢</div><h3>2 Minutes</h3><p>Quick, focused questions tailored specifically for your age group</p></div>
+      <div class="feat-card"><div class="feat-icon">🥢</div><h3>2 Minutes</h3><p>Quick focused questions tailored specifically for your age group</p></div>
       <div class="feat-card"><div class="feat-icon">🌶️</div><h3>Shape the Menu</h3><p>Your answers directly influence our dishes, spice levels, and pricing</p></div>
       <div class="feat-card"><div class="feat-icon">🏆</div><h3>Founding Member</h3><p>Early responders get exclusive launch discounts and first access</p></div>
       <div class="feat-card"><div class="feat-icon">📍</div><h3>IT Park First</h3><p>We launch where you work — your feedback decides where we park next</p></div>
     </div>
   </div>
 
-  <div style="background:var(--red);padding:4rem 5%;text-align:center">
-    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);color:#fff;font-weight:800;margin-bottom:1rem">Ready to Shape WOK IN?</h2>
-    <p style="color:rgba(255,255,255,.8);margin-bottom:2rem;font-size:15px">Takes just 2 minutes. Your taste becomes our recipe.</p>
-    <button class="btn-outline" onclick="goTo('survey')">Take the Survey Now →</button>
+  <!-- PEOPLE / TESTIMONIAL SECTION with Open Peeps style -->
+  <div class="people-section">
+    <div class="people-inner">
+      <h2>Who's Taking the Survey?</h2>
+      <p>People from all walks of IT life — help us serve you better</p>
+      <div class="people-grid">
+
+        <div class="person-card">
+          <!-- Peep: office worker -->
+          <svg class="peep" width="100" height="120" viewBox="0 0 100 120">
+            <circle cx="50" cy="35" r="22" fill="#FDBCB4"/>
+            <path d="M28 28 Q50 8 72 28 Q72 15 50 12 Q28 15 28 28" fill="#1a1a1a"/>
+            <circle cx="43" cy="33" r="3" fill="#1a1a1a"/>
+            <circle cx="57" cy="33" r="3" fill="#1a1a1a"/>
+            <path d="M42 44 Q50 50 58 44" stroke="#1a1a1a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <rect x="28" y="57" width="44" height="50" rx="10" fill="#378ADD"/>
+            <path d="M28 68 Q10 76 8 95" stroke="#FDBCB4" stroke-width="12" stroke-linecap="round" fill="none"/>
+            <path d="M72 68 Q88 74 90 90" stroke="#FDBCB4" stroke-width="12" stroke-linecap="round" fill="none"/>
+            <rect x="36" y="105" width="12" height="15" rx="6" fill="#1a1a1a"/>
+            <rect x="52" y="105" width="12" height="15" rx="6" fill="#1a1a1a"/>
+          </svg>
+          <h4>Rahul, 24</h4>
+          <div class="role">Software Engineer</div>
+          <div class="quote">"I eat at IT park food courts every day. Would love more options!"</div>
+        </div>
+
+        <div class="person-card">
+          <!-- Peep: student -->
+          <svg class="peep" width="100" height="120" viewBox="0 0 100 120">
+            <circle cx="50" cy="35" r="22" fill="#C68642"/>
+            <path d="M28 32 Q50 10 72 32" fill="#2a1a0a"/>
+            <ellipse cx="50" cy="14" rx="26" ry="8" fill="#2a1a0a"/>
+            <circle cx="43" cy="33" r="3" fill="#1a1a1a"/>
+            <circle cx="57" cy="33" r="3" fill="#1a1a1a"/>
+            <circle cx="44.5" cy="31.5" r="1" fill="#fff"/>
+            <circle cx="58.5" cy="31.5" r="1" fill="#fff"/>
+            <path d="M43 45 Q50 52 57 45" stroke="#1a1a1a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <rect x="28" y="57" width="44" height="50" rx="10" fill="#C41E3A"/>
+            <path d="M28 68 Q12 78 10 96" stroke="#C68642" stroke-width="12" stroke-linecap="round" fill="none"/>
+            <path d="M72 68 Q86 76 88 92" stroke="#C68642" stroke-width="12" stroke-linecap="round" fill="none"/>
+            <rect x="36" y="105" width="12" height="15" rx="6" fill="#555"/>
+            <rect x="52" y="105" width="12" height="15" rx="6" fill="#555"/>
+          </svg>
+          <h4>Priya, 19</h4>
+          <div class="role">College Student</div>
+          <div class="quote">"Indo-Chinese on a student budget? Yes please! Can't wait for WOK IN."</div>
+        </div>
+
+        <div class="person-card">
+          <!-- Peep: manager -->
+          <svg class="peep" width="100" height="120" viewBox="0 0 100 120">
+            <circle cx="50" cy="35" r="22" fill="#F1C27D"/>
+            <path d="M28 30 Q50 18 72 30" fill="#5a3e1b"/>
+            <circle cx="43" cy="33" r="3" fill="#1a1a1a"/>
+            <circle cx="57" cy="33" r="3" fill="#1a1a1a"/>
+            <path d="M43 46 Q50 53 57 46" stroke="#1a1a1a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <!-- glasses -->
+            <rect x="36" y="29" width="10" height="8" rx="3" fill="none" stroke="#555" stroke-width="1.5"/>
+            <rect x="54" y="29" width="10" height="8" rx="3" fill="none" stroke="#555" stroke-width="1.5"/>
+            <line x1="46" y1="33" x2="54" y2="33" stroke="#555" stroke-width="1.5"/>
+            <rect x="28" y="57" width="44" height="50" rx="10" fill="#1a1a1a"/>
+            <!-- tie -->
+            <path d="M50 57 L46 75 L50 80 L54 75 Z" fill="#C41E3A"/>
+            <path d="M28 68 Q12 75 10 92" stroke="#F1C27D" stroke-width="12" stroke-linecap="round" fill="none"/>
+            <path d="M72 68 Q86 73 88 88" stroke="#F1C27D" stroke-width="12" stroke-linecap="round" fill="none"/>
+            <rect x="36" y="105" width="12" height="15" rx="6" fill="#333"/>
+            <rect x="52" y="105" width="12" height="15" rx="6" fill="#333"/>
+          </svg>
+          <h4>Vikram, 35</h4>
+          <div class="role">Product Manager</div>
+          <div class="quote">"Need faster, tastier lunch options near office. This is exactly it."</div>
+        </div>
+
+        <div class="person-card">
+          <!-- Peep: senior professional -->
+          <svg class="peep" width="100" height="120" viewBox="0 0 100 120">
+            <circle cx="50" cy="35" r="22" fill="#FDBCB4"/>
+            <!-- Grey hair -->
+            <path d="M28 28 Q50 10 72 28 Q68 16 50 14 Q32 16 28 28" fill="#9e9e9e"/>
+            <circle cx="43" cy="33" r="3" fill="#1a1a1a"/>
+            <circle cx="57" cy="33" r="3" fill="#1a1a1a"/>
+            <path d="M43 46 Q50 54 57 46" stroke="#1a1a1a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <rect x="28" y="57" width="44" height="50" rx="10" fill="#4CAF50"/>
+            <path d="M28 68 Q10 77 9 94" stroke="#FDBCB4" stroke-width="12" stroke-linecap="round" fill="none"/>
+            <path d="M72 68 Q88 75 90 90" stroke="#FDBCB4" stroke-width="12" stroke-linecap="round" fill="none"/>
+            <rect x="36" y="105" width="12" height="15" rx="6" fill="#1a1a1a"/>
+            <rect x="52" y="105" width="12" height="15" rx="6" fill="#1a1a1a"/>
+          </svg>
+          <h4>Meena, 42</h4>
+          <div class="role">Senior Architect</div>
+          <div class="quote">"Quality, hygiene, and real Indian flavors matter to me. Love this idea."</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA SECTION -->
+  <div style="background:var(--red);padding:5rem 5%;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:100%">
+    <div style="max-width:600px;margin:0 auto">
+      <h2 style="font-family:'DonalMoty','Inter',serif;font-size:clamp(2rem,3.5vw,3.2rem);color:#fff;margin-bottom:1rem">Ready to Shape WOK IN?</h2>
+      <p style="color:rgba(255,255,255,.85);margin-bottom:2rem;font-size:15px;line-height:1.7">Takes just 2 minutes. Your taste becomes our recipe. Be among the first to help launch a bold new food brand at your workplace.</p>
+      <button class="btn-outline" onclick="goTo('survey')">Take the Survey Now →</button>
+    </div>
+    <!-- Peep: excited person -->
+    <div style="display:flex;justify-content:center">
+      <svg width="200" height="240" viewBox="0 0 200 240">
+        <circle cx="100" cy="70" r="40" fill="#FDBCB4"/>
+        <path d="M60 58 Q100 25 140 58 Q136 38 100 34 Q64 38 60 58" fill="#1a1a1a"/>
+        <circle cx="86" cy="66" r="5" fill="#1a1a1a"/>
+        <circle cx="114" cy="66" r="5" fill="#1a1a1a"/>
+        <circle cx="88" cy="63" r="2" fill="#fff"/>
+        <circle cx="116" cy="63" r="2" fill="#fff"/>
+        <path d="M84 84 Q100 96 116 84" stroke="#1a1a1a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- raised arms -->
+        <path d="M62 118 Q20 90 15 60" stroke="#FDBCB4" stroke-width="20" stroke-linecap="round" fill="none"/>
+        <path d="M138 118 Q178 88 185 58" stroke="#FDBCB4" stroke-width="20" stroke-linecap="round" fill="none"/>
+        <!-- hands -->
+        <circle cx="15" cy="57" r="12" fill="#FDBCB4"/>
+        <circle cx="185" cy="55" r="12" fill="#FDBCB4"/>
+        <rect x="62" y="110" width="76" height="90" rx="18" fill="rgba(255,255,255,0.2)"/>
+        <rect x="76" y="198" width="20" height="40" rx="10" fill="rgba(255,255,255,0.3)"/>
+        <rect x="104" y="198" width="20" height="40" rx="10" fill="rgba(255,255,255,0.3)"/>
+      </svg>
+    </div>
   </div>
 
   <footer style="background:#1a1a1a;padding:2.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
-    <div style="color:#fff;font-family:'Playfair Display',serif;font-size:18px;font-weight:800">WOK IN</div>
+    <div style="color:#fff;font-family:'DonalMoty','Inter',serif;font-size:22px">WOK IN</div>
     <div style="color:#888;font-size:13px">Where Chinese meets Indian spices · © 2025</div>
     <div style="color:#888;font-size:13px">wokin.in</div>
   </footer>
 </div>
 
-<!-- SURVEY -->
+<!-- SURVEY PAGE -->
 <div id="pg-survey" class="page">
   <div class="survey-section">
-    <div class="survey-inner" id="survey-content"></div>
+    <div class="survey-inner">
+      <div class="survey-hero">
+        <h2>Tell Us Your Taste</h2>
+        <p>Select your age group below and answer 10 quick questions</p>
+      </div>
+      <div id="survey-content"></div>
+    </div>
   </div>
 </div>
 
-<!-- ADMIN -->
+<!-- ADMIN PAGE (PIN protected) -->
 <div id="pg-admin" class="page">
-  <div class="admin-section">
-    <div class="admin-inner" id="admin-content"></div>
+  <div id="pin-gate">
+    <div class="pin-gate">
+      <div class="pin-card">
+        <svg width="60" height="60" viewBox="0 0 60 60" style="margin:0 auto 1rem;display:block">
+          <circle cx="30" cy="30" r="30" fill="#FFF0EC"/>
+          <rect x="18" y="26" width="24" height="20" rx="4" fill="#C41E3A"/>
+          <path d="M22 26 V20 Q30 12 38 20 V26" fill="none" stroke="#C41E3A" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="30" cy="35" r="3" fill="#fff"/>
+        </svg>
+        <h2>Admin Access</h2>
+        <p>Enter your 4-digit PIN to view survey responses</p>
+        <div class="pin-dots">
+          <div class="pin-dot" id="dot0"></div>
+          <div class="pin-dot" id="dot1"></div>
+          <div class="pin-dot" id="dot2"></div>
+          <div class="pin-dot" id="dot3"></div>
+        </div>
+        <div class="pin-grid">
+          <button class="pin-btn" onclick="pinPress('1')">1</button>
+          <button class="pin-btn" onclick="pinPress('2')">2</button>
+          <button class="pin-btn" onclick="pinPress('3')">3</button>
+          <button class="pin-btn" onclick="pinPress('4')">4</button>
+          <button class="pin-btn" onclick="pinPress('5')">5</button>
+          <button class="pin-btn" onclick="pinPress('6')">6</button>
+          <button class="pin-btn" onclick="pinPress('7')">7</button>
+          <button class="pin-btn" onclick="pinPress('8')">8</button>
+          <button class="pin-btn" onclick="pinPress('9')">9</button>
+          <button class="pin-btn" style="background:var(--light);font-size:13px" onclick="pinClear()">Clear</button>
+          <button class="pin-btn" onclick="pinPress('0')">0</button>
+          <button class="pin-btn" style="background:var(--light);font-size:18px" onclick="pinBackspace()">⌫</button>
+        </div>
+        <div class="pin-error" id="pin-error"></div>
+      </div>
+    </div>
+  </div>
+  <div id="admin-content" style="display:none;background:var(--light);min-height:100vh;padding:2.5rem 5%">
+    <div style="max-width:1200px;margin:0 auto" id="admin-inner"></div>
   </div>
 </div>
 
@@ -246,6 +517,36 @@ const _sb = supabase.createClient(
   'https://zntdkcmgekdfdjbcyctp.supabase.co',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpudGRrY21nZWtkZmRqYmN5Y3RwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2MzQxNzIsImV4cCI6MjA4OTIxMDE3Mn0.GniK5lVxNMSta5uTks135vofOsy0u7kfO9jq8MyEino'
 )
+
+const CORRECT_PIN = '1214'
+let pinEntry = ''
+let adminUnlocked = false
+
+function pinPress(d) {
+  if (pinEntry.length >= 4) return
+  pinEntry += d
+  for (var i = 0; i < 4; i++) {
+    document.getElementById('dot'+i).classList.toggle('filled', i < pinEntry.length)
+  }
+  if (pinEntry.length === 4) {
+    setTimeout(function() {
+      if (pinEntry === CORRECT_PIN) {
+        adminUnlocked = true
+        document.getElementById('pin-gate').style.display = 'none'
+        document.getElementById('admin-content').style.display = 'block'
+        renderAdmin()
+        loadAdmin()
+      } else {
+        document.getElementById('pin-error').textContent = 'Incorrect PIN. Try again.'
+        pinEntry = ''
+        for (var i = 0; i < 4; i++) document.getElementById('dot'+i).classList.remove('filled')
+        setTimeout(function(){ document.getElementById('pin-error').textContent='' }, 2000)
+      }
+    }, 300)
+  }
+}
+function pinClear() { pinEntry=''; for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.remove('filled'); document.getElementById('pin-error').textContent='' }
+function pinBackspace() { if(!pinEntry.length) return; pinEntry=pinEntry.slice(0,-1); for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.toggle('filled',i<pinEntry.length) }
 
 const FORMS = [
   {id:'teen',label:'Gen Z',range:'10–19',sub:'For teens and students',ages:[10,11,12,13,14,15,16,17,18,19],qs:[
@@ -305,26 +606,40 @@ const FORMS = [
 let pg='landing', fi=0, ans={}, done=false, aData=[], aFilt='all'
 
 function goTo(p) {
+  if (p === 'admin') {
+    pg = p
+    document.querySelectorAll('.page').forEach(function(el){el.classList.remove('on')})
+    document.getElementById('pg-admin').classList.add('on')
+    document.querySelectorAll('.nlink').forEach(function(b){b.classList.remove('active')})
+    if (!adminUnlocked) {
+      document.getElementById('pin-gate').style.display = 'block'
+      document.getElementById('admin-content').style.display = 'none'
+    } else {
+      document.getElementById('pin-gate').style.display = 'none'
+      document.getElementById('admin-content').style.display = 'block'
+      renderAdmin(); loadAdmin()
+    }
+    window.scrollTo(0,0); return
+  }
   pg=p
-  document.querySelectorAll('.page').forEach(el=>el.classList.remove('on'))
+  document.querySelectorAll('.page').forEach(function(el){el.classList.remove('on')})
   document.getElementById('pg-'+p).classList.add('on')
-  document.querySelectorAll('.nlink').forEach(b=>b.classList.remove('active'))
+  document.querySelectorAll('.nlink').forEach(function(b){b.classList.remove('active')})
   var nb=document.getElementById('nb-'+p)
   if(nb) nb.classList.add('active')
   if(p==='survey') renderSurvey()
-  if(p==='admin'){renderAdmin();loadAdmin()}
   window.scrollTo(0,0)
 }
 
 function renderSurvey() {
   var el=document.getElementById('survey-content')
   if(done){
-    el.innerHTML=`<div class="ty">
-      <div class="tycheck">✓</div>
-      <h2>Thank You!</h2>
-      <p>Your feedback helps WOK IN serve you better. You are officially part of our founding community. We will reach out with exclusive launch offers!</p><br>
-      <button class="subbtn" style="max-width:300px;margin:0 auto;display:block" onclick="resetSurvey()">Submit Another Response</button>
-    </div>`
+    el.innerHTML='<div class="ty">'
+      +'<div class="tycheck">✓</div>'
+      +'<h2>Thank You!</h2>'
+      +'<p>Your feedback helps WOK IN serve you better. You are officially part of our founding community!</p><br>'
+      +'<button class="subbtn" style="max-width:300px;margin:0 auto;display:block" onclick="resetSurvey()">Submit Another Response</button>'
+      +'</div>'
     return
   }
   var f=FORMS[fi]
@@ -362,7 +677,7 @@ function renderSurvey() {
     +'<div class="form-card">'
     +'<div class="form-card-header">'
     +'<div class="fch-logo"><img src="logo.png" alt="W" onerror="this.style.display=\'none\';this.parentElement.textContent=\'W\'"></div>'
-    +'<div><h2>WOK IN Survey</h2><p>'+f.sub+' · Takes just 2 minutes · You matter!</p></div>'
+    +'<div><h2>WOK IN Survey</h2><p>'+f.sub+' · Takes just 2 minutes</p></div>'
     +'</div>'
     +'<div class="prog-wrap">'
     +'<div class="prog-info"><span>Your progress</span><span id="ptxt">'+answered+' / '+totalQ+' answered</span></div>'
@@ -436,50 +751,45 @@ async function submitForm() {
   if(missing.length){alert('Please answer all questions. '+missing.length+' still remaining.');return}
   var btn=document.getElementById('subbtn')
   if(btn){btn.disabled=true;btn.textContent='Submitting...'}
-  var payload={form_version:f.id,age:ans.age,gender:ans.gender,
+  var res=await _sb.from('survey_responses').insert([{
+    form_version:f.id,age:ans.age,gender:ans.gender,
     q1:String(ans.q1||''),q2:String(ans.q2||''),q3:String(ans.q3||''),
     q4:String(ans.q4||''),q5:String(ans.q5||''),q6:String(ans.q6||''),
     q7:String(ans.q7||''),q8:String(ans.q8||''),q9:String(ans.q9||''),
-    q10:String(ans.q10||''),q11:String(ans.q11||'')}
-  var res=await _sb.from('survey_responses').insert([payload])
-  if(res.error){
-    alert('Error: '+res.error.message)
-    if(btn){btn.disabled=false;btn.textContent='Submit My Answers →'}
-    return
-  }
+    q10:String(ans.q10||''),q11:String(ans.q11||'')
+  }])
+  if(res.error){alert('Error: '+res.error.message);if(btn){btn.disabled=false;btn.textContent='Submit My Answers →'}return}
   done=true;renderSurvey();window.scrollTo(0,0)
 }
 
 function renderAdmin() {
-  var el=document.getElementById('admin-content')
+  var el=document.getElementById('admin-inner')
   var gl={teen:'Gen Z',young:'Young Adults',pro:'Professionals',adult:'Adults'}
   var gc={teen:'bt',young:'by',pro:'bp',adult:'ba'}
   var filt=aFilt==='all'?aData:aData.filter(function(r){return r.form_version===aFilt})
   var counts={teen:0,young:0,pro:0,adult:0}
   aData.forEach(function(r){if(counts[r.form_version]!==undefined)counts[r.form_version]++})
-
   var rows=filt.map(function(r,i){
     return '<tr><td>'+(i+1)+'</td>'
-    +'<td style="white-space:nowrap">'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td>'
-    +'<td><span class="badge '+(gc[r.form_version]||'')+'">'+(gl[r.form_version]||r.form_version)+'</span></td>'
-    +'<td>'+(r.age||'—')+'</td><td>'+(r.gender||'—')+'</td>'
-    +'<td title="'+(r.q1||'')+'">'+(r.q1||'—')+'</td>'
-    +'<td title="'+(r.q2||'')+'">'+(r.q2||'—')+'</td>'
-    +'<td title="'+(r.q3||'')+'">'+(r.q3||'—')+'</td>'
-    +'<td title="'+(r.q4||'')+'">'+(r.q4||'—')+'</td>'
-    +'<td title="'+(r.q5||'')+'">'+(r.q5||'—')+'</td>'
-    +'<td title="'+(r.q6||'')+'">'+(r.q6||'—')+'</td>'
-    +'<td title="'+(r.q7||'')+'">'+(r.q7||'—')+'</td>'
-    +'<td title="'+(r.q8||'')+'">'+(r.q8||'—')+'</td>'
-    +'<td title="'+(r.q9||'')+'">'+(r.q9||'—')+'</td>'
-    +'<td title="'+(r.q10||'')+'">'+(r.q10||'—')+'</td>'
-    +'<td title="'+(r.q11||'')+'">'+(r.q11||'—')+'</td></tr>'
+      +'<td>'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td>'
+      +'<td><span class="badge '+(gc[r.form_version]||'')+'">'+(gl[r.form_version]||r.form_version)+'</span></td>'
+      +'<td>'+(r.age||'—')+'</td><td>'+(r.gender||'—')+'</td>'
+      +'<td title="'+(r.q1||'')+'">'+(r.q1||'—')+'</td><td title="'+(r.q2||'')+'">'+(r.q2||'—')+'</td>'
+      +'<td title="'+(r.q3||'')+'">'+(r.q3||'—')+'</td><td title="'+(r.q4||'')+'">'+(r.q4||'—')+'</td>'
+      +'<td title="'+(r.q5||'')+'">'+(r.q5||'—')+'</td><td title="'+(r.q6||'')+'">'+(r.q6||'—')+'</td>'
+      +'<td title="'+(r.q7||'')+'">'+(r.q7||'—')+'</td><td title="'+(r.q8||'')+'">'+(r.q8||'—')+'</td>'
+      +'<td title="'+(r.q9||'')+'">'+(r.q9||'—')+'</td><td title="'+(r.q10||'')+'">'+(r.q10||'—')+'</td>'
+      +'<td title="'+(r.q11||'')+'">'+(r.q11||'—')+'</td></tr>'
   }).join('')
 
-  el.innerHTML='<div class="ahdr"><div><h2>Survey Responses</h2><p>All WOK IN submissions — live from Supabase</p></div>'
-    +'<button class="rfbtn" onclick="loadAdmin()">Refresh</button></div>'
+  el.innerHTML='<div class="ahdr">'
+    +'<div><h2>Survey Responses</h2><p>All WOK IN submissions — live from Supabase</p></div>'
+    +'<div style="display:flex;gap:8px">'
+    +'<button class="rfbtn" onclick="loadAdmin()">Refresh</button>'
+    +'<button class="logout-btn" onclick="logoutAdmin()">Lock</button>'
+    +'</div></div>'
     +'<div class="sgrid">'
-    +'<div class="sc"><div class="sl">Total</div><div class="sv">'+aData.length+'</div></div>'
+    +'<div class="sc"><div class="sl">Total Responses</div><div class="sv">'+aData.length+'</div></div>'
     +'<div class="sc"><div class="sl">Gen Z</div><div class="sv">'+counts.teen+'</div></div>'
     +'<div class="sc"><div class="sl">Young Adults</div><div class="sv">'+counts.young+'</div></div>'
     +'<div class="sc"><div class="sl">Professionals</div><div class="sv">'+counts.pro+'</div></div>'
@@ -488,8 +798,7 @@ function renderAdmin() {
     +'<div class="filtrow">'
     +[['all','All'],['teen','Gen Z'],['young','Young Adults'],['pro','Professionals'],['adult','Adults']].map(function(v){
       return '<button class="fbtn'+(aFilt===v[0]?' active':'')+'" onclick="setFilt(\''+v[0]+'\')">'+v[1]+'</button>'
-    }).join('')
-    +'</div>'
+    }).join('')+'</div>'
     +(filt.length
       ?'<div class="tblwrap"><table><thead><tr><th>#</th><th>Date</th><th>Group</th><th>Age</th><th>Gender</th>'
         +'<th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th><th>Q6</th>'
@@ -500,10 +809,17 @@ function renderAdmin() {
 }
 
 async function loadAdmin() {
-  document.getElementById('admin-content').innerHTML='<div class="empty">Loading responses...</div>'
+  document.getElementById('admin-inner').innerHTML='<div class="empty">Loading responses...</div>'
   var res=await _sb.from('survey_responses').select('*').order('created_at',{ascending:false})
   if(!res.error){aData=res.data||[];renderAdmin()}
-  else{document.getElementById('admin-content').innerHTML='<div class="empty">Error: '+res.error.message+'</div>'}
+  else{document.getElementById('admin-inner').innerHTML='<div class="empty">Error: '+res.error.message+'</div>'}
+}
+
+function logoutAdmin(){
+  adminUnlocked=false;pinEntry=''
+  document.getElementById('pin-gate').style.display='block'
+  document.getElementById('admin-content').style.display='none'
+  for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.remove('filled')
 }
 
 function setFilt(f){aFilt=f;renderAdmin()}
