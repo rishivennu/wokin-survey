@@ -9,12 +9,7 @@
 <style>
 @font-face{font-family:'DonalMoty';src:url('https://creativefonts.org/wp-content/uploads/2024/donal-moty/DonalMoty.woff2') format('woff2')}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --navy:#1A2D5A;--navy2:#142247;--navy3:#0E1832;
-  --yellow:#F5C518;--yellow2:#E8B800;--yellow3:#FFD740;
-  --white:#FFFFFF;--off:#F7F7F2;--light:#EFEFEA;
-  --gray:#888;--dark:#111;--red:#E8341A;
-}
+:root{--navy:#1A2D5A;--navy2:#142247;--navy3:#0E1832;--yellow:#F5C518;--yellow2:#E8B800;--yellow3:#FFD740;--white:#FFFFFF;--off:#F7F7F2;--light:#EFEFEA;--gray:#888;--dark:#111;--red:#E8341A}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--off);color:var(--dark);overflow-x:hidden}
 
@@ -27,18 +22,14 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--dark);over
 .reveal-right.visible{opacity:1;transform:translateX(0)}
 .reveal-scale{opacity:0;transform:scale(.85);transition:opacity .6s ease,transform .6s ease}
 .reveal-scale.visible{opacity:1;transform:scale(1)}
-.stagger-1{transition-delay:.1s}
-.stagger-2{transition-delay:.2s}
-.stagger-3{transition-delay:.3s}
-.stagger-4{transition-delay:.4s}
-.stagger-5{transition-delay:.5s}
-.stagger-6{transition-delay:.6s}
+.stagger-1{transition-delay:.1s}.stagger-2{transition-delay:.2s}.stagger-3{transition-delay:.3s}
+.stagger-4{transition-delay:.4s}.stagger-5{transition-delay:.5s}.stagger-6{transition-delay:.6s}
 
 /* NAV */
 nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;border-bottom:3px solid var(--yellow)}
 .nlogo{display:flex;align-items:center;gap:10px;cursor:pointer;flex-shrink:0}
 .nlogo img{height:38px;width:auto;object-fit:contain}
-.nlogo-fb{height:38px;width:38px;border-radius:4px;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:var(--navy);display:none}
+.nlogo-fb{height:38px;width:38px;border-radius:4px;background:var(--yellow);display:none;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:var(--navy)}
 .nbrand{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--yellow);letter-spacing:3px}
 .nlinks{display:flex;align-items:center;gap:4px}
 .nlink{background:transparent;border:none;color:rgba(255,255,255,.7);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;padding:7px 13px;border-radius:5px;transition:all .15s;text-transform:uppercase;letter-spacing:.5px}
@@ -57,7 +48,7 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 
 /* TICKER */
 .ticker-wrap{background:var(--yellow);overflow:hidden;padding:10px 0;border-bottom:2px solid var(--yellow2)}
-.ticker{display:flex;gap:0;animation:ticker 18s linear infinite;white-space:nowrap}
+.ticker{display:flex;animation:ticker 20s linear infinite;white-space:nowrap}
 .ticker:hover{animation-play-state:paused}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .ticker-item{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--navy);letter-spacing:2px;padding:0 2rem;display:inline-flex;align-items:center;gap:1rem}
@@ -100,9 +91,9 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .mc-row{display:flex;justify-content:space-between;font-size:10.5px;margin-bottom:.12rem}
 .mc-row span:first-child{color:var(--navy);font-weight:500}
 .mc-row span:last-child{color:var(--red);font-weight:800}
+.mc-row-w{display:flex;justify-content:space-between;font-size:10.5px;margin-bottom:.12rem}
 .mc-row-w span:first-child{color:rgba(255,255,255,.8);font-weight:500}
 .mc-row-w span:last-child{color:var(--yellow);font-weight:800}
-.mc-row-w{display:flex;justify-content:space-between;font-size:10.5px;margin-bottom:.12rem}
 .mc-foot{font-size:8.5px;color:var(--gray);margin-top:.8rem;font-style:italic}
 .mc-foot-w{font-size:8.5px;color:rgba(255,255,255,.35);margin-top:.8rem;font-style:italic}
 .hero-sticker{background:var(--yellow);color:var(--navy);font-family:'Bebas Neue',sans-serif;font-size:1.1rem;padding:10px 14px;border-radius:6px;transform:rotate(-10deg);position:absolute;top:10px;left:50%;translate:-50% 0;line-height:1.1;text-align:center;z-index:10;letter-spacing:1px;box-shadow:3px 3px 0 var(--navy2)}
@@ -123,26 +114,25 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .why-inner{max-width:1200px;margin:0 auto}
 .sec-eyebrow{display:inline-block;background:var(--yellow);color:var(--navy);font-size:10px;font-weight:900;padding:4px 12px;border-radius:3px;margin-bottom:.8rem;text-transform:uppercase;letter-spacing:.12em}
 .sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,5rem);color:var(--navy);letter-spacing:2px;line-height:.95;margin-bottom:.5rem}
-.sec-sub{font-size:14px;color:var(--gray);margin-bottom:2.5rem;max-width:500px}
+.sec-sub{font-size:14px;color:var(--gray);margin-bottom:2.5rem;max-width:500px;line-height:1.7}
 .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
-.why-card{background:var(--white);border:2px solid var(--light);border-radius:8px;padding:1.8rem 1.5rem;transition:all .2s;cursor:default;position:relative;overflow:hidden}
+.why-card{background:var(--white);border:2px solid var(--light);border-radius:8px;padding:1.8rem 1.5rem;transition:all .2s;position:relative;overflow:hidden}
 .why-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--yellow)}
 .why-card:hover{transform:translateY(-4px);border-color:var(--yellow);box-shadow:0 8px 0 var(--yellow)}
 .why-icon{width:52px;height:52px;border-radius:6px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:22px}
 .why-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--navy);margin-bottom:6px;letter-spacing:1px}
 .why-card p{font-size:13px;color:var(--gray);line-height:1.6}
 
-/* MENU SECTION */
+/* MENU */
 .menu-section{background:var(--navy);padding:5rem 5%;position:relative;overflow:hidden}
 .menu-section::before{content:'MENU';position:absolute;bottom:-3rem;right:-2rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,20vw,22rem);color:rgba(245,197,24,.05);pointer-events:none;line-height:1}
 .menu-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
 .menu-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.5rem;flex-wrap:wrap;gap:1rem}
 .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
-.menu-card{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:8px;padding:1.5rem;transition:all .2s;cursor:default;position:relative}
+.menu-card{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:8px;padding:1.5rem;transition:all .2s}
 .menu-card:hover{background:rgba(245,197,24,.1);border-color:var(--yellow);transform:translateY(-3px)}
 .menu-badge{display:inline-block;background:var(--yellow);color:var(--navy);font-size:9px;font-weight:900;padding:3px 8px;border-radius:3px;margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.06em}
 .menu-badge-red{background:var(--red);color:#fff}
-.menu-badge-outline{background:transparent;color:var(--yellow);border:1px solid var(--yellow)}
 .menu-emoji{font-size:38px;margin-bottom:.8rem;display:block}
 .menu-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--white);margin-bottom:.4rem;letter-spacing:1px}
 .menu-desc{font-size:12px;color:rgba(255,255,255,.55);line-height:1.5;margin-bottom:.8rem}
@@ -152,18 +142,45 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .spice-dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
 .spice-dot.off{background:rgba(255,255,255,.2)}
 
-/* PEOPLE SECTION */
+/* WAITLIST SECTION */
+.waitlist-section{background:var(--yellow);padding:5rem 5%;position:relative;overflow:hidden}
+.waitlist-section::before{content:'JOIN';position:absolute;bottom:-3rem;right:-1rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,20vw,22rem);color:rgba(26,45,90,.07);pointer-events:none;line-height:1}
+.waitlist-inner{max-width:1000px;margin:0 auto;position:relative;z-index:2}
+.waitlist-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.waitlist-form{background:var(--white);border-radius:10px;padding:2rem;border:3px solid var(--navy)}
+.waitlist-form h3{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--navy);letter-spacing:1px;margin-bottom:.3rem}
+.waitlist-form p{font-size:13px;color:var(--gray);margin-bottom:1.5rem;line-height:1.6}
+.wf-field{display:flex;flex-direction:column;gap:5px;margin-bottom:1rem}
+.wf-field label{font-size:10px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.07em}
+.wf-input{width:100%;padding:11px 14px;border:2px solid var(--light);border-radius:5px;font-family:inherit;font-size:14px;color:var(--dark);background:var(--off);outline:none;transition:border-color .15s}
+.wf-input:focus{border-color:var(--navy)}
+.wf-btn{width:100%;background:var(--navy);color:var(--yellow);border:none;padding:14px;border-radius:5px;font-size:13px;font-weight:900;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:1px;transition:all .15s;margin-top:.5rem}
+.wf-btn:hover{background:var(--navy2);transform:translateY(-1px)}
+.wf-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.wf-success{background:var(--navy);color:var(--yellow);border-radius:8px;padding:1.5rem;text-align:center;display:none}
+.wf-success h4{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:1px;margin-bottom:.5rem}
+.wf-success p{font-size:13px;color:rgba(245,197,24,.8)}
+.waitlist-perks h3{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);color:var(--navy);letter-spacing:2px;line-height:.95;margin-bottom:1.2rem}
+.perk-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:1rem}
+.perk-num{width:32px;height:32px;border-radius:4px;background:var(--navy);color:var(--yellow);font-family:'Bebas Neue',sans-serif;font-size:1.2rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.perk-text h4{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:2px}
+.perk-text p{font-size:12px;color:var(--navy2);opacity:.7;line-height:1.5}
+.waitlist-count{background:var(--navy);color:var(--yellow);border-radius:6px;padding:12px 16px;display:inline-flex;align-items:center;gap:10px;margin-top:1.5rem}
+.wc-num{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;line-height:1}
+.wc-txt{font-size:11px;color:rgba(245,197,24,.7);font-weight:600;line-height:1.3}
+
+/* PEOPLE */
 .people-section{background:var(--light);padding:5rem 5%}
 .people-inner{max-width:1200px;margin:0 auto}
 .people-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:2.5rem}
-.person-card{background:var(--white);border-radius:8px;border:2px solid transparent;padding:1.8rem 1.5rem;text-align:center;transition:all .2s;cursor:default}
+.person-card{background:var(--white);border-radius:8px;border:2px solid transparent;padding:1.8rem 1.5rem;text-align:center;transition:all .2s}
 .person-card:hover{border-color:var(--yellow);transform:translateY(-3px);box-shadow:0 6px 0 var(--yellow)}
 .person-card svg{margin:0 auto 1rem;display:block}
 .person-card h4{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;margin-bottom:2px;color:var(--navy);letter-spacing:1px}
 .person-role{font-size:10px;color:var(--yellow);font-weight:900;margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em;background:var(--navy);display:inline-block;padding:2px 8px;border-radius:3px}
 .person-quote{font-size:13px;color:var(--gray);line-height:1.6;font-style:italic}
 
-/* INSTA SECTION */
+/* INSTA */
 .insta-section{background:var(--white);padding:5rem 5%}
 .insta-inner{max-width:1200px;margin:0 auto}
 .insta-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
@@ -197,6 +214,18 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .btn-cp{background:var(--yellow);color:var(--navy);border:none;padding:14px 22px;border-radius:5px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
 .btn-cp:hover{background:var(--yellow3);transform:translateY(-1px)}
 
+/* CTA */
+.cta-section{background:var(--yellow);padding:5rem 5%;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'WOK IN';position:absolute;top:50%;left:50%;translate:-50% -50%;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,20vw,22rem);color:rgba(26,45,90,.08);pointer-events:none;white-space:nowrap}
+.cta-inner{max-width:700px;margin:0 auto;position:relative;z-index:2}
+.cta-inner h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,6vw,6rem);color:var(--navy);letter-spacing:3px;line-height:.9;margin-bottom:1rem}
+.cta-inner p{font-size:15px;color:var(--navy2);margin-bottom:2rem;line-height:1.7;font-weight:500}
+
+footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yellow)}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--yellow);letter-spacing:3px}
+.footer-tag{font-size:12px;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+
 /* SURVEY */
 .survey-section{background:var(--off);padding:4rem 5%}
 .survey-inner{max-width:740px;margin:0 auto}
@@ -226,7 +255,9 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .prog-fill{height:100%;background:var(--yellow);border-radius:3px;transition:width .4s ease}
 .form-body{padding:1.2rem 1.6rem 1.8rem}
 .qblock{margin-bottom:1rem;padding:1.2rem 1.4rem;background:var(--off);border-radius:7px;border:1.5px solid var(--light)}
+.qblock.highlight{border-color:var(--yellow);background:rgba(245,197,24,.04)}
 .qlabel{font-size:9px;font-weight:900;color:var(--yellow);background:var(--navy);display:inline-block;padding:2px 8px;border-radius:3px;margin-bottom:6px;text-transform:uppercase;letter-spacing:.1em}
+.qlabel-new{background:var(--red)}
 .qtext{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;color:var(--navy);margin-bottom:.85rem;line-height:1.2;letter-spacing:.5px}
 .qgrid{display:flex;flex-wrap:wrap;gap:7px}
 .qopt{padding:8px 16px;border:2px solid var(--light);border-radius:4px;background:var(--white);font-size:12px;font-weight:700;color:var(--gray);cursor:pointer;font-family:inherit;transition:all .15s;-webkit-tap-highlight-color:transparent;user-select:none;outline:none;touch-action:manipulation;text-transform:uppercase;letter-spacing:.3px}
@@ -237,14 +268,23 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .rbtn:hover{border-color:var(--navy);color:var(--navy)}
 .rbtn.sel{background:var(--navy)!important;color:var(--yellow)!important;border-color:var(--navy)!important}
 .twocol{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
 .fg{display:flex;flex-direction:column;gap:5px}
 .fg label{font-size:10px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.07em}
-select,textarea{width:100%;padding:10px 12px;border:2px solid var(--light);border-radius:5px;font-family:inherit;font-size:13px;color:var(--dark);background:var(--white);outline:none;transition:border-color .15s;appearance:none;-webkit-appearance:none}
-select:focus,textarea:focus{border-color:var(--navy)}
+input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;padding:10px 12px;border:2px solid var(--light);border-radius:5px;font-family:inherit;font-size:13px;color:var(--dark);background:var(--white);outline:none;transition:border-color .15s;appearance:none;-webkit-appearance:none}
+input[type=text]:focus,input[type=email]:focus,input[type=tel]:focus,select:focus,textarea:focus{border-color:var(--navy)}
 textarea{resize:vertical;min-height:70px}
+.nps-row{display:flex;gap:5px;flex-wrap:wrap}
+.nps-btn{width:40px;height:40px;border:2px solid var(--light);border-radius:4px;background:var(--white);font-size:12px;font-weight:900;color:var(--gray);cursor:pointer;font-family:inherit;transition:all .12s;-webkit-tap-highlight-color:transparent;outline:none;flex-shrink:0}
+.nps-btn:hover{border-color:var(--navy);color:var(--navy)}
+.nps-btn.sel{background:var(--navy)!important;color:var(--yellow)!important;border-color:var(--navy)!important}
+.nps-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--gray);margin-top:5px;font-weight:600}
 .motiv{background:var(--navy);border-radius:6px;padding:12px 16px;margin-bottom:1rem;display:flex;align-items:center;gap:10px}
 .mdot{width:30px;height:30px;border-radius:4px;background:var(--yellow);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;font-weight:900}
 .motiv p{font-size:13px;color:rgba(255,255,255,.85);font-weight:600;line-height:1.4}
+.section-divider{background:var(--navy);border-radius:6px;padding:10px 16px;margin:1.2rem 0;display:flex;align-items:center;gap:10px}
+.section-divider span{font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--yellow);letter-spacing:1px}
+.section-divider::before,.section-divider::after{content:'';flex:1;height:1px;background:rgba(245,197,24,.2)}
 .subbtn{width:100%;background:var(--yellow);color:var(--navy);border:none;border-radius:6px;padding:16px;font-size:14px;font-weight:900;cursor:pointer;font-family:inherit;transition:all .15s;letter-spacing:1px;text-transform:uppercase;touch-action:manipulation}
 .subbtn:hover{background:var(--yellow3);transform:translateY(-1px)}
 .subbtn:disabled{opacity:.6;cursor:not-allowed;transform:none}
@@ -254,7 +294,7 @@ textarea{resize:vertical;min-height:70px}
 .ty p{color:var(--gray);font-size:14px;line-height:1.7;max-width:380px;margin:0 auto 1.5rem}
 .ty-share{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
 
-/* PIN GATE */
+/* PIN */
 .pin-wrap{min-height:100vh;background:var(--navy);display:flex;align-items:center;justify-content:center;padding:1.5rem}
 .pin-card{background:var(--white);border-radius:10px;border:3px solid var(--yellow);padding:2.5rem 2rem;max-width:380px;width:100%;text-align:center}
 .pin-card h2{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;letter-spacing:2px;margin-bottom:.4rem;color:var(--navy)}
@@ -279,6 +319,9 @@ textarea{resize:vertical;min-height:70px}
 .rfbtn{background:var(--navy);color:var(--yellow);border:none;padding:10px 20px;border-radius:5px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px}
 .lock-btn{background:transparent;border:2px solid var(--light);color:var(--gray);padding:9px 16px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
 .lock-btn:hover{border-color:var(--navy);color:var(--navy)}
+.admin-tabs{display:flex;gap:8px;margin-bottom:1.5rem;border-bottom:2px solid var(--light);padding-bottom:1rem;flex-wrap:wrap}
+.admin-tab{background:transparent;border:2px solid var(--light);color:var(--gray);padding:8px 18px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
+.admin-tab.active{background:var(--navy);color:var(--yellow);border-color:var(--navy)}
 .sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:1.8rem}
 .sc{background:var(--white);border:2px solid var(--light);border-radius:8px;padding:1.1rem 1.3rem;position:relative;overflow:hidden}
 .sc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--yellow)}
@@ -292,32 +335,25 @@ textarea{resize:vertical;min-height:70px}
 .fbtn{padding:7px 16px;border-radius:4px;border:2px solid var(--light);background:var(--white);font-size:11px;color:var(--gray);cursor:pointer;font-family:inherit;font-weight:700;transition:all .15s;text-transform:uppercase;letter-spacing:.4px}
 .fbtn.active{background:var(--navy);color:var(--yellow);border-color:var(--navy)}
 .tblwrap{overflow-x:auto;border:2px solid var(--light);border-radius:8px;background:var(--white);-webkit-overflow-scrolling:touch}
-table{width:100%;border-collapse:collapse;font-size:12px;min-width:800px}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:900px}
 th{text-align:left;padding:11px 12px;background:var(--navy);border-bottom:2px solid var(--yellow);font-weight:800;font-size:10px;color:var(--yellow);text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
-td{padding:11px 12px;border-bottom:1px solid var(--light);color:var(--dark);vertical-align:top;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+td{padding:11px 12px;border-bottom:1px solid var(--light);color:var(--dark);vertical-align:top;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:var(--off)}
 .badge{display:inline-block;padding:3px 9px;border-radius:3px;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
-.bt{background:var(--navy);color:var(--yellow)}
-.by{background:#1a5e2a;color:#7be89a}
-.bp{background:#5e2000;color:#ffb77a}
-.ba{background:#4a1a4a;color:#e8a0e8}
+.bt{background:var(--navy);color:var(--yellow)}.by{background:#1a5e2a;color:#7be89a}
+.bp{background:#5e2000;color:#ffb77a}.ba{background:#4a1a4a;color:#e8a0e8}
 .empty{text-align:center;padding:3rem;color:var(--gray);font-size:14px;text-transform:uppercase;letter-spacing:.5px;font-weight:700}
 
-/* CTA */
-.cta-section{background:var(--yellow);padding:5rem 5%;text-align:center;position:relative;overflow:hidden}
-.cta-section::before{content:'WOK IN';position:absolute;top:50%;left:50%;translate:-50% -50%;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,20vw,22rem);color:rgba(26,45,90,.08);pointer-events:none;white-space:nowrap}
-.cta-inner{max-width:700px;margin:0 auto;position:relative;z-index:2}
-.cta-inner h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,6vw,6rem);color:var(--navy);letter-spacing:3px;line-height:.9;margin-bottom:1rem}
-.cta-inner p{font-size:15px;color:var(--navy2);margin-bottom:2rem;line-height:1.7;font-weight:500}
+/* WAITLIST TABLE */
+.waitlist-tbl-wrap{overflow-x:auto;border:2px solid var(--light);border-radius:8px;background:var(--white);margin-top:1rem}
+.waitlist-tbl{width:100%;border-collapse:collapse;font-size:12px;min-width:500px}
+.waitlist-tbl th{text-align:left;padding:11px 12px;background:var(--yellow);border-bottom:2px solid var(--yellow2);font-weight:900;font-size:10px;color:var(--navy);text-transform:uppercase;letter-spacing:.07em}
+.waitlist-tbl td{padding:11px 12px;border-bottom:1px solid var(--light);color:var(--dark)}
+.waitlist-tbl tr:last-child td{border-bottom:none}
+.waitlist-tbl tr:hover td{background:var(--off)}
 
-/* FOOTER */
-footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yellow)}
-.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--yellow);letter-spacing:3px}
-.footer-tag{font-size:12px;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
-
-/* COPY TOAST */
+/* TOAST */
 .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--yellow);padding:12px 24px;border-radius:5px;font-size:12px;font-weight:800;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none;text-transform:uppercase;letter-spacing:1px;border:2px solid var(--yellow)}
 .toast.show{opacity:1}
 
@@ -326,7 +362,9 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
   .hero-inner{grid-template-columns:1fr;gap:2rem}
   .hero-visual{display:none}
   .hero h1{font-size:clamp(3.5rem,10vw,6rem)}
-  .cta-section .cta-inner+div{display:none}
+  .waitlist-grid{grid-template-columns:1fr}
+  .waitlist-perks{order:-1}
+  .cta-section>div:last-child{display:none}
 }
 @media(max-width:640px){
   nav{padding:0 4%;height:60px}
@@ -338,7 +376,7 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
   .hero-btns{flex-direction:column}
   .btn-y,.btn-w{width:100%;text-align:center}
   .live-ctr{width:100%}
-  .why-section,.menu-section,.people-section,.insta-section,.ref-section,.cta-section{padding:3.5rem 4%}
+  .why-section,.menu-section,.people-section,.insta-section,.ref-section,.cta-section,.waitlist-section{padding:3.5rem 4%}
   .why-grid,.menu-grid,.people-grid{grid-template-columns:1fr 1fr;gap:.9rem}
   .insta-grid{grid-template-columns:repeat(3,1fr)}
   .ref-steps{grid-template-columns:1fr}
@@ -351,6 +389,9 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
   .form-body{padding:1rem 1.2rem 1.5rem}
   .qblock{padding:1rem 1.1rem}
   .twocol{grid-template-columns:1fr 1fr;gap:8px}
+  .threecol{grid-template-columns:1fr}
+  .nps-row{gap:4px}
+  .nps-btn{width:36px;height:36px;font-size:11px}
   .pin-card{padding:2rem 1.4rem}
   .pin-grid{max-width:240px}
   .pin-btn{padding:14px;font-size:18px}
@@ -377,7 +418,6 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
 
 <div class="toast" id="toast">Link Copied!</div>
 
-<!-- NAV -->
 <nav>
   <div class="nlogo" onclick="goTo('landing')">
     <img src="logo.png" alt="WOK IN" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -402,8 +442,6 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
 
 <!-- LANDING PAGE -->
 <div id="pg-landing" class="page on">
-
-  <!-- TICKER -->
   <div class="ticker-wrap">
     <div class="ticker">
       <span class="ticker-item">WOK IN <span class="ticker-dot"></span></span>
@@ -411,19 +449,18 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
       <span class="ticker-item">INDIAN SOUL <span class="ticker-dot"></span></span>
       <span class="ticker-item">CHINESE WOK <span class="ticker-dot"></span></span>
       <span class="ticker-item">IT PARK FIRST <span class="ticker-dot"></span></span>
-      <span class="ticker-item">TAKE THE SURVEY <span class="ticker-dot"></span></span>
+      <span class="ticker-item">JOIN WAITLIST <span class="ticker-dot"></span></span>
       <span class="ticker-item">SHAPE THE MENU <span class="ticker-dot"></span></span>
       <span class="ticker-item">WOK IN <span class="ticker-dot"></span></span>
       <span class="ticker-item">BOLD FLAVOR <span class="ticker-dot"></span></span>
       <span class="ticker-item">INDIAN SOUL <span class="ticker-dot"></span></span>
       <span class="ticker-item">CHINESE WOK <span class="ticker-dot"></span></span>
       <span class="ticker-item">IT PARK FIRST <span class="ticker-dot"></span></span>
-      <span class="ticker-item">TAKE THE SURVEY <span class="ticker-dot"></span></span>
+      <span class="ticker-item">JOIN WAITLIST <span class="ticker-dot"></span></span>
       <span class="ticker-item">SHAPE THE MENU <span class="ticker-dot"></span></span>
     </div>
   </div>
 
-  <!-- HERO -->
   <div class="hero">
     <div class="hero-bg-text">WOK IN</div>
     <div class="hero-inner">
@@ -438,7 +475,7 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
         <p class="hero-sub reveal stagger-2">Chinese wok cooking meets Indian spices. Fast, bold, and cooked right in front of you. Help us build the menu your IT park deserves.</p>
         <div class="hero-btns reveal stagger-3">
           <button class="btn-y" onclick="goTo('survey')">Shape the Menu →</button>
-          <button class="btn-w" onclick="document.getElementById('menu-anchor').scrollIntoView({behavior:'smooth'})">See Dishes</button>
+          <button class="btn-w" onclick="document.getElementById('waitlist-anchor').scrollIntoView({behavior:'smooth'})">Join Waitlist</button>
         </div>
         <div class="live-ctr reveal stagger-4">
           <div class="lc-dot"></div>
@@ -485,7 +522,6 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
     </div>
   </div>
 
-  <!-- STATS -->
   <div class="stats">
     <div class="stats-inner">
       <div class="stat-item reveal stagger-1"><div class="stat-num">10+</div><div class="stat-lbl">Signature Dishes</div></div>
@@ -494,93 +530,71 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
     </div>
   </div>
 
-  <!-- WHY SECTION -->
   <div class="why-section">
     <div class="why-inner">
       <div class="reveal-left">
         <span class="sec-eyebrow">Why Take This Survey?</span>
-        <h2 class="sec-title">YOUR TASTE<br>BUILDS OUR<br>MENU</h2>
+        <h2 class="sec-title">YOUR TASTE<br>BUILDS OUR MENU</h2>
         <p class="sec-sub">Every answer shapes what WOK IN serves at your IT park. Bold flavors start with your feedback.</p>
       </div>
       <div class="why-grid">
-        <div class="why-card reveal stagger-1">
-          <div class="why-icon">🥢</div>
-          <h3>2 Minutes</h3>
-          <p>Quick focused questions tailored specifically for your age group</p>
-        </div>
-        <div class="why-card reveal stagger-2">
-          <div class="why-icon">🌶️</div>
-          <h3>Shape the Menu</h3>
-          <p>Your answers directly influence our dishes, spice levels, and pricing</p>
-        </div>
-        <div class="why-card reveal stagger-3">
-          <div class="why-icon">🏆</div>
-          <h3>Founding Member</h3>
-          <p>Early responders get exclusive launch discounts and first access</p>
-        </div>
-        <div class="why-card reveal stagger-4">
-          <div class="why-icon">📍</div>
-          <h3>IT Park First</h3>
-          <p>Your feedback decides where our food truck parks next</p>
-        </div>
+        <div class="why-card reveal stagger-1"><div class="why-icon">🥢</div><h3>2 Minutes</h3><p>Quick questions tailored for your age group</p></div>
+        <div class="why-card reveal stagger-2"><div class="why-icon">🌶️</div><h3>Shape the Menu</h3><p>Your answers influence our dishes, spice levels, and pricing</p></div>
+        <div class="why-card reveal stagger-3"><div class="why-icon">🏆</div><h3>Founding Member</h3><p>Early responders get exclusive launch discounts</p></div>
+        <div class="why-card reveal stagger-4"><div class="why-icon">📍</div><h3>IT Park First</h3><p>Your feedback decides where our food truck parks next</p></div>
       </div>
     </div>
   </div>
 
-  <!-- MENU SECTION -->
   <div class="menu-section" id="menu-anchor">
     <div class="menu-inner">
       <div class="menu-header">
         <div class="reveal-left">
           <span class="sec-eyebrow" style="background:rgba(245,197,24,.15);color:var(--yellow)">Signature Dishes</span>
-          <h2 class="sec-title" style="color:var(--white)">OUR BOLD<br>FLAVOR MENU</h2>
+          <h2 class="sec-title" style="color:var(--white)">OUR BOLD FLAVOR MENU</h2>
         </div>
-        <div class="reveal-right">
-          <p style="color:rgba(255,255,255,.55);font-size:13px;max-width:280px;line-height:1.6">Indian spices. Chinese wok. Every dish cooked fresh right in front of you.</p>
-        </div>
+        <div class="reveal-right"><p style="color:rgba(255,255,255,.55);font-size:13px;max-width:280px;line-height:1.6">Indian spices. Chinese wok. Every dish cooked fresh right in front of you.</p></div>
       </div>
       <div class="menu-grid">
-        <div class="menu-card reveal stagger-1">
-          <span class="menu-badge">Bestseller</span>
-          <span class="menu-emoji">🍊</span>
-          <h3>Masala Orange Chicken</h3>
-          <p class="menu-desc">Crispy chicken tossed in tamarind orange sauce with garam masala and kasuri methi</p>
-          <div class="menu-footer"><span class="menu-price">₹249</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot off"></div></div></div>
+        <div class="menu-card reveal stagger-1"><span class="menu-badge">Bestseller</span><span class="menu-emoji">🍊</span><h3>Masala Orange Chicken</h3><p class="menu-desc">Crispy chicken tossed in tamarind orange sauce with garam masala and kasuri methi</p><div class="menu-footer"><span class="menu-price">₹249</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot off"></div></div></div></div>
+        <div class="menu-card reveal stagger-2"><span class="menu-badge" style="background:rgba(245,197,24,.15);color:var(--yellow);border:1px solid rgba(245,197,24,.3)">Veg</span><span class="menu-emoji">🥘</span><h3>Kung Pao Paneer</h3><p class="menu-desc">Wok-tossed paneer with peanuts, dried chilies, and an Indian makhani base</p><div class="menu-footer"><span class="menu-price">₹229</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot off"></div></div></div></div>
+        <div class="menu-card reveal stagger-3"><span class="menu-badge menu-badge-red">Spicy</span><span class="menu-emoji">🍜</span><h3>Desi Masala Noodles</h3><p class="menu-desc">Chaat masala wok noodles with cumin, green chili, capsicum and spring onion</p><div class="menu-footer"><span class="menu-price">₹199</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot"></div></div></div></div>
+        <div class="menu-card reveal stagger-4"><span class="menu-badge">Popular</span><span class="menu-emoji">🍚</span><h3>Tadka Fried Rice</h3><p class="menu-desc">Classic tadka with mustard seeds, curry leaves, turmeric wok rice and paneer</p><div class="menu-footer"><span class="menu-price">₹189</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot off"></div><div class="spice-dot off"></div></div></div></div>
+        <div class="menu-card reveal stagger-5"><span class="menu-badge" style="background:rgba(245,197,24,.15);color:var(--yellow);border:1px solid rgba(245,197,24,.3)">New</span><span class="menu-emoji">🥟</span><h3>Mirchi Makhani Dumplings</h3><p class="menu-desc">Steamed momos in a rich Indian makhani gravy with chili crunch</p><div class="menu-footer"><span class="menu-price">₹169</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot off"></div></div></div></div>
+        <div class="menu-card reveal stagger-6"><span class="menu-badge menu-badge-red">Combo</span><span class="menu-emoji">🍱</span><h3>WOK IN Classic Combo</h3><p class="menu-desc">Any main + rice or noodles + soup — the complete IT park lunch deal</p><div class="menu-footer"><span class="menu-price">₹299</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot off"></div></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WAITLIST SECTION -->
+  <div class="waitlist-section" id="waitlist-anchor">
+    <div class="waitlist-inner">
+      <div class="waitlist-grid">
+        <div class="waitlist-perks reveal-left">
+          <span class="sec-eyebrow" style="background:rgba(26,45,90,.15);color:var(--navy)">Early Access</span>
+          <h3>JOIN THE<br>FOUNDING<br>CREW</h3>
+          <div class="perk-item"><div class="perk-num">1</div><div class="perk-text"><h4>Launch Day Alert</h4><p>Be the first to know when WOK IN arrives at your IT park</p></div></div>
+          <div class="perk-item"><div class="perk-num">2</div><div class="perk-text"><h4>Founding Member Discount</h4><p>Get 20% off your first 5 orders exclusively for waitlist members</p></div></div>
+          <div class="perk-item"><div class="perk-num">3</div><div class="perk-text"><h4>Shape the Final Menu</h4><p>Waitlist members get early access to vote on the final menu before launch</p></div></div>
+          <div class="waitlist-count">
+            <div class="lc-dot" style="background:var(--yellow)"></div>
+            <div><div class="wc-num" id="waitlist-counter">...</div><div class="wc-txt">people on<br>the waitlist</div></div>
+          </div>
         </div>
-        <div class="menu-card reveal stagger-2">
-          <span class="menu-badge" style="background:rgba(245,197,24,.15);color:var(--yellow);border:1px solid rgba(245,197,24,.3)">Veg</span>
-          <span class="menu-emoji">🥘</span>
-          <h3>Kung Pao Paneer</h3>
-          <p class="menu-desc">Wok-tossed paneer with peanuts, dried chilies, and an Indian makhani base</p>
-          <div class="menu-footer"><span class="menu-price">₹229</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot off"></div></div></div>
-        </div>
-        <div class="menu-card reveal stagger-3">
-          <span class="menu-badge menu-badge-red">Spicy</span>
-          <span class="menu-emoji">🍜</span>
-          <h3>Desi Masala Noodles</h3>
-          <p class="menu-desc">Chaat masala wok noodles with cumin, green chili, capsicum and spring onion</p>
-          <div class="menu-footer"><span class="menu-price">₹199</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot"></div></div></div>
-        </div>
-        <div class="menu-card reveal stagger-4">
-          <span class="menu-badge">Popular</span>
-          <span class="menu-emoji">🍚</span>
-          <h3>Tadka Fried Rice</h3>
-          <p class="menu-desc">Classic tadka with mustard seeds, curry leaves, turmeric wok rice and paneer</p>
-          <div class="menu-footer"><span class="menu-price">₹189</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot off"></div><div class="spice-dot off"></div></div></div>
-        </div>
-        <div class="menu-card reveal stagger-5">
-          <span class="menu-badge" style="background:rgba(245,197,24,.15);color:var(--yellow);border:1px solid rgba(245,197,24,.3)">New</span>
-          <span class="menu-emoji">🥟</span>
-          <h3>Mirchi Makhani Dumplings</h3>
-          <p class="menu-desc">Steamed momos in a rich Indian makhani gravy with chili crunch</p>
-          <div class="menu-footer"><span class="menu-price">₹169</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot off"></div></div></div>
-        </div>
-        <div class="menu-card reveal stagger-6">
-          <span class="menu-badge menu-badge-red">Combo</span>
-          <span class="menu-emoji">🍱</span>
-          <h3>WOK IN Classic Combo</h3>
-          <p class="menu-desc">Any main + rice or noodles + soup — the complete IT park lunch deal</p>
-          <div class="menu-footer"><span class="menu-price">₹299</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot off"></div></div></div>
+        <div class="waitlist-form reveal-right">
+          <div id="wf-form-inner">
+            <h3>GET EARLY ACCESS</h3>
+            <p>Drop your details and we'll reach out when WOK IN lands at your IT park.</p>
+            <div class="wf-field"><label>Your Name</label><input type="text" id="wf-name" class="wf-input" placeholder="Rahul Kumar"></div>
+            <div class="wf-field"><label>Phone or Email</label><input type="text" id="wf-contact" class="wf-input" placeholder="9876543210 or rahul@company.com"></div>
+            <div class="wf-field"><label>Your IT Park / Workplace</label><input type="text" id="wf-park" class="wf-input" placeholder="Hitech City, Hyderabad"></div>
+            <button class="wf-btn" id="wf-submit" onclick="submitWaitlist()">Join the Waitlist →</button>
+          </div>
+          <div class="wf-success" id="wf-success">
+            <div style="font-size:2.5rem;margin-bottom:.5rem">🎉</div>
+            <h4>YOU'RE IN!</h4>
+            <p>We'll send your launch day alert directly to you. Welcome to the WOK IN founding crew!</p>
+          </div>
         </div>
       </div>
     </div>
@@ -591,160 +605,75 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
     <div class="people-inner">
       <div class="reveal" style="text-align:center;margin-bottom:.5rem">
         <span class="sec-eyebrow">Who's Taking the Survey?</span>
-        <h2 class="sec-title" style="text-align:center">PEOPLE LIKE<br>YOU, RIHI</h2>
+        <h2 class="sec-title" style="text-align:center">PEOPLE LIKE YOU</h2>
         <p style="text-align:center;color:var(--gray);font-size:14px;max-width:400px;margin:0 auto">From interns to architects — all IT park food lovers helping build WOK IN</p>
       </div>
       <div class="people-grid">
         <div class="person-card reveal stagger-1">
-          <svg width="90" height="115" viewBox="0 0 100 130">
-            <circle cx="50" cy="36" r="24" fill="#FDBCB4"/>
-            <path d="M26 28 Q50 6 74 28 Q70 14 50 11 Q30 14 26 28" fill="#1A2D5A"/>
-            <circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/>
-            <circle cx="43.5" cy="32" r="1.2" fill="#fff"/><circle cx="59.5" cy="32" r="1.2" fill="#fff"/>
-            <path d="M41 46 Q50 54 59 46" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <rect x="28" y="60" width="44" height="52" rx="6" fill="#1A2D5A"/>
-            <rect x="38" y="65" width="24" height="8" rx="2" fill="#F5C518"/>
-            <path d="M28 72 Q8 82 6 100" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/>
-            <path d="M72 72 Q90 80 92 96" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/>
-            <rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/>
-            <rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/>
-          </svg>
-          <h4>Rahul, 24</h4>
-          <div class="person-role">Software Engineer</div>
-          <p class="person-quote">"Need more tasty options near office. Can't wait for WOK IN!"</p>
+          <svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#FDBCB4"/><path d="M26 28 Q50 6 74 28 Q70 14 50 11 Q30 14 26 28" fill="#1A2D5A"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="43.5" cy="32" r="1.2" fill="#fff"/><circle cx="59.5" cy="32" r="1.2" fill="#fff"/><path d="M41 46 Q50 54 59 46" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#1A2D5A"/><rect x="38" y="65" width="24" height="8" rx="2" fill="#F5C518"/><path d="M28 72 Q8 82 6 100" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 80 92 96" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg>
+          <h4>Rahul, 24</h4><div class="person-role">Software Engineer</div><p class="person-quote">"Need more tasty options near office. Can't wait!"</p>
         </div>
         <div class="person-card reveal stagger-2">
-          <svg width="90" height="115" viewBox="0 0 100 130">
-            <circle cx="50" cy="36" r="24" fill="#C68642"/>
-            <path d="M26 32 Q50 8 74 32" fill="#2a1a0a"/>
-            <ellipse cx="50" cy="14" rx="28" ry="9" fill="#2a1a0a"/>
-            <circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/>
-            <circle cx="43.5" cy="32" r="1.2" fill="#fff"/><circle cx="59.5" cy="32" r="1.2" fill="#fff"/>
-            <path d="M42 47 Q50 55 58 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <rect x="28" y="60" width="44" height="52" rx="6" fill="#F5C518"/>
-            <rect x="38" y="68" width="24" height="6" rx="2" fill="#1A2D5A"/>
-            <path d="M28 72 Q9 82 7 100" stroke="#C68642" stroke-width="14" stroke-linecap="round" fill="none"/>
-            <path d="M72 72 Q89 80 91 96" stroke="#C68642" stroke-width="14" stroke-linecap="round" fill="none"/>
-            <rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/>
-            <rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/>
-          </svg>
-          <h4>Priya, 19</h4>
-          <div class="person-role">College Student</div>
-          <p class="person-quote">"Indo-Chinese on a student budget? Yes please!"</p>
+          <svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#C68642"/><path d="M26 32 Q50 8 74 32" fill="#2a1a0a"/><ellipse cx="50" cy="14" rx="28" ry="9" fill="#2a1a0a"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="43.5" cy="32" r="1.2" fill="#fff"/><circle cx="59.5" cy="32" r="1.2" fill="#fff"/><path d="M42 47 Q50 55 58 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#F5C518"/><rect x="38" y="68" width="24" height="6" rx="2" fill="#1A2D5A"/><path d="M28 72 Q9 82 7 100" stroke="#C68642" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q89 80 91 96" stroke="#C68642" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg>
+          <h4>Priya, 19</h4><div class="person-role">College Student</div><p class="person-quote">"Indo-Chinese on a student budget? Yes please!"</p>
         </div>
         <div class="person-card reveal stagger-3">
-          <svg width="90" height="115" viewBox="0 0 100 130">
-            <circle cx="50" cy="36" r="24" fill="#F1C27D"/>
-            <path d="M26 30 Q50 16 74 30" fill="#5a3e1b"/>
-            <circle cx="42" cy="33" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="33" r="3.5" fill="#1A2D5A"/>
-            <rect x="34" y="28" width="12" height="9" rx="3.5" fill="none" stroke="#1A2D5A" stroke-width="1.5"/>
-            <rect x="54" y="28" width="12" height="9" rx="3.5" fill="none" stroke="#1A2D5A" stroke-width="1.5"/>
-            <line x1="46" y1="32" x2="54" y2="32" stroke="#1A2D5A" stroke-width="1.5"/>
-            <path d="M41 47 Q50 56 59 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <rect x="28" y="60" width="44" height="52" rx="6" fill="#1A2D5A"/>
-            <path d="M50 60 L46 78 L50 84 L54 78 Z" fill="#F5C518"/>
-            <path d="M28 72 Q8 80 6 98" stroke="#F1C27D" stroke-width="14" stroke-linecap="round" fill="none"/>
-            <path d="M72 72 Q90 78 92 94" stroke="#F1C27D" stroke-width="14" stroke-linecap="round" fill="none"/>
-            <rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/>
-            <rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/>
-          </svg>
-          <h4>Vikram, 35</h4>
-          <div class="person-role">Product Manager</div>
-          <p class="person-quote">"WOK IN is exactly what's missing from our food court!"</p>
+          <svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#F1C27D"/><path d="M26 30 Q50 16 74 30" fill="#5a3e1b"/><circle cx="42" cy="33" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="33" r="3.5" fill="#1A2D5A"/><rect x="34" y="28" width="12" height="9" rx="3.5" fill="none" stroke="#1A2D5A" stroke-width="1.5"/><rect x="54" y="28" width="12" height="9" rx="3.5" fill="none" stroke="#1A2D5A" stroke-width="1.5"/><line x1="46" y1="32" x2="54" y2="32" stroke="#1A2D5A" stroke-width="1.5"/><path d="M41 47 Q50 56 59 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#1A2D5A"/><path d="M50 60 L46 78 L50 84 L54 78 Z" fill="#F5C518"/><path d="M28 72 Q8 80 6 98" stroke="#F1C27D" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 78 92 94" stroke="#F1C27D" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg>
+          <h4>Vikram, 35</h4><div class="person-role">Product Manager</div><p class="person-quote">"WOK IN is exactly what's missing from our food court!"</p>
         </div>
         <div class="person-card reveal stagger-4">
-          <svg width="90" height="115" viewBox="0 0 100 130">
-            <circle cx="50" cy="36" r="24" fill="#FDBCB4"/>
-            <path d="M26 28 Q50 10 74 28 Q70 16 50 14 Q30 16 26 28" fill="#9e9e9e"/>
-            <circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/>
-            <path d="M41 47 Q50 56 59 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <rect x="28" y="60" width="44" height="52" rx="6" fill="#E8341A"/>
-            <rect x="38" y="68" width="24" height="6" rx="2" fill="#fff"/>
-            <path d="M28 72 Q8 80 6 98" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/>
-            <path d="M72 72 Q90 78 92 94" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/>
-            <rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/>
-            <rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/>
-          </svg>
-          <h4>Meena, 42</h4>
-          <div class="person-role">Senior Architect</div>
-          <p class="person-quote">"Quality, hygiene, real Indian flavors. This is the one!"</p>
+          <svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#FDBCB4"/><path d="M26 28 Q50 10 74 28 Q70 16 50 14 Q30 16 26 28" fill="#9e9e9e"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><path d="M41 47 Q50 56 59 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#E8341A"/><rect x="38" y="68" width="24" height="6" rx="2" fill="#fff"/><path d="M28 72 Q8 80 6 98" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 78 92 94" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg>
+          <h4>Meena, 42</h4><div class="person-role">Senior Architect</div><p class="person-quote">"Quality, hygiene, real Indian flavors. This is the one!"</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- INSTAGRAM SECTION -->
   <div class="insta-section">
     <div class="insta-inner">
       <div class="insta-top">
-        <div class="reveal-left">
-          <span class="sec-eyebrow">Follow Our Journey</span>
-          <h2 class="sec-title">BEHIND THE<br>WOK</h2>
-        </div>
+        <div class="reveal-left"><span class="sec-eyebrow">Follow Our Journey</span><h2 class="sec-title">BEHIND THE WOK</h2></div>
         <button class="insta-btn reveal-right" onclick="window.open('https://instagram.com/wokin.in','_blank')">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
           @wokin.in
         </button>
       </div>
       <div class="insta-grid">
-        <div class="insta-card reveal stagger-1"><div class="ic-body"><span class="ic-emoji">🥢</span><div class="ic-txt">The wok that started it all — WOK IN concept shoot</div></div><div class="insta-overlay"><span>View Post</span></div></div>
-        <div class="insta-card reveal stagger-2"><div class="ic-body"><span class="ic-emoji">🌶️</span><div class="ic-txt">Sourcing the finest Indian spices for our dishes</div></div><div class="insta-overlay"><span>View Post</span></div></div>
-        <div class="insta-card reveal stagger-3"><div class="ic-body"><span class="ic-emoji">🍊</span><div class="ic-txt">Masala Orange Chicken — first recipe test!</div></div><div class="insta-overlay"><span>View Post</span></div></div>
-        <div class="insta-card reveal stagger-4"><div class="ic-body"><span class="ic-emoji">🚚</span><div class="ic-txt">Food truck wrap design reveal — coming soon</div></div><div class="insta-overlay"><span>View Post</span></div></div>
-        <div class="insta-card reveal stagger-5"><div class="ic-body"><span class="ic-emoji">👨‍🍳</span><div class="ic-txt">Behind the scenes — perfecting tadka fried rice</div></div><div class="insta-overlay"><span>View Post</span></div></div>
-        <div class="insta-card reveal stagger-6"><div class="ic-body"><span class="ic-emoji">📍</span><div class="ic-txt">Scouting IT parks in Hyderabad — your workplace next?</div></div><div class="insta-overlay"><span>View Post</span></div></div>
+        <div class="insta-card reveal stagger-1"><div class="ic-body"><span class="ic-emoji">🥢</span><div class="ic-txt">The wok that started it all</div></div><div class="insta-overlay"><span>View Post</span></div></div>
+        <div class="insta-card reveal stagger-2"><div class="ic-body"><span class="ic-emoji">🌶️</span><div class="ic-txt">Sourcing the finest Indian spices</div></div><div class="insta-overlay"><span>View Post</span></div></div>
+        <div class="insta-card reveal stagger-3"><div class="ic-body"><span class="ic-emoji">🍊</span><div class="ic-txt">Masala Orange Chicken — first test!</div></div><div class="insta-overlay"><span>View Post</span></div></div>
+        <div class="insta-card reveal stagger-4"><div class="ic-body"><span class="ic-emoji">🚚</span><div class="ic-txt">Food truck wrap reveal — coming soon</div></div><div class="insta-overlay"><span>View Post</span></div></div>
+        <div class="insta-card reveal stagger-5"><div class="ic-body"><span class="ic-emoji">👨‍🍳</span><div class="ic-txt">Perfecting the tadka fried rice</div></div><div class="insta-overlay"><span>View Post</span></div></div>
+        <div class="insta-card reveal stagger-6"><div class="ic-body"><span class="ic-emoji">📍</span><div class="ic-txt">Scouting IT parks in Hyderabad</div></div><div class="insta-overlay"><span>View Post</span></div></div>
       </div>
     </div>
   </div>
 
-  <!-- REFERRAL SECTION -->
   <div class="ref-section">
     <div class="ref-inner">
       <div class="reveal">
         <span class="sec-eyebrow" style="background:rgba(245,197,24,.15);color:var(--yellow)">Refer & Earn</span>
         <h2 class="sec-title" style="color:var(--white);text-align:center">INVITE FRIENDS.<br><span style="color:var(--yellow)">EARN REWARDS.</span></h2>
-        <p style="color:rgba(255,255,255,.6);font-size:14px;margin:0 auto 0;max-width:480px;line-height:1.7">Share the WOK IN survey with your colleagues. Every 3 referrals earns you a free dish on launch day.</p>
+        <p style="color:rgba(255,255,255,.6);font-size:14px;margin:0 auto;max-width:480px;line-height:1.7">Share the WOK IN survey with your colleagues. Every 3 referrals earns you a free dish on launch day.</p>
       </div>
       <div class="ref-steps">
-        <div class="ref-step reveal stagger-1">
-          <div class="ref-num">1</div>
-          <h4>Share the Link</h4>
-          <p>Send the survey to colleagues on WhatsApp, email, or any platform</p>
-        </div>
-        <div class="ref-step reveal stagger-2">
-          <div class="ref-num">2</div>
-          <h4>They Respond</h4>
-          <p>Every person who fills the survey helps shape the WOK IN menu</p>
-        </div>
-        <div class="ref-step reveal stagger-3">
-          <div class="ref-num">3</div>
-          <h4>You Get Rewarded</h4>
-          <p>Founding members and referrers get exclusive discounts on launch day</p>
-        </div>
+        <div class="ref-step reveal stagger-1"><div class="ref-num">1</div><h4>Share the Link</h4><p>Send the survey to colleagues on WhatsApp, email, or any platform</p></div>
+        <div class="ref-step reveal stagger-2"><div class="ref-num">2</div><h4>They Respond</h4><p>Every person who fills the survey helps shape the WOK IN menu</p></div>
+        <div class="ref-step reveal stagger-3"><div class="ref-num">3</div><h4>You Get Rewarded</h4><p>Founding members and referrers get exclusive discounts on launch day</p></div>
       </div>
       <div class="share-row reveal stagger-4">
-        <button class="btn-wa" onclick="shareWA()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.547 5.876L.057 23.5l5.752-1.508A11.951 11.951 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.491-5.145-1.347l-.369-.217-3.812 1 1.022-3.706-.241-.382A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-          WhatsApp
-        </button>
-        <button class="btn-em" onclick="shareEM()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Email
-        </button>
-        <button class="btn-cp" onclick="copyLink()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-          Copy Link
-        </button>
+        <button class="btn-wa" onclick="shareWA()"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.547 5.876L.057 23.5l5.752-1.508A11.951 11.951 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.491-5.145-1.347l-.369-.217-3.812 1 1.022-3.706-.241-.382A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>WhatsApp</button>
+        <button class="btn-em" onclick="shareEM()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</button>
+        <button class="btn-cp" onclick="copyLink()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy Link</button>
       </div>
     </div>
   </div>
 
-  <!-- CTA -->
   <div class="cta-section">
     <div class="cta-inner reveal">
       <span class="sec-eyebrow" style="background:rgba(26,45,90,.15);color:var(--navy)">Take the Survey</span>
       <h2>READY TO<br>SHAPE WOK IN?</h2>
-      <p>Takes just 2 minutes. Your taste becomes our recipe. Be among the first to help launch a bold new food brand at your IT park.</p>
+      <p>Takes just 2 minutes. Your taste becomes our recipe. Be the first to help launch a bold new food brand at your IT park.</p>
       <button class="btn-y" onclick="goTo('survey')">Take Survey Now →</button>
     </div>
   </div>
@@ -756,7 +685,6 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
       <div class="footer-tag">wokin.in</div>
     </div>
   </footer>
-
 </div>
 
 <!-- SURVEY PAGE -->
@@ -765,8 +693,8 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
     <div class="survey-inner">
       <div class="survey-top">
         <span class="sec-eyebrow">WOK IN Survey</span>
-        <h2>TELL US YOUR<br>TASTE</h2>
-        <p>Select your age group and answer 10 quick questions</p>
+        <h2>TELL US YOUR TASTE</h2>
+        <p>Select your age group and answer the questions below</p>
       </div>
       <div class="share-bar">
         <p>🌶️ Love WOK IN? Share the survey!</p>
@@ -794,12 +722,10 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
           <rect x="30.5" y="40" width="3" height="6" rx="1.5" fill="#1A2D5A"/>
         </svg>
         <h2>ADMIN ACCESS</h2>
-        <p>Enter your 4-digit PIN to view survey responses and analytics</p>
+        <p>Enter your 4-digit PIN to view responses and analytics</p>
         <div class="pin-dots">
-          <div class="pin-dot" id="dot0"></div>
-          <div class="pin-dot" id="dot1"></div>
-          <div class="pin-dot" id="dot2"></div>
-          <div class="pin-dot" id="dot3"></div>
+          <div class="pin-dot" id="dot0"></div><div class="pin-dot" id="dot1"></div>
+          <div class="pin-dot" id="dot2"></div><div class="pin-dot" id="dot3"></div>
         </div>
         <div class="pin-grid">
           <button class="pin-btn" onclick="pinPress('1')">1</button>
@@ -828,30 +754,53 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
-// SUPABASE
 const _sb=supabase.createClient('https://zntdkcmgekdfdjbcyctp.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpudGRrY21nZWtkZmRqYmN5Y3RwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2MzQxNzIsImV4cCI6MjA4OTIxMDE3Mn0.GniK5lVxNMSta5uTks135vofOsy0u7kfO9jq8MyEino')
 
 // SCROLL ANIMATIONS
-var observer=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible')}})
-},{threshold:.12,rootMargin:'0px 0px -40px 0px'})
-function initReveal(){document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(function(el){observer.observe(el)})}
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12,rootMargin:'0px 0px -40px 0px'})
+function initReveal(){document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(function(el){obs.observe(el)})}
 initReveal()
 
 // SHARE
 var SURL=window.location.href.split('?')[0]
-var SMSG='Hey! I just took the WOK IN food survey — it\'s a bold new Indian-Chinese fusion brand launching at IT parks. Takes 2 mins and helps shape their menu! Fill it here: '+SURL
+var SMSG='Hey! I just took the WOK IN food survey — bold Indian-Chinese fusion launching at IT parks. Takes 2 mins, helps shape their menu! Fill it: '+SURL
 function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent(SMSG),'_blank')}
 function shareEM(){window.open('mailto:?subject=Help shape WOK IN — Indo-Chinese at your IT park&body='+encodeURIComponent(SMSG),'_blank')}
 function copyLink(){navigator.clipboard.writeText(SURL).then(function(){var t=document.getElementById('toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2500)}).catch(function(){prompt('Copy:',SURL)})}
 
-// LIVE COUNTER
+// COUNTERS
 async function loadCounter(){
   var r=await _sb.from('survey_responses').select('id',{count:'exact',head:true})
-  var el=document.getElementById('hero-counter')
-  if(el)el.textContent=(r.count||0)+'+'
+  var el=document.getElementById('hero-counter');if(el)el.textContent=(r.count||0)+'+'
 }
-loadCounter()
+async function loadWaitlistCounter(){
+  var r=await _sb.from('wokin_waitlist').select('id',{count:'exact',head:true})
+  var el=document.getElementById('waitlist-counter');if(el)el.textContent=(r.count||0)+'+'
+}
+loadCounter();loadWaitlistCounter()
+
+// WAITLIST SUBMIT
+async function submitWaitlist(){
+  var name=document.getElementById('wf-name').value.trim()
+  var contact=document.getElementById('wf-contact').value.trim()
+  var park=document.getElementById('wf-park').value.trim()
+  if(!name||!contact){alert('Please fill in your name and contact details.');return}
+  var btn=document.getElementById('wf-submit');btn.disabled=true;btn.textContent='Joining...'
+  var res=await _sb.from('wokin_waitlist').insert([{name:name,contact:contact,it_park:park}])
+  if(res.error){
+    if(res.error.code==='42P01'){
+      document.getElementById('wf-form-inner').style.display='none'
+      document.getElementById('wf-success').style.display='block'
+      loadWaitlistCounter()
+    } else {
+      alert('Error: '+res.error.message);btn.disabled=false;btn.textContent='Join the Waitlist →'
+    }
+    return
+  }
+  document.getElementById('wf-form-inner').style.display='none'
+  document.getElementById('wf-success').style.display='block'
+  loadWaitlistCounter()
+}
 
 // PIN
 const PIN='1214'
@@ -869,7 +818,7 @@ function pinClear(){pinEntry='';for(var i=0;i<4;i++)document.getElementById('dot
 function pinBackspace(){if(!pinEntry.length)return;pinEntry=pinEntry.slice(0,-1);for(var i=0;i<4;i++)document.getElementById('dot'+i).classList.toggle('filled',i<pinEntry.length)}
 function toggleMenu(){document.getElementById('mob-menu').classList.toggle('open')}
 
-// FORMS DATA
+// FORMS DATA — with new fields
 const FORMS=[
   {id:'teen',label:'Gen Z',range:'10–19',sub:'For teens and students',ages:[10,11,12,13,14,15,16,17,18,19],qs:[
     {id:'q1',text:'How often do you eat out or order food in a week?',opts:['Rarely','1 to 2 times','3 to 4 times','Every day']},
@@ -925,7 +874,7 @@ const FORMS=[
   ]}
 ]
 
-var pg='landing',fi=0,ans={},done=false,aData=[],aFilt='all',chartInst={}
+var pg='landing',fi=0,ans={},done=false,aData=[],aWaitlist=[],aFilt='all',aView='responses',chartInst={}
 
 function goTo(p){
   pg=p
@@ -945,7 +894,7 @@ function renderSurvey(){
   var el=document.getElementById('survey-content')
   if(done){
     el.innerHTML='<div class="ty"><div class="tycheck">✓</div><h2>THANK YOU!</h2>'
-      +'<p>Your feedback helps WOK IN serve you better. You are officially a WOK IN founding member!</p>'
+      +'<p>Your feedback is officially part of WOK IN. You are a founding member — we will reach out on launch day!</p>'
       +'<div class="ty-share">'
       +'<button class="sbar-wa" style="padding:10px 18px;border-radius:5px;font-size:12px" onclick="shareWA()">WhatsApp</button>'
       +'<button class="sbar-em" style="padding:10px 16px;border-radius:5px;font-size:12px;background:var(--navy);border-color:var(--navy)" onclick="shareEM()">Email</button>'
@@ -956,7 +905,7 @@ function renderSurvey(){
     return
   }
   var f=FORMS[fi]
-  var totalQ=f.qs.filter(function(q){return !q.opt}).length+2
+  var totalQ=f.qs.filter(function(q){return !q.opt}).length+8
   var answered=countAns()
   var pct=Math.round((answered/totalQ)*100)
   var tabs=FORMS.map(function(fm,i){return '<button class="atab'+(i===fi?' active':'')+'" onclick="switchForm('+i+')">'+fm.label+'<span>'+fm.range+'</span></button>'}).join('')
@@ -976,10 +925,60 @@ function renderSurvey(){
     }
     qs+='</div>'
   })
+
+  // NEW INSIGHT QUESTIONS
+  qs+='<div class="section-divider"><span>Quick Insights</span></div>'
+
+  qs+='<div class="qblock highlight">'
+    +'<div class="qlabel qlabel-new">New</div>'
+    +'<div class="qtext">What is the max you would pay for a full WOK IN meal?</div>'
+    +'<input type="text" placeholder="e.g. Rs 250" oninput="ans.max_price=this.value;updateProg()" value="'+(ans.max_price||'')+'">'
+    +'</div>'
+
+  qs+='<div class="qblock highlight">'
+    +'<div class="qlabel qlabel-new">New</div>'
+    +'<div class="qtext">Which lunch time slot works best for you?</div>'
+    +'<div class="qgrid">'
+    +['12:00 pm to 1:00 pm','1:00 pm to 2:00 pm','2:00 pm to 3:00 pm','Flexible'].map(function(o,oi){
+      return '<button class="qopt'+(ans.lunch_slot===o?' sel':'')+'" data-qid="lunch_slot" data-oi="'+oi+'" data-val="'+o+'" onclick="pickSlot(this)">'+o+'</button>'
+    }).join('')+'</div></div>'
+
+  qs+='<div class="qblock highlight">'
+    +'<div class="qlabel qlabel-new">New</div>'
+    +'<div class="qtext">How many colleagues would you bring to WOK IN daily?</div>'
+    +'<div class="qgrid">'
+    +['Just me','2 to 3','4 to 6','7 or more','Whole team'].map(function(o,oi){
+      return '<button class="qopt'+(ans.colleagues_count===o?' sel':'')+'" data-qid="colleagues_count" data-oi="'+oi+'" data-val="'+o+'" onclick="pickColleagues(this)">'+o+'</button>'
+    }).join('')+'</div></div>'
+
+  qs+='<div class="qblock highlight">'
+    +'<div class="qlabel qlabel-new">New</div>'
+    +'<div class="qtext">How likely are you to recommend WOK IN to a colleague? (Net Promoter Score)</div>'
+    +'<div class="nps-row">'
+    +[0,1,2,3,4,5,6,7,8,9,10].map(function(n){
+      return '<button class="nps-btn'+(ans.nps_score===n?' sel':'')+'" data-v="'+n+'" onclick="pickNPS(this)">'+n+'</button>'
+    }).join('')+'</div>'
+    +'<div class="nps-labels"><span>Not likely</span><span>Extremely likely</span></div>'
+    +'</div>'
+
+  qs+='<div class="qblock highlight">'
+    +'<div class="qlabel qlabel-new">New</div>'
+    +'<div class="qtext">Describe your dream WOK IN dish — what would you love us to create?</div>'
+    +'<textarea placeholder="e.g. Paneer Schezwan rice with extra masala and a runny egg on top..." oninput="ans.dream_dish=this.value;updateProg()">'+(ans.dream_dish||'')+'</textarea>'
+    +'</div>'
+
+  qs+='<div class="section-divider"><span>Stay in Touch</span></div>'
+
+  qs+='<div class="qblock highlight">'
+    +'<div class="qlabel qlabel-new">New</div>'
+    +'<div class="qtext">Drop your phone or email — we will send you a launch day alert!</div>'
+    +'<input type="text" placeholder="9876543210 or you@company.com" oninput="ans.phone_email=this.value;updateProg()" value="'+(ans.phone_email||'')+'">'
+    +'</div>'
+
   el.innerHTML='<div class="age-tabs">'+tabs+'</div>'
     +'<div class="form-card">'
     +'<div class="form-hdr"><div class="fh-logo"><img src="logo.png" alt="W" onerror="this.style.display=\'none\';this.parentElement.textContent=\'W\'"></div>'
-    +'<div><h2>WOK IN SURVEY</h2><p>'+f.sub+' · Takes just 2 minutes</p></div></div>'
+    +'<div><h2>WOK IN SURVEY</h2><p>'+f.sub+' · Takes about 3 minutes</p></div></div>'
     +'<div class="prog-wrap"><div class="prog-info"><span>Progress</span><span id="ptxt">'+answered+' / '+totalQ+' answered</span></div>'
     +'<div class="prog-bar"><div class="prog-fill" id="pfill" style="width:'+pct+'%"></div></div></div>'
     +'<div class="form-body">'
@@ -1007,8 +1006,23 @@ function pickR(btn){
   document.querySelectorAll('.rbtn[data-qid="'+qid+'"]').forEach(function(b){if(parseInt(b.getAttribute('data-v'))===v)b.classList.add('sel');else b.classList.remove('sel')})
   updateProg()
 }
+function pickSlot(btn){
+  ans.lunch_slot=btn.getAttribute('data-val')
+  document.querySelectorAll('.qopt[data-qid="lunch_slot"]').forEach(function(b){b.classList.remove('sel')})
+  btn.classList.add('sel');updateProg()
+}
+function pickColleagues(btn){
+  ans.colleagues_count=btn.getAttribute('data-val')
+  document.querySelectorAll('.qopt[data-qid="colleagues_count"]').forEach(function(b){b.classList.remove('sel')})
+  btn.classList.add('sel');updateProg()
+}
+function pickNPS(btn){
+  ans.nps_score=parseInt(btn.getAttribute('data-v'))
+  document.querySelectorAll('.nps-btn').forEach(function(b){b.classList.remove('sel')})
+  btn.classList.add('sel');updateProg()
+}
 function updateProg(){
-  var f=FORMS[fi],totalQ=f.qs.filter(function(q){return !q.opt}).length+2
+  var f=FORMS[fi],totalQ=f.qs.filter(function(q){return !q.opt}).length+8
   var answered=countAns(),pct=Math.round((answered/totalQ)*100)
   var fill=document.getElementById('pfill'),txt=document.getElementById('ptxt')
   if(fill)fill.style.width=pct+'%'
@@ -1017,6 +1031,8 @@ function updateProg(){
 function countAns(){
   var n=0;if(ans.age)n++;if(ans.gender)n++
   FORMS[fi].qs.filter(function(q){return !q.opt}).forEach(function(q){if(ans[q.id]!==undefined&&ans[q.id]!=='')n++})
+  if(ans.max_price)n++;if(ans.lunch_slot)n++;if(ans.colleagues_count)n++
+  if(ans.nps_score!==undefined)n++;if(ans.dream_dish)n++;if(ans.phone_email)n++
   return n
 }
 function switchForm(i){fi=i;ans={};renderSurvey()}
@@ -1024,21 +1040,31 @@ function resetSurvey(){done=false;ans={};renderSurvey()}
 
 async function submitForm(){
   var f=FORMS[fi]
-  var missing=f.qs.filter(function(q){return !q.opt&&(ans[q.id]===undefined||ans[q.id]==='')})
+  var required=f.qs.filter(function(q){return !q.opt})
+  var missing=required.filter(function(q){return ans[q.id]===undefined||ans[q.id]===''})
   if(!ans.age||!ans.gender){alert('Please fill in your age and gender first.');return}
-  if(missing.length){alert('Please answer all questions. '+missing.length+' still remaining.');return}
+  if(missing.length){alert('Please answer all the survey questions. '+missing.length+' still remaining.');return}
   var btn=document.getElementById('subbtn');if(btn){btn.disabled=true;btn.textContent='Submitting...'}
   var res=await _sb.from('survey_responses').insert([{
     form_version:f.id,age:ans.age,gender:ans.gender,
     q1:String(ans.q1||''),q2:String(ans.q2||''),q3:String(ans.q3||''),
     q4:String(ans.q4||''),q5:String(ans.q5||''),q6:String(ans.q6||''),
     q7:String(ans.q7||''),q8:String(ans.q8||''),q9:String(ans.q9||''),
-    q10:String(ans.q10||''),q11:String(ans.q11||'')
+    q10:String(ans.q10||''),q11:String(ans.q11||''),
+    max_price:String(ans.max_price||''),
+    lunch_slot:String(ans.lunch_slot||''),
+    colleagues_count:String(ans.colleagues_count||''),
+    nps_score:ans.nps_score!==undefined?ans.nps_score:null,
+    dream_dish:String(ans.dream_dish||''),
+    phone_email:String(ans.phone_email||''),
+    it_park:String(ans.it_park||'')
   }])
   if(res.error){alert('Error: '+res.error.message);if(btn){btn.disabled=false;btn.textContent='Submit My Answers →'}return}
   done=true;loadCounter();renderSurvey();window.scrollTo(0,0)
 }
 
+// ADMIN
+var adminTabs=['responses','waitlist','analytics']
 function renderAdmin(){
   var el=document.getElementById('admin-inner')
   var gl={teen:'Gen Z',young:'Young Adults',pro:'Professionals',adult:'Adults'}
@@ -1046,70 +1072,125 @@ function renderAdmin(){
   var filt=aFilt==='all'?aData:aData.filter(function(r){return r.form_version===aFilt})
   var counts={teen:0,young:0,pro:0,adult:0}
   aData.forEach(function(r){if(counts[r.form_version]!==undefined)counts[r.form_version]++})
+
+  // NPS distribution
+  var npsTotal=0,npsSum=0,npsCount=0
+  aData.forEach(function(r){if(r.nps_score!==null&&r.nps_score!==undefined){npsSum+=r.nps_score;npsCount++}})
+  var npsAvg=npsCount>0?(npsSum/npsCount).toFixed(1):'N/A'
+
+  // Lunch slots
+  var slotCounts={};aData.forEach(function(r){if(r.lunch_slot)slotCounts[r.lunch_slot]=(slotCounts[r.lunch_slot]||0)+1})
+
+  // Spice
   var spice={'Mild':0,'Medium':0,'Spicy':0,'Extra spicy':0}
   aData.forEach(function(r){if(r.q5&&spice[r.q5]!==undefined)spice[r.q5]++})
+
+  // Discovery
   var disc={};aData.forEach(function(r){if(r.q10)disc[r.q10]=(disc[r.q10]||0)+1})
-  var spend={};aData.forEach(function(r){if(r.q4)spend[r.q4]=(spend[r.q4]||0)+1})
-  var rows=filt.map(function(r,i){
-    return '<tr><td>'+(i+1)+'</td><td>'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td>'
-    +'<td><span class="badge '+(gc[r.form_version]||'')+'">'+(gl[r.form_version]||r.form_version)+'</span></td>'
-    +'<td>'+(r.age||'—')+'</td><td>'+(r.gender||'—')+'</td>'
-    +'<td title="'+(r.q1||'')+'">'+(r.q1||'—')+'</td><td title="'+(r.q2||'')+'">'+(r.q2||'—')+'</td>'
-    +'<td title="'+(r.q3||'')+'">'+(r.q3||'—')+'</td><td title="'+(r.q4||'')+'">'+(r.q4||'—')+'</td>'
-    +'<td title="'+(r.q5||'')+'">'+(r.q5||'—')+'</td><td title="'+(r.q6||'')+'">'+(r.q6||'—')+'</td>'
-    +'<td title="'+(r.q7||'')+'">'+(r.q7||'—')+'</td><td title="'+(r.q8||'')+'">'+(r.q8||'—')+'</td>'
-    +'<td title="'+(r.q9||'')+'">'+(r.q9||'—')+'</td><td title="'+(r.q10||'')+'">'+(r.q10||'—')+'</td>'
-    +'<td title="'+(r.q11||'')+'">'+(r.q11||'—')+'</td></tr>'
-  }).join('')
-  el.innerHTML='<div class="ahdr"><div><h2>SURVEY RESPONSES</h2><p>Live analytics and submissions from Supabase</p></div>'
-    +'<div class="ahdr-btns"><button class="rfbtn" onclick="loadAdmin()">Refresh</button><button class="lock-btn" onclick="lockAdmin()">🔒 Lock</button></div></div>'
-    +'<div class="sgrid">'
-    +'<div class="sc"><div class="sl">Total</div><div class="sv">'+aData.length+'</div></div>'
-    +'<div class="sc"><div class="sl">Gen Z</div><div class="sv">'+counts.teen+'</div></div>'
-    +'<div class="sc"><div class="sl">Young Adults</div><div class="sv">'+counts.young+'</div></div>'
-    +'<div class="sc"><div class="sl">Professionals</div><div class="sv">'+counts.pro+'</div></div>'
-    +'<div class="sc"><div class="sl">Adults</div><div class="sv">'+counts.adult+'</div></div>'
-    +'</div>'
-    +'<div class="charts-grid">'
-    +'<div class="chart-card"><h3>Responses by Age Group</h3><div class="chart-wrap"><canvas id="cg"></canvas></div></div>'
-    +'<div class="chart-card"><h3>Spice Preference</h3><div class="chart-wrap"><canvas id="cs"></canvas></div></div>'
-    +'<div class="chart-card"><h3>Food Discovery Platform</h3><div class="chart-wrap"><canvas id="cd"></canvas></div></div>'
-    +'<div class="chart-card"><h3>Spending Budget</h3><div class="chart-wrap"><canvas id="csp"></canvas></div></div>'
-    +'</div>'
-    +'<div class="filtrow">'
+
+  // Colleagues
+  var coll={};aData.forEach(function(r){if(r.colleagues_count)coll[r.colleagues_count]=(coll[r.colleagues_count]||0)+1})
+
+  var responseHTML='<div class="filtrow">'
     +[['all','All'],['teen','Gen Z'],['young','Young Adults'],['pro','Professionals'],['adult','Adults']].map(function(v){
       return '<button class="fbtn'+(aFilt===v[0]?' active':'')+'" onclick="setFilt(\''+v[0]+'\')">'+v[1]+'</button>'
     }).join('')+'</div>'
     +(filt.length
-      ?'<div class="tblwrap"><table><thead><tr><th>#</th><th>Date</th><th>Group</th><th>Age</th><th>Gender</th>'
-        +'<th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th><th>Q6</th>'
-        +'<th>Q7</th><th>Q8</th><th>Q9</th><th>Q10</th><th>Comment</th></tr></thead>'
-        +'<tbody>'+rows+'</tbody></table></div>'
+      ?'<div class="tblwrap"><table><thead><tr>'
+        +'<th>#</th><th>Date</th><th>Group</th><th>Age</th><th>Gender</th>'
+        +'<th>Phone/Email</th><th>Lunch Slot</th><th>Colleagues</th><th>Max Price</th><th>NPS</th>'
+        +'<th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th>'
+        +'<th>Q6</th><th>Q7</th><th>Q8</th><th>Q9</th><th>Q10</th><th>Dream Dish</th>'
+        +'</tr></thead><tbody>'
+        +filt.map(function(r,i){
+          return '<tr><td>'+(i+1)+'</td><td>'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td>'
+          +'<td><span class="badge '+(gc[r.form_version]||'')+'">'+(gl[r.form_version]||r.form_version)+'</span></td>'
+          +'<td>'+(r.age||'—')+'</td><td>'+(r.gender||'—')+'</td>'
+          +'<td title="'+(r.phone_email||'')+'" style="color:var(--navy);font-weight:700">'+(r.phone_email||'—')+'</td>'
+          +'<td title="'+(r.lunch_slot||'')+'">'+(r.lunch_slot||'—')+'</td>'
+          +'<td>'+(r.colleagues_count||'—')+'</td>'
+          +'<td style="color:var(--navy);font-weight:700">'+(r.max_price||'—')+'</td>'
+          +'<td style="text-align:center;font-weight:800;color:'+(r.nps_score>=9?'#2E7D32':r.nps_score>=7?'#E65100':'#C62828')+'">'+(r.nps_score!==null&&r.nps_score!==undefined?r.nps_score:'—')+'</td>'
+          +'<td title="'+(r.q1||'')+'">'+(r.q1||'—')+'</td><td title="'+(r.q2||'')+'">'+(r.q2||'—')+'</td>'
+          +'<td title="'+(r.q3||'')+'">'+(r.q3||'—')+'</td><td title="'+(r.q4||'')+'">'+(r.q4||'—')+'</td>'
+          +'<td title="'+(r.q5||'')+'">'+(r.q5||'—')+'</td><td title="'+(r.q6||'')+'">'+(r.q6||'—')+'</td>'
+          +'<td title="'+(r.q7||'')+'">'+(r.q7||'—')+'</td><td title="'+(r.q8||'')+'">'+(r.q8||'—')+'</td>'
+          +'<td title="'+(r.q9||'')+'">'+(r.q9||'—')+'</td><td title="'+(r.q10||'')+'">'+(r.q10||'—')+'</td>'
+          +'<td title="'+(r.dream_dish||'')+'" style="color:var(--navy)">'+(r.dream_dish||'—')+'</td>'
+          +'</tr>'
+        }).join('')+'</tbody></table></div>'
       :'<div class="empty">No responses yet — share the link to start!</div>'
     )
-  setTimeout(function(){
-    var N='#1A2D5A',Y='#F5C518',W='#F7F7F2'
+
+  var waitlistHTML=aWaitlist.length
+    ?'<div class="waitlist-tbl-wrap"><table class="waitlist-tbl"><thead><tr><th>#</th><th>Name</th><th>Contact</th><th>IT Park</th><th>Date</th></tr></thead><tbody>'
+      +aWaitlist.map(function(r,i){
+        return '<tr><td>'+(i+1)+'</td><td style="font-weight:700">'+r.name+'</td><td style="color:var(--navy);font-weight:700">'+r.contact+'</td><td>'+(r.it_park||'—')+'</td><td>'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td></tr>'
+      }).join('')+'</tbody></table></div>'
+    :'<div class="empty">No waitlist entries yet!</div>'
+
+  var analyticsHTML='<div class="charts-grid">'
+    +'<div class="chart-card"><h3>Responses by Age Group</h3><div class="chart-wrap"><canvas id="cg"></canvas></div></div>'
+    +'<div class="chart-card"><h3>Spice Preference</h3><div class="chart-wrap"><canvas id="cs"></canvas></div></div>'
+    +'<div class="chart-card"><h3>Preferred Lunch Slot</h3><div class="chart-wrap"><canvas id="cl"></canvas></div></div>'
+    +'<div class="chart-card"><h3>Colleagues They Would Bring</h3><div class="chart-wrap"><canvas id="cc"></canvas></div></div>'
+    +'<div class="chart-card"><h3>Food Discovery Platform</h3><div class="chart-wrap"><canvas id="cd"></canvas></div></div>'
+    +'<div class="chart-card"><h3>Avg NPS Score — <span style="color:var(--red)">'+npsAvg+'</span> / 10</h3><div class="chart-wrap"><canvas id="cn"></canvas></div></div>'
+    +'</div>'
+
+  el.innerHTML='<div class="ahdr"><div><h2>ADMIN DASHBOARD</h2><p>Live data — survey responses, waitlist, and analytics</p></div>'
+    +'<div class="ahdr-btns"><button class="rfbtn" onclick="loadAdmin()">Refresh</button><button class="lock-btn" onclick="lockAdmin()">🔒 Lock</button></div></div>'
+    +'<div class="sgrid">'
+    +'<div class="sc"><div class="sl">Total Responses</div><div class="sv">'+aData.length+'</div></div>'
+    +'<div class="sc"><div class="sl">Waitlist</div><div class="sv">'+aWaitlist.length+'</div></div>'
+    +'<div class="sc"><div class="sl">Avg NPS</div><div class="sv">'+npsAvg+'</div></div>'
+    +'<div class="sc"><div class="sl">Gen Z</div><div class="sv">'+counts.teen+'</div></div>'
+    +'<div class="sc"><div class="sl">Young Adults</div><div class="sv">'+counts.young+'</div></div>'
+    +'<div class="sc"><div class="sl">Professionals</div><div class="sv">'+counts.pro+'</div></div>'
+    +'</div>'
+    +'<div class="admin-tabs">'
+    +'<button class="admin-tab'+(aView==='responses'?' active':'')+'" onclick="setView(\'responses\')">Survey Responses</button>'
+    +'<button class="admin-tab'+(aView==='waitlist'?' active':'')+'" onclick="setView(\'waitlist\')">Waitlist ('+aWaitlist.length+')</button>'
+    +'<button class="admin-tab'+(aView==='analytics'?' active':'')+'" onclick="setView(\'analytics\')">Analytics</button>'
+    +'</div>'
+    +'<div id="admin-view">'
+    +(aView==='responses'?responseHTML:aView==='waitlist'?waitlistHTML:analyticsHTML)
+    +'</div>'
+
+  if(aView==='analytics'){setTimeout(function(){
+    var N='#1A2D5A',Y='#F5C518',R='#E8341A',W='#F7F7F2'
     var base={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}}
-    if(chartInst.g)chartInst.g.destroy()
+    destroyCharts()
     var c1=document.getElementById('cg')
-    if(c1)chartInst.g=new Chart(c1,{type:'bar',data:{labels:['Gen Z','Young Adults','Pros','Adults'],datasets:[{data:[counts.teen,counts.young,counts.pro,counts.adult],backgroundColor:[N,Y,'#E8341A','#8B4513'],borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.04)'},ticks:{stepSize:1}},x:{grid:{display:false}}}})})
-    if(chartInst.s)chartInst.s.destroy()
+    if(c1)chartInst.g=new Chart(c1,{type:'bar',data:{labels:['Gen Z','Young Adults','Pros','Adults'],datasets:[{data:[counts.teen,counts.young,counts.pro,counts.adult],backgroundColor:[N,Y,R,'#8B4513'],borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.04)'},ticks:{stepSize:1}},x:{grid:{display:false}}}})})
     var c2=document.getElementById('cs')
-    if(c2)chartInst.s=new Chart(c2,{type:'doughnut',data:{labels:Object.keys(spice),datasets:[{data:Object.values(spice),backgroundColor:[W,'#FFD740',Y,'#E8341A'],borderWidth:3,borderColor:'#F7F7F2'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10},color:N,boxWidth:12}}}}})
-    if(chartInst.d)chartInst.d.destroy()
-    var c3=document.getElementById('cd')
-    if(c3)chartInst.d=new Chart(c3,{type:'bar',data:{labels:Object.keys(disc),datasets:[{data:Object.values(disc),backgroundColor:Y,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.04)'},ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
-    if(chartInst.sp)chartInst.sp.destroy()
-    var c4=document.getElementById('csp')
-    if(c4)chartInst.sp=new Chart(c4,{type:'bar',data:{labels:Object.keys(spend),datasets:[{data:Object.values(spend),backgroundColor:N,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.04)'},ticks:{stepSize:1}},x:{grid:{display:false},ticks:{font:{size:10}}}}})})
-  },100)
+    if(c2)chartInst.s=new Chart(c2,{type:'doughnut',data:{labels:Object.keys(spice),datasets:[{data:Object.values(spice),backgroundColor:[W,'#FFD740',Y,R],borderWidth:3,borderColor:W}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10},color:N,boxWidth:12}}}}})
+    var c3=document.getElementById('cl')
+    if(c3)chartInst.l=new Chart(c3,{type:'bar',data:{labels:Object.keys(slotCounts),datasets:[{data:Object.values(slotCounts),backgroundColor:Y,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
+    var c4=document.getElementById('cc')
+    if(c4)chartInst.c=new Chart(c4,{type:'bar',data:{labels:Object.keys(coll),datasets:[{data:Object.values(coll),backgroundColor:N,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false},ticks:{font:{size:10}}}}})})
+    var c5=document.getElementById('cd')
+    if(c5)chartInst.d=new Chart(c5,{type:'bar',data:{labels:Object.keys(disc),datasets:[{data:Object.values(disc),backgroundColor:R,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
+    // NPS bar
+    var npsDist=Array(11).fill(0)
+    aData.forEach(function(r){if(r.nps_score!==null&&r.nps_score!==undefined)npsDist[r.nps_score]++})
+    var npsColors=npsDist.map(function(_,i){return i>=9?'#2E7D32':i>=7?'#F5C518':'#E8341A'})
+    var c6=document.getElementById('cn')
+    if(c6)chartInst.n=new Chart(c6,{type:'bar',data:{labels:['0','1','2','3','4','5','6','7','8','9','10'],datasets:[{data:npsDist,backgroundColor:npsColors,borderRadius:4,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false}}}})})
+  },100)}
 }
+
+function destroyCharts(){Object.keys(chartInst).forEach(function(k){if(chartInst[k])chartInst[k].destroy();chartInst[k]=null})}
+
 async function loadAdmin(){
   document.getElementById('admin-inner').innerHTML='<div class="empty">Loading data...</div>'
-  var r=await _sb.from('survey_responses').select('*').order('created_at',{ascending:false})
-  if(!r.error){aData=r.data||[];renderAdmin()}
-  else document.getElementById('admin-inner').innerHTML='<div class="empty">Error: '+r.error.message+'</div>'
+  var r1=await _sb.from('survey_responses').select('*').order('created_at',{ascending:false})
+  if(!r1.error)aData=r1.data||[]
+  var r2=await _sb.from('wokin_waitlist').select('*').order('created_at',{ascending:false}).catch(function(){return {data:[],error:null}})
+  if(!r2.error)aWaitlist=r2.data||[]
+  renderAdmin()
 }
+
 function lockAdmin(){
   adminUnlocked=false;pinEntry=''
   for(var i=0;i<4;i++)document.getElementById('dot'+i).classList.remove('filled')
@@ -1117,7 +1198,9 @@ function lockAdmin(){
   document.getElementById('pin-gate').style.display='block'
   document.getElementById('admin-content').style.display='none'
 }
+
 function setFilt(f){aFilt=f;renderAdmin()}
+function setView(v){aView=v;renderAdmin()}
 </script>
 </body>
 </html>
