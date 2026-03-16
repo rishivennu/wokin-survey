@@ -4,159 +4,149 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>WOK IN — Where Chinese meets Indian Spices</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--red:#C41E3A;--red2:#a01830;--cream:#FFF8F0;--brown:#5C2D0E;--border:#e5e5e5;--muted:#6b6b6b;--bg:#f7f7f7}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:#1a1a1a;min-height:100vh}
+:root{--red:#C41E3A;--red2:#a01830;--orange:#E8521A;--cream:#FFF8F0;--dark:#1a1a1a;--muted:#6b7280;--border:#f0f0f0;--bg:#ffffff;--light:#fafafa}
+body{font-family:'Inter',sans-serif;background:#fff;color:var(--dark);min-height:100vh}
 
-/* NAV */
-nav{background:var(--red);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
-.nlogo{display:flex;align-items:center;gap:9px;cursor:pointer;text-decoration:none}
-.nlogo img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.4)}
-.nlogo-fallback{width:36px;height:36px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:var(--red)}
-.nbrand{color:#fff;font-weight:800;font-size:17px;letter-spacing:.5px}
-.nlinks{display:flex;gap:7px}
-.nlinks button{background:transparent;border:1px solid rgba(255,255,255,0.4);color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;font-family:inherit;transition:all .15s}
-.nlinks button:hover,.nlinks button.active{background:#fff;color:var(--red);font-weight:600}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px;position:sticky;top:0;z-index:100}
+.nlogo{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none}
+.nlogo img{height:40px;width:auto;object-fit:contain}
+.nlogo-fb{height:40px;width:40px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#fff}
+.nbrand{font-family:'Playfair Display',serif;font-weight:800;font-size:20px;color:var(--red)}
+.nlinks{display:flex;align-items:center;gap:8px}
+.nlink{background:transparent;border:none;color:var(--muted);font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;padding:8px 14px;border-radius:8px;transition:color .15s}
+.nlink:hover{color:var(--dark)}
+.nlink.active{color:var(--dark);font-weight:600}
+.nbtn{background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:25px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .15s}
+.nbtn:hover{background:var(--red2)}
 
-/* PAGES */
 .page{display:none}.page.on{display:block}
 
 /* HERO */
-.hero{background:var(--red);color:#fff;padding:5rem 1.5rem 4rem;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="40" fill="rgba(255,255,255,0.03)"/><circle cx="80" cy="80" r="50" fill="rgba(255,255,255,0.03)"/></svg>');pointer-events:none}
-.hero-logo-wrap{position:relative;display:inline-block;margin-bottom:1.5rem}
-.hero-logo-img{width:200px;height:auto;border-radius:16px;display:block}
-.hero-logo-fallback{width:120px;height:120px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:52px;color:var(--red);margin:0 auto}
-.hero h1{font-size:clamp(2.2rem,6vw,3.8rem);font-weight:800;margin-bottom:.5rem;letter-spacing:1px}
-.hero .tagline{font-size:1.1rem;opacity:.9;margin-bottom:1rem;font-style:italic}
-.htag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);padding:8px 20px;border-radius:20px;font-size:13px;margin-bottom:2rem}
-.hbtn{display:inline-block;background:var(--cream);color:var(--red);padding:14px 36px;border-radius:28px;font-size:16px;font-weight:800;cursor:pointer;border:none;font-family:inherit;margin-top:.5rem;transition:transform .15s}
-.hbtn:hover{transform:scale(1.04)}
+.hero{padding:5rem 5% 4rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1200px;margin:0 auto}
+@media(max-width:768px){.hero{grid-template-columns:1fr;text-align:center}.hero-img{display:none}}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:#FFF0EC;color:var(--orange);font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:1.2rem;text-transform:uppercase;letter-spacing:.06em}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:800;line-height:1.15;margin-bottom:1rem;color:var(--dark)}
+.hero h1 span{color:var(--red)}
+.hero-sub{font-size:1rem;color:var(--muted);line-height:1.7;margin-bottom:2rem;max-width:460px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--red);color:#fff;border:none;padding:14px 30px;border-radius:30px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .15s}
+.btn-primary:hover{background:var(--red2);transform:translateY(-1px)}
+.btn-outline{background:#fff;color:var(--dark);border:2px solid var(--border);padding:14px 28px;border-radius:30px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s}
+.btn-outline:hover{border-color:var(--dark)}
+.hero-img{display:flex;align-items:center;justify-content:center}
+.hero-img-circle{width:420px;height:420px;border-radius:50%;background:linear-gradient(135deg,#FFF0EC,#FFEBE0);display:flex;align-items:center;justify-content:center;font-size:160px;position:relative}
+.hero-badge{position:absolute;bottom:40px;right:20px;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0,0,0.1);display:flex;align-items:center;gap:10px}
+.hero-badge .hb-num{font-size:22px;font-weight:800;color:var(--red)}
+.hero-badge .hb-txt{font-size:11px;color:var(--muted);line-height:1.3}
 
-/* FEATURES */
-.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.2rem;max-width:880px;margin:0 auto;padding:2.5rem 1.5rem 3rem}
-.fc{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.5rem;text-align:center;transition:transform .15s}
-.fc:hover{transform:translateY(-2px)}
-.fi{width:48px;height:48px;border-radius:12px;background:#FAECE7;display:flex;align-items:center;justify-content:center;margin:0 auto .9rem;font-size:22px}
-.fc h3{font-size:15px;font-weight:700;margin-bottom:6px}
-.fc p{font-size:13px;color:var(--muted);line-height:1.55}
+/* STATS */
+.stats{background:var(--light);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stats-inner{max-width:1200px;margin:0 auto;padding:2rem 5%;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.stat-item{text-align:center;padding:1.5rem}
+.stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--red);margin-bottom:4px}
+.stat-label{font-size:13px;color:var(--muted);font-weight:500}
 
-/* SURVEY WRAP */
-.swrap{max-width:680px;margin:0 auto;padding:1.8rem 1.2rem 5rem}
+/* SECTION */
+.section{max-width:1200px;margin:0 auto;padding:4rem 5%}
+.section-header{text-align:center;margin-bottom:3rem}
+.section-header h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;margin-bottom:.6rem}
+.section-header p{color:var(--muted);font-size:15px}
 
-/* AGE TABS */
-.atabs{display:flex;gap:8px;flex-wrap:wrap;background:#fff;border:1px solid var(--border);border-radius:16px;padding:10px;margin-bottom:1.5rem}
-.atab{flex:1;min-width:120px;padding:10px 8px;border-radius:10px;border:1px solid var(--border);background:transparent;cursor:pointer;font-size:12px;font-weight:600;color:var(--muted);font-family:inherit;text-align:center;line-height:1.4;transition:all .15s}
-.atab.active{background:var(--red);color:#fff;border-color:var(--red)}
-.atab span{display:block;font-size:10px;opacity:.75;margin-top:2px;font-weight:400}
+/* FEATURE CARDS */
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.feat-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:2rem 1.5rem;text-align:center;transition:transform .2s,box-shadow .2s;cursor:default}
+.feat-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}
+.feat-icon{width:60px;height:60px;border-radius:16px;background:#FFF0EC;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:26px}
+.feat-card h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.feat-card p{font-size:13px;color:var(--muted);line-height:1.6}
 
-/* FORM HEADER */
-.fhdr{background:var(--red);border-radius:16px;padding:1.4rem;color:#fff;margin-bottom:1.4rem;display:flex;align-items:center;gap:1rem}
-.fhicon{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;flex-shrink:0;overflow:hidden}
-.fhicon img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-.fhdr h2{font-size:18px;font-weight:800;margin-bottom:4px}
-.fhdr p{font-size:12px;opacity:.85}
+/* SURVEY */
+.survey-section{background:var(--light);padding:4rem 5%}
+.survey-inner{max-width:760px;margin:0 auto}
 
-/* PROGRESS */
-.progwrap{margin-bottom:1.4rem}
-.proginfo{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:8px}
-.progbar{height:6px;background:var(--border);border-radius:3px;overflow:hidden}
-.progfill{height:100%;background:var(--red);border-radius:3px;transition:width .4s ease}
+.age-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2rem;padding:8px;background:#fff;border-radius:16px;border:1px solid var(--border)}
+.atab{flex:1;min-width:130px;padding:12px 10px;border-radius:10px;border:none;background:transparent;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;color:var(--muted);transition:all .15s;text-align:center;line-height:1.4}
+.atab span{display:block;font-size:11px;font-weight:400;margin-top:2px;opacity:.7}
+.atab.active{background:var(--red);color:#fff}
+.atab:hover:not(.active){background:var(--light);color:var(--dark)}
 
-/* QUESTION CARDS */
-.qcard{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.2rem 1.4rem;margin-bottom:1rem}
-.qlabel{font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
-.qtext{font-size:14px;font-weight:600;margin-bottom:.9rem;line-height:1.5;color:#1a1a1a}
+.form-card{background:#fff;border-radius:24px;border:1px solid var(--border);overflow:hidden;margin-bottom:1.5rem}
+.form-card-header{background:var(--red);padding:1.8rem 2rem;display:flex;align-items:center;gap:1rem}
+.fch-logo{width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;color:#fff;overflow:hidden;flex-shrink:0}
+.fch-logo img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.form-card-header h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:800;color:#fff;margin-bottom:4px}
+.form-card-header p{font-size:13px;color:rgba(255,255,255,.8)}
+
+.prog-wrap{padding:1.5rem 2rem 0}
+.prog-info{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-weight:500;margin-bottom:8px}
+.prog-bar{height:6px;background:#f0f0f0;border-radius:3px;overflow:hidden}
+.prog-fill{height:100%;background:var(--red);border-radius:3px;transition:width .4s ease}
+
+.form-body{padding:1.5rem 2rem 2rem}
+
+.qblock{margin-bottom:1.2rem;padding:1.4rem 1.6rem;background:var(--light);border-radius:16px;border:1px solid var(--border)}
+.qlabel{font-size:10px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.qtext{font-size:15px;font-weight:600;color:var(--dark);margin-bottom:1rem;line-height:1.5}
 .qgrid{display:flex;flex-wrap:wrap;gap:8px}
 
-/* OPTION BUTTONS — key fix */
-.qopt{
-  padding:9px 17px;
-  border:1.5px solid var(--border);
-  border-radius:22px;
-  background:#fff;
-  font-size:13px;
-  color:#555;
-  cursor:pointer;
-  font-family:inherit;
-  transition:border-color .12s, background .12s, color .12s;
-  -webkit-tap-highlight-color:transparent;
-  user-select:none;
-  outline:none;
-}
+.qopt{padding:9px 18px;border:1.5px solid #e5e7eb;border-radius:25px;background:#fff;font-size:13px;font-weight:500;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .15s;-webkit-tap-highlight-color:transparent;user-select:none;outline:none}
 .qopt:hover{border-color:var(--red);color:var(--red)}
-.qopt.sel{background:#FAECE7 !important;color:#8B2500 !important;border-color:#C41E3A !important;font-weight:700 !important}
+.qopt.sel{background:var(--red) !important;color:#fff !important;border-color:var(--red) !important;font-weight:700 !important}
 
-/* RATING BUTTONS */
 .rrow{display:flex;gap:8px}
-.rbtn{
-  width:44px;height:44px;
-  border:1.5px solid var(--border);
-  border-radius:10px;
-  background:#fff;
-  font-size:14px;font-weight:700;
-  color:#555;cursor:pointer;
-  font-family:inherit;
-  transition:all .12s;
-  outline:none;
-  -webkit-tap-highlight-color:transparent;
-}
+.rbtn{width:46px;height:46px;border:1.5px solid #e5e7eb;border-radius:12px;background:#fff;font-size:15px;font-weight:700;color:#6b7280;cursor:pointer;font-family:inherit;transition:all .15s;-webkit-tap-highlight-color:transparent;outline:none}
 .rbtn:hover{border-color:var(--red);color:var(--red)}
 .rbtn.sel{background:var(--red) !important;color:#fff !important;border-color:var(--red) !important}
 
-/* FORM INPUTS */
 .twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .fg{display:flex;flex-direction:column;gap:6px}
-.fg label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
-select,textarea{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;font-family:inherit;font-size:13px;color:#1a1a1a;background:#fff;outline:none;transition:border-color .15s}
+.fg label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+select,textarea{width:100%;padding:11px 14px;border:1.5px solid #e5e7eb;border-radius:12px;font-family:inherit;font-size:14px;color:var(--dark);background:#fff;outline:none;transition:border-color .15s;appearance:none}
 select:focus,textarea:focus{border-color:var(--red)}
-textarea{resize:vertical;min-height:70px}
+textarea{resize:vertical;min-height:75px}
 
-/* MOTIVATION CARDS */
-.motiv{background:linear-gradient(135deg,#FFF8E7,#FAECE7);border:1px solid #F5C4B3;border-radius:14px;padding:13px 16px;margin-bottom:1rem;display:flex;align-items:center;gap:11px}
-.mdot{width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
-.motiv p{font-size:13px;color:var(--brown);font-weight:600;line-height:1.4}
+.motiv{background:linear-gradient(135deg,#FFFBF0,#FFF0EC);border:1px solid #fde8d8;border-radius:14px;padding:14px 18px;margin-bottom:1.2rem;display:flex;align-items:center;gap:12px}
+.mdot{width:34px;height:34px;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;font-weight:700}
+.motiv p{font-size:13px;color:#7c3a1e;font-weight:600;line-height:1.4}
 
-/* SUBMIT */
-.subbtn{width:100%;background:var(--red);color:#fff;border:none;border-radius:14px;padding:16px;font-size:16px;font-weight:800;cursor:pointer;margin-top:1rem;font-family:inherit;transition:background .2s,transform .1s;letter-spacing:.3px}
-.subbtn:hover{background:var(--red2)}
-.subbtn:active{transform:scale(.99)}
-.subbtn:disabled{opacity:.6;cursor:not-allowed}
+.subbtn{width:100%;background:var(--red);color:#fff;border:none;border-radius:14px;padding:17px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .15s;letter-spacing:.3px}
+.subbtn:hover{background:var(--red2);transform:translateY(-1px)}
+.subbtn:disabled{opacity:.6;cursor:not-allowed;transform:none}
 
-/* THANK YOU */
-.ty{text-align:center;padding:3rem 1rem;background:#fff;border-radius:20px;border:1px solid var(--border)}
-.tycheck{width:72px;height:72px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 1.3rem}
-.ty h2{font-size:24px;font-weight:800;margin-bottom:8px}
-.ty p{color:var(--muted);font-size:15px;line-height:1.7}
+.ty{text-align:center;padding:4rem 2rem;background:#fff;border-radius:24px;border:1px solid var(--border)}
+.tycheck{width:80px;height:80px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 1.5rem}
+.ty h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:800;margin-bottom:10px}
+.ty p{color:var(--muted);font-size:15px;line-height:1.7;max-width:400px;margin:0 auto}
 
 /* ADMIN */
-.awrap{max-width:1100px;margin:0 auto;padding:1.8rem 1.2rem 5rem}
-.ahdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem}
-.ahdr h2{font-size:22px;font-weight:800}
-.ahdr p{font-size:13px;color:var(--muted);margin-top:4px}
-.rfbtn{background:var(--red);color:#fff;border:none;padding:10px 20px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
-.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:1.5rem}
-.sc{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.2rem}
-.sc .sl{font-size:11px;color:var(--muted);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-.sc .sv{font-size:28px;font-weight:800;color:var(--red)}
-.filtrow{display:flex;gap:7px;margin-bottom:1.3rem;flex-wrap:wrap}
-.fbtn{padding:7px 16px;border-radius:20px;border:1px solid var(--border);background:transparent;font-size:12px;color:var(--muted);cursor:pointer;font-family:inherit;font-weight:500;transition:all .15s}
+.admin-section{background:var(--light);min-height:100vh;padding:2.5rem 5%}
+.admin-inner{max-width:1200px;margin:0 auto}
+.ahdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
+.ahdr h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:800}
+.ahdr p{font-size:14px;color:var(--muted);margin-top:4px}
+.rfbtn{background:var(--red);color:#fff;border:none;padding:11px 22px;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:2rem}
+.sc{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.3rem 1.5rem}
+.sc .sl{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.sc .sv{font-size:30px;font-weight:800;color:var(--red);font-family:'Playfair Display',serif}
+.filtrow{display:flex;gap:8px;margin-bottom:1.5rem;flex-wrap:wrap}
+.fbtn{padding:8px 18px;border-radius:20px;border:1.5px solid var(--border);background:#fff;font-size:13px;color:var(--muted);cursor:pointer;font-family:inherit;font-weight:600;transition:all .15s}
 .fbtn.active{background:var(--red);color:#fff;border-color:var(--red)}
-.tblwrap{overflow-x:auto;border:1px solid var(--border);border-radius:14px}
-table{width:100%;border-collapse:collapse;font-size:12px;background:#fff}
-th{text-align:left;padding:10px 12px;background:#f8f8f8;border-bottom:1px solid var(--border);font-weight:700;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
-td{padding:11px 12px;border-bottom:1px solid #f0f0f0;color:#1a1a1a;vertical-align:top;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tblwrap{overflow-x:auto;border:1px solid var(--border);border-radius:16px;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:left;padding:12px 14px;background:#fafafa;border-bottom:1px solid var(--border);font-weight:700;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+td{padding:12px 14px;border-bottom:1px solid #f7f7f7;color:var(--dark);vertical-align:top;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:#fafafa}
-.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700}
-.bt{background:#E6F1FB;color:#185FA5}
-.by{background:#EAF3DE;color:#3B6D11}
-.bp{background:#FAECE7;color:#993C1D}
-.ba{background:#FAEEDA;color:#854F0B}
-.empty{text-align:center;padding:3rem;color:var(--muted);font-size:14px}
-.loading{text-align:center;padding:2rem;color:var(--muted);font-size:14px}
+.badge{display:inline-block;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:800;letter-spacing:.04em}
+.bt{background:#EBF5FF;color:#1565C0}
+.by{background:#E8F5E9;color:#2E7D32}
+.bp{background:#FFF3E0;color:#E65100}
+.ba{background:#FCE4EC;color:#C62828}
+.empty{text-align:center;padding:3rem;color:var(--muted);font-size:15px}
 </style>
 </head>
 <body>
@@ -164,40 +154,91 @@ tr:hover td{background:#fafafa}
 <nav>
   <div class="nlogo" onclick="goTo('landing')">
     <img src="logo.png" alt="WOK IN" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="nlogo-fallback" style="display:none">W</div>
+    <div class="nlogo-fb" style="display:none">W</div>
     <span class="nbrand">WOK IN</span>
   </div>
   <div class="nlinks">
-    <button id="nb-survey" onclick="goTo('survey')">Take Survey</button>
-    <button id="nb-admin" onclick="goTo('admin')">Admin</button>
+    <button class="nlink" id="nb-landing" onclick="goTo('landing')">Home</button>
+    <button class="nlink" id="nb-survey" onclick="goTo('survey')">Survey</button>
+    <button class="nlink" id="nb-admin" onclick="goTo('admin')">Admin</button>
+    <button class="nbtn" onclick="goTo('survey')">Take Survey</button>
   </div>
 </nav>
 
-<!-- LANDING PAGE -->
+<!-- LANDING -->
 <div id="pg-landing" class="page on">
-  <div class="hero">
-    <div class="hero-logo-wrap">
-      <img class="hero-logo-img" src="logo.png" alt="WOK IN Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="hero-logo-fallback" style="display:none">W</div>
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="hero">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span style="font-size:14px">🌶️</span> New Food Brand · IT Parks First
+        </div>
+        <h1>Savor the Flavor<br>of <span>WOK IN</span><br>Indian Spice Fusion</h1>
+        <p class="hero-sub">Where Chinese wok cooking meets Indian spices. Bold flavors, fast service, and a menu built around what you actually crave. Help us shape it.</p>
+        <div class="hero-btns">
+          <button class="btn-primary" onclick="goTo('survey')">Share Your Taste →</button>
+          <button class="btn-outline" onclick="goTo('survey')">View Survey</button>
+        </div>
+      </div>
+      <div class="hero-img">
+        <div class="hero-img-circle">
+          🥢
+          <div class="hero-badge">
+            <div class="hb-num">4</div>
+            <div class="hb-txt">Age group<br>surveys</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <h1>WOK IN</h1>
-    <div class="tagline">Indian spices. Chinese wok. One bold brand.</div>
-    <div class="htag">Where Chinese meets Indian spices</div><br>
-    <button class="hbtn" onclick="goTo('survey')">Share Your Taste →</button>
   </div>
-  <div class="feats">
-    <div class="fc"><div class="fi">🥢</div><h3>2 Minutes</h3><p>Quick fun survey tailored for your age group</p></div>
-    <div class="fc"><div class="fi">🌶️</div><h3>Shape the Menu</h3><p>Your answers directly influence our dishes and locations</p></div>
-    <div class="fc"><div class="fi">🏆</div><h3>Be a Founder</h3><p>Early responders get exclusive launch discounts</p></div>
-    <div class="fc"><div class="fi">📍</div><h3>IT Park First</h3><p>Starting at your workplace — lunch will never be boring again</p></div>
+
+  <div class="stats">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-num">10+</div><div class="stat-label">Signature Dishes</div></div>
+      <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Age Group Surveys</div></div>
+      <div class="stat-item"><div class="stat-num">IT</div><div class="stat-label">Park First Launch</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <h2>Why Take This Survey?</h2>
+      <p>Your feedback directly shapes what WOK IN serves at your workplace</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card"><div class="feat-icon">🥢</div><h3>2 Minutes</h3><p>Quick, focused questions tailored specifically for your age group</p></div>
+      <div class="feat-card"><div class="feat-icon">🌶️</div><h3>Shape the Menu</h3><p>Your answers directly influence our dishes, spice levels, and pricing</p></div>
+      <div class="feat-card"><div class="feat-icon">🏆</div><h3>Founding Member</h3><p>Early responders get exclusive launch discounts and first access</p></div>
+      <div class="feat-card"><div class="feat-icon">📍</div><h3>IT Park First</h3><p>We launch where you work — your feedback decides where we park next</p></div>
+    </div>
+  </div>
+
+  <div style="background:var(--red);padding:4rem 5%;text-align:center">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);color:#fff;font-weight:800;margin-bottom:1rem">Ready to Shape WOK IN?</h2>
+    <p style="color:rgba(255,255,255,.8);margin-bottom:2rem;font-size:15px">Takes just 2 minutes. Your taste becomes our recipe.</p>
+    <button class="btn-outline" onclick="goTo('survey')">Take the Survey Now →</button>
+  </div>
+
+  <footer style="background:#1a1a1a;padding:2.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+    <div style="color:#fff;font-family:'Playfair Display',serif;font-size:18px;font-weight:800">WOK IN</div>
+    <div style="color:#888;font-size:13px">Where Chinese meets Indian spices · © 2025</div>
+    <div style="color:#888;font-size:13px">wokin.in</div>
+  </footer>
+</div>
+
+<!-- SURVEY -->
+<div id="pg-survey" class="page">
+  <div class="survey-section">
+    <div class="survey-inner" id="survey-content"></div>
   </div>
 </div>
 
-<!-- SURVEY PAGE -->
-<div id="pg-survey" class="page"></div>
-
-<!-- ADMIN PAGE -->
-<div id="pg-admin" class="page"></div>
+<!-- ADMIN -->
+<div id="pg-admin" class="page">
+  <div class="admin-section">
+    <div class="admin-inner" id="admin-content"></div>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
@@ -207,299 +248,265 @@ const _sb = supabase.createClient(
 )
 
 const FORMS = [
-  {
-    id:'teen',label:'Gen Z',range:'10–19',sub:'For teens and students',
-    ages:[10,11,12,13,14,15,16,17,18,19],
-    qs:[
-      {id:'q1',text:'How often do you eat out or order food in a week?',opts:['Rarely','1 to 2 times','3 to 4 times','Every day']},
-      {id:'q2',text:'What type of food do you crave the most?',opts:['Chinese','Indian','Indo-Chinese','Fast food','South Indian']},
-      {id:'q3',text:'Where do you usually eat or order from?',opts:['Zomato or Swiggy','Food court','Street food','Restaurant','Food truck'],mot:"You're doing great! Just a few more — promise they're easy."},
-      {id:'q4',text:'What is your usual budget for a meal?',opts:['Under Rs 100','Rs 100 to 200','Rs 200 to 350','Above Rs 350']},
-      {id:'q5',text:'How spicy do you like your food?',opts:['Mild','Medium','Spicy','Extra spicy']},
-      {id:'q6',text:'What is most important when choosing a food place?',opts:['Taste','Price','Speed','Vibe','Hygiene'],mot:'Halfway there! You are helping shape a real food brand.'},
-      {id:'q7',text:'Would you try a food truck serving Indian-style wok dishes?',opts:['Definitely yes','Maybe','Probably not','No']},
-      {id:'q8',text:'Do you prefer veg or non-veg in Indo-Chinese food?',opts:['Always veg','Mostly veg','Mostly non-veg','Both equally']},
-      {id:'q9',text:'Which existing brand does this remind you of?',opts:['Wow Momo','Faasos','KFC or McDonalds','Local Chinese stall','None totally new'],mot:'2 more to go — you are almost a WOK IN founding member!'},
-      {id:'q10',text:'Would you follow a food brand on Instagram for deals?',opts:['Yes definitely','If content is good','Only for discounts','No']},
-      {id:'q11',text:'Any dish you would love to see on our menu?',type:'text',opt:true}
-    ]
-  },
-  {
-    id:'young',label:'Young Adults',range:'20–28',sub:'For college and early career',
-    ages:[20,21,22,23,24,25,26,27,28],
-    qs:[
-      {id:'q1',text:'What is your current situation?',opts:['College student','Working professional','Freelancer','Job seeking']},
-      {id:'q2',text:'How often do you eat outside in a week?',opts:['1 to 2 times','3 to 4 times','5 or more times','Daily']},
-      {id:'q3',text:'What do you look for most in a quick lunch?',opts:['Fast delivery','Value for money','Taste and quality','Healthy options','Variety'],mot:"3 questions in — you are already helping shape something delicious!"},
-      {id:'q4',text:'How much do you spend on a weekday lunch?',opts:['Under Rs 150','Rs 150 to 250','Rs 250 to 400','Above Rs 400']},
-      {id:'q5',text:'Have you tried Indo-Chinese food before?',opts:['Yes love it','Yes its okay','Rarely','Never tried']},
-      {id:'q6',text:'What disappoints you about existing food brands?',opts:['Too pricey','Inconsistent taste','Small portions','Boring menu','Slow service'],mot:'Halfway! Just 5 more and your taste becomes our recipe.'},
-      {id:'q7',text:'Rate your excitement for a fresh Indian-spiced wok brand (1 to 5)',type:'rating'},
-      {id:'q8',text:'Would a loyalty rewards program make you come back more often?',opts:['Yes definitely','Depends on rewards','Rarely use them','No']},
-      {id:'q9',text:'Which meal do you prefer from a food truck?',opts:['Breakfast','Lunch','Evening snack','Dinner'],mot:'2 more! You are basically on the founding panel of WOK IN now.'},
-      {id:'q10',text:'Which platform do you use most for food discovery?',opts:['Instagram','Zomato or Swiggy','YouTube or Reels','Word of mouth']},
-      {id:'q11',text:'Any suggestion for WOK IN to stand out?',type:'text',opt:true}
-    ]
-  },
-  {
-    id:'pro',label:'Professionals',range:'29–38',sub:'For working professionals',
-    ages:[29,30,31,32,33,34,35,36,37,38],
-    qs:[
-      {id:'q1',text:'How many days a week do you eat lunch outside?',opts:['1 to 2 days','3 to 4 days','Almost every day','I bring my own']},
-      {id:'q2',text:'Biggest frustration with existing quick lunch options?',opts:['Long wait times','Overpriced','Unhealthy options','Same boring menu','Poor hygiene']},
-      {id:'q3',text:'Comfortable spending for a full office lunch?',opts:['Rs 150 to 200','Rs 200 to 300','Rs 300 to 450','Above Rs 450'],mot:'Only 8 more to go — your feedback shapes where we set up next!'},
-      {id:'q4',text:'How important is a healthy meal at lunch? (1 to 5)',type:'rating'},
-      {id:'q5',text:'Would you visit a food truck at your IT park during lunch?',opts:['Yes regularly','Occasionally','If food looks good','Unlikely']},
-      {id:'q6',text:'Do you prefer bowl-style meals or traditional plate meals?',opts:['Bowl style','Traditional plate','Wraps or rolls','Does not matter'],mot:'More than halfway! Your answers are gold for us.'},
-      {id:'q7',text:'How do you typically discover new food places?',opts:['Colleague recommendation','Zomato or Swiggy','Instagram or Reels','Walking past it']},
-      {id:'q8',text:'Which protein do you prefer in an Indo-Chinese dish?',opts:['Chicken','Paneer','Egg','Mixed or both','Tofu']},
-      {id:'q9',text:'Would pre-order and quick pickup make you choose us over others?',opts:['Absolutely yes','Would be nice','Does not matter','No'],mot:'Last 2 questions — you have basically co-built WOK IN with us!'},
-      {id:'q10',text:'What would make WOK IN your first choice over Wow Momo?',opts:['Better taste','Better price','Faster service','Unique menu','Clean and hygienic']},
-      {id:'q11',text:'Any other feedback or suggestion?',type:'text',opt:true}
-    ]
-  },
-  {
-    id:'adult',label:'Adults',range:'39–45',sub:'For experienced food lovers',
-    ages:[39,40,41,42,43,44,45],
-    qs:[
-      {id:'q1',text:'How often do you eat outside in a typical week?',opts:['Rarely','1 to 2 times','3 to 4 times','Daily']},
-      {id:'q2',text:'What food category do you prefer when eating out?',opts:['Indian','Chinese or Indo-Chinese','South Indian','Continental','Mixed']},
-      {id:'q3',text:'How health-conscious are you when choosing a meal? (1 to 5)',type:'rating',mot:'Just 8 more — your food lover experience is exactly what we need!'},
-      {id:'q4',text:'Acceptable spend for a satisfying meal?',opts:['Rs 200 to 300','Rs 300 to 450','Rs 450 to 600','Above Rs 600']},
-      {id:'q5',text:'Do you typically eat out alone or with others?',opts:['Alone','With colleagues','With family','Varies']},
-      {id:'q6',text:'How important is hygiene when choosing a food outlet? (1 to 5)',type:'rating',mot:'Halfway done — your perspective as an experienced foodie matters a lot.'},
-      {id:'q7',text:'What would make you trust a new food brand immediately?',opts:['Good reviews online','Clean visible kitchen','Friend recommendation','Professional branding','Free sample']},
-      {id:'q8',text:'Would you bring your family or team to an Indo-Chinese food truck?',opts:['Yes definitely','Maybe if kids enjoy it','For team lunch yes','Probably not']},
-      {id:'q9',text:'What is missing in fast-casual Chinese food in India?',opts:['Authentic flavour','Better pricing','Consistent quality','Indian spice integration','Wider variety'],mot:'Almost there — 2 final questions and you are done!'},
-      {id:'q10',text:'How likely are you to try WOK IN at your workplace? (1 to 5)',type:'rating'},
-      {id:'q11',text:'What one thing would make WOK IN your regular lunch spot?',type:'text',opt:true}
-    ]
-  }
+  {id:'teen',label:'Gen Z',range:'10–19',sub:'For teens and students',ages:[10,11,12,13,14,15,16,17,18,19],qs:[
+    {id:'q1',text:'How often do you eat out or order food in a week?',opts:['Rarely','1 to 2 times','3 to 4 times','Every day']},
+    {id:'q2',text:'What type of food do you crave the most?',opts:['Chinese','Indian','Indo-Chinese','Fast food','South Indian']},
+    {id:'q3',text:'Where do you usually eat or order from?',opts:['Zomato or Swiggy','Food court','Street food','Restaurant','Food truck'],mot:"You're doing great! Just a few more — promise they're easy."},
+    {id:'q4',text:'What is your usual budget for a meal?',opts:['Under Rs 100','Rs 100 to 200','Rs 200 to 350','Above Rs 350']},
+    {id:'q5',text:'How spicy do you like your food?',opts:['Mild','Medium','Spicy','Extra spicy']},
+    {id:'q6',text:'What is most important when choosing a food place?',opts:['Taste','Price','Speed','Vibe','Hygiene'],mot:'Halfway there! You are helping shape a real food brand.'},
+    {id:'q7',text:'Would you try a food truck serving Indian-style wok dishes?',opts:['Definitely yes','Maybe','Probably not','No']},
+    {id:'q8',text:'Do you prefer veg or non-veg in Indo-Chinese food?',opts:['Always veg','Mostly veg','Mostly non-veg','Both equally']},
+    {id:'q9',text:'Which existing brand does this remind you of?',opts:['Wow Momo','Faasos','KFC or McDonalds','Local Chinese stall','None totally new'],mot:'2 more to go — you are almost a WOK IN founding member!'},
+    {id:'q10',text:'Would you follow a food brand on Instagram for deals?',opts:['Yes definitely','If content is good','Only for discounts','No']},
+    {id:'q11',text:'Any dish you would love to see on our menu?',type:'text',opt:true}
+  ]},
+  {id:'young',label:'Young Adults',range:'20–28',sub:'For college and early career',ages:[20,21,22,23,24,25,26,27,28],qs:[
+    {id:'q1',text:'What is your current situation?',opts:['College student','Working professional','Freelancer','Job seeking']},
+    {id:'q2',text:'How often do you eat outside in a week?',opts:['1 to 2 times','3 to 4 times','5 or more times','Daily']},
+    {id:'q3',text:'What do you look for most in a quick lunch?',opts:['Fast delivery','Value for money','Taste and quality','Healthy options','Variety'],mot:"3 questions in — you are already helping shape something delicious!"},
+    {id:'q4',text:'How much do you spend on a weekday lunch?',opts:['Under Rs 150','Rs 150 to 250','Rs 250 to 400','Above Rs 400']},
+    {id:'q5',text:'Have you tried Indo-Chinese food before?',opts:['Yes love it','Yes its okay','Rarely','Never tried']},
+    {id:'q6',text:'What disappoints you about existing food brands?',opts:['Too pricey','Inconsistent taste','Small portions','Boring menu','Slow service'],mot:'Halfway! Just 5 more and your taste becomes our recipe.'},
+    {id:'q7',text:'Rate your excitement for a fresh Indian-spiced wok brand (1 to 5)',type:'rating'},
+    {id:'q8',text:'Would a loyalty rewards program make you come back more?',opts:['Yes definitely','Depends on rewards','Rarely use them','No']},
+    {id:'q9',text:'Which meal do you prefer from a food truck?',opts:['Breakfast','Lunch','Evening snack','Dinner'],mot:'2 more! You are basically on the founding panel of WOK IN now.'},
+    {id:'q10',text:'Which platform do you use most for food discovery?',opts:['Instagram','Zomato or Swiggy','YouTube or Reels','Word of mouth']},
+    {id:'q11',text:'Any suggestion for WOK IN to stand out?',type:'text',opt:true}
+  ]},
+  {id:'pro',label:'Professionals',range:'29–38',sub:'For working professionals',ages:[29,30,31,32,33,34,35,36,37,38],qs:[
+    {id:'q1',text:'How many days a week do you eat lunch outside?',opts:['1 to 2 days','3 to 4 days','Almost every day','I bring my own']},
+    {id:'q2',text:'Biggest frustration with existing quick lunch options?',opts:['Long wait times','Overpriced','Unhealthy options','Same boring menu','Poor hygiene']},
+    {id:'q3',text:'Comfortable spending for a full office lunch?',opts:['Rs 150 to 200','Rs 200 to 300','Rs 300 to 450','Above Rs 450'],mot:'Only 8 more to go — your feedback shapes where we set up next!'},
+    {id:'q4',text:'How important is a healthy meal at lunch? (1 to 5)',type:'rating'},
+    {id:'q5',text:'Would you visit a food truck at your IT park during lunch?',opts:['Yes regularly','Occasionally','If food looks good','Unlikely']},
+    {id:'q6',text:'Do you prefer bowl-style meals or traditional plate meals?',opts:['Bowl style','Traditional plate','Wraps or rolls','Does not matter'],mot:'More than halfway! Your answers are gold for us.'},
+    {id:'q7',text:'How do you typically discover new food places?',opts:['Colleague recommendation','Zomato or Swiggy','Instagram or Reels','Walking past it']},
+    {id:'q8',text:'Which protein do you prefer in an Indo-Chinese dish?',opts:['Chicken','Paneer','Egg','Mixed or both','Tofu']},
+    {id:'q9',text:'Would pre-order and quick pickup make you choose us over others?',opts:['Absolutely yes','Would be nice','Does not matter','No'],mot:'Last 2 questions — you have basically co-built WOK IN with us!'},
+    {id:'q10',text:'What would make WOK IN your first choice over Wow Momo?',opts:['Better taste','Better price','Faster service','Unique menu','Clean and hygienic']},
+    {id:'q11',text:'Any other feedback or suggestion?',type:'text',opt:true}
+  ]},
+  {id:'adult',label:'Adults',range:'39–45',sub:'For experienced food lovers',ages:[39,40,41,42,43,44,45],qs:[
+    {id:'q1',text:'How often do you eat outside in a typical week?',opts:['Rarely','1 to 2 times','3 to 4 times','Daily']},
+    {id:'q2',text:'What food category do you prefer when eating out?',opts:['Indian','Chinese or Indo-Chinese','South Indian','Continental','Mixed']},
+    {id:'q3',text:'How health-conscious are you when choosing a meal? (1 to 5)',type:'rating',mot:'Just 8 more — your food lover experience is exactly what we need!'},
+    {id:'q4',text:'Acceptable spend for a satisfying meal?',opts:['Rs 200 to 300','Rs 300 to 450','Rs 450 to 600','Above Rs 600']},
+    {id:'q5',text:'Do you typically eat out alone or with others?',opts:['Alone','With colleagues','With family','Varies']},
+    {id:'q6',text:'How important is hygiene when choosing a food outlet? (1 to 5)',type:'rating',mot:'Halfway done — your perspective as an experienced foodie matters a lot.'},
+    {id:'q7',text:'What would make you trust a new food brand immediately?',opts:['Good reviews online','Clean visible kitchen','Friend recommendation','Professional branding','Free sample']},
+    {id:'q8',text:'Would you bring your family or team to an Indo-Chinese food truck?',opts:['Yes definitely','Maybe if kids enjoy it','For team lunch yes','Probably not']},
+    {id:'q9',text:'What is missing in fast-casual Chinese food in India?',opts:['Authentic flavour','Better pricing','Consistent quality','Indian spice integration','Wider variety'],mot:'Almost there — 2 final questions and you are done!'},
+    {id:'q10',text:'How likely are you to try WOK IN at your workplace? (1 to 5)',type:'rating'},
+    {id:'q11',text:'What one thing would make WOK IN your regular lunch spot?',type:'text',opt:true}
+  ]}
 ]
 
-let page='landing', fi=0, ans={}, done=false, aData=[], aFilt='all'
+let pg='landing', fi=0, ans={}, done=false, aData=[], aFilt='all'
 
 function goTo(p) {
-  page = p
-  document.querySelectorAll('.page').forEach(el => el.classList.remove('on'))
+  pg=p
+  document.querySelectorAll('.page').forEach(el=>el.classList.remove('on'))
   document.getElementById('pg-'+p).classList.add('on')
-  document.querySelectorAll('.nlinks button').forEach(b => b.classList.remove('active'))
-  if (p==='survey') { document.getElementById('nb-survey').classList.add('active'); renderSurvey() }
-  if (p==='admin')  { document.getElementById('nb-admin').classList.add('active');  renderAdmin(); loadAdmin() }
+  document.querySelectorAll('.nlink').forEach(b=>b.classList.remove('active'))
+  var nb=document.getElementById('nb-'+p)
+  if(nb) nb.classList.add('active')
+  if(p==='survey') renderSurvey()
+  if(p==='admin'){renderAdmin();loadAdmin()}
   window.scrollTo(0,0)
 }
 
 function renderSurvey() {
-  const el = document.getElementById('pg-survey')
-  if (done) {
-    el.innerHTML = `<div class="swrap"><div class="ty">
+  var el=document.getElementById('survey-content')
+  if(done){
+    el.innerHTML=`<div class="ty">
       <div class="tycheck">✓</div>
-      <h2>Thank you!</h2>
-      <p>Your feedback helps WOK IN serve you better.<br>You are officially part of our founding community.<br><br>We will reach out with exclusive launch offers soon!</p><br>
-      <button class="subbtn" style="max-width:280px;margin:0 auto;display:block" onclick="resetSurvey()">Submit Another Response</button>
-    </div></div>`
+      <h2>Thank You!</h2>
+      <p>Your feedback helps WOK IN serve you better. You are officially part of our founding community. We will reach out with exclusive launch offers!</p><br>
+      <button class="subbtn" style="max-width:300px;margin:0 auto;display:block" onclick="resetSurvey()">Submit Another Response</button>
+    </div>`
     return
   }
+  var f=FORMS[fi]
+  var totalQ=f.qs.filter(function(q){return !q.opt}).length+2
+  var answered=countAns()
+  var pct=Math.round((answered/totalQ)*100)
 
-  const f = FORMS[fi]
-  const totalQ = f.qs.filter(q=>!q.opt).length + 2
-  const answered = countAns()
-  const pct = Math.round((answered/totalQ)*100)
+  var tabs=FORMS.map(function(fm,i){
+    return '<button class="atab'+(i===fi?' active':'')+'" onclick="switchForm('+i+')">'+fm.label+'<span>'+fm.range+'</span></button>'
+  }).join('')
 
-  let tabs = FORMS.map((fm,i) =>
-    `<button class="atab${i===fi?' active':''}" onclick="switchForm(${i})">${fm.label}<span>${fm.range}</span></button>`
-  ).join('')
-
-  let qs = ''
-  f.qs.forEach((q,i) => {
-    if (q.mot) qs += `<div class="motiv"><div class="mdot">★</div><p>${q.mot}</p></div>`
-    qs += `<div class="qcard"><div class="qlabel">${q.opt?'Optional':'Q'+(i+1)}</div><div class="qtext">${q.text}</div>`
-    if (q.type==='text') {
-      qs += `<textarea placeholder="Type here..." onchange="ans['${q.id}']=this.value;updateProg()">${ans[q.id]||''}</textarea>`
-    } else if (q.type==='rating') {
-      qs += `<div class="rrow">`
-      for (let r=1;r<=5;r++) {
-        qs += `<button class="rbtn${ans[q.id]===r?' sel':''}" data-qid="${q.id}" data-v="${r}" onclick="pickR(this)">${r}</button>`
+  var qs=''
+  f.qs.forEach(function(q,i){
+    if(q.mot) qs+='<div class="motiv"><div class="mdot">★</div><p>'+q.mot+'</p></div>'
+    qs+='<div class="qblock"><div class="qlabel">'+(q.opt?'Optional':'Q'+(i+1))+'</div><div class="qtext">'+q.text+'</div>'
+    if(q.type==='text'){
+      qs+='<textarea placeholder="Type your answer here..." onchange="ans[\''+q.id+'\']=this.value;updateProg()">'+(ans[q.id]||'')+'</textarea>'
+    } else if(q.type==='rating'){
+      qs+='<div class="rrow">'
+      for(var r=1;r<=5;r++){
+        qs+='<button class="rbtn'+(ans[q.id]===r?' sel':'')+'" data-qid="'+q.id+'" data-v="'+r+'" onclick="pickR(this)">'+r+'</button>'
       }
-      qs += `</div>`
+      qs+='</div>'
     } else {
-      qs += `<div class="qgrid">`
-      q.opts.forEach((o,oi) => {
-        qs += `<button class="qopt${ans[q.id]===o?' sel':''}" data-qid="${q.id}" data-oi="${oi}" onclick="pickO(this)">${o}</button>`
+      qs+='<div class="qgrid">'
+      q.opts.forEach(function(o,oi){
+        qs+='<button class="qopt'+(ans[q.id]===o?' sel':'')+'" data-qid="'+q.id+'" data-oi="'+oi+'" onclick="pickO(this)">'+o+'</button>'
       })
-      qs += `</div>`
+      qs+='</div>'
     }
-    qs += `</div>`
+    qs+='</div>'
   })
 
-  el.innerHTML = `<div class="swrap">
-    <div class="atabs">${tabs}</div>
-    <div class="fhdr">
-      <div class="fhicon">
-        <img src="logo.png" alt="W" onerror="this.style.display='none';this.parentElement.innerHTML='W'">
-      </div>
-      <div><h2>WOK IN Survey</h2><p>${f.sub} · Takes 2 mins · Your answers matter!</p></div>
-    </div>
-    <div class="progwrap">
-      <div class="proginfo"><span>Your progress</span><span id="ptxt">${answered} / ${totalQ} answered</span></div>
-      <div class="progbar"><div class="progfill" id="pfill" style="width:${pct}%"></div></div>
-    </div>
-    <div class="qcard">
-      <div class="qlabel">Basic Info</div>
-      <div class="qtext">Tell us a little about yourself</div>
-      <div class="twocol">
-        <div class="fg"><label>Age</label>
-          <select onchange="ans.age=parseInt(this.value);updateProg()">
-            <option value="">Select age</option>
-            ${f.ages.map(a=>`<option value="${a}"${ans.age==a?' selected':''}>${a}</option>`).join('')}
-          </select>
-        </div>
-        <div class="fg"><label>Gender</label>
-          <select onchange="ans.gender=this.value;updateProg()">
-            <option value="">Select gender</option>
-            ${['Male','Female','Non-binary','Prefer not to say'].map(g=>`<option${ans.gender===g?' selected':''}>${g}</option>`).join('')}
-          </select>
-        </div>
-      </div>
-    </div>
-    ${qs}
-    <button class="subbtn" id="subbtn" onclick="submitForm()">Submit My Answers →</button>
-  </div>`
+  el.innerHTML='<div class="age-tabs">'+tabs+'</div>'
+    +'<div class="form-card">'
+    +'<div class="form-card-header">'
+    +'<div class="fch-logo"><img src="logo.png" alt="W" onerror="this.style.display=\'none\';this.parentElement.textContent=\'W\'"></div>'
+    +'<div><h2>WOK IN Survey</h2><p>'+f.sub+' · Takes just 2 minutes · You matter!</p></div>'
+    +'</div>'
+    +'<div class="prog-wrap">'
+    +'<div class="prog-info"><span>Your progress</span><span id="ptxt">'+answered+' / '+totalQ+' answered</span></div>'
+    +'<div class="prog-bar"><div class="prog-fill" id="pfill" style="width:'+pct+'%"></div></div>'
+    +'</div>'
+    +'<div class="form-body">'
+    +'<div class="qblock"><div class="qlabel">Basic Info</div><div class="qtext">Tell us a little about yourself</div>'
+    +'<div class="twocol">'
+    +'<div class="fg"><label>Age</label><select onchange="ans.age=parseInt(this.value);updateProg()"><option value="">Select age</option>'
+    +f.ages.map(function(a){return '<option value="'+a+'"'+(ans.age==a?' selected':'')+'>'+a+'</option>'}).join('')
+    +'</select></div>'
+    +'<div class="fg"><label>Gender</label><select onchange="ans.gender=this.value;updateProg()"><option value="">Select gender</option>'
+    +['Male','Female','Non-binary','Prefer not to say'].map(function(g){return '<option'+(ans.gender===g?' selected':'')+'>'+g+'</option>'}).join('')
+    +'</select></div>'
+    +'</div></div>'
+    +qs
+    +'<button class="subbtn" id="subbtn" onclick="submitForm()">Submit My Answers →</button>'
+    +'</div></div>'
 }
 
 function pickO(btn) {
-  const qid = btn.getAttribute('data-qid')
-  const oi = parseInt(btn.getAttribute('data-oi'))
-  const q = FORMS[fi].qs.find(q=>q.id===qid)
-  if (!q) return
-  ans[qid] = q.opts[oi]
+  var qid=btn.getAttribute('data-qid')
+  var oi=parseInt(btn.getAttribute('data-oi'))
+  var q=FORMS[fi].qs.find(function(q){return q.id===qid})
+  if(!q) return
+  ans[qid]=q.opts[oi]
   document.querySelectorAll('.qopt[data-qid="'+qid+'"]').forEach(function(b,i){
-    if (i===oi) { b.classList.add('sel') }
-    else { b.classList.remove('sel') }
+    if(i===oi){b.classList.add('sel')}else{b.classList.remove('sel')}
   })
   updateProg()
 }
 
 function pickR(btn) {
-  const qid = btn.getAttribute('data-qid')
-  const v = parseInt(btn.getAttribute('data-v'))
-  ans[qid] = v
+  var qid=btn.getAttribute('data-qid')
+  var v=parseInt(btn.getAttribute('data-v'))
+  ans[qid]=v
   document.querySelectorAll('.rbtn[data-qid="'+qid+'"]').forEach(function(b){
-    if (parseInt(b.getAttribute('data-v'))===v) { b.classList.add('sel') }
-    else { b.classList.remove('sel') }
+    if(parseInt(b.getAttribute('data-v'))===v){b.classList.add('sel')}else{b.classList.remove('sel')}
   })
   updateProg()
 }
 
 function updateProg() {
-  const f = FORMS[fi]
-  const totalQ = f.qs.filter(q=>!q.opt).length + 2
-  const answered = countAns()
-  const pct = Math.round((answered/totalQ)*100)
-  const fill = document.getElementById('pfill')
-  const txt = document.getElementById('ptxt')
-  if (fill) fill.style.width = pct+'%'
-  if (txt) txt.textContent = answered+' / '+totalQ+' answered'
+  var f=FORMS[fi]
+  var totalQ=f.qs.filter(function(q){return !q.opt}).length+2
+  var answered=countAns()
+  var pct=Math.round((answered/totalQ)*100)
+  var fill=document.getElementById('pfill')
+  var txt=document.getElementById('ptxt')
+  if(fill) fill.style.width=pct+'%'
+  if(txt) txt.textContent=answered+' / '+totalQ+' answered'
 }
 
 function countAns() {
-  let n=0
-  if (ans.age) n++
-  if (ans.gender) n++
-  FORMS[fi].qs.filter(q=>!q.opt).forEach(q=>{
-    if (ans[q.id]!==undefined && ans[q.id]!=='') n++
+  var n=0
+  if(ans.age) n++
+  if(ans.gender) n++
+  FORMS[fi].qs.filter(function(q){return !q.opt}).forEach(function(q){
+    if(ans[q.id]!==undefined&&ans[q.id]!=='') n++
   })
   return n
 }
 
-function switchForm(i) { fi=i; ans={}; renderSurvey() }
-function resetSurvey() { done=false; ans={}; renderSurvey() }
+function switchForm(i){fi=i;ans={};renderSurvey()}
+function resetSurvey(){done=false;ans={};renderSurvey()}
 
 async function submitForm() {
-  const f = FORMS[fi]
-  const missing = f.qs.filter(q=>!q.opt && (ans[q.id]===undefined||ans[q.id]===''))
-  if (!ans.age||!ans.gender) { alert('Please fill in your age and gender first.'); return }
-  if (missing.length) { alert('Please answer all questions. '+missing.length+' still remaining.'); return }
-  const btn = document.getElementById('subbtn')
-  if (btn) { btn.disabled=true; btn.textContent='Submitting...' }
-  const {error} = await _sb.from('survey_responses').insert([{
-    form_version:f.id, age:ans.age, gender:ans.gender,
-    q1:String(ans.q1||''), q2:String(ans.q2||''), q3:String(ans.q3||''),
-    q4:String(ans.q4||''), q5:String(ans.q5||''), q6:String(ans.q6||''),
-    q7:String(ans.q7||''), q8:String(ans.q8||''), q9:String(ans.q9||''),
-    q10:String(ans.q10||''), q11:String(ans.q11||'')
-  }])
-  if (error) {
-    alert('Error saving: '+error.message)
-    if (btn) { btn.disabled=false; btn.textContent='Submit My Answers →' }
+  var f=FORMS[fi]
+  var missing=f.qs.filter(function(q){return !q.opt&&(ans[q.id]===undefined||ans[q.id]==='')})
+  if(!ans.age||!ans.gender){alert('Please fill in your age and gender first.');return}
+  if(missing.length){alert('Please answer all questions. '+missing.length+' still remaining.');return}
+  var btn=document.getElementById('subbtn')
+  if(btn){btn.disabled=true;btn.textContent='Submitting...'}
+  var payload={form_version:f.id,age:ans.age,gender:ans.gender,
+    q1:String(ans.q1||''),q2:String(ans.q2||''),q3:String(ans.q3||''),
+    q4:String(ans.q4||''),q5:String(ans.q5||''),q6:String(ans.q6||''),
+    q7:String(ans.q7||''),q8:String(ans.q8||''),q9:String(ans.q9||''),
+    q10:String(ans.q10||''),q11:String(ans.q11||'')}
+  var res=await _sb.from('survey_responses').insert([payload])
+  if(res.error){
+    alert('Error: '+res.error.message)
+    if(btn){btn.disabled=false;btn.textContent='Submit My Answers →'}
     return
   }
-  done=true; renderSurvey(); window.scrollTo(0,0)
+  done=true;renderSurvey();window.scrollTo(0,0)
 }
 
 function renderAdmin() {
-  const el = document.getElementById('pg-admin')
-  const gl = {teen:'Gen Z',young:'Young Adults',pro:'Professionals',adult:'Adults'}
-  const gc = {teen:'bt',young:'by',pro:'bp',adult:'ba'}
-  const filt = aFilt==='all' ? aData : aData.filter(r=>r.form_version===aFilt)
-  const counts = {teen:0,young:0,pro:0,adult:0}
-  aData.forEach(r=>{ if(counts[r.form_version]!==undefined) counts[r.form_version]++ })
+  var el=document.getElementById('admin-content')
+  var gl={teen:'Gen Z',young:'Young Adults',pro:'Professionals',adult:'Adults'}
+  var gc={teen:'bt',young:'by',pro:'bp',adult:'ba'}
+  var filt=aFilt==='all'?aData:aData.filter(function(r){return r.form_version===aFilt})
+  var counts={teen:0,young:0,pro:0,adult:0}
+  aData.forEach(function(r){if(counts[r.form_version]!==undefined)counts[r.form_version]++})
 
-  const rows = filt.map((r,i)=>`<tr>
-    <td>${i+1}</td>
-    <td style="white-space:nowrap">${new Date(r.created_at).toLocaleDateString('en-IN')}</td>
-    <td><span class="badge ${gc[r.form_version]||''}">${gl[r.form_version]||r.form_version}</span></td>
-    <td>${r.age||'—'}</td><td>${r.gender||'—'}</td>
-    <td title="${r.q1||''}">${r.q1||'—'}</td>
-    <td title="${r.q2||''}">${r.q2||'—'}</td>
-    <td title="${r.q3||''}">${r.q3||'—'}</td>
-    <td title="${r.q4||''}">${r.q4||'—'}</td>
-    <td title="${r.q5||''}">${r.q5||'—'}</td>
-    <td title="${r.q6||''}">${r.q6||'—'}</td>
-    <td title="${r.q7||''}">${r.q7||'—'}</td>
-    <td title="${r.q8||''}">${r.q8||'—'}</td>
-    <td title="${r.q9||''}">${r.q9||'—'}</td>
-    <td title="${r.q10||''}">${r.q10||'—'}</td>
-    <td title="${r.q11||''}">${r.q11||'—'}</td>
-  </tr>`).join('')
+  var rows=filt.map(function(r,i){
+    return '<tr><td>'+(i+1)+'</td>'
+    +'<td style="white-space:nowrap">'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td>'
+    +'<td><span class="badge '+(gc[r.form_version]||'')+'">'+(gl[r.form_version]||r.form_version)+'</span></td>'
+    +'<td>'+(r.age||'—')+'</td><td>'+(r.gender||'—')+'</td>'
+    +'<td title="'+(r.q1||'')+'">'+(r.q1||'—')+'</td>'
+    +'<td title="'+(r.q2||'')+'">'+(r.q2||'—')+'</td>'
+    +'<td title="'+(r.q3||'')+'">'+(r.q3||'—')+'</td>'
+    +'<td title="'+(r.q4||'')+'">'+(r.q4||'—')+'</td>'
+    +'<td title="'+(r.q5||'')+'">'+(r.q5||'—')+'</td>'
+    +'<td title="'+(r.q6||'')+'">'+(r.q6||'—')+'</td>'
+    +'<td title="'+(r.q7||'')+'">'+(r.q7||'—')+'</td>'
+    +'<td title="'+(r.q8||'')+'">'+(r.q8||'—')+'</td>'
+    +'<td title="'+(r.q9||'')+'">'+(r.q9||'—')+'</td>'
+    +'<td title="'+(r.q10||'')+'">'+(r.q10||'—')+'</td>'
+    +'<td title="'+(r.q11||'')+'">'+(r.q11||'—')+'</td></tr>'
+  }).join('')
 
-  el.innerHTML = `<div class="awrap">
-    <div class="ahdr">
-      <div><h2>Survey Responses</h2><p>All WOK IN submissions from Supabase</p></div>
-      <button class="rfbtn" onclick="loadAdmin()">Refresh Data</button>
-    </div>
-    <div class="sgrid">
-      <div class="sc"><div class="sl">Total</div><div class="sv">${aData.length}</div></div>
-      <div class="sc"><div class="sl">Gen Z</div><div class="sv">${counts.teen}</div></div>
-      <div class="sc"><div class="sl">Young Adults</div><div class="sv">${counts.young}</div></div>
-      <div class="sc"><div class="sl">Professionals</div><div class="sv">${counts.pro}</div></div>
-      <div class="sc"><div class="sl">Adults</div><div class="sv">${counts.adult}</div></div>
-    </div>
-    <div class="filtrow">
-      ${[['all','All'],['teen','Gen Z'],['young','Young Adults'],['pro','Professionals'],['adult','Adults']].map(([v,l])=>
-        `<button class="fbtn${aFilt===v?' active':''}" onclick="setFilt('${v}')">${l}</button>`
-      ).join('')}
-    </div>
-    ${filt.length
-      ? `<div class="tblwrap"><table>
-          <thead><tr><th>#</th><th>Date</th><th>Group</th><th>Age</th><th>Gender</th>
-          <th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th><th>Q6</th>
-          <th>Q7</th><th>Q8</th><th>Q9</th><th>Q10</th><th>Comment</th></tr></thead>
-          <tbody>${rows}</tbody>
-        </table></div>`
-      : `<div class="empty">No responses yet. Share the link to start collecting!</div>`
-    }
-  </div>`
+  el.innerHTML='<div class="ahdr"><div><h2>Survey Responses</h2><p>All WOK IN submissions — live from Supabase</p></div>'
+    +'<button class="rfbtn" onclick="loadAdmin()">Refresh</button></div>'
+    +'<div class="sgrid">'
+    +'<div class="sc"><div class="sl">Total</div><div class="sv">'+aData.length+'</div></div>'
+    +'<div class="sc"><div class="sl">Gen Z</div><div class="sv">'+counts.teen+'</div></div>'
+    +'<div class="sc"><div class="sl">Young Adults</div><div class="sv">'+counts.young+'</div></div>'
+    +'<div class="sc"><div class="sl">Professionals</div><div class="sv">'+counts.pro+'</div></div>'
+    +'<div class="sc"><div class="sl">Adults</div><div class="sv">'+counts.adult+'</div></div>'
+    +'</div>'
+    +'<div class="filtrow">'
+    +[['all','All'],['teen','Gen Z'],['young','Young Adults'],['pro','Professionals'],['adult','Adults']].map(function(v){
+      return '<button class="fbtn'+(aFilt===v[0]?' active':'')+'" onclick="setFilt(\''+v[0]+'\')">'+v[1]+'</button>'
+    }).join('')
+    +'</div>'
+    +(filt.length
+      ?'<div class="tblwrap"><table><thead><tr><th>#</th><th>Date</th><th>Group</th><th>Age</th><th>Gender</th>'
+        +'<th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th><th>Q6</th>'
+        +'<th>Q7</th><th>Q8</th><th>Q9</th><th>Q10</th><th>Comment</th></tr></thead>'
+        +'<tbody>'+rows+'</tbody></table></div>'
+      :'<div class="empty">No responses yet. Share your survey link to start collecting!</div>'
+    )
 }
 
 async function loadAdmin() {
-  document.getElementById('pg-admin').innerHTML = '<div class="loading">Loading responses...</div>'
-  const {data,error} = await _sb.from('survey_responses').select('*').order('created_at',{ascending:false})
-  if (!error) { aData=data||[]; renderAdmin() }
-  else { document.getElementById('pg-admin').innerHTML = '<div class="empty">Error: '+error.message+'</div>' }
+  document.getElementById('admin-content').innerHTML='<div class="empty">Loading responses...</div>'
+  var res=await _sb.from('survey_responses').select('*').order('created_at',{ascending:false})
+  if(!res.error){aData=res.data||[];renderAdmin()}
+  else{document.getElementById('admin-content').innerHTML='<div class="empty">Error: '+res.error.message+'</div>'}
 }
 
-function setFilt(f) { aFilt=f; renderAdmin() }
+function setFilt(f){aFilt=f;renderAdmin()}
 </script>
 </body>
 </html>
