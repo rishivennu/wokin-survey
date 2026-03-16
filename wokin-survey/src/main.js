@@ -380,6 +380,8 @@ window.switchForm = function(i) {
 
 window.setAnswer = function(id, val) {
   answers[id] = val
+
+  // Update progress
   const totalQ = forms[currentFormIdx].questions.filter(q => !q.optional).length + 2
   const answered = countAnswered()
   const pct = Math.round((answered / totalQ) * 100)
@@ -388,16 +390,26 @@ window.setAnswer = function(id, val) {
   if (fill) fill.style.width = pct + '%'
   if (info) info.textContent = `${answered} / ${totalQ} answered`
 
-  document.querySelectorAll(`.q-opt, .r-btn`).forEach(b => {
-    if (b.closest('.q-card')) {
-      const card = b.closest('.q-card')
+  // Update option buttons for this question
+  document.querySelectorAll('.q-opt').forEach(b => {
+    const fn = b.getAttribute('onclick') || ''
+    if (fn.includes(`'${id}'`)) {
+      b.classList.remove('sel')
+      if (b.textContent.trim() === String(val)) {
+        b.classList.add('sel')
+      }
     }
   })
-  const allBtns = document.querySelectorAll(`[onclick*="setAnswer('${id}'"]`)
-  allBtns.forEach(b => {
-    b.classList.remove('sel')
-    const match = b.getAttribute('onclick').includes(`'${val}'`) || b.getAttribute('onclick').includes(`,${val})`)
-    if (match) b.classList.add('sel')
+
+  // Update rating buttons for this question
+  document.querySelectorAll('.r-btn').forEach(b => {
+    const fn = b.getAttribute('onclick') || ''
+    if (fn.includes(`'${id}'`)) {
+      b.classList.remove('sel')
+      if (parseInt(b.textContent.trim()) === parseInt(val)) {
+        b.classList.add('sel')
+      }
+    }
   })
 }
 
