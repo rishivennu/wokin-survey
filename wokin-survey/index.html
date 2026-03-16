@@ -5,41 +5,31 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>WOK IN — Where Chinese meets Indian Spices</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 @font-face{font-family:'DonalMoty';src:url('https://creativefonts.org/wp-content/uploads/2024/donal-moty/DonalMoty.woff2') format('woff2');font-weight:normal;font-style:normal}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --red:#C41E3A;
-  --red2:#a01830;
-  --red3:#8B1426;
-  --cream:#FFF8F0;
-  --cream2:#FFF0E0;
-  --brown:#3E1A0A;
-  --brown2:#5C2D0E;
-  --brown3:#8B4513;
-  --orange:#E8521A;
-  --dark:#1a1a1a;
-  --muted:#6b7280;
-  --border:#F2E8E0;
-  --light:#FFF8F0;
-  --white:#FFFFFF;
+  --red:#C41E3A;--red2:#a01830;--red3:#8B1426;
+  --cream:#FFF8F0;--cream2:#FFF0E0;--cream3:#FFE8D0;
+  --brown:#3E1A0A;--brown2:#5C2D0E;--brown3:#8B4513;
+  --orange:#E8521A;--dark:#1a1a1a;--muted:#6b7280;
+  --border:#F2E8E0;--light:#FFF8F0;--white:#FFFFFF;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--brown);min-height:100vh;overflow-x:hidden}
 
-/* ── NAV ── */
+/* NAV */
 nav{background:var(--red);border-bottom:2px solid var(--red2);padding:0 4%;display:flex;align-items:center;justify-content:space-between;height:62px;position:sticky;top:0;z-index:200}
 .nlogo{display:flex;align-items:center;gap:10px;cursor:pointer;flex-shrink:0}
 .nlogo img{height:38px;width:auto;object-fit:contain}
 .nlogo-fb{height:38px;width:38px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:var(--red);display:none;flex-shrink:0}
 .nbrand{font-family:'DonalMoty','Inter',serif;font-size:22px;color:var(--cream);letter-spacing:1px}
 .nlinks{display:flex;align-items:center;gap:6px}
-.nlink{background:transparent;border:none;color:rgba(255,248,240,0.8);font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;padding:7px 12px;border-radius:8px;transition:all .15s;white-space:nowrap}
-.nlink:hover,.nlink.active{color:var(--cream);background:rgba(255,255,255,0.15)}
-.nbtn{background:var(--cream);color:var(--red);border:none;padding:9px 18px;border-radius:22px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .15s;white-space:nowrap;flex-shrink:0}
+.nlink{background:transparent;border:none;color:rgba(255,248,240,.8);font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;padding:7px 12px;border-radius:8px;transition:all .15s;white-space:nowrap}
+.nlink:hover,.nlink.active{color:var(--cream);background:rgba(255,255,255,.15)}
+.nbtn{background:var(--cream);color:var(--red);border:none;padding:9px 18px;border-radius:22px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .15s;white-space:nowrap}
 .nbtn:hover{background:var(--cream2);transform:translateY(-1px)}
-
-/* ── HAMBURGER (mobile) ── */
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent}
 .hamburger span{display:block;width:22px;height:2px;background:var(--cream);border-radius:2px;transition:all .2s}
 .mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:var(--red);padding:1rem;z-index:199;border-bottom:2px solid var(--red2);flex-direction:column;gap:4px}
@@ -50,82 +40,145 @@ nav{background:var(--red);border-bottom:2px solid var(--red2);padding:0 4%;displ
 
 .page{display:none}.page.on{display:block}
 
-/* ── HERO ── */
+/* HERO */
 .hero{padding:3.5rem 4% 3rem;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;max-width:1200px;margin:0 auto}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--cream2);color:var(--brown2);font-size:11px;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.07em;border:1px solid var(--border)}
 .hero h1{font-family:'DonalMoty','Inter',serif;font-size:clamp(2.4rem,4.5vw,4.8rem);line-height:1.08;margin-bottom:1rem;color:var(--brown)}
 .hero h1 span{color:var(--red)}
-.hero-sub{font-size:.95rem;color:var(--brown3);line-height:1.75;margin-bottom:1.8rem;max-width:480px}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.hero-sub{font-size:.95rem;color:var(--brown3);line-height:1.75;margin-bottom:1.5rem;max-width:480px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:1.5rem}
 .btn-primary{background:var(--red);color:var(--cream);border:none;padding:14px 28px;border-radius:28px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .15s}
 .btn-primary:hover{background:var(--red2);transform:translateY(-1px)}
 .btn-outline{background:transparent;color:var(--brown);border:2px solid var(--brown3);padding:13px 26px;border-radius:28px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s}
 .btn-outline:hover{background:var(--brown);color:var(--cream);border-color:var(--brown)}
 .btn-outline-white{background:transparent;color:var(--cream);border:2px solid rgba(255,248,240,.5);padding:13px 26px;border-radius:28px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s}
 .btn-outline-white:hover{background:rgba(255,248,240,.15)}
+
+/* LIVE COUNTER */
+.live-counter{display:flex;align-items:center;gap:14px;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:12px 16px;width:fit-content}
+.lc-pulse{width:10px;height:10px;border-radius:50%;background:var(--red);animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.lc-num{font-family:'DonalMoty',serif;font-size:1.6rem;color:var(--red);line-height:1}
+.lc-txt{font-size:12px;color:var(--brown3);font-weight:600;line-height:1.3}
+
 .hero-visual{position:relative;display:flex;align-items:flex-end;justify-content:center;height:420px}
 .float-badge{background:var(--brown);color:var(--cream);border-radius:12px;padding:10px 16px;position:absolute;bottom:80px;left:0;font-size:12px;font-weight:700}
-.hero-info-badge{background:var(--white);border-radius:16px;padding:12px 16px;border:1px solid var(--border);position:absolute;top:30px;right:10px;display:flex;align-items:center;gap:10px}
-.hb-num{font-family:'DonalMoty',serif;font-size:22px;color:var(--red)}
-.hb-txt{font-size:11px;color:var(--brown3);line-height:1.3}
 
-/* ── STATS ── */
+/* STATS */
 .stats{background:var(--red);border-top:2px solid var(--red2);border-bottom:2px solid var(--red2)}
 .stats-inner{max-width:1200px;margin:0 auto;padding:1.5rem 4%;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .stat-item{text-align:center;padding:1.2rem .5rem}
 .stat-num{font-family:'DonalMoty','Inter',serif;font-size:2.2rem;color:var(--cream);margin-bottom:4px}
 .stat-label{font-size:13px;color:rgba(255,248,240,.8);font-weight:500}
 
-/* ── SECTIONS ── */
+/* SECTIONS */
 .section{max-width:1200px;margin:0 auto;padding:3.5rem 4%}
 .section-header{text-align:center;margin-bottom:2.5rem}
 .section-header h2{font-family:'DonalMoty','Inter',serif;font-size:clamp(1.8rem,3.5vw,3rem);margin-bottom:.5rem;color:var(--brown)}
 .section-header p{color:var(--brown3);font-size:14px}
 
-/* ── FEATURE CARDS ── */
+/* FEAT CARDS */
 .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem}
-.feat-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:1.8rem 1.4rem;text-align:center;transition:transform .2s,box-shadow .2s}
-.feat-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(62,26,10,.1)}
+.feat-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:1.8rem 1.4rem;text-align:center;transition:transform .2s}
+.feat-card:hover{transform:translateY(-3px)}
 .feat-icon{width:56px;height:56px;border-radius:14px;background:var(--cream2);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:24px;border:1px solid var(--border)}
 .feat-card h3{font-family:'DonalMoty','Inter',serif;font-size:17px;margin-bottom:7px;color:var(--brown)}
 .feat-card p{font-size:13px;color:var(--brown3);line-height:1.6}
 
-/* ── PEOPLE SECTION ── */
+/* MENU PREVIEW */
+.menu-section{background:var(--brown);padding:4rem 4%}
+.menu-inner{max-width:1200px;margin:0 auto}
+.menu-inner h2{font-family:'DonalMoty','Inter',serif;font-size:clamp(1.8rem,3.5vw,3rem);text-align:center;margin-bottom:.5rem;color:var(--cream)}
+.menu-inner .sub{text-align:center;color:rgba(255,248,240,.7);margin-bottom:2.5rem;font-size:14px}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem}
+.menu-card{background:rgba(255,248,240,.08);border:1px solid rgba(255,248,240,.15);border-radius:18px;padding:1.5rem;text-align:center;transition:transform .2s;cursor:default}
+.menu-card:hover{transform:translateY(-3px);background:rgba(255,248,240,.12)}
+.menu-emoji{font-size:42px;margin-bottom:.8rem;display:block}
+.menu-card h3{font-family:'DonalMoty','Inter',serif;font-size:16px;color:var(--cream);margin-bottom:5px}
+.menu-card .desc{font-size:12px;color:rgba(255,248,240,.7);line-height:1.5;margin-bottom:.8rem}
+.menu-card .price{font-family:'DonalMoty',serif;font-size:1.2rem;color:var(--cream2)}
+.menu-badge{display:inline-block;background:var(--red);color:var(--cream);font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px;margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.04em}
+
+/* PEOPLE SECTION */
 .people-section{background:var(--red);padding:3.5rem 4%}
 .people-inner{max-width:1200px;margin:0 auto}
 .people-inner h2{font-family:'DonalMoty','Inter',serif;font-size:clamp(1.8rem,3.5vw,3rem);text-align:center;margin-bottom:.5rem;color:var(--cream)}
 .people-inner .sub{text-align:center;color:rgba(255,248,240,.8);margin-bottom:2.5rem;font-size:14px}
 .people-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem}
-.person-card{background:rgba(255,255,255,.12);border-radius:18px;padding:1.8rem 1.4rem;border:1px solid rgba(255,248,240,.2);text-align:center;transition:transform .2s;backdrop-filter:blur(4px)}
+.person-card{background:rgba(255,255,255,.12);border-radius:18px;padding:1.8rem 1.4rem;border:1px solid rgba(255,248,240,.2);text-align:center;transition:transform .2s}
 .person-card:hover{transform:translateY(-3px)}
 .person-card svg{margin:0 auto 1rem;display:block}
 .person-card h4{font-family:'DonalMoty','Inter',serif;font-size:16px;margin-bottom:3px;color:var(--cream)}
 .person-card .role{font-size:11px;color:var(--cream2);font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em}
 .person-card .quote{font-size:13px;color:rgba(255,248,240,.85);line-height:1.6;font-style:italic}
 
-/* ── CTA ── */
+/* INSTAGRAM WALL */
+.insta-section{background:var(--cream);padding:3.5rem 4%}
+.insta-inner{max-width:1200px;margin:0 auto}
+.insta-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
+.insta-header h2{font-family:'DonalMoty','Inter',serif;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--brown)}
+.insta-handle{display:flex;align-items:center;gap:8px;background:var(--red);color:var(--cream);padding:10px 18px;border-radius:22px;font-size:13px;font-weight:700;text-decoration:none;cursor:pointer;border:none;font-family:inherit}
+.insta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.insta-card{border-radius:14px;overflow:hidden;aspect-ratio:1;position:relative;cursor:pointer;background:var(--cream2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.insta-card:hover{transform:scale(1.02)}
+.insta-card .ic-inner{text-align:center;padding:1rem}
+.insta-card .ic-emoji{font-size:32px;margin-bottom:.5rem;display:block}
+.insta-card .ic-txt{font-size:11px;color:var(--brown3);font-weight:600;line-height:1.4}
+.insta-overlay{position:absolute;inset:0;background:rgba(196,30,58,.85);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;border-radius:14px}
+.insta-card:hover .insta-overlay{opacity:1}
+.insta-overlay span{color:#fff;font-size:12px;font-weight:700}
+
+/* REFERRAL SECTION */
+.referral-section{background:var(--cream2);padding:3.5rem 4%;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.referral-inner{max-width:800px;margin:0 auto;text-align:center}
+.referral-inner h2{font-family:'DonalMoty','Inter',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:.6rem;color:var(--brown)}
+.referral-inner p{color:var(--brown3);font-size:14px;margin-bottom:2rem;line-height:1.7}
+.referral-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:2rem}
+.ref-step{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.5rem 1rem;text-align:center}
+.ref-step-num{width:36px;height:36px;border-radius:50%;background:var(--red);color:var(--cream);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;margin:0 auto .8rem;font-family:'DonalMoty',serif}
+.ref-step h4{font-family:'DonalMoty','Inter',serif;font-size:15px;margin-bottom:4px;color:var(--brown)}
+.ref-step p{font-size:12px;color:var(--brown3);line-height:1.5}
+.share-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.share-whatsapp{background:#25D366;color:#fff;border:none;padding:14px 24px;border-radius:26px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:8px;transition:all .15s}
+.share-whatsapp:hover{background:#1ebe5d;transform:translateY(-1px)}
+.share-email{background:var(--white);color:var(--brown);border:2px solid var(--border);padding:13px 22px;border-radius:26px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:8px;transition:all .15s}
+.share-email:hover{border-color:var(--brown);background:var(--cream)}
+.share-copy{background:var(--red);color:var(--cream);border:none;padding:14px 22px;border-radius:26px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:8px;transition:all .15s}
+.share-copy:hover{background:var(--red2);transform:translateY(-1px)}
+.copy-toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:var(--brown);color:var(--cream);padding:12px 24px;border-radius:30px;font-size:13px;font-weight:700;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none}
+.copy-toast.show{opacity:1}
+
+/* CTA */
 .cta-section{background:var(--brown);padding:4rem 4%;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
 .cta-section h2{font-family:'DonalMoty','Inter',serif;font-size:clamp(1.8rem,3.5vw,3rem);color:var(--cream);margin-bottom:1rem}
 .cta-section p{color:var(--cream2);margin-bottom:2rem;font-size:14px;line-height:1.75}
 
-/* ── FOOTER ── */
 footer{background:#1a0a04;padding:2rem 4%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .footer-brand{color:var(--cream);font-family:'DonalMoty','Inter',serif;font-size:22px}
 .footer-mid{color:rgba(255,248,240,.5);font-size:12px;text-align:center}
 .footer-right{color:rgba(255,248,240,.5);font-size:12px}
 
-/* ── SURVEY ── */
+/* SURVEY */
 .survey-section{background:var(--cream);padding:3rem 4%}
 .survey-inner{max-width:720px;margin:0 auto}
 .survey-hero{text-align:center;margin-bottom:2rem}
 .survey-hero h2{font-family:'DonalMoty','Inter',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:.4rem;color:var(--brown)}
 .survey-hero p{color:var(--brown3);font-size:14px}
+
+/* SHARE BANNER inside survey */
+.share-banner{background:var(--cream2);border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.share-banner p{font-size:13px;color:var(--brown2);font-weight:600}
+.share-banner-btns{display:flex;gap:8px;flex-wrap:wrap}
+.sbtn-wa{background:#25D366;color:#fff;border:none;padding:8px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.sbtn-em{background:var(--white);color:var(--brown);border:1.5px solid var(--border);padding:7px 12px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.sbtn-cp{background:var(--red);color:var(--cream);border:none;padding:8px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+
 .age-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.5rem;padding:8px;background:var(--white);border-radius:14px;border:1px solid var(--border)}
 .atab{flex:1;min-width:100px;padding:10px 8px;border-radius:9px;border:none;background:transparent;cursor:pointer;font-family:inherit;font-size:12px;font-weight:600;color:var(--brown3);transition:all .15s;text-align:center;line-height:1.4}
 .atab span{display:block;font-size:10px;font-weight:400;margin-top:2px;opacity:.7}
 .atab.active{background:var(--red);color:var(--cream)}
 .atab:hover:not(.active){background:var(--cream2);color:var(--brown)}
-.form-card{background:var(--white);border-radius:22px;border:1px solid var(--border);overflow:hidden;margin-bottom:1.2rem;box-shadow:0 2px 20px rgba(62,26,10,.06)}
+.form-card{background:var(--white);border-radius:22px;border:1px solid var(--border);overflow:hidden;margin-bottom:1.2rem}
 .form-card-header{background:var(--red);padding:1.6rem 1.8rem;display:flex;align-items:center;gap:1rem}
 .fch-logo{width:50px;height:50px;border-radius:12px;background:rgba(255,248,240,.2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:var(--cream);overflow:hidden;flex-shrink:0}
 .fch-logo img{width:100%;height:100%;object-fit:cover;border-radius:12px}
@@ -162,11 +215,12 @@ textarea{resize:vertical;min-height:70px}
 .ty{text-align:center;padding:3.5rem 1.5rem;background:var(--white);border-radius:22px;border:1px solid var(--border)}
 .tycheck{width:76px;height:76px;border-radius:50%;background:var(--red);color:var(--cream);display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 1.3rem}
 .ty h2{font-family:'DonalMoty','Inter',serif;font-size:2.2rem;margin-bottom:8px;color:var(--brown)}
-.ty p{color:var(--brown3);font-size:14px;line-height:1.7;max-width:380px;margin:0 auto}
+.ty p{color:var(--brown3);font-size:14px;line-height:1.7;max-width:380px;margin:0 auto 1.5rem}
+.ty-share{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
 
-/* ── PIN GATE ── */
+/* PIN GATE */
 .pin-gate-wrap{min-height:100vh;background:var(--cream);display:flex;align-items:center;justify-content:center;padding:1.5rem}
-.pin-card{background:var(--white);border-radius:22px;border:1px solid var(--border);padding:2.5rem 2rem;max-width:380px;width:100%;text-align:center;box-shadow:0 4px 30px rgba(62,26,10,.08)}
+.pin-card{background:var(--white);border-radius:22px;border:1px solid var(--border);padding:2.5rem 2rem;max-width:380px;width:100%;text-align:center}
 .pin-card h2{font-family:'DonalMoty','Inter',serif;font-size:1.9rem;margin-bottom:.4rem;color:var(--brown)}
 .pin-card p{color:var(--brown3);font-size:13px;margin-bottom:1.8rem}
 .pin-dots{display:flex;justify-content:center;gap:14px;margin-bottom:1.8rem}
@@ -179,7 +233,7 @@ textarea{resize:vertical;min-height:70px}
 .pin-small{font-size:12px!important;font-family:'Inter',sans-serif!important}
 .pin-error{color:var(--red);font-size:13px;font-weight:600;min-height:20px;margin-top:.4rem}
 
-/* ── ADMIN ── */
+/* ADMIN */
 .admin-bg{background:var(--cream);min-height:100vh;padding:2rem 4%}
 .admin-wrap{max-width:1200px;margin:0 auto}
 .ahdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.8rem;flex-wrap:wrap;gap:1rem}
@@ -193,6 +247,13 @@ textarea{resize:vertical;min-height:70px}
 .sc{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.3rem}
 .sc .sl{font-size:10px;font-weight:700;color:var(--brown3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
 .sc .sv{font-family:'DonalMoty','Inter',serif;font-size:2rem;color:var(--red)}
+
+/* CHARTS */
+.charts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-bottom:1.8rem}
+.chart-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.3rem}
+.chart-card h3{font-family:'DonalMoty','Inter',serif;font-size:16px;color:var(--brown);margin-bottom:1rem}
+.chart-wrap{position:relative;height:200px}
+
 .filtrow{display:flex;gap:7px;margin-bottom:1.3rem;flex-wrap:wrap}
 .fbtn{padding:7px 16px;border-radius:18px;border:1.5px solid var(--border);background:var(--white);font-size:12px;color:var(--brown3);cursor:pointer;font-family:inherit;font-weight:600;transition:all .15s}
 .fbtn.active{background:var(--red);color:var(--cream);border-color:var(--red)}
@@ -207,7 +268,7 @@ tr:hover td{background:var(--cream)}
 .bp{background:#FFF3E0;color:#E65100}.ba{background:var(--cream2);color:var(--brown2)}
 .empty{text-align:center;padding:3rem;color:var(--brown3);font-size:14px}
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;gap:2rem;padding:2.5rem 4% 2rem}
   .hero-visual{display:none}
@@ -216,82 +277,67 @@ tr:hover td{background:var(--cream)}
   .cta-section{grid-template-columns:1fr}
   .cta-section>div:last-child{display:none}
   .stats-inner{grid-template-columns:repeat(3,1fr);gap:.5rem}
-  .stat-item{padding:.8rem .3rem}
-  .stat-num{font-size:1.8rem}
+  .referral-steps{grid-template-columns:1fr}
 }
-
 @media(max-width:640px){
   nav{padding:0 4%;height:58px}
-  .nlink{display:none}
-  .nbtn{display:none}
+  .nlink{display:none}.nbtn{display:none}
   .hamburger{display:flex}
   .nbrand{font-size:20px}
-  .nlogo img,.nlogo-fb{height:34px;width:34px}
-
   .hero{padding:2rem 4% 1.5rem}
   .hero h1{font-size:clamp(2rem,8vw,3rem)}
   .hero-btns{flex-direction:column}
-  .btn-primary,.btn-outline{width:100%;text-align:center;padding:14px 20px}
-
-  .stats-inner{grid-template-columns:repeat(3,1fr);padding:1rem 4%}
+  .btn-primary,.btn-outline{width:100%;text-align:center}
+  .live-counter{width:100%}
+  .stats-inner{padding:1rem 4%}
   .stat-num{font-size:1.5rem}
   .stat-label{font-size:11px}
-
   .section{padding:2.5rem 4%}
   .feat-grid{grid-template-columns:1fr 1fr;gap:1rem}
   .feat-card{padding:1.2rem 1rem}
-  .feat-icon{width:46px;height:46px;font-size:20px}
-  .feat-card h3{font-size:15px}
-  .feat-card p{font-size:12px}
-
+  .menu-grid{grid-template-columns:1fr 1fr}
   .people-section{padding:2.5rem 4%}
   .people-grid{grid-template-columns:1fr 1fr;gap:1rem}
   .person-card{padding:1.2rem 1rem}
-  .person-card svg{width:80px;height:100px}
-
+  .insta-grid{grid-template-columns:repeat(3,1fr)}
+  .referral-section{padding:2.5rem 4%}
+  .share-btns{flex-direction:column;align-items:center}
+  .share-whatsapp,.share-email,.share-copy{width:100%;justify-content:center}
   .cta-section{padding:2.5rem 4%}
-
   .survey-section{padding:2rem 4%}
   .age-tabs{gap:5px;padding:6px}
   .atab{min-width:70px;padding:9px 6px;font-size:11px}
-  .atab span{font-size:9px}
-  .form-card-header{padding:1.2rem 1.2rem;gap:.8rem}
-  .fch-logo{width:44px;height:44px}
-  .form-card-header h2{font-size:18px}
-  .prog-wrap{padding:1rem 1.2rem 0}
+  .form-card-header{padding:1.2rem;gap:.8rem}
   .form-body{padding:1rem 1.2rem 1.5rem}
   .qblock{padding:1rem 1.1rem}
   .qtext{font-size:15px}
   .qopt{padding:8px 12px;font-size:12px}
   .twocol{grid-template-columns:1fr 1fr;gap:8px}
-
   .pin-card{padding:2rem 1.4rem}
   .pin-grid{max-width:240px}
   .pin-btn{padding:14px;font-size:18px}
-
   .admin-bg{padding:1.5rem 4%}
   .sgrid{grid-template-columns:repeat(2,1fr)}
+  .charts-grid{grid-template-columns:1fr}
   .ahdr h2{font-size:1.6rem}
-  .filtrow{gap:6px}
-  .fbtn{padding:6px 12px;font-size:11px}
-
-  footer{flex-direction:column;text-align:center;padding:1.5rem 4%;gap:.6rem}
+  .share-banner{flex-direction:column}
+  footer{flex-direction:column;text-align:center;padding:1.5rem 4%}
 }
-
 @media(max-width:380px){
   .feat-grid{grid-template-columns:1fr}
   .people-grid{grid-template-columns:1fr}
-  .stats-inner{grid-template-columns:repeat(3,1fr)}
+  .menu-grid{grid-template-columns:1fr}
+  .insta-grid{grid-template-columns:repeat(2,1fr)}
   .atab{min-width:60px;padding:8px 4px;font-size:10px}
   .twocol{grid-template-columns:1fr}
   .hero h1{font-size:1.9rem}
-  .sgrid{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<div class="copy-toast" id="copy-toast">Link copied to clipboard!</div>
+
 <nav>
   <div class="nlogo" onclick="goTo('landing')">
     <img src="logo.png" alt="WOK IN" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -304,12 +350,11 @@ tr:hover td{background:var(--cream)}
     <button class="nlink" id="nb-admin" onclick="goTo('admin')">Admin</button>
     <button class="nbtn" onclick="goTo('survey')">Take Survey</button>
   </div>
-  <button class="hamburger" onclick="toggleMenu()" id="hamburger" aria-label="Menu">
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
   <button class="mobile-link" onclick="goTo('landing');toggleMenu()">Home</button>
   <button class="mobile-link" onclick="goTo('survey');toggleMenu()">Survey</button>
@@ -317,7 +362,7 @@ tr:hover td{background:var(--cream)}
   <button class="mobile-survey-btn" onclick="goTo('survey');toggleMenu()">Take Survey →</button>
 </div>
 
-<!-- LANDING PAGE -->
+<!-- LANDING -->
 <div id="pg-landing" class="page on">
   <div style="max-width:1200px;margin:0 auto">
     <div class="hero">
@@ -329,6 +374,13 @@ tr:hover td{background:var(--cream)}
           <button class="btn-primary" onclick="goTo('survey')">Share Your Taste →</button>
           <button class="btn-outline" onclick="goTo('survey')">Take Survey</button>
         </div>
+        <div class="live-counter">
+          <div class="lc-pulse"></div>
+          <div>
+            <div class="lc-num" id="hero-counter">...</div>
+            <div class="lc-txt">food lovers have shared<br>their taste</div>
+          </div>
+        </div>
       </div>
       <div class="hero-visual">
         <svg width="400" height="420" viewBox="0 0 400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -337,10 +389,8 @@ tr:hover td{background:var(--cream)}
             <circle cx="100" cy="65" r="38" fill="#FDBCB4"/>
             <rect x="72" y="22" width="56" height="18" rx="5" fill="#fff" stroke="#F2E8E0" stroke-width="1.5"/>
             <rect x="80" y="8" width="40" height="18" rx="9" fill="#fff" stroke="#F2E8E0" stroke-width="1.5"/>
-            <circle cx="88" cy="62" r="4.5" fill="#3E1A0A"/>
-            <circle cx="112" cy="62" r="4.5" fill="#3E1A0A"/>
-            <circle cx="89.5" cy="60" r="1.8" fill="#fff"/>
-            <circle cx="113.5" cy="60" r="1.8" fill="#fff"/>
+            <circle cx="88" cy="62" r="4.5" fill="#3E1A0A"/><circle cx="112" cy="62" r="4.5" fill="#3E1A0A"/>
+            <circle cx="89.5" cy="60" r="1.8" fill="#fff"/><circle cx="113.5" cy="60" r="1.8" fill="#fff"/>
             <path d="M86 76 Q100 87 114 76" stroke="#3E1A0A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
             <rect x="66" y="103" width="68" height="85" rx="14" fill="#fff" stroke="#F2E8E0" stroke-width="1.5"/>
             <circle cx="100" cy="120" r="4" fill="#C41E3A"/>
@@ -361,10 +411,8 @@ tr:hover td{background:var(--cream)}
           <g transform="translate(220,90)">
             <circle cx="70" cy="58" r="34" fill="#C68642"/>
             <path d="M36 48 Q70 18 104 48 Q100 32 70 28 Q40 32 36 48" fill="#3E1A0A"/>
-            <circle cx="59" cy="55" r="4" fill="#3E1A0A"/>
-            <circle cx="81" cy="55" r="4" fill="#3E1A0A"/>
-            <circle cx="60.5" cy="53" r="1.5" fill="#fff"/>
-            <circle cx="82.5" cy="53" r="1.5" fill="#fff"/>
+            <circle cx="59" cy="55" r="4" fill="#3E1A0A"/><circle cx="81" cy="55" r="4" fill="#3E1A0A"/>
+            <circle cx="60.5" cy="53" r="1.5" fill="#fff"/><circle cx="82.5" cy="53" r="1.5" fill="#fff"/>
             <path d="M57 68 Q70 78 83 68" stroke="#3E1A0A" stroke-width="2" fill="none" stroke-linecap="round"/>
             <rect x="42" y="92" width="56" height="76" rx="13" fill="#E8521A"/>
             <path d="M42 106 Q8 118 6 146" stroke="#C68642" stroke-width="18" stroke-linecap="round" fill="none"/>
@@ -410,6 +458,59 @@ tr:hover td{background:var(--cream)}
     </div>
   </div>
 
+  <!-- MENU PREVIEW -->
+  <div class="menu-section">
+    <div class="menu-inner">
+      <h2>Our Signature Dishes</h2>
+      <p class="sub">Indian spices meet Chinese wok — bold, fresh, and cooked right in front of you</p>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <span class="menu-badge">Bestseller</span>
+          <span class="menu-emoji">🍊</span>
+          <h3>Masala Orange Chicken</h3>
+          <div class="desc">Crispy chicken tossed in tamarind orange sauce with garam masala and kasuri methi</div>
+          <div class="price">₹249</div>
+        </div>
+        <div class="menu-card">
+          <span class="menu-badge">Veg</span>
+          <span class="menu-emoji">🥘</span>
+          <h3>Kung Pao Paneer</h3>
+          <div class="desc">Wok-tossed paneer with peanuts, dried chilies, and an Indian makhani base</div>
+          <div class="price">₹229</div>
+        </div>
+        <div class="menu-card">
+          <span class="menu-badge">Spicy</span>
+          <span class="menu-emoji">🍜</span>
+          <h3>Desi Masala Noodles</h3>
+          <div class="desc">Chaat masala wok noodles with cumin, green chili, capsicum and spring onion</div>
+          <div class="price">₹199</div>
+        </div>
+        <div class="menu-card">
+          <span class="menu-badge">Popular</span>
+          <span class="menu-emoji">🍚</span>
+          <h3>Tadka Fried Rice</h3>
+          <div class="desc">Classic tadka with mustard seeds, curry leaves, turmeric wok rice and paneer</div>
+          <div class="price">₹189</div>
+        </div>
+        <div class="menu-card">
+          <span class="menu-badge">New</span>
+          <span class="menu-emoji">🥟</span>
+          <h3>Mirchi Makhani Dumplings</h3>
+          <div class="desc">Steamed momos in a rich Indian makhani gravy with chili crunch</div>
+          <div class="price">₹169</div>
+        </div>
+        <div class="menu-card">
+          <span class="menu-badge">Combo</span>
+          <span class="menu-emoji">🍱</span>
+          <h3>WOK IN Classic Combo</h3>
+          <div class="desc">Any main + rice or noodles + soup — the complete IT park lunch deal</div>
+          <div class="price">₹299</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PEOPLE SECTION -->
   <div class="people-section">
     <div class="people-inner">
       <h2>Who's Taking the Survey?</h2>
@@ -419,10 +520,8 @@ tr:hover td{background:var(--cream)}
           <svg width="90" height="115" viewBox="0 0 100 130">
             <circle cx="50" cy="36" r="24" fill="#FDBCB4"/>
             <path d="M26 28 Q50 6 74 28 Q70 14 50 11 Q30 14 26 28" fill="#3E1A0A"/>
-            <circle cx="42" cy="34" r="3.5" fill="#3E1A0A"/>
-            <circle cx="58" cy="34" r="3.5" fill="#3E1A0A"/>
-            <circle cx="43.5" cy="32" r="1.2" fill="#fff"/>
-            <circle cx="59.5" cy="32" r="1.2" fill="#fff"/>
+            <circle cx="42" cy="34" r="3.5" fill="#3E1A0A"/><circle cx="58" cy="34" r="3.5" fill="#3E1A0A"/>
+            <circle cx="43.5" cy="32" r="1.2" fill="#fff"/><circle cx="59.5" cy="32" r="1.2" fill="#fff"/>
             <path d="M41 46 Q50 54 59 46" stroke="#3E1A0A" stroke-width="2" fill="none" stroke-linecap="round"/>
             <rect x="28" y="60" width="44" height="52" rx="11" fill="#378ADD"/>
             <path d="M28 72 Q8 82 6 100" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/>
@@ -430,8 +529,7 @@ tr:hover td{background:var(--cream)}
             <rect x="36" y="110" width="14" height="18" rx="7" fill="#3E1A0A"/>
             <rect x="52" y="110" width="14" height="18" rx="7" fill="#3E1A0A"/>
           </svg>
-          <h4>Rahul, 24</h4>
-          <div class="role">Software Engineer</div>
+          <h4>Rahul, 24</h4><div class="role">Software Engineer</div>
           <div class="quote">"Need more tasty options near office. Can't wait for WOK IN!"</div>
         </div>
         <div class="person-card">
@@ -439,10 +537,8 @@ tr:hover td{background:var(--cream)}
             <circle cx="50" cy="36" r="24" fill="#C68642"/>
             <path d="M26 32 Q50 8 74 32" fill="#2a1a0a"/>
             <ellipse cx="50" cy="14" rx="28" ry="9" fill="#2a1a0a"/>
-            <circle cx="42" cy="34" r="3.5" fill="#3E1A0A"/>
-            <circle cx="58" cy="34" r="3.5" fill="#3E1A0A"/>
-            <circle cx="43.5" cy="32" r="1.2" fill="#fff"/>
-            <circle cx="59.5" cy="32" r="1.2" fill="#fff"/>
+            <circle cx="42" cy="34" r="3.5" fill="#3E1A0A"/><circle cx="58" cy="34" r="3.5" fill="#3E1A0A"/>
+            <circle cx="43.5" cy="32" r="1.2" fill="#fff"/><circle cx="59.5" cy="32" r="1.2" fill="#fff"/>
             <path d="M42 47 Q50 55 58 47" stroke="#3E1A0A" stroke-width="2" fill="none" stroke-linecap="round"/>
             <rect x="28" y="60" width="44" height="52" rx="11" fill="#C41E3A"/>
             <path d="M28 72 Q9 82 7 100" stroke="#C68642" stroke-width="14" stroke-linecap="round" fill="none"/>
@@ -450,16 +546,14 @@ tr:hover td{background:var(--cream)}
             <rect x="36" y="110" width="14" height="18" rx="7" fill="#5C2D0E"/>
             <rect x="52" y="110" width="14" height="18" rx="7" fill="#5C2D0E"/>
           </svg>
-          <h4>Priya, 19</h4>
-          <div class="role">College Student</div>
+          <h4>Priya, 19</h4><div class="role">College Student</div>
           <div class="quote">"Indo-Chinese on a student budget? Yes please!"</div>
         </div>
         <div class="person-card">
           <svg width="90" height="115" viewBox="0 0 100 130">
             <circle cx="50" cy="36" r="24" fill="#F1C27D"/>
             <path d="M26 30 Q50 16 74 30" fill="#5a3e1b"/>
-            <circle cx="42" cy="33" r="3.5" fill="#3E1A0A"/>
-            <circle cx="58" cy="33" r="3.5" fill="#3E1A0A"/>
+            <circle cx="42" cy="33" r="3.5" fill="#3E1A0A"/><circle cx="58" cy="33" r="3.5" fill="#3E1A0A"/>
             <rect x="34" y="28" width="12" height="9" rx="3.5" fill="none" stroke="#8B4513" stroke-width="1.5"/>
             <rect x="54" y="28" width="12" height="9" rx="3.5" fill="none" stroke="#8B4513" stroke-width="1.5"/>
             <line x1="46" y1="32" x2="54" y2="32" stroke="#8B4513" stroke-width="1.5"/>
@@ -471,16 +565,14 @@ tr:hover td{background:var(--cream)}
             <rect x="36" y="110" width="14" height="18" rx="7" fill="#5C2D0E"/>
             <rect x="52" y="110" width="14" height="18" rx="7" fill="#5C2D0E"/>
           </svg>
-          <h4>Vikram, 35</h4>
-          <div class="role">Product Manager</div>
+          <h4>Vikram, 35</h4><div class="role">Product Manager</div>
           <div class="quote">"WOK IN is exactly what's missing from our food court."</div>
         </div>
         <div class="person-card">
           <svg width="90" height="115" viewBox="0 0 100 130">
             <circle cx="50" cy="36" r="24" fill="#FDBCB4"/>
             <path d="M26 28 Q50 10 74 28 Q70 16 50 14 Q30 16 26 28" fill="#9e9e9e"/>
-            <circle cx="42" cy="34" r="3.5" fill="#3E1A0A"/>
-            <circle cx="58" cy="34" r="3.5" fill="#3E1A0A"/>
+            <circle cx="42" cy="34" r="3.5" fill="#3E1A0A"/><circle cx="58" cy="34" r="3.5" fill="#3E1A0A"/>
             <path d="M41 47 Q50 56 59 47" stroke="#3E1A0A" stroke-width="2" fill="none" stroke-linecap="round"/>
             <rect x="28" y="60" width="44" height="52" rx="11" fill="#4CAF50"/>
             <path d="M28 72 Q8 80 6 98" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/>
@@ -488,10 +580,90 @@ tr:hover td{background:var(--cream)}
             <rect x="36" y="110" width="14" height="18" rx="7" fill="#3E1A0A"/>
             <rect x="52" y="110" width="14" height="18" rx="7" fill="#3E1A0A"/>
           </svg>
-          <h4>Meena, 42</h4>
-          <div class="role">Senior Architect</div>
-          <div class="quote">"Quality, hygiene, and real Indian flavors. Love this!"</div>
+          <h4>Meena, 42</h4><div class="role">Senior Architect</div>
+          <div class="quote">"Quality, hygiene, and real Indian flavors. Love this idea!"</div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTAGRAM SOCIAL WALL -->
+  <div class="insta-section">
+    <div class="insta-inner">
+      <div class="insta-header">
+        <div>
+          <h2>Follow Our Journey</h2>
+          <p style="color:var(--brown3);font-size:14px;margin-top:4px">Behind the scenes — spices, woks, and big dreams</p>
+        </div>
+        <a class="insta-handle" href="https://instagram.com/wokin.in" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          @wokin.in
+        </a>
+      </div>
+      <div class="insta-grid">
+        <div class="insta-card">
+          <div class="ic-inner"><span class="ic-emoji">🥢</span><div class="ic-txt">WOK IN concept shoot — the wok that started it all</div></div>
+          <div class="insta-overlay"><span>View Post</span></div>
+        </div>
+        <div class="insta-card">
+          <div class="ic-inner"><span class="ic-emoji">🌶️</span><div class="ic-txt">Sourcing the finest Indian spices for our signature dishes</div></div>
+          <div class="insta-overlay"><span>View Post</span></div>
+        </div>
+        <div class="insta-card">
+          <div class="ic-inner"><span class="ic-emoji">🍊</span><div class="ic-txt">Masala Orange Chicken — first recipe test! Your feedback needed</div></div>
+          <div class="insta-overlay"><span>View Post</span></div>
+        </div>
+        <div class="insta-card">
+          <div class="ic-inner"><span class="ic-emoji">🚚</span><div class="ic-txt">The WOK IN food truck wrap design — reveal coming soon!</div></div>
+          <div class="insta-overlay"><span>View Post</span></div>
+        </div>
+        <div class="insta-card">
+          <div class="ic-inner"><span class="ic-emoji">👨‍🍳</span><div class="ic-txt">Behind the scenes — perfecting the tadka fried rice recipe</div></div>
+          <div class="insta-overlay"><span>View Post</span></div>
+        </div>
+        <div class="insta-card">
+          <div class="ic-inner"><span class="ic-emoji">📍</span><div class="ic-txt">Scouting IT parks in Hyderabad — your workplace next?</div></div>
+          <div class="insta-overlay"><span>View Post</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFERRAL SECTION -->
+  <div class="referral-section">
+    <div class="referral-inner">
+      <h2>Invite Friends, Earn Rewards</h2>
+      <p>Share the WOK IN survey with your colleagues and friends. For every 3 people you bring in, you get a free dish on launch day. IT parks run on word of mouth — help us grow!</p>
+      <div class="referral-steps">
+        <div class="ref-step">
+          <div class="ref-step-num">1</div>
+          <h4>Share the Link</h4>
+          <p>Send the survey to your colleagues on WhatsApp, email, or any platform</p>
+        </div>
+        <div class="ref-step">
+          <div class="ref-step-num">2</div>
+          <h4>They Respond</h4>
+          <p>Every person who fills the survey helps shape the WOK IN menu</p>
+        </div>
+        <div class="ref-step">
+          <div class="ref-step-num">3</div>
+          <h4>You Get Rewarded</h4>
+          <p>Founding members and referrers get exclusive discounts on launch day</p>
+        </div>
+      </div>
+      <div class="share-btns">
+        <button class="share-whatsapp" onclick="shareWhatsApp()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.547 5.876L.057 23.5l5.752-1.508A11.951 11.951 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.491-5.145-1.347l-.369-.217-3.812 1 1.022-3.706-.241-.382A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Share on WhatsApp
+        </button>
+        <button class="share-email" onclick="shareEmail()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Share via Email
+        </button>
+        <button class="share-copy" onclick="copyLink()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy Link
+        </button>
       </div>
     </div>
   </div>
@@ -506,10 +678,8 @@ tr:hover td{background:var(--cream)}
       <svg width="180" height="220" viewBox="0 0 200 250">
         <circle cx="100" cy="72" r="42" fill="#FDBCB4"/>
         <path d="M58 58 Q100 22 142 58 Q138 36 100 32 Q62 36 58 58" fill="#3E1A0A"/>
-        <circle cx="86" cy="68" r="5.5" fill="#3E1A0A"/>
-        <circle cx="114" cy="68" r="5.5" fill="#3E1A0A"/>
-        <circle cx="87.5" cy="65" r="2" fill="#fff"/>
-        <circle cx="115.5" cy="65" r="2" fill="#fff"/>
+        <circle cx="86" cy="68" r="5.5" fill="#3E1A0A"/><circle cx="114" cy="68" r="5.5" fill="#3E1A0A"/>
+        <circle cx="87.5" cy="65" r="2" fill="#fff"/><circle cx="115.5" cy="65" r="2" fill="#fff"/>
         <path d="M83 87 Q100 100 117 87" stroke="#3E1A0A" stroke-width="3" fill="none" stroke-linecap="round"/>
         <path d="M62 122 Q18 92 12 58" stroke="#FDBCB4" stroke-width="22" stroke-linecap="round" fill="none"/>
         <path d="M138 122 Q182 90 188 56" stroke="#FDBCB4" stroke-width="22" stroke-linecap="round" fill="none"/>
@@ -537,6 +707,14 @@ tr:hover td{background:var(--cream)}
         <h2>Tell Us Your Taste</h2>
         <p>Select your age group and answer 10 quick questions</p>
       </div>
+      <div class="share-banner">
+        <p>🌶️ Love WOK IN? Share the survey with your colleagues!</p>
+        <div class="share-banner-btns">
+          <button class="sbtn-wa" onclick="shareWhatsApp()">WhatsApp</button>
+          <button class="sbtn-em" onclick="shareEmail()">Email</button>
+          <button class="sbtn-cp" onclick="copyLink()">Copy Link</button>
+        </div>
+      </div>
       <div id="survey-content"></div>
     </div>
   </div>
@@ -555,7 +733,7 @@ tr:hover td{background:var(--cream)}
           <rect x="30.5" y="40" width="3" height="6" rx="1.5" fill="#FFF8F0"/>
         </svg>
         <h2>Admin Access</h2>
-        <p>Enter your 4-digit PIN to view survey responses</p>
+        <p>Enter your 4-digit PIN to view survey responses and analytics</p>
         <div class="pin-dots">
           <div class="pin-dot" id="dot0"></div>
           <div class="pin-dot" id="dot1"></div>
@@ -590,6 +768,25 @@ tr:hover td{background:var(--cream)}
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
 const _sb=supabase.createClient('https://zntdkcmgekdfdjbcyctp.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpudGRrY21nZWtkZmRqYmN5Y3RwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2MzQxNzIsImV4cCI6MjA4OTIxMDE3Mn0.GniK5lVxNMSta5uTks135vofOsy0u7kfO9jq8MyEino')
+
+const SITE_URL = window.location.href.split('?')[0]
+const SHARE_MSG = 'Hey! I just took the WOK IN food survey — it\'s a new Indian-Chinese fusion brand launching at IT parks. Takes 2 mins and helps shape their menu! Fill it here: '+SITE_URL
+
+// SHARE FUNCTIONS
+function shareWhatsApp(){window.open('https://wa.me/?text='+encodeURIComponent(SHARE_MSG),'_blank')}
+function shareEmail(){window.open('mailto:?subject=Help shape WOK IN — Indo-Chinese food at your IT park&body='+encodeURIComponent(SHARE_MSG),'_blank')}
+function copyLink(){navigator.clipboard.writeText(SITE_URL).then(function(){var t=document.getElementById('copy-toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2500)}).catch(function(){prompt('Copy this link:',SITE_URL)})}
+
+// LIVE COUNTER
+async function loadCounter(){
+  var res=await _sb.from('survey_responses').select('id',{count:'exact',head:true})
+  var count=res.count||0
+  var el=document.getElementById('hero-counter')
+  if(el) el.textContent=count+' +'
+}
+loadCounter()
+
+// PIN
 const CORRECT_PIN='1214'
 let pinEntry='',adminUnlocked=false
 function pinPress(d){
@@ -603,11 +800,7 @@ function pinPress(d){
 }
 function pinClear(){pinEntry='';for(var i=0;i<4;i++)document.getElementById('dot'+i).classList.remove('filled');document.getElementById('pin-error').textContent=''}
 function pinBackspace(){if(!pinEntry.length)return;pinEntry=pinEntry.slice(0,-1);for(var i=0;i<4;i++)document.getElementById('dot'+i).classList.toggle('filled',i<pinEntry.length)}
-
-function toggleMenu(){
-  var m=document.getElementById('mobile-menu')
-  m.classList.toggle('open')
-}
+function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('open')}
 
 const FORMS=[
   {id:'teen',label:'Gen Z',range:'10–19',sub:'For teens and students',ages:[10,11,12,13,14,15,16,17,18,19],qs:[
@@ -665,6 +858,7 @@ const FORMS=[
 ]
 
 let pg='landing',fi=0,ans={},done=false,aData=[],aFilt='all'
+var chartInstances={}
 
 function goTo(p){
   pg=p
@@ -684,7 +878,15 @@ function goTo(p){
 function renderSurvey(){
   var el=document.getElementById('survey-content')
   if(done){
-    el.innerHTML='<div class="ty"><div class="tycheck">✓</div><h2>Thank You!</h2><p>Your feedback helps WOK IN serve you better. You are officially part of our founding community!</p><br><button class="subbtn" style="max-width:300px;margin:0 auto;display:block" onclick="resetSurvey()">Submit Another Response</button></div>'
+    el.innerHTML='<div class="ty"><div class="tycheck">✓</div><h2>Thank You!</h2>'
+      +'<p>Your feedback helps WOK IN serve you better. You are officially part of our founding community!</p>'
+      +'<div class="ty-share">'
+      +'<button class="sbtn-wa" onclick="shareWhatsApp()" style="padding:10px 18px;border-radius:22px;font-size:13px">Share on WhatsApp</button>'
+      +'<button class="sbtn-em" onclick="shareEmail()" style="padding:9px 16px;border-radius:22px;font-size:13px">Share via Email</button>'
+      +'<button class="sbtn-cp" onclick="copyLink()" style="padding:10px 18px;border-radius:22px;font-size:13px">Copy Link</button>'
+      +'</div>'
+      +'<button class="subbtn" style="max-width:300px;margin:0 auto;display:block" onclick="resetSurvey()">Submit Another Response</button>'
+      +'</div>'
     return
   }
   var f=FORMS[fi]
@@ -735,7 +937,6 @@ function pickO(btn){
   document.querySelectorAll('.qopt[data-qid="'+qid+'"]').forEach(function(b,i){if(i===oi){b.classList.add('sel')}else{b.classList.remove('sel')}})
   updateProg()
 }
-
 function pickR(btn){
   var qid=btn.getAttribute('data-qid')
   var v=parseInt(btn.getAttribute('data-v'))
@@ -743,7 +944,6 @@ function pickR(btn){
   document.querySelectorAll('.rbtn[data-qid="'+qid+'"]').forEach(function(b){if(parseInt(b.getAttribute('data-v'))===v){b.classList.add('sel')}else{b.classList.remove('sel')}})
   updateProg()
 }
-
 function updateProg(){
   var f=FORMS[fi]
   var totalQ=f.qs.filter(function(q){return !q.opt}).length+2
@@ -754,7 +954,6 @@ function updateProg(){
   if(fill)fill.style.width=pct+'%'
   if(txt)txt.textContent=answered+' / '+totalQ+' answered'
 }
-
 function countAns(){
   var n=0
   if(ans.age)n++
@@ -762,7 +961,6 @@ function countAns(){
   FORMS[fi].qs.filter(function(q){return !q.opt}).forEach(function(q){if(ans[q.id]!==undefined&&ans[q.id]!=='')n++})
   return n
 }
-
 function switchForm(i){fi=i;ans={};renderSurvey()}
 function resetSurvey(){done=false;ans={};renderSurvey()}
 
@@ -781,9 +979,13 @@ async function submitForm(){
     q10:String(ans.q10||''),q11:String(ans.q11||'')
   }])
   if(res.error){alert('Error: '+res.error.message);if(btn){btn.disabled=false;btn.textContent='Submit My Answers →'}return}
-  done=true;renderSurvey();window.scrollTo(0,0)
+  done=true
+  loadCounter()
+  renderSurvey()
+  window.scrollTo(0,0)
 }
 
+// ADMIN + CHARTS
 function renderAdmin(){
   var el=document.getElementById('admin-inner')
   var gl={teen:'Gen Z',young:'Young Adults',pro:'Professionals',adult:'Adults'}
@@ -791,6 +993,19 @@ function renderAdmin(){
   var filt=aFilt==='all'?aData:aData.filter(function(r){return r.form_version===aFilt})
   var counts={teen:0,young:0,pro:0,adult:0}
   aData.forEach(function(r){if(counts[r.form_version]!==undefined)counts[r.form_version]++})
+
+  // Count spice preferences
+  var spiceCounts={'Mild':0,'Medium':0,'Spicy':0,'Extra spicy':0}
+  aData.forEach(function(r){if(r.q5&&spiceCounts[r.q5]!==undefined)spiceCounts[r.q5]++})
+
+  // Count food discovery platforms
+  var discoveryCounts={}
+  aData.forEach(function(r){if(r.q10){discoveryCounts[r.q10]=(discoveryCounts[r.q10]||0)+1}})
+
+  // Count spend preferences
+  var spendCounts={}
+  aData.forEach(function(r){if(r.q4){spendCounts[r.q4]=(spendCounts[r.q4]||0)+1}})
+
   var rows=filt.map(function(r,i){
     return '<tr><td>'+(i+1)+'</td><td style="white-space:nowrap">'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td>'
     +'<td><span class="badge '+(gc[r.form_version]||'')+'">'+(gl[r.form_version]||r.form_version)+'</span></td>'
@@ -802,7 +1017,8 @@ function renderAdmin(){
     +'<td title="'+(r.q9||'')+'">'+(r.q9||'—')+'</td><td title="'+(r.q10||'')+'">'+(r.q10||'—')+'</td>'
     +'<td title="'+(r.q11||'')+'">'+(r.q11||'—')+'</td></tr>'
   }).join('')
-  el.innerHTML='<div class="ahdr"><div><h2>Survey Responses</h2><p>All WOK IN submissions — live from Supabase</p></div>'
+
+  el.innerHTML='<div class="ahdr"><div><h2>Survey Responses</h2><p>Live analytics and submissions from Supabase</p></div>'
     +'<div class="ahdr-btns"><button class="rfbtn" onclick="loadAdmin()">Refresh</button><button class="lock-btn" onclick="lockAdmin()">🔒 Lock</button></div></div>'
     +'<div class="sgrid">'
     +'<div class="sc"><div class="sl">Total</div><div class="sv">'+aData.length+'</div></div>'
@@ -810,6 +1026,12 @@ function renderAdmin(){
     +'<div class="sc"><div class="sl">Young Adults</div><div class="sv">'+counts.young+'</div></div>'
     +'<div class="sc"><div class="sl">Professionals</div><div class="sv">'+counts.pro+'</div></div>'
     +'<div class="sc"><div class="sl">Adults</div><div class="sv">'+counts.adult+'</div></div>'
+    +'</div>'
+    +'<div class="charts-grid">'
+    +'<div class="chart-card"><h3>Responses by Age Group</h3><div class="chart-wrap"><canvas id="chart-groups"></canvas></div></div>'
+    +'<div class="chart-card"><h3>Spice Preference</h3><div class="chart-wrap"><canvas id="chart-spice"></canvas></div></div>'
+    +'<div class="chart-card"><h3>Food Discovery Platform</h3><div class="chart-wrap"><canvas id="chart-discovery"></canvas></div></div>'
+    +'<div class="chart-card"><h3>Spending Budget</h3><div class="chart-wrap"><canvas id="chart-spend"></canvas></div></div>'
     +'</div>'
     +'<div class="filtrow">'
     +[['all','All'],['teen','Gen Z'],['young','Young Adults'],['pro','Professionals'],['adult','Adults']].map(function(v){
@@ -822,10 +1044,54 @@ function renderAdmin(){
         +'<tbody>'+rows+'</tbody></table></div>'
       :'<div class="empty">No responses yet. Share your survey link to start collecting!</div>'
     )
+
+  // Render charts after DOM update
+  setTimeout(function(){
+    var RED='#C41E3A',CREAM='#FFF8F0',BROWN='#8B4513'
+    var opts={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{bodyFont:{family:'Inter'}}}}
+
+    // Groups bar chart
+    if(chartInstances['groups']) chartInstances['groups'].destroy()
+    var c1=document.getElementById('chart-groups')
+    if(c1) chartInstances['groups']=new Chart(c1,{type:'bar',data:{
+      labels:['Gen Z','Young Adults','Professionals','Adults'],
+      datasets:[{data:[counts.teen,counts.young,counts.pro,counts.adult],backgroundColor:[RED,'#E8521A','#8B4513','#5C2D0E'],borderRadius:8,borderSkipped:false}]
+    },options:Object.assign({},opts,{scales:{y:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.04)'},ticks:{stepSize:1}},x:{grid:{display:false}}}})})
+
+    // Spice doughnut
+    if(chartInstances['spice']) chartInstances['spice'].destroy()
+    var c2=document.getElementById('chart-spice')
+    var spiceLabels=Object.keys(spiceCounts)
+    var spiceVals=Object.values(spiceCounts)
+    if(c2) chartInstances['spice']=new Chart(c2,{type:'doughnut',data:{
+      labels:spiceLabels,
+      datasets:[{data:spiceVals,backgroundColor:[CREAM,'#FFE8D0','#E8521A',RED],borderWidth:2,borderColor:'#FFF8F0'}]
+    },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{family:'Inter',size:11},color:BROWN,boxWidth:12}}}}})
+
+    // Discovery bar
+    if(chartInstances['discovery']) chartInstances['discovery'].destroy()
+    var c3=document.getElementById('chart-discovery')
+    var discLabels=Object.keys(discoveryCounts)
+    var discVals=Object.values(discoveryCounts)
+    if(c3) chartInstances['discovery']=new Chart(c3,{type:'bar',data:{
+      labels:discLabels,
+      datasets:[{data:discVals,backgroundColor:RED,borderRadius:8,borderSkipped:false}]
+    },options:Object.assign({},opts,{indexAxis:'y',scales:{x:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.04)'},ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
+
+    // Spend bar
+    if(chartInstances['spend']) chartInstances['spend'].destroy()
+    var c4=document.getElementById('chart-spend')
+    var spendLabels=Object.keys(spendCounts)
+    var spendVals=Object.values(spendCounts)
+    if(c4) chartInstances['spend']=new Chart(c4,{type:'bar',data:{
+      labels:spendLabels,
+      datasets:[{data:spendVals,backgroundColor:'#8B4513',borderRadius:8,borderSkipped:false}]
+    },options:Object.assign({},opts,{scales:{y:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.04)'},ticks:{stepSize:1}},x:{grid:{display:false},ticks:{font:{size:10}}}}})})
+  },100)
 }
 
 async function loadAdmin(){
-  document.getElementById('admin-inner').innerHTML='<div class="empty">Loading responses...</div>'
+  document.getElementById('admin-inner').innerHTML='<div class="empty">Loading responses and analytics...</div>'
   var res=await _sb.from('survey_responses').select('*').order('created_at',{ascending:false})
   if(!res.error){aData=res.data||[];renderAdmin()}
   else{document.getElementById('admin-inner').innerHTML='<div class="empty">Error: '+res.error.message+'</div>'}
