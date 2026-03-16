@@ -1,18 +1,13 @@
 import { supabase } from './supabase.js'
 
-// ─── DATA ────────────────────────────────────────────────────────────────────
-
 const forms = [
   {
-    id: 'teen',
-    label: 'Gen Z',
-    range: '10–19',
-    sub: 'For teens & students',
+    id: 'teen', label: 'Gen Z', range: '10–19', sub: 'For teens & students',
     ageOpts: Array.from({length:10},(_,i)=>10+i),
     questions: [
       { id:'q1', text:'How often do you eat out or order food in a week?', opts:['Rarely','1–2 times','3–4 times','Every day'] },
       { id:'q2', text:'What type of food do you crave the most?', opts:['Chinese','Indian','Indo-Chinese','Fast food','South Indian'] },
-      { id:'q3', text:'Where do you usually eat or order from?', opts:['Zomato / Swiggy','Food court','Street food','Restaurant','Food truck'], motiveBefore:'You\'re doing great! Just a few more — promise they\'re easy.' },
+      { id:'q3', text:'Where do you usually eat or order from?', opts:['Zomato / Swiggy','Food court','Street food','Restaurant','Food truck'], motiveBefore:"You're doing great! Just a few more — promise they're easy." },
       { id:'q4', text:'What\'s your usual budget for a meal?', opts:['Under ₹100','₹100–₹200','₹200–₹350','Above ₹350'] },
       { id:'q5', text:'How spicy do you like your food?', opts:['Mild','Medium','Spicy','Extra spicy'] },
       { id:'q6', text:'What\'s most important when choosing a food place?', opts:['Taste','Price','Speed','Vibe / ambience','Hygiene'], motiveBefore:'Halfway there! You\'re helping shape a real food brand.' },
@@ -24,10 +19,7 @@ const forms = [
     ]
   },
   {
-    id: 'young',
-    label: 'Young Adults',
-    range: '20–28',
-    sub: 'For college & early career',
+    id: 'young', label: 'Young Adults', range: '20–28', sub: 'For college & early career',
     ageOpts: Array.from({length:9},(_,i)=>20+i),
     questions: [
       { id:'q1', text:'What\'s your current situation?', opts:['College student','Working professional','Freelancer','Job seeking'] },
@@ -44,10 +36,7 @@ const forms = [
     ]
   },
   {
-    id: 'pro',
-    label: 'Professionals',
-    range: '29–38',
-    sub: 'For working professionals',
+    id: 'pro', label: 'Professionals', range: '29–38', sub: 'For working professionals',
     ageOpts: Array.from({length:10},(_,i)=>29+i),
     questions: [
       { id:'q1', text:'How many days a week do you eat lunch outside?', opts:['1–2 days','3–4 days','Almost every day','I bring my own'] },
@@ -64,10 +53,7 @@ const forms = [
     ]
   },
   {
-    id: 'adult',
-    label: 'Adults',
-    range: '39–45',
-    sub: 'For experienced food lovers',
+    id: 'adult', label: 'Adults', range: '39–45', sub: 'For experienced food lovers',
     ageOpts: Array.from({length:7},(_,i)=>39+i),
     questions: [
       { id:'q1', text:'How often do you eat outside in a typical week?', opts:['Rarely','1–2 times','3–4 times','Daily'] },
@@ -85,8 +71,6 @@ const forms = [
   }
 ]
 
-// ─── STATE ───────────────────────────────────────────────────────────────────
-
 let currentPage = 'landing'
 let currentFormIdx = 0
 let answers = {}
@@ -94,29 +78,20 @@ let submitted = false
 let adminData = []
 let adminFilter = 'all'
 
-// ─── RENDER ──────────────────────────────────────────────────────────────────
+// ── FULL RE-RENDER ON EVERY STATE CHANGE ─────────────────────────────────────
 
 function render() {
-  document.getElementById('app').innerHTML = `
-    ${renderNav()}
-    <div id="page-landing" class="page ${currentPage==='landing'?'active':''}">
-      ${renderLanding()}
-    </div>
-    <div id="page-survey" class="page ${currentPage==='survey'?'active':''}">
-      ${renderSurvey()}
-    </div>
-    <div id="page-admin" class="page ${currentPage==='admin'?'active':''}">
-      ${renderAdmin()}
-    </div>
+  document.getElementById('app').innerHTML = renderNav() + `
+    <div id="page-landing" class="page ${currentPage==='landing'?'active':''}">${renderLanding()}</div>
+    <div id="page-survey" class="page ${currentPage==='survey'?'active':''}">${renderSurvey()}</div>
+    <div id="page-admin" class="page ${currentPage==='admin'?'active':''}">${renderAdmin()}</div>
   `
-  attachEvents()
   if (currentPage === 'admin') loadAdminData()
 }
 
 function renderNav() {
-  return `
-  <nav>
-    <a class="nav-logo" href="#" onclick="navigate('landing')">
+  return `<nav>
+    <a class="nav-logo" href="#" onclick="navigate('landing');return false;">
       <div class="nav-logo-circle">W</div>
       <span class="nav-brand">WOK IN</span>
     </a>
@@ -133,51 +108,31 @@ function renderLanding() {
     <div class="hero-logo">W</div>
     <h1>WOK IN</h1>
     <p>Indian spices. Chinese wok. One bold brand.</p>
-    <div class="hero-tagline">Where Chinese meets Indian spices</div>
-    <br>
+    <div class="hero-tagline">Where Chinese meets Indian spices</div><br>
     <button class="hero-btn" onclick="navigate('survey')">Share Your Taste →</button>
   </div>
   <div class="features">
-    <div class="feature-card">
-      <div class="feature-icon">🥢</div>
-      <h3>2 Minutes</h3>
-      <p>Quick, fun survey designed for your age group</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🌶️</div>
-      <h3>Shape the Menu</h3>
-      <p>Your answers directly influence our dishes and locations</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🏆</div>
-      <h3>Be a Founder</h3>
-      <p>Early responders get exclusive launch discounts</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📍</div>
-      <h3>IT Park First</h3>
-      <p>Starting at your workplace — lunch will never be boring again</p>
-    </div>
+    <div class="feature-card"><div class="feature-icon">🥢</div><h3>2 Minutes</h3><p>Quick, fun survey designed for your age group</p></div>
+    <div class="feature-card"><div class="feature-icon">🌶️</div><h3>Shape the Menu</h3><p>Your answers directly influence our dishes and locations</p></div>
+    <div class="feature-card"><div class="feature-icon">🏆</div><h3>Be a Founder</h3><p>Early responders get exclusive launch discounts</p></div>
+    <div class="feature-card"><div class="feature-icon">📍</div><h3>IT Park First</h3><p>Starting at your workplace — lunch will never be boring again</p></div>
   </div>`
 }
 
 function renderSurvey() {
   if (submitted) {
-    return `
-    <div class="survey-wrap">
-      <div class="thank-you">
-        <div class="ty-check">✓</div>
-        <h2>Thank you!</h2>
-        <p>Your feedback helps WOK IN serve you better.<br>You're officially part of our founding community.</p>
-        <br>
-        <button class="submit-btn" style="max-width:300px;margin:1rem auto 0" onclick="resetSurvey()">Submit Another Response</button>
-      </div>
-    </div>`
+    return `<div class="survey-wrap"><div class="thank-you">
+      <div class="ty-check">✓</div>
+      <h2>Thank you!</h2>
+      <p>Your feedback helps WOK IN serve you better.<br>You're officially part of our founding community.</p><br>
+      <button class="submit-btn" style="max-width:300px;margin:1rem auto 0" onclick="resetSurvey()">Submit Another Response</button>
+    </div></div>`
   }
 
   const form = forms[currentFormIdx]
   const totalQ = form.questions.filter(q => !q.optional).length + 2
   const answered = countAnswered()
+  const pct = Math.round((answered / totalQ) * 100)
 
   let qs = ''
   form.questions.forEach((q, i) => {
@@ -187,189 +142,130 @@ function renderSurvey() {
     qs += `<div class="q-card">
       <div class="q-label">${q.optional ? 'Optional' : `Q${i+1}`}</div>
       <div class="q-text">${q.text}</div>`
-    
+
     if (q.type === 'text') {
-      qs += `<textarea id="ans-${q.id}" placeholder="Type here..." onchange="setAnswer('${q.id}', this.value)">${answers[q.id]||''}</textarea>`
+      qs += `<textarea onchange="setAnswer('${q.id}',this.value)" placeholder="Type here...">${answers[q.id]||''}</textarea>`
     } else if (q.type === 'rating') {
       qs += `<div class="rating-wrap">`
       for (let r = 1; r <= 5; r++) {
-        qs += `<button class="r-btn ${answers[q.id]==r?'sel':''}" onclick="setAnswer('${q.id}',${r})">${r}</button>`
+        const sel = answers[q.id] === r ? 'sel' : ''
+        qs += `<button class="r-btn ${sel}" onclick="setAnswer('${q.id}',${r})">${r}</button>`
       }
       qs += `</div>`
     } else {
       qs += `<div class="q-grid">`
       q.opts.forEach(opt => {
-        qs += `<button class="q-opt ${answers[q.id]===opt?'sel':''}" onclick="setAnswer('${q.id}','${opt.replace(/'/g,"\\'")}'">${opt}</button>`
+        const sel = answers[q.id] === opt ? 'sel' : ''
+        const safe = opt.replace(/'/g, '&#39;')
+        qs += `<button class="q-opt ${sel}" onclick="setAnswer('${q.id}','${safe}')">${opt}</button>`
       })
       qs += `</div>`
     }
     qs += `</div>`
   })
 
-  const pct = Math.round((answered / totalQ) * 100)
-
-  return `
-  <div class="survey-wrap">
+  return `<div class="survey-wrap">
     <div class="age-tabs">
       ${forms.map((f,i) => `
         <button class="age-tab ${i===currentFormIdx?'active':''}" onclick="switchForm(${i})">
-          ${f.label}
-          <span class="tab-range">${f.range}</span>
+          ${f.label}<span class="tab-range">${f.range}</span>
         </button>`).join('')}
     </div>
     <div class="form-header">
       <div class="form-header-icon">W</div>
-      <div>
-        <h2>WOK IN Survey</h2>
-        <p>${form.sub} · Takes 2 mins</p>
-      </div>
+      <div><h2>WOK IN Survey</h2><p>${form.sub} · Takes 2 mins</p></div>
     </div>
     <div class="progress-wrap">
-      <div class="progress-info">
-        <span>Progress</span>
-        <span>${answered} / ${totalQ} answered</span>
-      </div>
+      <div class="progress-info"><span>Progress</span><span>${answered} / ${totalQ} answered</span></div>
       <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
     </div>
     <div class="q-card">
       <div class="q-label">Basic Info</div>
       <div class="q-text">Tell us a little about yourself</div>
       <div class="two-col">
-        <div class="field-group">
-          <label>Age</label>
-          <select onchange="setAnswer('age', parseInt(this.value))">
+        <div class="field-group"><label>Age</label>
+          <select onchange="setAnswer('age',parseInt(this.value))">
             <option value="">Select age</option>
-            ${form.ageOpts.map(a => `<option value="${a}" ${answers.age==a?'selected':''}>${a}</option>`).join('')}
+            ${form.ageOpts.map(a=>`<option value="${a}" ${answers.age==a?'selected':''}>${a}</option>`).join('')}
           </select>
         </div>
-        <div class="field-group">
-          <label>Gender</label>
-          <select onchange="setAnswer('gender', this.value)">
+        <div class="field-group"><label>Gender</label>
+          <select onchange="setAnswer('gender',this.value)">
             <option value="">Select gender</option>
-            ${['Male','Female','Non-binary','Prefer not to say'].map(g => `<option ${answers.gender===g?'selected':''}>${g}</option>`).join('')}
+            ${['Male','Female','Non-binary','Prefer not to say'].map(g=>`<option ${answers.gender===g?'selected':''}>${g}</option>`).join('')}
           </select>
         </div>
       </div>
     </div>
     ${qs}
-    <button class="submit-btn" onclick="submitForm()" id="submit-btn">Submit My Answers →</button>
+    <button class="submit-btn" id="submit-btn" onclick="submitForm()">Submit My Answers →</button>
   </div>`
 }
 
 function renderAdmin() {
-  const filtered = adminFilter === 'all' ? adminData : adminData.filter(r => r.form_version === adminFilter)
-  const counts = { teen:0, young:0, pro:0, adult:0 }
-  adminData.forEach(r => { if(counts[r.form_version]!==undefined) counts[r.form_version]++ })
+  const filtered = adminFilter==='all' ? adminData : adminData.filter(r=>r.form_version===adminFilter)
+  const counts = {teen:0,young:0,pro:0,adult:0}
+  adminData.forEach(r=>{if(counts[r.form_version]!==undefined)counts[r.form_version]++})
+  const groupLabel = {teen:'Gen Z',young:'Young Adults',pro:'Professionals',adult:'Adults'}
+  const badgeClass = {teen:'badge-teen',young:'badge-young',pro:'badge-pro',adult:'badge-adult'}
 
-  return `
-  <div class="admin-wrap">
+  const tableHTML = !filtered.length
+    ? `<div class="empty-state">No responses yet. Share the survey link to collect data!</div>`
+    : `<div class="responses-table-wrap"><table class="responses-table">
+        <thead><tr><th>#</th><th>Date</th><th>Group</th><th>Age</th><th>Gender</th>
+        <th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th>
+        <th>Q6</th><th>Q7</th><th>Q8</th><th>Q9</th><th>Q10</th><th>Comment</th></tr></thead>
+        <tbody>${filtered.map((r,i)=>`<tr>
+          <td>${i+1}</td>
+          <td>${new Date(r.created_at).toLocaleDateString('en-IN')}</td>
+          <td><span class="badge ${badgeClass[r.form_version]||''}">${groupLabel[r.form_version]||r.form_version}</span></td>
+          <td>${r.age||'—'}</td><td>${r.gender||'—'}</td>
+          <td>${r.q1||'—'}</td><td>${r.q2||'—'}</td><td>${r.q3||'—'}</td>
+          <td>${r.q4||'—'}</td><td>${r.q5||'—'}</td><td>${r.q6||'—'}</td>
+          <td>${r.q7||'—'}</td><td>${r.q8||'—'}</td><td>${r.q9||'—'}</td>
+          <td>${r.q10||'—'}</td><td>${r.q11||'—'}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>`
+
+  return `<div class="admin-wrap">
     <div class="admin-header">
-      <div>
-        <h2>Survey Responses</h2>
-        <p>All WOK IN survey submissions from Supabase</p>
-      </div>
+      <div><h2>Survey Responses</h2><p>All WOK IN survey submissions</p></div>
       <button class="refresh-btn" onclick="loadAdminData()">Refresh</button>
     </div>
     <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-label">Total responses</div>
-        <div class="stat-value">${adminData.length}</div>
-        <div class="stat-sub">All age groups</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Gen Z (10–19)</div>
-        <div class="stat-value">${counts.teen}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Young Adults (20–28)</div>
-        <div class="stat-value">${counts.young}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Professionals (29–38)</div>
-        <div class="stat-value">${counts.pro}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Adults (39–45)</div>
-        <div class="stat-value">${counts.adult}</div>
-      </div>
+      <div class="stat-card"><div class="stat-label">Total responses</div><div class="stat-value">${adminData.length}</div></div>
+      <div class="stat-card"><div class="stat-label">Gen Z (10–19)</div><div class="stat-value">${counts.teen}</div></div>
+      <div class="stat-card"><div class="stat-label">Young Adults (20–28)</div><div class="stat-value">${counts.young}</div></div>
+      <div class="stat-card"><div class="stat-label">Professionals (29–38)</div><div class="stat-value">${counts.pro}</div></div>
+      <div class="stat-card"><div class="stat-label">Adults (39–45)</div><div class="stat-value">${counts.adult}</div></div>
     </div>
     <div class="filter-row">
-      ${[['all','All'],['teen','Gen Z'],['young','Young Adults'],['pro','Professionals'],['adult','Adults']].map(([v,l]) =>
-        `<button class="filter-btn ${adminFilter===v?'active':''}" onclick="setFilter('${v}')">${l}</button>`
+      ${[['all','All'],['teen','Gen Z'],['young','Young Adults'],['pro','Professionals'],['adult','Adults']].map(([v,l])=>
+        `<button class="filter-btn ${adminFilter===v?'active':''}" onclick="filterAdmin('${v}')">${l}</button>`
       ).join('')}
     </div>
-    <div id="admin-table-wrap">
-      ${renderTable(filtered)}
-    </div>
+    ${tableHTML}
   </div>`
 }
 
-function renderTable(data) {
-  if (!data.length) return `<div class="empty-state">No responses yet. Share the survey link to collect data!</div>`
-  const badgeClass = { teen:'badge-teen', young:'badge-young', pro:'badge-pro', adult:'badge-adult' }
-  const groupLabel = { teen:'Gen Z', young:'Young Adults', pro:'Professionals', adult:'Adults' }
-  return `
-  <div class="responses-table-wrap">
-    <table class="responses-table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Date</th>
-          <th>Group</th>
-          <th>Age</th>
-          <th>Gender</th>
-          <th>Q1</th>
-          <th>Q2</th>
-          <th>Q3</th>
-          <th>Q4</th>
-          <th>Q5</th>
-          <th>Q6</th>
-          <th>Q7</th>
-          <th>Q8</th>
-          <th>Q9</th>
-          <th>Q10</th>
-          <th>Comment</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${data.map((r,i) => `
-          <tr>
-            <td>${i+1}</td>
-            <td>${new Date(r.created_at).toLocaleDateString('en-IN')}</td>
-            <td><span class="badge ${badgeClass[r.form_version]||''}">${groupLabel[r.form_version]||r.form_version}</span></td>
-            <td>${r.age||'—'}</td>
-            <td>${r.gender||'—'}</td>
-            <td>${r.q1||'—'}</td>
-            <td>${r.q2||'—'}</td>
-            <td>${r.q3||'—'}</td>
-            <td>${r.q4||'—'}</td>
-            <td>${r.q5||'—'}</td>
-            <td>${r.q6||'—'}</td>
-            <td>${r.q7||'—'}</td>
-            <td>${r.q8||'—'}</td>
-            <td>${r.q9||'—'}</td>
-            <td>${r.q10||'—'}</td>
-            <td>${r.q11||'—'}</td>
-          </tr>`).join('')}
-      </tbody>
-    </table>
-  </div>`
-}
-
-// ─── LOGIC ───────────────────────────────────────────────────────────────────
+// ── HELPERS ───────────────────────────────────────────────────────────────────
 
 function countAnswered() {
   let n = 0
   if (answers.age) n++
   if (answers.gender) n++
-  forms[currentFormIdx].questions.filter(q=>!q.optional).forEach(q => { if(answers[q.id]!==undefined && answers[q.id]!=='') n++ })
+  forms[currentFormIdx].questions.filter(q=>!q.optional).forEach(q=>{
+    if (answers[q.id] !== undefined && answers[q.id] !== '') n++
+  })
   return n
 }
 
+// ── GLOBAL HANDLERS ───────────────────────────────────────────────────────────
+
 window.navigate = function(page) {
   currentPage = page
-  render()
   window.scrollTo(0,0)
+  render()
 }
 
 window.switchForm = function(i) {
@@ -380,74 +276,10 @@ window.switchForm = function(i) {
 
 window.setAnswer = function(id, val) {
   answers[id] = val
-
-  // Update progress
-  const totalQ = forms[currentFormIdx].questions.filter(q => !q.optional).length + 2
-  const answered = countAnswered()
-  const pct = Math.round((answered / totalQ) * 100)
-  const fill = document.querySelector('.progress-fill')
-  const info = document.querySelector('.progress-info span:last-child')
-  if (fill) fill.style.width = pct + '%'
-  if (info) info.textContent = `${answered} / ${totalQ} answered`
-
-  // Update option buttons for this question
-  document.querySelectorAll('.q-opt').forEach(b => {
-    const fn = b.getAttribute('onclick') || ''
-    if (fn.includes(`'${id}'`)) {
-      b.classList.remove('sel')
-      if (b.textContent.trim() === String(val)) {
-        b.classList.add('sel')
-      }
-    }
-  })
-
-  // Update rating buttons for this question
-  document.querySelectorAll('.r-btn').forEach(b => {
-    const fn = b.getAttribute('onclick') || ''
-    if (fn.includes(`'${id}'`)) {
-      b.classList.remove('sel')
-      if (parseInt(b.textContent.trim()) === parseInt(val)) {
-        b.classList.add('sel')
-      }
-    }
-  })
-}
-
-window.submitForm = async function() {
-  const form = forms[currentFormIdx]
-  const required = form.questions.filter(q => !q.optional)
-  const missing = required.filter(q => answers[q.id] === undefined || answers[q.id] === '')
-  if (!answers.age || !answers.gender) {
-    alert('Please fill in your age and gender to continue.')
-    return
-  }
-  if (missing.length > 0) {
-    alert(`Please answer all questions. ${missing.length} question(s) remaining.`)
-    return
-  }
-
-  const btn = document.getElementById('submit-btn')
-  if (btn) { btn.disabled = true; btn.textContent = 'Submitting...' }
-
-  const payload = {
-    form_version: form.id,
-    age: answers.age,
-    gender: answers.gender,
-    q1: answers.q1, q2: answers.q2, q3: answers.q3,
-    q4: answers.q4, q5: answers.q5, q6: answers.q6,
-    q7: String(answers.q7||''), q8: String(answers.q8||''),
-    q9: answers.q9, q10: String(answers.q10||''), q11: answers.q11||''
-  }
-
-  const { error } = await supabase.from('survey_responses').insert([payload])
-  if (error) {
-    alert('Something went wrong: ' + error.message)
-    if (btn) { btn.disabled = false; btn.textContent = 'Submit My Answers →' }
-    return
-  }
-  submitted = true
+  // Full re-render so sel classes are always in sync with state
+  const scrollY = window.scrollY
   render()
-  window.scrollTo(0,0)
+  window.scrollTo(0, scrollY)
 }
 
 window.resetSurvey = function() {
@@ -456,28 +288,43 @@ window.resetSurvey = function() {
   render()
 }
 
-window.setFilter = function(f) {
+window.filterAdmin = function(f) {
   adminFilter = f
-  const filtered = f === 'all' ? adminData : adminData.filter(r => r.form_version === f)
-  document.getElementById('admin-table-wrap').innerHTML = renderTable(filtered)
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'))
-  event.target.classList.add('active')
+  render()
 }
 
-async function loadAdminData() {
-  const wrap = document.getElementById('admin-table-wrap')
-  if (wrap) wrap.innerHTML = '<div class="loading">Loading responses...</div>'
-  const { data, error } = await supabase.from('survey_responses').select('*').order('created_at', { ascending: false })
+window.submitForm = async function() {
+  const form = forms[currentFormIdx]
+  const required = form.questions.filter(q=>!q.optional)
+  const missing = required.filter(q=>answers[q.id]===undefined||answers[q.id]==='')
+  if (!answers.age || !answers.gender) { alert('Please fill in your age and gender.'); return }
+  if (missing.length > 0) { alert(`Please answer all questions. ${missing.length} remaining.`); return }
+
+  const btn = document.getElementById('submit-btn')
+  if (btn) { btn.disabled = true; btn.textContent = 'Submitting...' }
+
+  const { error } = await supabase.from('survey_responses').insert([{
+    form_version: form.id,
+    age: answers.age, gender: answers.gender,
+    q1: answers.q1||'', q2: answers.q2||'', q3: answers.q3||'',
+    q4: answers.q4||'', q5: answers.q5||'', q6: answers.q6||'',
+    q7: String(answers.q7||''), q8: String(answers.q8||''),
+    q9: answers.q9||'', q10: String(answers.q10||''), q11: answers.q11||''
+  }])
+
   if (error) {
-    if (wrap) wrap.innerHTML = `<div class="empty-state">Error: ${error.message}</div>`
+    alert('Error: ' + error.message)
+    if (btn) { btn.disabled=false; btn.textContent='Submit My Answers →' }
     return
   }
-  adminData = data || []
-  document.querySelector('.stat-value').textContent = adminData.length
-  if (wrap) wrap.innerHTML = renderTable(adminFilter === 'all' ? adminData : adminData.filter(r => r.form_version === adminFilter))
+  submitted = true
+  render()
+  window.scrollTo(0,0)
 }
 
-function attachEvents() {}
+window.loadAdminData = async function() {
+  const { data, error } = await supabase.from('survey_responses').select('*').order('created_at',{ascending:false})
+  if (!error) { adminData = data||[]; render() }
+}
 
-// ─── INIT ────────────────────────────────────────────────────────────────────
 render()
