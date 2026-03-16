@@ -154,4 +154,219 @@ function renderSurvey() {
       qs += `<div class="q-grid">`
       q.opts.forEach((opt, oi) => {
         const sel = answers[q.id] === opt ? 'sel' : ''
-        qs += `<button class="q-opt ${sel}" data-qid="${q.id}" data-oi="${oi}" onclick="pickOpt(this)"
+        qs += `<button class="q-opt ${sel}" data-qid="${q.id}" data-oi="${oi}" onclick="pickOpt(this)">${opt}</button>`
+      })
+      qs += `</div>`
+    }
+    qs += `</div>`
+  })
+
+  return `<div class="survey-wrap">
+    <div class="age-tabs">
+      ${forms.map((f, i) => `
+        <button class="age-tab ${i === currentFormIdx ? 'active' : ''}" onclick="switchForm(${i})">
+          ${f.label}<span class="tab-range">${f.range}</span>
+        </button>`).join('')}
+    </div>
+    <div class="form-header">
+      <div class="form-header-icon">W</div>
+      <div><h2>WOK IN Survey</h2><p>${form.sub} · Takes 2 mins</p></div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-info"><span>Progress</span><span id="prog-text">${answered} / ${totalQ} answered</span></div>
+      <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:${pct}%"></div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-label">Basic Info</div>
+      <div class="q-text">Tell us a little about yourself</div>
+      <div class="two-col">
+        <div class="field-group"><label>Age</label>
+          <select onchange="setSelectAnswer('age', this.value, true)">
+            <option value="">Select age</option>
+            ${form.ageOpts.map(a => `<option value="${a}" ${answers.age == a ? 'selected' : ''}>${a}</option>`).join('')}
+          </select>
+        </div>
+        <div class="field-group"><label>Gender</label>
+          <select onchange="setSelectAnswer('gender', this.value, false)">
+            <option value="">Select gender</option>
+            ${['Male', 'Female', 'Non-binary', 'Prefer not to say'].map(g => `<option ${answers.gender === g ? 'selected' : ''}>${g}</option>`).join('')}
+          </select>
+        </div>
+      </div>
+    </div>
+    ${qs}
+    <button class="submit-btn" id="submit-btn" onclick="submitForm()">Submit My Answers →</button>
+  </div>`
+}
+
+function renderAdmin() {
+  const filtered = adminFilter === 'all' ? adminData : adminData.filter(r => r.form_version === adminFilter)
+  const counts = { teen: 0, young: 0, pro: 0, adult: 0 }
+  adminData.forEach(r => { if (counts[r.form_version] !== undefined) counts[r.form_version]++ })
+  const groupLabel = { teen: 'Gen Z', young: 'Young Adults', pro: 'Professionals', adult: 'Adults' }
+  const badgeClass = { teen: 'badge-teen', young: 'badge-young', pro: 'badge-pro', adult: 'badge-adult' }
+
+  const tableHTML = !filtered.length
+    ? `<div class="empty-state">No responses yet. Share the survey link to collect data!</div>`
+    : `<div class="responses-table-wrap"><table class="responses-table">
+        <thead><tr><th>#</th><th>Date</th><th>Group</th><th>Age</th><th>Gender</th>
+        <th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th>
+        <th>Q6</th><th>Q7</th><th>Q8</th><th>Q9</th><th>Q10</th><th>Comment</th></tr></thead>
+        <tbody>${filtered.map((r, i) => `<tr>
+          <td>${i + 1}</td>
+          <td>${new Date(r.created_at).toLocaleDateString('en-IN')}</td>
+          <td><span class="badge ${badgeClass[r.form_version] || ''}">${groupLabel[r.form_version] || r.form_version}</span></td>
+          <td>${r.age || '—'}</td><td>${r.gender || '—'}</td>
+          <td>${r.q1 || '—'}</td><td>${r.q2 || '—'}</td><td>${r.q3 || '—'}</td>
+          <td>${r.q4 || '—'}</td><td>${r.q5 || '—'}</td><td>${r.q6 || '—'}</td>
+          <td>${r.q7 || '—'}</td><td>${r.q8 || '—'}</td><td>${r.q9 || '—'}</td>
+          <td>${r.q10 || '—'}</td><td>${r.q11 || '—'}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>`
+
+  return `<div class="admin-wrap">
+    <div class="admin-header">
+      <div><h2>Survey Responses</h2><p>All WOK IN survey submissions</p></div>
+      <button class="refresh-btn" onclick="loadAdminData()">Refresh</button>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-label">Total responses</div><div class="stat-value">${adminData.length}</div></div>
+      <div class="stat-card"><div class="stat-label">Gen Z (10–19)</div><div class="stat-value">${counts.teen}</div></div>
+      <div class="stat-card"><div class="stat-label">Young Adults (20–28)</div><div class="stat-value">${counts.young}</div></div>
+      <div class="stat-card"><div class="stat-label">Professionals (29–38)</div><div class="stat-value">${counts.pro}</div></div>
+      <div class="stat-card"><div class="stat-label">Adults (39–45)</div><div class="stat-value">${counts.adult}</div></div>
+    </div>
+    <div class="filter-row">
+      ${[['all', 'All'], ['teen', 'Gen Z'], ['young', 'Young Adults'], ['pro', 'Professionals'], ['adult', 'Adults']].map(([v, l]) =>
+        `<button class="filter-btn ${adminFilter === v ? 'active' : ''}" onclick="filterAdmin('${v}')">${l}</button>`
+      ).join('')}
+    </div>
+    ${tableHTML}
+  </div>`
+}
+
+function countAnswered() {
+  let n = 0
+  if (answers.age) n++
+  if (answers.gender) n++
+  forms[currentFormIdx].questions.filter(q => !q.optional).forEach(q => {
+    if (answers[q.id] !== undefined && answers[q.id] !== '') n++
+  })
+  return n
+}
+
+function updateProgress() {
+  const totalQ = forms[currentFormIdx].questions.filter(q => !q.optional).length + 2
+  const answered = countAnswered()
+  const pct = Math.round((answered / totalQ) * 100)
+  const fill = document.getElementById('prog-fill')
+  const text = document.getElementById('prog-text')
+  if (fill) fill.style.width = pct + '%'
+  if (text) text.textContent = answered + ' / ' + totalQ + ' answered'
+}
+
+// ── GLOBAL HANDLERS ───────────────────────────────────────────────────────────
+
+window.goTo = function(page) {
+  currentPage = page
+  window.scrollTo(0, 0)
+  render()
+}
+
+window.switchForm = function(i) {
+  currentFormIdx = i
+  answers = {}
+  render()
+}
+
+window.pickOpt = function(btn) {
+  const qid = btn.getAttribute('data-qid')
+  const oi = parseInt(btn.getAttribute('data-oi'))
+  const form = forms[currentFormIdx]
+  const q = form.questions.find(q => q.id === qid)
+  if (!q) return
+  answers[qid] = q.opts[oi]
+  document.querySelectorAll(`.q-opt[data-qid="${qid}"]`).forEach((b, i) => {
+    b.classList.toggle('sel', i === oi)
+  })
+  updateProgress()
+}
+
+window.pickRating = function(btn) {
+  const qid = btn.getAttribute('data-qid')
+  const val = parseInt(btn.getAttribute('data-val'))
+  answers[qid] = val
+  document.querySelectorAll(`.r-btn[data-qid="${qid}"]`).forEach(b => {
+    b.classList.toggle('sel', parseInt(b.getAttribute('data-val')) === val)
+  })
+  updateProgress()
+}
+
+window.setTextAnswer = function(id, val) {
+  answers[id] = val
+  updateProgress()
+}
+
+window.setSelectAnswer = function(id, val, isNum) {
+  answers[id] = isNum ? parseInt(val) : val
+  updateProgress()
+}
+
+window.resetSurvey = function() {
+  submitted = false
+  answers = {}
+  render()
+}
+
+window.filterAdmin = function(f) {
+  adminFilter = f
+  render()
+}
+
+window.submitForm = async function() {
+  const form = forms[currentFormIdx]
+  const required = form.questions.filter(q => !q.optional)
+  const missing = required.filter(q => answers[q.id] === undefined || answers[q.id] === '')
+  if (!answers.age || !answers.gender) {
+    alert('Please fill in your age and gender.')
+    return
+  }
+  if (missing.length > 0) {
+    alert(`Please answer all questions. ${missing.length} question(s) still remaining.`)
+    return
+  }
+  const btn = document.getElementById('submit-btn')
+  if (btn) { btn.disabled = true; btn.textContent = 'Submitting...' }
+
+  const { error } = await supabase.from('survey_responses').insert([{
+    form_version: form.id,
+    age: answers.age,
+    gender: answers.gender,
+    q1: answers.q1 || '', q2: answers.q2 || '', q3: answers.q3 || '',
+    q4: answers.q4 || '', q5: answers.q5 || '', q6: answers.q6 || '',
+    q7: String(answers.q7 || ''), q8: String(answers.q8 || ''),
+    q9: answers.q9 || '', q10: String(answers.q10 || ''), q11: answers.q11 || ''
+  }])
+
+  if (error) {
+    alert('Error saving response: ' + error.message)
+    if (btn) { btn.disabled = false; btn.textContent = 'Submit My Answers →' }
+    return
+  }
+  submitted = true
+  render()
+  window.scrollTo(0, 0)
+}
+
+window.loadAdminData = async function() {
+  const { data, error } = await supabase
+    .from('survey_responses')
+    .select('*')
+    .order('created_at', { ascending: false })
+  if (!error) {
+    adminData = data || []
+    render()
+  }
+}
+
+render()
