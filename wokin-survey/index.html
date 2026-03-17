@@ -9,7 +9,7 @@
 <style>
 @font-face{font-family:'DonalMoty';src:url('https://creativefonts.org/wp-content/uploads/2024/donal-moty/DonalMoty.woff2') format('woff2')}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#1A2D5A;--navy2:#142247;--navy3:#0E1832;--yellow:#F5C518;--yellow2:#E8B800;--yellow3:#FFD740;--white:#FFFFFF;--off:#F7F7F2;--light:#EFEFEA;--gray:#888;--dark:#111;--red:#E8341A}
+:root{--navy:#1A2D5A;--navy2:#142247;--navy3:#0E1832;--yellow:#F5C518;--yellow2:#E8B800;--yellow3:#FFD740;--white:#FFFFFF;--off:#F7F7F2;--light:#EFEFEA;--gray:#888;--dark:#111;--red:#E8341A;--green:#25D366}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--off);color:var(--dark);overflow-x:hidden}
 .reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
@@ -20,6 +20,8 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--dark);over
 .reveal-right.visible{opacity:1;transform:translateX(0)}
 .stagger-1{transition-delay:.1s}.stagger-2{transition-delay:.2s}.stagger-3{transition-delay:.3s}
 .stagger-4{transition-delay:.4s}.stagger-5{transition-delay:.5s}.stagger-6{transition-delay:.6s}
+
+/* NAV */
 nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;border-bottom:3px solid var(--yellow)}
 .nlogo{display:flex;align-items:center;gap:10px;cursor:pointer;flex-shrink:0}
 .nlogo img{height:38px;width:auto;object-fit:contain}
@@ -38,12 +40,26 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .mob-link:hover{background:rgba(245,197,24,.15);color:var(--yellow)}
 .mob-cta{background:var(--yellow);color:var(--navy);border:none;padding:14px;border-radius:6px;font-size:14px;font-weight:900;cursor:pointer;font-family:inherit;margin-top:6px;width:100%;text-transform:uppercase;letter-spacing:1px}
 .page{display:none}.page.on{display:block}
+
+/* SOCIAL PROOF TICKER - NEW */
+.proof-bar{background:var(--navy2);border-bottom:1px solid rgba(245,197,24,.2);padding:8px 0;overflow:hidden;position:relative}
+.proof-ticker{display:flex;gap:0;animation:pticker 25s linear infinite;white-space:nowrap}
+.proof-ticker:hover{animation-play-state:paused}
+@keyframes pticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.proof-item{display:inline-flex;align-items:center;gap:8px;padding:0 2rem;font-size:12px;color:rgba(255,255,255,.7);font-weight:500}
+.proof-dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;animation:pulse 1.4s infinite}
+.proof-name{color:var(--yellow);font-weight:700}
+.proof-sep{color:rgba(255,255,255,.2);margin:0 .5rem}
+
+/* TICKER */
 .ticker-wrap{background:var(--yellow);overflow:hidden;padding:10px 0;border-bottom:2px solid var(--yellow2)}
 .ticker{display:flex;animation:ticker 20s linear infinite;white-space:nowrap}
 .ticker:hover{animation-play-state:paused}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .ticker-item{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--navy);letter-spacing:2px;padding:0 2rem;display:inline-flex;align-items:center;gap:1rem}
 .ticker-dot{width:8px;height:8px;border-radius:50%;background:var(--navy);display:inline-block;flex-shrink:0}
+
+/* HERO */
 .hero{background:var(--navy);padding:5rem 5% 4rem;position:relative;overflow:hidden}
 .hero-bg-text{position:absolute;bottom:-2rem;left:0;right:0;font-family:'Bebas Neue',sans-serif;font-size:clamp(6rem,18vw,20rem);color:rgba(245,197,24,.04);letter-spacing:4px;text-align:center;pointer-events:none;line-height:1;user-select:none}
 .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;z-index:2}
@@ -83,15 +99,21 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .hero-badge{background:var(--white);border-radius:8px;padding:10px 14px;position:absolute;bottom:50px;right:10px;z-index:10;text-align:center;box-shadow:3px 3px 0 var(--yellow)}
 .hb-num{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--navy);line-height:1}
 .hb-txt{font-size:10px;color:var(--gray);font-weight:700;text-transform:uppercase}
+
+/* STATS */
 .stats{background:var(--yellow);border-top:3px solid var(--yellow2);border-bottom:3px solid var(--yellow2)}
 .stats-inner{max-width:1200px;margin:0 auto;padding:1.2rem 5%;display:grid;grid-template-columns:repeat(3,1fr)}
 .stat-item{text-align:center;padding:1.2rem .5rem;position:relative}
 .stat-item:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;bottom:20%;width:2px;background:var(--yellow2)}
 .stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--navy);line-height:1}
 .stat-lbl{font-size:11px;color:var(--navy2);font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+
+/* SECTIONS */
 .sec-eyebrow{display:inline-block;background:var(--yellow);color:var(--navy);font-size:10px;font-weight:900;padding:4px 12px;border-radius:3px;margin-bottom:.8rem;text-transform:uppercase;letter-spacing:.12em}
 .sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,5rem);color:var(--navy);letter-spacing:2px;line-height:.95;margin-bottom:.5rem}
 .sec-sub{font-size:14px;color:var(--gray);margin-bottom:2.5rem;max-width:500px;line-height:1.7}
+
+/* WHY */
 .why-section{background:var(--off);padding:5rem 5%}
 .why-inner{max-width:1200px;margin:0 auto}
 .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
@@ -101,6 +123,8 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .why-icon{width:52px;height:52px;border-radius:6px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:22px}
 .why-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--navy);margin-bottom:6px;letter-spacing:1px}
 .why-card p{font-size:13px;color:var(--gray);line-height:1.6}
+
+/* MENU */
 .menu-section{background:var(--navy);padding:5rem 5%;position:relative;overflow:hidden}
 .menu-section::before{content:'MENU';position:absolute;bottom:-3rem;right:-2rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,20vw,22rem);color:rgba(245,197,24,.05);pointer-events:none;line-height:1}
 .menu-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
@@ -118,6 +142,51 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .menu-spice{display:flex;gap:2px}
 .spice-dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
 .spice-dot.off{background:rgba(255,255,255,.2)}
+
+/* LOYALTY SECTION - NEW */
+.loyalty-section{background:var(--navy3);padding:5rem 5%;position:relative;overflow:hidden}
+.loyalty-section::before{content:'POINTS';position:absolute;bottom:-2rem;right:-1rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(6rem,15vw,18rem);color:rgba(245,197,24,.04);pointer-events:none;line-height:1}
+.loyalty-inner{max-width:1100px;margin:0 auto;position:relative;z-index:2}
+.loyalty-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.loyalty-info h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,5rem);color:var(--yellow);letter-spacing:2px;line-height:.95;margin-bottom:.8rem}
+.loyalty-info p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:1.5rem}
+.pts-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1.5rem}
+.pts-card{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:8px;padding:1rem;text-align:center;transition:border-color .2s}
+.pts-card:hover{border-color:var(--yellow)}
+.pts-val{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--yellow);line-height:1;margin-bottom:3px}
+.pts-lbl{font-size:11px;color:rgba(255,255,255,.5);font-weight:600;line-height:1.3}
+.loyalty-tiers{display:flex;flex-direction:column;gap:8px;margin-top:.5rem}
+.tier-row{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.04);border-radius:6px;padding:10px 14px;border:1px solid rgba(255,255,255,.08)}
+.tier-badge{width:36px;height:36px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.tier-info h4{font-size:13px;font-weight:800;color:var(--white);margin-bottom:1px}
+.tier-info p{font-size:11px;color:rgba(255,255,255,.4)}
+.loyalty-form{background:rgba(255,255,255,.05);border:2px solid rgba(245,197,24,.2);border-radius:10px;padding:2rem}
+.loyalty-form h3{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--yellow);letter-spacing:1px;margin-bottom:.4rem}
+.loyalty-form p{font-size:13px;color:rgba(255,255,255,.55);margin-bottom:1.5rem;line-height:1.6}
+.lf-field{display:flex;flex-direction:column;gap:5px;margin-bottom:1rem}
+.lf-field label{font-size:10px;font-weight:800;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.07em}
+.lf-input{width:100%;padding:11px 14px;border:2px solid rgba(255,255,255,.1);border-radius:5px;font-family:inherit;font-size:13px;color:var(--white);background:rgba(255,255,255,.07);outline:none;transition:border-color .15s}
+.lf-input:focus{border-color:var(--yellow)}
+.lf-input::placeholder{color:rgba(255,255,255,.3)}
+.lf-btn{width:100%;background:var(--yellow);color:var(--navy);border:none;padding:14px;border-radius:5px;font-size:13px;font-weight:900;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:1px;transition:all .15s;margin-top:.5rem}
+.lf-btn:hover{background:var(--yellow3);transform:translateY(-1px)}
+.lf-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+
+/* BADGE SCREEN - NEW */
+.badge-screen{text-align:center;padding:2rem 1rem;display:none}
+.badge-card{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);border:3px solid var(--yellow);border-radius:16px;padding:2rem;max-width:360px;margin:0 auto;position:relative;overflow:hidden}
+.badge-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(245,197,24,.08) 0%,transparent 60%);pointer-events:none}
+.badge-icon{font-size:60px;margin-bottom:.8rem;display:block;animation:bounceIn .6s ease}
+@keyframes bounceIn{0%{transform:scale(0)}80%{transform:scale(1.15)}100%{transform:scale(1)}}
+.badge-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--yellow);letter-spacing:2px;margin-bottom:.3rem}
+.badge-name{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--white);letter-spacing:1px;margin-bottom:.3rem}
+.badge-pts{background:var(--yellow);color:var(--navy);font-family:'Bebas Neue',sans-serif;font-size:1.8rem;padding:8px 20px;border-radius:6px;display:inline-block;margin:.8rem 0;letter-spacing:2px}
+.badge-sub{font-size:12px;color:rgba(255,255,255,.5);line-height:1.5;margin-bottom:1.2rem}
+.badge-share-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.badge-wa{background:var(--green);color:#fff;border:none;padding:10px 18px;border-radius:5px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px}
+.badge-cp{background:var(--yellow);color:var(--navy);border:none;padding:10px 18px;border-radius:5px;font-size:12px;font-weight:900;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px}
+
+/* WAITLIST */
 .waitlist-section{background:var(--yellow);padding:5rem 5%;position:relative;overflow:hidden}
 .waitlist-section::before{content:'JOIN';position:absolute;bottom:-3rem;right:-1rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,20vw,22rem);color:rgba(26,45,90,.07);pointer-events:none;line-height:1}
 .waitlist-inner{max-width:1000px;margin:0 auto;position:relative;z-index:2}
@@ -143,6 +212,8 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .waitlist-count{background:var(--navy);color:var(--yellow);border-radius:6px;padding:12px 16px;display:inline-flex;align-items:center;gap:10px;margin-top:1.5rem}
 .wc-num{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;line-height:1}
 .wc-txt{font-size:11px;color:rgba(245,197,24,.7);font-weight:600;line-height:1.3}
+
+/* PEOPLE */
 .people-section{background:var(--light);padding:5rem 5%}
 .people-inner{max-width:1200px;margin:0 auto}
 .people-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:2.5rem}
@@ -152,6 +223,8 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .person-card h4{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;margin-bottom:2px;color:var(--navy);letter-spacing:1px}
 .person-role{font-size:10px;color:var(--yellow);font-weight:900;margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em;background:var(--navy);display:inline-block;padding:2px 8px;border-radius:3px}
 .person-quote{font-size:13px;color:var(--gray);line-height:1.6;font-style:italic}
+
+/* INSTA */
 .insta-section{background:var(--white);padding:5rem 5%}
 .insta-inner{max-width:1200px;margin:0 auto}
 .insta-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
@@ -166,6 +239,8 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .insta-overlay{position:absolute;inset:0;background:rgba(26,45,90,.9);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;border-radius:4px}
 .insta-card:hover .insta-overlay{opacity:1}
 .insta-overlay span{color:var(--yellow);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+
+/* REF */
 .ref-section{background:var(--navy);padding:5rem 5%;position:relative;overflow:hidden}
 .ref-section::after{content:'SHARE';position:absolute;bottom:-3rem;left:-1rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,18vw,20rem);color:rgba(245,197,24,.04);pointer-events:none;line-height:1}
 .ref-inner{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:2}
@@ -176,12 +251,14 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .ref-step h4{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--white);margin-bottom:5px;letter-spacing:1px}
 .ref-step p{font-size:12px;color:rgba(255,255,255,.55);line-height:1.5}
 .share-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.btn-wa{background:#25D366;color:#fff;border:none;padding:14px 22px;border-radius:5px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
+.btn-wa{background:var(--green);color:#fff;border:none;padding:14px 22px;border-radius:5px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
 .btn-wa:hover{background:#1ebe5d;transform:translateY(-1px)}
 .btn-em{background:var(--white);color:var(--navy);border:2px solid var(--light);padding:13px 20px;border-radius:5px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
 .btn-em:hover{border-color:var(--yellow);transform:translateY(-1px)}
 .btn-cp{background:var(--yellow);color:var(--navy);border:none;padding:14px 22px;border-radius:5px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
 .btn-cp:hover{background:var(--yellow3);transform:translateY(-1px)}
+
+/* CTA */
 .cta-section{background:var(--yellow);padding:5rem 5%;text-align:center;position:relative;overflow:hidden}
 .cta-section::before{content:'WOK IN';position:absolute;top:50%;left:50%;translate:-50% -50%;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,20vw,22rem);color:rgba(26,45,90,.08);pointer-events:none;white-space:nowrap}
 .cta-inner{max-width:700px;margin:0 auto;position:relative;z-index:2}
@@ -191,6 +268,8 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .footer-brand{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--yellow);letter-spacing:3px}
 .footer-tag{font-size:12px;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+
+/* SURVEY */
 .survey-section{background:var(--off);padding:4rem 5%}
 .survey-inner{max-width:740px;margin:0 auto}
 .survey-top{text-align:center;margin-bottom:2rem}
@@ -199,7 +278,7 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
 .share-bar{background:var(--navy);border-radius:6px;padding:14px 18px;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .share-bar p{font-size:13px;color:var(--yellow);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
 .share-bar-btns{display:flex;gap:7px;flex-wrap:wrap}
-.sbar-wa{background:#25D366;color:#fff;border:none;padding:7px 13px;border-radius:4px;font-size:11px;font-weight:800;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.4px}
+.sbar-wa{background:var(--green);color:#fff;border:none;padding:7px 13px;border-radius:4px;font-size:11px;font-weight:800;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.4px}
 .sbar-em{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);padding:6px 11px;border-radius:4px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.4px}
 .sbar-cp{background:var(--yellow);color:var(--navy);border:none;padding:7px 13px;border-radius:4px;font-size:11px;font-weight:800;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.4px}
 .age-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.5rem;padding:8px;background:var(--white);border-radius:8px;border:2px solid var(--light)}
@@ -251,11 +330,25 @@ textarea{resize:vertical;min-height:70px}
 .subbtn{width:100%;background:var(--yellow);color:var(--navy);border:none;border-radius:6px;padding:16px;font-size:14px;font-weight:900;cursor:pointer;font-family:inherit;transition:all .15s;letter-spacing:1px;text-transform:uppercase;touch-action:manipulation}
 .subbtn:hover{background:var(--yellow3);transform:translateY(-1px)}
 .subbtn:disabled{opacity:.6;cursor:not-allowed;transform:none}
-.ty{text-align:center;padding:3.5rem 1.5rem;background:var(--white);border-radius:10px;border:2px solid var(--light)}
-.tycheck{width:76px;height:76px;border-radius:6px;background:var(--navy);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 1.3rem}
+
+/* THANK YOU + BADGE UNLOCK */
+.ty{text-align:center;padding:3rem 1.5rem;background:var(--white);border-radius:10px;border:2px solid var(--light)}
+.tycheck{width:76px;height:76px;border-radius:6px;background:var(--navy);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 1rem}
 .ty h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:2px;margin-bottom:8px;color:var(--navy)}
-.ty p{color:var(--gray);font-size:14px;line-height:1.7;max-width:380px;margin:0 auto 1.5rem}
-.ty-share{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.ty p{color:var(--gray);font-size:14px;line-height:1.7;max-width:380px;margin:0 auto 1rem}
+.ty-badge-unlock{background:var(--navy);border-radius:10px;padding:1.5rem;margin:1rem 0;position:relative;overflow:hidden}
+.ty-badge-unlock::before{content:'';position:absolute;top:-30%;left:-10%;width:120%;height:160%;background:radial-gradient(ellipse,rgba(245,197,24,.12) 0%,transparent 60%);pointer-events:none}
+.ty-badge-unlock-inner{position:relative;z-index:1}
+.ty-badge-row{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
+.ty-badge-icon{font-size:52px;animation:bounceIn .5s ease}
+.ty-badge-info h3{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--yellow);letter-spacing:1px;margin-bottom:2px}
+.ty-badge-info p{font-size:12px;color:rgba(255,255,255,.6);line-height:1.4}
+.ty-pts-display{background:var(--yellow);color:var(--navy);border-radius:6px;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.ty-pts-num{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1}
+.ty-pts-break{font-size:11px;color:var(--navy2);font-weight:700;text-align:right;line-height:1.4}
+.ty-share{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:1rem}
+
+/* PIN */
 .pin-wrap{min-height:100vh;background:var(--navy);display:flex;align-items:center;justify-content:center;padding:1.5rem}
 .pin-card{background:var(--white);border-radius:10px;border:3px solid var(--yellow);padding:2.5rem 2rem;max-width:380px;width:100%;text-align:center}
 .pin-card h2{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;letter-spacing:2px;margin-bottom:.4rem;color:var(--navy)}
@@ -269,6 +362,8 @@ textarea{resize:vertical;min-height:70px}
 .pin-btn:active{transform:scale(.95)}
 .pin-small{font-size:11px!important;font-family:'Inter',sans-serif!important;font-weight:700!important}
 .pin-error{color:var(--red);font-size:13px;font-weight:700;min-height:20px;margin-top:.4rem;text-transform:uppercase;letter-spacing:.5px}
+
+/* ADMIN */
 .admin-bg{background:var(--off);min-height:100vh;padding:2rem 5%}
 .admin-wrap{max-width:1200px;margin:0 auto}
 .ahdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.8rem;flex-wrap:wrap;gap:1rem}
@@ -279,16 +374,18 @@ textarea{resize:vertical;min-height:70px}
 .rfbtn:hover{background:var(--navy2)}
 .export-btn{background:var(--yellow);color:var(--navy);border:none;padding:10px 20px;border-radius:5px;font-size:12px;font-weight:900;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
 .export-btn:hover{background:var(--yellow3)}
+.wa-btn{background:var(--green);color:#fff;border:none;padding:10px 20px;border-radius:5px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
+.wa-btn:hover{background:#1ebe5d}
 .lock-btn{background:transparent;border:2px solid var(--light);color:var(--gray);padding:9px 16px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
 .lock-btn:hover{border-color:var(--navy);color:var(--navy)}
 .admin-tabs{display:flex;gap:8px;margin-bottom:1.5rem;border-bottom:2px solid var(--light);padding-bottom:1rem;flex-wrap:wrap}
 .admin-tab{background:transparent;border:2px solid var(--light);color:var(--gray);padding:8px 18px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
 .admin-tab.active{background:var(--navy);color:var(--yellow);border-color:var(--navy)}
-.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:1.8rem}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:1.8rem}
 .sc{background:var(--white);border:2px solid var(--light);border-radius:8px;padding:1.1rem 1.3rem;position:relative;overflow:hidden}
 .sc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--yellow)}
 .sc .sl{font-size:10px;font-weight:800;color:var(--gray);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
-.sc .sv{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--navy);line-height:1}
+.sc .sv{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--navy);line-height:1}
 .charts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-bottom:1.8rem}
 .chart-card{background:var(--white);border:2px solid var(--light);border-radius:8px;padding:1.3rem}
 .chart-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--navy);margin-bottom:1rem;letter-spacing:1px}
@@ -302,7 +399,7 @@ th{text-align:left;padding:11px 12px;background:var(--navy);border-bottom:2px so
 td{padding:11px 12px;border-bottom:1px solid var(--light);color:var(--dark);vertical-align:top;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:var(--off)}
-.badge{display:inline-block;padding:3px 9px;border-radius:3px;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.badge-pill{display:inline-block;padding:3px 9px;border-radius:3px;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
 .bt{background:var(--navy);color:var(--yellow)}.by{background:#1a5e2a;color:#7be89a}
 .bp{background:#5e2000;color:#ffb77a}.ba{background:#4a1a4a;color:#e8a0e8}
 .empty{text-align:center;padding:3rem;color:var(--gray);font-size:14px;text-transform:uppercase;letter-spacing:.5px;font-weight:700}
@@ -312,16 +409,27 @@ tr:hover td{background:var(--off)}
 .waitlist-tbl td{padding:11px 12px;border-bottom:1px solid var(--light);color:var(--dark)}
 .waitlist-tbl tr:last-child td{border-bottom:none}
 .waitlist-tbl tr:hover td{background:var(--off)}
-.debug-box{background:var(--white);border:2px solid var(--yellow);border-radius:8px;padding:1.2rem;margin-bottom:1.5rem;font-size:12px;font-family:monospace;color:var(--navy);line-height:1.8;display:none}
-.debug-box.show{display:block}
+
+/* WA MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:500;display:flex;align-items:center;justify-content:center;padding:1rem}
+.modal-box{background:var(--white);border-radius:10px;border:3px solid var(--yellow);padding:2rem;max-width:560px;width:100%;max-height:80vh;overflow-y:auto}
+.modal-box h3{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--navy);letter-spacing:1px;margin-bottom:.5rem}
+.modal-box p{font-size:13px;color:var(--gray);margin-bottom:1.2rem;line-height:1.6}
+.modal-nums{background:var(--off);border-radius:6px;padding:1rem;font-size:12px;color:var(--dark);font-family:monospace;white-space:pre-wrap;word-break:break-all;max-height:220px;overflow-y:auto;border:1px solid var(--light);margin-bottom:1rem;line-height:1.8}
+.modal-btns{display:flex;gap:8px;flex-wrap:wrap}
+.modal-copy{background:var(--yellow);color:var(--navy);border:none;padding:11px 20px;border-radius:5px;font-size:12px;font-weight:900;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px}
+.modal-close{background:transparent;border:2px solid var(--light);color:var(--gray);padding:10px 18px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px}
+
 .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--yellow);padding:12px 24px;border-radius:5px;font-size:12px;font-weight:800;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none;text-transform:uppercase;letter-spacing:1px;border:2px solid var(--yellow)}
 .toast.show{opacity:1}
+
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;gap:2rem}
   .hero-visual{display:none}
   .hero h1{font-size:clamp(3.5rem,10vw,6rem)}
   .waitlist-grid{grid-template-columns:1fr}
   .waitlist-perks{order:-1}
+  .loyalty-grid{grid-template-columns:1fr}
 }
 @media(max-width:640px){
   nav{padding:0 4%;height:60px}
@@ -333,11 +441,12 @@ tr:hover td{background:var(--off)}
   .hero-btns{flex-direction:column}
   .btn-y,.btn-w{width:100%;text-align:center}
   .live-ctr{width:100%}
-  .why-section,.menu-section,.people-section,.insta-section,.ref-section,.cta-section,.waitlist-section{padding:3.5rem 4%}
+  .why-section,.menu-section,.people-section,.insta-section,.ref-section,.cta-section,.waitlist-section,.loyalty-section{padding:3.5rem 4%}
   .why-grid,.menu-grid,.people-grid{grid-template-columns:1fr 1fr;gap:.9rem}
+  .pts-grid{grid-template-columns:1fr 1fr}
   .insta-grid{grid-template-columns:repeat(3,1fr)}
   .ref-steps{grid-template-columns:1fr}
-  .share-row{flex-direction:column;align-items:center}
+  .share-row,.badge-share-row{flex-direction:column;align-items:center}
   .btn-wa,.btn-em,.btn-cp{width:100%;justify-content:center}
   .survey-section{padding:2rem 4%}
   .age-tabs{gap:5px;padding:6px}
@@ -371,7 +480,19 @@ tr:hover td{background:var(--off)}
 </style>
 </head>
 <body>
+
 <div class="toast" id="toast">Copied!</div>
+<div class="modal-overlay" id="wa-modal" style="display:none" onclick="if(event.target===this)closeWA()">
+  <div class="modal-box">
+    <h3>📲 WHATSAPP BROADCAST LIST</h3>
+    <p>All phone numbers from survey responses and waitlist. Copy and paste into WhatsApp Broadcast to reach your entire audience at once.</p>
+    <div class="modal-nums" id="wa-nums">Loading...</div>
+    <div class="modal-btns">
+      <button class="modal-copy" onclick="copyWANums()">Copy All Numbers</button>
+      <button class="modal-close" onclick="closeWA()">Close</button>
+    </div>
+  </div>
+</div>
 
 <nav>
   <div class="nlogo" onclick="goTo('landing')">
@@ -395,24 +516,47 @@ tr:hover td{background:var(--off)}
   <button class="mob-cta" onclick="goTo('survey');toggleMenu()">Take Survey →</button>
 </div>
 
-<!-- LANDING -->
+<!-- LANDING PAGE -->
 <div id="pg-landing" class="page on">
+
+  <!-- SOCIAL PROOF BAR -->
+  <div class="proof-bar">
+    <div class="proof-ticker" id="proof-ticker">
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Rahul</span> from Hitech City just responded<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Priya</span> from Gachibowli joined the waitlist<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Vikram</span> from Financial District just responded<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Ananya</span> from Madhapur earned 150 WOK IN points<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Kiran</span> from KPHB just responded<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Sneha</span> from Kondapur joined the waitlist<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Arjun</span> from Banjara Hills just responded<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Meena</span> from Jubilee Hills earned 200 points<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Rahul</span> from Hitech City just responded<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Priya</span> from Gachibowli joined the waitlist<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Vikram</span> from Financial District just responded<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Ananya</span> from Madhapur earned 150 WOK IN points<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Kiran</span> from KPHB just responded<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Sneha</span> from Kondapur joined the waitlist<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Arjun</span> from Banjara Hills just responded<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Meena</span> from Jubilee Hills earned 200 points<span class="proof-sep">·</span></span>
+    </div>
+  </div>
+
   <div class="ticker-wrap">
     <div class="ticker">
       <span class="ticker-item">WOK IN <span class="ticker-dot"></span></span>
       <span class="ticker-item">BOLD FLAVOR <span class="ticker-dot"></span></span>
       <span class="ticker-item">INDIAN SOUL <span class="ticker-dot"></span></span>
       <span class="ticker-item">CHINESE WOK <span class="ticker-dot"></span></span>
-      <span class="ticker-item">IT PARK FIRST <span class="ticker-dot"></span></span>
+      <span class="ticker-item">EARN POINTS <span class="ticker-dot"></span></span>
       <span class="ticker-item">JOIN WAITLIST <span class="ticker-dot"></span></span>
-      <span class="ticker-item">SHAPE THE MENU <span class="ticker-dot"></span></span>
+      <span class="ticker-item">IT PARK FIRST <span class="ticker-dot"></span></span>
       <span class="ticker-item">WOK IN <span class="ticker-dot"></span></span>
       <span class="ticker-item">BOLD FLAVOR <span class="ticker-dot"></span></span>
       <span class="ticker-item">INDIAN SOUL <span class="ticker-dot"></span></span>
       <span class="ticker-item">CHINESE WOK <span class="ticker-dot"></span></span>
-      <span class="ticker-item">IT PARK FIRST <span class="ticker-dot"></span></span>
+      <span class="ticker-item">EARN POINTS <span class="ticker-dot"></span></span>
       <span class="ticker-item">JOIN WAITLIST <span class="ticker-dot"></span></span>
-      <span class="ticker-item">SHAPE THE MENU <span class="ticker-dot"></span></span>
+      <span class="ticker-item">IT PARK FIRST <span class="ticker-dot"></span></span>
     </div>
   </div>
 
@@ -425,7 +569,7 @@ tr:hover td{background:var(--off)}
         <p class="hero-sub reveal stagger-2">Chinese wok cooking meets Indian spices. Fast, bold, and cooked right in front of you. Help us build the menu your IT park deserves.</p>
         <div class="hero-btns reveal stagger-3">
           <button class="btn-y" onclick="goTo('survey')">Shape the Menu →</button>
-          <button class="btn-w" onclick="document.getElementById('waitlist-anchor').scrollIntoView({behavior:'smooth'})">Join Waitlist</button>
+          <button class="btn-w" onclick="document.getElementById('loyalty-anchor').scrollIntoView({behavior:'smooth'})">Earn Points 🏆</button>
         </div>
         <div class="live-ctr reveal stagger-4">
           <div class="lc-dot"></div>
@@ -484,7 +628,7 @@ tr:hover td{background:var(--off)}
       <div class="why-grid">
         <div class="why-card reveal stagger-1"><div class="why-icon">🥢</div><h3>2 Minutes</h3><p>Quick questions tailored for your age group</p></div>
         <div class="why-card reveal stagger-2"><div class="why-icon">🌶️</div><h3>Shape the Menu</h3><p>Your answers influence our dishes, spice levels, and pricing</p></div>
-        <div class="why-card reveal stagger-3"><div class="why-icon">🏆</div><h3>Founding Member</h3><p>Early responders get exclusive launch discounts</p></div>
+        <div class="why-card reveal stagger-3"><div class="why-icon">🏆</div><h3>Earn Points</h3><p>Get WOK IN loyalty points before we even launch — redeem on day one</p></div>
         <div class="why-card reveal stagger-4"><div class="why-icon">📍</div><h3>IT Park First</h3><p>Your feedback decides where our food truck parks next</p></div>
       </div>
     </div>
@@ -510,15 +654,77 @@ tr:hover td{background:var(--off)}
     </div>
   </div>
 
+  <!-- LOYALTY POINTS SECTION -->
+  <div class="loyalty-section" id="loyalty-anchor">
+    <div class="loyalty-inner">
+      <div class="loyalty-grid">
+        <div class="loyalty-info reveal-left">
+          <span class="sec-eyebrow" style="background:rgba(245,197,24,.15);color:var(--yellow)">Earn Before Launch</span>
+          <h2>CLAIM YOUR<br>WOK IN<br>POINTS NOW</h2>
+          <p>Don't wait for launch day to start earning. Claim free loyalty points right now just for being an early supporter — redeem them for free dishes, discounts, and exclusive combos when WOK IN opens.</p>
+          <div class="pts-grid">
+            <div class="pts-card"><div class="pts-val">100</div><div class="pts-lbl">Points for taking the survey</div></div>
+            <div class="pts-card"><div class="pts-val">50</div><div class="pts-lbl">Points for joining waitlist</div></div>
+            <div class="pts-card"><div class="pts-val">75</div><div class="pts-lbl">Points for sharing with 3 friends</div></div>
+            <div class="pts-card"><div class="pts-val">25</div><div class="pts-lbl">Points just for signing up here</div></div>
+          </div>
+          <div class="loyalty-tiers">
+            <div class="tier-row"><div class="tier-badge" style="background:rgba(255,255,255,.08)">🥢</div><div class="tier-info"><h4>Wok Rookie — 0 to 99 pts</h4><p>Welcome to the WOK IN family</p></div></div>
+            <div class="tier-row"><div class="tier-badge" style="background:rgba(245,197,24,.15)">🌶️</div><div class="tier-info"><h4>Spice Lover — 100 to 299 pts</h4><p>10% off every order on launch day</p></div></div>
+            <div class="tier-row"><div class="tier-badge" style="background:rgba(232,52,26,.2)">🔥</div><div class="tier-info"><h4>Wok Master — 300+ pts</h4><p>Free dish + 20% off on launch day</p></div></div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="loyalty-form" id="lf-form-wrap">
+            <h3>CLAIM YOUR POINTS</h3>
+            <p>Sign up below to lock in your pre-launch loyalty points. We'll credit them to your account on launch day.</p>
+            <div class="lf-field"><label>Your Name</label><input type="text" id="lf-name" class="lf-input" placeholder="Rahul Kumar"></div>
+            <div class="lf-field"><label>Phone or Email</label><input type="text" id="lf-contact" class="lf-input" placeholder="9876543210 or rahul@company.com"></div>
+            <div class="lf-field"><label>Your IT Park</label><input type="text" id="lf-park" class="lf-input" placeholder="Hitech City, Hyderabad" list="park-suggestions">
+              <datalist id="park-suggestions">
+                <option value="Hitech City, Hyderabad">
+                <option value="Gachibowli, Hyderabad">
+                <option value="Financial District, Hyderabad">
+                <option value="Madhapur, Hyderabad">
+                <option value="Kondapur, Hyderabad">
+                <option value="KPHB, Hyderabad">
+                <option value="Banjara Hills, Hyderabad">
+                <option value="Jubilee Hills, Hyderabad">
+                <option value="Begumpet, Hyderabad">
+                <option value="Secunderabad, Hyderabad">
+                <option value="Nallagandla, Hyderabad">
+                <option value="Manikonda, Hyderabad">
+              </datalist>
+            </div>
+            <button class="lf-btn" id="lf-btn" onclick="claimPoints()">Claim 25 Points Free →</button>
+          </div>
+          <div class="badge-screen" id="lf-badge">
+            <div class="badge-card">
+              <span class="badge-icon" id="lf-badge-icon">🌶️</span>
+              <div class="badge-title">WOK IN LOYALTY</div>
+              <div class="badge-name" id="lf-badge-name">FOUNDING MEMBER</div>
+              <div class="badge-pts" id="lf-badge-pts">25 POINTS</div>
+              <div class="badge-sub" id="lf-badge-sub">You are officially a WOK IN founding member! Your points will be credited on launch day. Share with colleagues to earn more!</div>
+              <div class="badge-share-row">
+                <button class="badge-wa" onclick="shareLoyaltyWA()">Share on WhatsApp</button>
+                <button class="badge-cp" onclick="copyLoyaltyLink()">Copy Link</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="waitlist-section" id="waitlist-anchor">
     <div class="waitlist-inner">
       <div class="waitlist-grid">
         <div class="waitlist-perks reveal-left">
           <span class="sec-eyebrow" style="background:rgba(26,45,90,.15);color:var(--navy)">Early Access</span>
-          <h3>JOIN THE<br>FOUNDING<br>CREW</h3>
+          <h3>JOIN THE<br>FOUNDING CREW</h3>
           <div class="perk-item"><div class="perk-num">1</div><div class="perk-text"><h4>Launch Day Alert</h4><p>Be the first to know when WOK IN arrives at your IT park</p></div></div>
           <div class="perk-item"><div class="perk-num">2</div><div class="perk-text"><h4>Founding Member Discount</h4><p>Get 20% off your first 5 orders exclusively for waitlist members</p></div></div>
-          <div class="perk-item"><div class="perk-num">3</div><div class="perk-text"><h4>Shape the Final Menu</h4><p>Waitlist members vote on the final menu before launch</p></div></div>
+          <div class="perk-item"><div class="perk-num">3</div><div class="perk-text"><h4>+ 50 Bonus Points</h4><p>Joining the waitlist credits 50 extra WOK IN loyalty points</p></div></div>
           <div class="waitlist-count">
             <div class="lc-dot" style="background:var(--yellow)"></div>
             <div><div class="wc-num" id="waitlist-counter">...</div><div class="wc-txt">people on<br>the waitlist</div></div>
@@ -527,16 +733,23 @@ tr:hover td{background:var(--off)}
         <div class="waitlist-form reveal-right">
           <div id="wf-form-inner">
             <h3>GET EARLY ACCESS</h3>
-            <p>Drop your details and we'll reach out when WOK IN lands at your IT park.</p>
+            <p>Drop your details and we'll reach out when WOK IN lands at your IT park. Also earns you 50 loyalty points!</p>
             <div class="wf-field"><label>Your Name</label><input type="text" id="wf-name" class="wf-input" placeholder="Rahul Kumar"></div>
             <div class="wf-field"><label>Phone or Email</label><input type="text" id="wf-contact" class="wf-input" placeholder="9876543210 or rahul@company.com"></div>
-            <div class="wf-field"><label>Your IT Park / Workplace</label><input type="text" id="wf-park" class="wf-input" placeholder="Hitech City, Hyderabad"></div>
-            <button class="wf-btn" id="wf-submit" onclick="submitWaitlist()">Join the Waitlist →</button>
+            <div class="wf-field"><label>Your IT Park / Workplace</label><input type="text" id="wf-park" class="wf-input" placeholder="Hitech City, Hyderabad" list="park-suggestions2">
+              <datalist id="park-suggestions2">
+                <option value="Hitech City, Hyderabad"><option value="Gachibowli, Hyderabad">
+                <option value="Financial District, Hyderabad"><option value="Madhapur, Hyderabad">
+                <option value="Kondapur, Hyderabad"><option value="KPHB, Hyderabad">
+                <option value="Banjara Hills, Hyderabad"><option value="Jubilee Hills, Hyderabad">
+              </datalist>
+            </div>
+            <button class="wf-btn" id="wf-submit" onclick="submitWaitlist()">Join the Waitlist + Earn 50 Points →</button>
           </div>
           <div class="wf-success" id="wf-success">
             <div style="font-size:2.5rem;margin-bottom:.5rem">🎉</div>
             <h4>YOU'RE IN!</h4>
-            <p>We'll send your launch day alert directly to you. Welcome to the WOK IN founding crew!</p>
+            <p>50 loyalty points credited! We'll send your launch day alert directly to you. Welcome to the WOK IN founding crew!</p>
           </div>
         </div>
       </div>
@@ -551,7 +764,7 @@ tr:hover td{background:var(--off)}
         <p style="text-align:center;color:var(--gray);font-size:14px;max-width:400px;margin:0 auto">From interns to architects — all IT park food lovers helping build WOK IN</p>
       </div>
       <div class="people-grid">
-        <div class="person-card reveal stagger-1"><svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#FDBCB4"/><path d="M26 28 Q50 6 74 28 Q70 14 50 11 Q30 14 26 28" fill="#1A2D5A"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="43.5" cy="32" r="1.2" fill="#fff"/><circle cx="59.5" cy="32" r="1.2" fill="#fff"/><path d="M41 46 Q50 54 59 46" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#1A2D5A"/><rect x="38" y="65" width="24" height="8" rx="2" fill="#F5C518"/><path d="M28 72 Q8 82 6 100" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 80 92 96" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg><h4>Rahul, 24</h4><div class="person-role">Software Engineer</div><p class="person-quote">"Need more tasty options near office. Can't wait!"</p></div>
+        <div class="person-card reveal stagger-1"><svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#FDBCB4"/><path d="M26 28 Q50 6 74 28 Q70 14 50 11 Q30 14 26 28" fill="#1A2D5A"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="43.5" cy="32" r="1.2" fill="#fff"/><circle cx="59.5" cy="32" r="1.2" fill="#fff"/><path d="M41 46 Q50 54 59 46" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#1A2D5A"/><rect x="38" y="65" width="24" height="8" rx="2" fill="#F5C518"/><path d="M28 72 Q8 82 6 100" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 80 92 96" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg><h4>Rahul, 24</h4><div class="person-role">Software Engineer</div><p class="person-quote">"Earned 100 points just for taking the survey. Brilliant!"</p></div>
         <div class="person-card reveal stagger-2"><svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#C68642"/><path d="M26 32 Q50 8 74 32" fill="#2a1a0a"/><ellipse cx="50" cy="14" rx="28" ry="9" fill="#2a1a0a"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><path d="M42 47 Q50 55 58 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#F5C518"/><rect x="38" y="68" width="24" height="6" rx="2" fill="#1A2D5A"/><path d="M28 72 Q9 82 7 100" stroke="#C68642" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q89 80 91 96" stroke="#C68642" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg><h4>Priya, 19</h4><div class="person-role">College Student</div><p class="person-quote">"Indo-Chinese on a student budget? Yes please!"</p></div>
         <div class="person-card reveal stagger-3"><svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#F1C27D"/><path d="M26 30 Q50 16 74 30" fill="#5a3e1b"/><circle cx="42" cy="33" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="33" r="3.5" fill="#1A2D5A"/><rect x="34" y="28" width="12" height="9" rx="3.5" fill="none" stroke="#1A2D5A" stroke-width="1.5"/><rect x="54" y="28" width="12" height="9" rx="3.5" fill="none" stroke="#1A2D5A" stroke-width="1.5"/><line x1="46" y1="32" x2="54" y2="32" stroke="#1A2D5A" stroke-width="1.5"/><path d="M41 47 Q50 56 59 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#1A2D5A"/><path d="M50 60 L46 78 L50 84 L54 78 Z" fill="#F5C518"/><path d="M28 72 Q8 80 6 98" stroke="#F1C27D" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 78 92 94" stroke="#F1C27D" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg><h4>Vikram, 35</h4><div class="person-role">Product Manager</div><p class="person-quote">"WOK IN is exactly what's missing from our food court!"</p></div>
         <div class="person-card reveal stagger-4"><svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#FDBCB4"/><path d="M26 28 Q50 10 74 28 Q70 16 50 14 Q30 16 26 28" fill="#9e9e9e"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><path d="M41 47 Q50 56 59 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#E8341A"/><rect x="38" y="68" width="24" height="6" rx="2" fill="#fff"/><path d="M28 72 Q8 80 6 98" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 78 92 94" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg><h4>Meena, 42</h4><div class="person-role">Senior Architect</div><p class="person-quote">"Quality, hygiene, real Indian flavors. This is the one!"</p></div>
@@ -580,13 +793,13 @@ tr:hover td{background:var(--off)}
     <div class="ref-inner">
       <div class="reveal">
         <span class="sec-eyebrow" style="background:rgba(245,197,24,.15);color:var(--yellow)">Refer & Earn</span>
-        <h2 class="sec-title" style="color:var(--white);text-align:center">INVITE FRIENDS.<br><span style="color:var(--yellow)">EARN REWARDS.</span></h2>
-        <p style="color:rgba(255,255,255,.6);font-size:14px;margin:0 auto;max-width:480px;line-height:1.7">Share the WOK IN survey with your colleagues. Every 3 referrals earns you a free dish on launch day.</p>
+        <h2 class="sec-title" style="color:var(--white);text-align:center">SHARE WOK IN.<br><span style="color:var(--yellow)">EARN MORE POINTS.</span></h2>
+        <p style="color:rgba(255,255,255,.6);font-size:14px;margin:0 auto;max-width:480px;line-height:1.7">Every colleague you refer earns you 75 bonus points. Get 3 friends to join and unlock Wok Master tier before launch.</p>
       </div>
       <div class="ref-steps">
         <div class="ref-step reveal stagger-1"><div class="ref-num">1</div><h4>Share the Link</h4><p>Send the survey to colleagues on WhatsApp or email</p></div>
-        <div class="ref-step reveal stagger-2"><div class="ref-num">2</div><h4>They Respond</h4><p>Every person who fills the survey helps shape the menu</p></div>
-        <div class="ref-step reveal stagger-3"><div class="ref-num">3</div><h4>You Get Rewarded</h4><p>Founding members get exclusive discounts on launch day</p></div>
+        <div class="ref-step reveal stagger-2"><div class="ref-num">2</div><h4>They Sign Up</h4><p>Each friend who joins earns you 75 bonus WOK IN points</p></div>
+        <div class="ref-step reveal stagger-3"><div class="ref-num">3</div><h4>Unlock Rewards</h4><p>Hit 300 points to become a Wok Master — free dish on launch day</p></div>
       </div>
       <div class="share-row reveal stagger-4">
         <button class="btn-wa" onclick="shareWA()"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.547 5.876L.057 23.5l5.752-1.508A11.951 11.951 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.491-5.145-1.347l-.369-.217-3.812 1 1.022-3.706-.241-.382A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>WhatsApp</button>
@@ -600,8 +813,8 @@ tr:hover td{background:var(--off)}
     <div class="cta-inner reveal">
       <span class="sec-eyebrow" style="background:rgba(26,45,90,.15);color:var(--navy)">Take the Survey</span>
       <h2>READY TO<br>SHAPE WOK IN?</h2>
-      <p>Takes just 2 minutes. Your taste becomes our recipe. Be the first to help launch a bold new food brand at your IT park.</p>
-      <button class="btn-y" onclick="goTo('survey')">Take Survey Now →</button>
+      <p>Takes just 2 minutes. Earn 100 points. Your taste becomes our recipe.</p>
+      <button class="btn-y" onclick="goTo('survey')">Take Survey + Earn 100 Points →</button>
     </div>
   </div>
 
@@ -621,7 +834,7 @@ tr:hover td{background:var(--off)}
       <div class="survey-top">
         <span class="sec-eyebrow">WOK IN Survey</span>
         <h2>TELL US YOUR TASTE</h2>
-        <p>Select your age group and answer the questions below</p>
+        <p>Complete the survey to earn <strong>100 WOK IN loyalty points</strong> 🏆</p>
       </div>
       <div class="share-bar">
         <p>🌶️ Love WOK IN? Share the survey!</p>
@@ -667,35 +880,32 @@ tr:hover td{background:var(--off)}
   <div id="admin-content" style="display:none">
     <div class="admin-bg">
       <div class="admin-wrap">
-        <!-- HEADER -->
         <div class="ahdr">
-          <div><h2>ADMIN DASHBOARD</h2><p id="admin-status">Loading data from Supabase...</p></div>
+          <div><h2>ADMIN DASHBOARD</h2><p id="admin-status">Loading...</p></div>
           <div class="ahdr-btns">
             <button class="rfbtn" onclick="loadAdmin()">↻ Refresh</button>
             <button class="export-btn" onclick="exportCSV()">Export CSV</button>
+            <button class="wa-btn" onclick="openWA()">📲 WA Broadcast</button>
             <button class="lock-btn" onclick="lockAdmin()">🔒 Lock</button>
           </div>
         </div>
-        <!-- DEBUG BOX -->
-        <div class="debug-box" id="debug-box"></div>
-        <!-- STAT CARDS -->
-        <div class="sgrid" id="admin-stats">
+        <div class="sgrid">
           <div class="sc"><div class="sl">Total Responses</div><div class="sv" id="stat-total">—</div></div>
           <div class="sc"><div class="sl">Waitlist</div><div class="sv" id="stat-waitlist">—</div></div>
+          <div class="sc"><div class="sl">Loyalty Members</div><div class="sv" id="stat-loyalty">—</div></div>
           <div class="sc"><div class="sl">Avg NPS</div><div class="sv" id="stat-nps">—</div></div>
           <div class="sc"><div class="sl">Gen Z</div><div class="sv" id="stat-teen">—</div></div>
-          <div class="sc"><div class="sl">Young Adults</div><div class="sv" id="stat-young">—</div></div>
           <div class="sc"><div class="sl">Professionals</div><div class="sv" id="stat-pro">—</div></div>
         </div>
-        <!-- TABS -->
         <div class="admin-tabs">
           <button class="admin-tab active" id="tab-responses" onclick="setView('responses')">Survey Responses</button>
           <button class="admin-tab" id="tab-waitlist" onclick="setView('waitlist')">Waitlist</button>
+          <button class="admin-tab" id="tab-loyalty" onclick="setView('loyalty')">Loyalty Members</button>
           <button class="admin-tab" id="tab-analytics" onclick="setView('analytics')">Analytics</button>
         </div>
-        <!-- VIEW AREAS -->
         <div id="view-responses"></div>
         <div id="view-waitlist" style="display:none"></div>
+        <div id="view-loyalty" style="display:none"></div>
         <div id="view-analytics" style="display:none"></div>
       </div>
     </div>
@@ -704,81 +914,92 @@ tr:hover td{background:var(--off)}
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
-// ── SUPABASE ──────────────────────────────────────────────────────────────────
 const _sb = supabase.createClient(
   'https://zntdkcmgekdfdjbcyctp.supabase.co',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpudGRrY21nZWtkZmRqYmN5Y3RwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2MzQxNzIsImV4cCI6MjA4OTIxMDE3Mn0.GniK5lVxNMSta5uTks135vofOsy0u7kfO9jq8MyEino'
 )
 
-// ── SCROLL ANIMATIONS ─────────────────────────────────────────────────────────
-var obs = new IntersectionObserver(function(entries){
-  entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible') })
-},{threshold:.1,rootMargin:'0px 0px -40px 0px'})
-function initReveal(){
-  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){ obs.observe(el) })
-}
+// ── SCROLL ANIMATIONS ─────────────────────────────────────────────────
+var obs = new IntersectionObserver(function(e){ e.forEach(function(x){ if(x.isIntersecting) x.target.classList.add('visible') }) },{threshold:.1,rootMargin:'0px 0px -40px 0px'})
+function initReveal(){ document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){ obs.observe(el) }) }
 initReveal()
 
-// ── SHARE ─────────────────────────────────────────────────────────────────────
+// ── SHARE ─────────────────────────────────────────────────────────────
 var SURL = window.location.href.split('?')[0]
-var SMSG = 'Hey! I just took the WOK IN food survey — bold Indian-Chinese fusion launching at IT parks. Takes 2 mins! Fill it: ' + SURL
+var SMSG = 'Hey! I just took the WOK IN food survey — bold Indian-Chinese fusion launching at IT parks. Takes 2 mins + earn FREE loyalty points! Fill it: ' + SURL
 function shareWA(){ window.open('https://wa.me/?text='+encodeURIComponent(SMSG),'_blank') }
-function shareEM(){ window.open('mailto:?subject=Help shape WOK IN&body='+encodeURIComponent(SMSG),'_blank') }
-function copyLink(){
-  navigator.clipboard.writeText(SURL).then(function(){
-    var t = document.getElementById('toast'); t.textContent = 'Link Copied!'; t.classList.add('show')
-    setTimeout(function(){ t.classList.remove('show') }, 2500)
-  }).catch(function(){ prompt('Copy this link:',SURL) })
-}
-function showToast(msg){
-  var t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show')
-  setTimeout(function(){ t.classList.remove('show') }, 2500)
-}
+function shareEM(){ window.open('mailto:?subject=Earn WOK IN loyalty points + shape the menu&body='+encodeURIComponent(SMSG),'_blank') }
+function copyLink(){ navigator.clipboard.writeText(SURL).then(function(){ showToast('Link Copied!') }).catch(function(){ prompt('Copy:',SURL) }) }
+function showToast(m){ var t=document.getElementById('toast'); t.textContent=m; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show') },2500) }
 
-// ── COUNTERS ──────────────────────────────────────────────────────────────────
+// ── COUNTERS ──────────────────────────────────────────────────────────
 async function loadCounter(){
-  try {
-    var r = await _sb.from('survey_responses').select('*',{count:'exact',head:true})
-    var el = document.getElementById('hero-counter')
-    if(el) el.textContent = (r.count || 0) + '+'
-  } catch(e){}
+  var r = await _sb.from('survey_responses').select('*',{count:'exact',head:true}).catch(function(){ return {count:0} })
+  var el = document.getElementById('hero-counter'); if(el) el.textContent = (r.count||0)+'+'
 }
 async function loadWaitlistCounter(){
-  try {
-    var r = await _sb.from('wokin_waitlist').select('*',{count:'exact',head:true})
-    var el = document.getElementById('waitlist-counter')
-    if(el) el.textContent = (r.count || 0) + '+'
-  } catch(e){}
+  var r = await _sb.from('wokin_waitlist').select('*',{count:'exact',head:true}).catch(function(){ return {count:0} })
+  var el = document.getElementById('waitlist-counter'); if(el) el.textContent = (r.count||0)+'+'
 }
-loadCounter()
-loadWaitlistCounter()
+loadCounter(); loadWaitlistCounter()
 
-// ── WAITLIST ──────────────────────────────────────────────────────────────────
+// ── LOYALTY POINTS ────────────────────────────────────────────────────
+function getPointsInfo(pts){
+  if(pts >= 300) return {tier:'Wok Master', icon:'🔥', badge:'WOKMASTER'}
+  if(pts >= 100) return {tier:'Spice Lover', icon:'🌶️', badge:'SPICE LOVER'}
+  return {tier:'Wok Rookie', icon:'🥢', badge:'WOK ROOKIE'}
+}
+
+async function claimPoints(){
+  var name = document.getElementById('lf-name').value.trim()
+  var contact = document.getElementById('lf-contact').value.trim()
+  var park = document.getElementById('lf-park').value.trim()
+  if(!name || !contact){ alert('Please fill in your name and contact details.'); return }
+  var btn = document.getElementById('lf-btn'); btn.disabled = true; btn.textContent = 'Claiming...'
+  var pts = 25
+  var info = getPointsInfo(pts)
+  try {
+    await _sb.from('wokin_loyalty').insert([{ name:name, phone_email:contact, it_park:park, points:pts, source:'direct_signup', badge:info.badge }])
+  } catch(e){ console.log('loyalty insert:', e) }
+  // Show badge
+  document.getElementById('lf-form-wrap').style.display = 'none'
+  var bs = document.getElementById('lf-badge'); bs.style.display = 'block'
+  document.getElementById('lf-badge-icon').textContent = info.icon
+  document.getElementById('lf-badge-name').textContent = name.toUpperCase()
+  document.getElementById('lf-badge-pts').textContent = pts + ' POINTS'
+  document.getElementById('lf-badge-sub').textContent = 'You are a '+info.tier+'! Your points will be credited on launch day. Take the survey to earn 100 more points!'
+}
+
+function shareLoyaltyWA(){
+  var name = document.getElementById('lf-badge-name').textContent
+  var msg = 'Just claimed my WOK IN loyalty points! 🏆 Bold Indian-Chinese fusion food truck launching at IT parks in Hyderabad. Earn FREE points before launch → ' + SURL
+  window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank')
+}
+function copyLoyaltyLink(){ navigator.clipboard.writeText(SURL).then(function(){ showToast('Link Copied!') }) }
+
+// ── WAITLIST ──────────────────────────────────────────────────────────
 async function submitWaitlist(){
   var name = document.getElementById('wf-name').value.trim()
   var contact = document.getElementById('wf-contact').value.trim()
   var park = document.getElementById('wf-park').value.trim()
   if(!name || !contact){ alert('Please fill in your name and contact details.'); return }
-  var btn = document.getElementById('wf-submit')
-  btn.disabled = true; btn.textContent = 'Joining...'
+  var btn = document.getElementById('wf-submit'); btn.disabled = true; btn.textContent = 'Joining...'
   try {
-    var res = await _sb.from('wokin_waitlist').insert([{name:name, contact:contact, it_park:park}])
-    if(res.error){ throw new Error(res.error.message) }
-  } catch(e){
-    console.log('Waitlist insert note:', e.message)
-  }
+    await _sb.from('wokin_waitlist').insert([{name:name, contact:contact, it_park:park}])
+    await _sb.from('wokin_loyalty').insert([{name:name, phone_email:contact, it_park:park, points:50, source:'waitlist', badge:'WOK ROOKIE'}])
+  } catch(e){ console.log('waitlist:', e) }
   document.getElementById('wf-form-inner').style.display = 'none'
   document.getElementById('wf-success').style.display = 'block'
   loadWaitlistCounter()
 }
 
-// ── PIN ───────────────────────────────────────────────────────────────────────
+// ── PIN ───────────────────────────────────────────────────────────────
 const PIN = '1214'
 var pinEntry = '', adminUnlocked = false
 function pinPress(d){
   if(pinEntry.length >= 4) return
   pinEntry += d
-  for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.toggle('filled', i < pinEntry.length)
+  for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.toggle('filled', i<pinEntry.length)
   if(pinEntry.length === 4){
     setTimeout(function(){
       if(pinEntry === PIN){
@@ -795,19 +1016,11 @@ function pinPress(d){
     }, 300)
   }
 }
-function pinClear(){
-  pinEntry = ''
-  for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.remove('filled')
-  document.getElementById('pin-error').textContent = ''
-}
-function pinBackspace(){
-  if(!pinEntry.length) return
-  pinEntry = pinEntry.slice(0,-1)
-  for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.toggle('filled', i < pinEntry.length)
-}
+function pinClear(){ pinEntry = ''; for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.remove('filled'); document.getElementById('pin-error').textContent = '' }
+function pinBackspace(){ if(!pinEntry.length) return; pinEntry = pinEntry.slice(0,-1); for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.toggle('filled', i<pinEntry.length) }
 function toggleMenu(){ document.getElementById('mob-menu').classList.toggle('open') }
 
-// ── NAVIGATION ────────────────────────────────────────────────────────────────
+// ── NAV ───────────────────────────────────────────────────────────────
 var pg = 'landing'
 function goTo(p){
   pg = p
@@ -816,20 +1029,14 @@ function goTo(p){
   document.querySelectorAll('.nlink').forEach(function(b){ b.classList.remove('active') })
   var nb = document.getElementById('nb-'+p); if(nb) nb.classList.add('active')
   if(p === 'admin'){
-    if(!adminUnlocked){
-      document.getElementById('pin-gate').style.display = 'block'
-      document.getElementById('admin-content').style.display = 'none'
-    } else {
-      document.getElementById('pin-gate').style.display = 'none'
-      document.getElementById('admin-content').style.display = 'block'
-      loadAdmin()
-    }
+    if(!adminUnlocked){ document.getElementById('pin-gate').style.display='block'; document.getElementById('admin-content').style.display='none' }
+    else { document.getElementById('pin-gate').style.display='none'; document.getElementById('admin-content').style.display='block'; loadAdmin() }
   }
   if(p === 'survey'){ renderSurvey(); setTimeout(initReveal,100) }
   window.scrollTo(0,0)
 }
 
-// ── FORMS DATA ────────────────────────────────────────────────────────────────
+// ── FORMS ─────────────────────────────────────────────────────────────
 const FORMS = [
   {id:'teen',label:'Gen Z',range:'10–19',sub:'For teens and students',ages:[10,11,12,13,14,15,16,17,18,19],qs:[
     {id:'q1',text:'How often do you eat out or order food in a week?',opts:['Rarely','1 to 2 times','3 to 4 times','Every day']},
@@ -886,20 +1093,38 @@ const FORMS = [
 ]
 
 var fi=0, ans={}, done=false
-var aData=[], aWaitlist=[], aFilt='all', aView='responses', chartInst={}
+var aData=[], aWaitlist=[], aLoyalty=[], aFilt='all', aView='responses', chartInst={}
 
-// ── SURVEY RENDER ─────────────────────────────────────────────────────────────
+// ── SURVEY RENDER ─────────────────────────────────────────────────────
 function renderSurvey(){
   var el = document.getElementById('survey-content')
   if(done){
-    el.innerHTML = '<div class="ty"><div class="tycheck">✓</div><h2>THANK YOU!</h2>'
-      + '<p>Your feedback is officially part of WOK IN. You are a founding member!</p>'
-      + '<div class="ty-share">'
-      + '<button class="sbar-wa" style="padding:10px 18px;border-radius:5px;font-size:12px" onclick="shareWA()">WhatsApp</button>'
-      + '<button class="sbar-em" style="padding:10px 16px;border-radius:5px;font-size:12px;background:var(--navy);border-color:var(--navy)" onclick="shareEM()">Email</button>'
-      + '<button class="sbar-cp" style="padding:10px 18px;border-radius:5px;font-size:12px" onclick="copyLink()">Copy Link</button>'
+    var pts = 100
+    var contact = ans.phone_email || ''
+    var name = ans._name || 'Food Lover'
+    var info = getPointsInfo(pts)
+    el.innerHTML = '<div class="ty">'
+      + '<div class="tycheck">✓</div>'
+      + '<h2>THANK YOU!</h2>'
+      + '<p>Your feedback is officially part of WOK IN. You have earned your founding member badge!</p>'
+      + '<div class="ty-badge-unlock">'
+      + '<div class="ty-badge-unlock-inner">'
+      + '<div class="ty-badge-row">'
+      + '<span class="badge-icon" style="font-size:48px;animation:bounceIn .5s ease">'+info.icon+'</span>'
+      + '<div class="ty-badge-info"><h3>🏆 BADGE UNLOCKED</h3><p>You earned the <strong style="color:var(--yellow)">'+info.tier+'</strong> badge for completing the WOK IN survey!</p></div>'
       + '</div>'
-      + '<button class="subbtn" style="max-width:300px;margin:0 auto;display:block" onclick="resetSurvey()">Submit Another Response</button>'
+      + '<div class="ty-pts-display">'
+      + '<div><div style="font-size:11px;font-weight:800;color:var(--navy2);text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Points Earned</div><div class="ty-pts-num">'+pts+' pts</div></div>'
+      + '<div class="ty-pts-break"><span style="font-size:10px">Survey</span><br>+100 pts<br><span style="color:var(--navy3);font-size:9px">Redeemable on launch day</span></div>'
+      + '</div>'
+      + '<p style="font-size:12px;color:rgba(255,255,255,.5);text-align:center;margin-bottom:.8rem">Share with colleagues to earn 75 more points each!</p>'
+      + '</div></div>'
+      + '<div class="ty-share">'
+      + '<button class="sbar-wa" style="padding:10px 18px;border-radius:5px;font-size:12px" onclick="shareWA()">📲 Share on WhatsApp</button>'
+      + '<button class="sbar-em" style="padding:10px 16px;border-radius:5px;font-size:12px;background:var(--navy);border-color:var(--navy)" onclick="shareEM()">📧 Email</button>'
+      + '<button class="sbar-cp" style="padding:10px 18px;border-radius:5px;font-size:12px" onclick="copyLink()">🔗 Copy Link</button>'
+      + '</div>'
+      + '<button class="subbtn" style="max-width:300px;margin:1rem auto 0;display:block" onclick="resetSurvey()">Submit Another Response</button>'
       + '</div>'
     return
   }
@@ -941,18 +1166,21 @@ function renderSurvey(){
   qs += '<div class="qblock highlight"><div class="qlabel qlabel-new">New</div><div class="qtext">How likely are you to recommend WOK IN? (NPS 0–10)</div>'
     + '<div class="nps-row">'
     + [0,1,2,3,4,5,6,7,8,9,10].map(function(n){
-      return '<button class="nps-btn'+(ans.nps_score===n?' sel':'')+'" data-v="'+n+'" onclick="pickNPS(this)">'+n+'</button>'
-    }).join('') + '</div><div class="nps-labels"><span>Not likely</span><span>Extremely likely</span></div></div>'
+        return '<button class="nps-btn'+(ans.nps_score===n?' sel':'')+'" data-v="'+n+'" onclick="pickNPS(this)">'+n+'</button>'
+      }).join('')
+    + '</div><div class="nps-labels"><span>Not likely</span><span>Extremely likely</span></div></div>'
   qs += '<div class="qblock highlight"><div class="qlabel qlabel-new">New</div><div class="qtext">Describe your dream WOK IN dish</div>'
     + '<textarea placeholder="e.g. Paneer Schezwan rice with a runny egg on top..." oninput="ans.dream_dish=this.value;updateProg()">'+(ans.dream_dish||'')+'</textarea></div>'
-  qs += '<div class="section-divider"><span>Stay in Touch</span></div>'
-  qs += '<div class="qblock highlight"><div class="qlabel qlabel-new">New</div><div class="qtext">Drop your phone or email — we will alert you on launch day!</div>'
+  qs += '<div class="section-divider"><span>Stay in Touch + Earn 100 Points 🏆</span></div>'
+  qs += '<div class="qblock highlight" style="border-color:var(--yellow);background:rgba(245,197,24,.06)">'
+    + '<div class="qlabel" style="background:var(--yellow);color:var(--navy)">Earn Points</div>'
+    + '<div class="qtext">Drop your phone or email — earn 100 WOK IN loyalty points!</div>'
     + '<input type="text" placeholder="9876543210 or you@company.com" oninput="ans.phone_email=this.value;updateProg()" value="'+(ans.phone_email||'')+'"></div>'
 
   el.innerHTML = '<div class="age-tabs">'+tabs+'</div>'
     + '<div class="form-card">'
     + '<div class="form-hdr"><div class="fh-logo"><img src="logo.png" alt="W" onerror="this.style.display=\'none\';this.parentElement.textContent=\'W\'"></div>'
-    + '<div><h2>WOK IN SURVEY</h2><p>'+f.sub+' · Takes about 3 minutes</p></div></div>'
+    + '<div><h2>WOK IN SURVEY</h2><p>'+f.sub+' · Complete to earn 100 loyalty points 🏆</p></div></div>'
     + '<div class="prog-wrap"><div class="prog-info"><span>Progress</span><span id="ptxt">'+answered+' / '+totalQ+' answered</span></div>'
     + '<div class="prog-bar"><div class="prog-fill" id="pfill" style="width:'+pct+'%"></div></div></div>'
     + '<div class="form-body">'
@@ -963,42 +1191,42 @@ function renderSurvey(){
     + ['Male','Female','Non-binary','Prefer not to say'].map(function(g){ return '<option'+(ans.gender===g?' selected':'')+'>'+g+'</option>' }).join('')
     + '</select></div></div></div>'
     + qs
-    + '<button class="subbtn" id="subbtn" onclick="submitForm()">Submit My Answers →</button>'
+    + '<button class="subbtn" id="subbtn" onclick="submitForm()">Submit + Earn 100 Points →</button>'
     + '</div></div>'
 }
 
 function pickO(btn){
-  var qid = btn.getAttribute('data-qid'), oi = parseInt(btn.getAttribute('data-oi'))
-  var q = FORMS[fi].qs.find(function(q){ return q.id===qid }); if(!q) return
-  ans[qid] = q.opts[oi]
+  var qid=btn.getAttribute('data-qid'), oi=parseInt(btn.getAttribute('data-oi'))
+  var q=FORMS[fi].qs.find(function(q){ return q.id===qid }); if(!q) return
+  ans[qid]=q.opts[oi]
   document.querySelectorAll('.qopt[data-qid="'+qid+'"]').forEach(function(b,i){ if(i===oi) b.classList.add('sel'); else b.classList.remove('sel') })
   updateProg()
 }
 function pickR(btn){
-  var qid = btn.getAttribute('data-qid'), v = parseInt(btn.getAttribute('data-v'))
-  ans[qid] = v
+  var qid=btn.getAttribute('data-qid'), v=parseInt(btn.getAttribute('data-v'))
+  ans[qid]=v
   document.querySelectorAll('.rbtn[data-qid="'+qid+'"]').forEach(function(b){ if(parseInt(b.getAttribute('data-v'))===v) b.classList.add('sel'); else b.classList.remove('sel') })
   updateProg()
 }
 function pickGen(btn, field){
-  ans[field] = btn.getAttribute('data-val')
+  ans[field]=btn.getAttribute('data-val')
   document.querySelectorAll('.qopt[data-qid="'+field+'"]').forEach(function(b){ b.classList.remove('sel') })
   btn.classList.add('sel'); updateProg()
 }
 function pickNPS(btn){
-  ans.nps_score = parseInt(btn.getAttribute('data-v'))
+  ans.nps_score=parseInt(btn.getAttribute('data-v'))
   document.querySelectorAll('.nps-btn').forEach(function(b){ b.classList.remove('sel') })
   btn.classList.add('sel'); updateProg()
 }
 function updateProg(){
-  var f = FORMS[fi], totalQ = f.qs.filter(function(q){ return !q.opt }).length + 6
-  var answered = countAns(), pct = Math.round((answered/totalQ)*100)
-  var fill = document.getElementById('pfill'), txt = document.getElementById('ptxt')
-  if(fill) fill.style.width = pct+'%'
-  if(txt) txt.textContent = answered+' / '+totalQ+' answered'
+  var f=FORMS[fi], totalQ=f.qs.filter(function(q){ return !q.opt }).length+6
+  var answered=countAns(), pct=Math.round((answered/totalQ)*100)
+  var fill=document.getElementById('pfill'), txt=document.getElementById('ptxt')
+  if(fill) fill.style.width=pct+'%'
+  if(txt) txt.textContent=answered+' / '+totalQ+' answered'
 }
 function countAns(){
-  var n = 0; if(ans.age) n++; if(ans.gender) n++
+  var n=0; if(ans.age) n++; if(ans.gender) n++
   FORMS[fi].qs.filter(function(q){ return !q.opt }).forEach(function(q){ if(ans[q.id]!==undefined && ans[q.id]!=='') n++ })
   if(ans.max_price) n++; if(ans.lunch_slot) n++; if(ans.colleagues_count) n++
   if(ans.nps_score!==undefined) n++; if(ans.dream_dish) n++; if(ans.phone_email) n++
@@ -1014,133 +1242,137 @@ async function submitForm(){
   if(missing.length){ alert('Please answer all the core survey questions. '+missing.length+' still remaining.'); return }
   var btn = document.getElementById('subbtn'); if(btn){ btn.disabled=true; btn.textContent='Submitting...' }
   var payload = {
-    form_version: f.id,
-    age_group: f.id,
-    age: ans.age,
-    gender: ans.gender,
-    q1: String(ans.q1||''), q2: String(ans.q2||''), q3: String(ans.q3||''),
-    q4: String(ans.q4||''), q5: String(ans.q5||''), q6: String(ans.q6||''),
-    q7: String(ans.q7||''), q8: String(ans.q8||''), q9: String(ans.q9||''),
-    q10: String(ans.q10||''), q11: String(ans.q11||''),
-    max_price: String(ans.max_price||''),
-    lunch_slot: String(ans.lunch_slot||''),
-    colleagues_count: String(ans.colleagues_count||''),
-    nps_score: ans.nps_score !== undefined ? ans.nps_score : null,
-    dream_dish: String(ans.dream_dish||''),
-    phone_email: String(ans.phone_email||'')
+    form_version:f.id, age_group:f.id, age:ans.age, gender:ans.gender,
+    q1:String(ans.q1||''), q2:String(ans.q2||''), q3:String(ans.q3||''),
+    q4:String(ans.q4||''), q5:String(ans.q5||''), q6:String(ans.q6||''),
+    q7:String(ans.q7||''), q8:String(ans.q8||''), q9:String(ans.q9||''),
+    q10:String(ans.q10||''), q11:String(ans.q11||''),
+    max_price:String(ans.max_price||''), lunch_slot:String(ans.lunch_slot||''),
+    colleagues_count:String(ans.colleagues_count||''),
+    nps_score:ans.nps_score!==undefined?ans.nps_score:null,
+    dream_dish:String(ans.dream_dish||''), phone_email:String(ans.phone_email||'')
   }
   var res = await _sb.from('survey_responses').insert([payload])
-  if(res.error){
-    alert('Error saving response: ' + res.error.message)
-    if(btn){ btn.disabled=false; btn.textContent='Submit My Answers →' }
-    return
+  if(res.error){ alert('Error: '+res.error.message); if(btn){ btn.disabled=false; btn.textContent='Submit + Earn 100 Points →' }; return }
+  // Save loyalty points if they gave contact
+  if(ans.phone_email){
+    var info = getPointsInfo(100)
+    await _sb.from('wokin_loyalty').insert([{name:'Survey Respondent', phone_email:ans.phone_email, points:100, source:'survey', badge:info.badge}]).catch(function(){})
   }
-  done = true; loadCounter(); renderSurvey(); window.scrollTo(0,0)
+  done=true; loadCounter(); renderSurvey(); window.scrollTo(0,0)
 }
 
-// ── ADMIN — COMPLETELY REBUILT ────────────────────────────────────────────────
+// ── ADMIN ─────────────────────────────────────────────────────────────
 function setView(v){
-  aView = v
+  aView=v
   document.querySelectorAll('.admin-tab').forEach(function(b){ b.classList.remove('active') })
   document.getElementById('tab-'+v).classList.add('active')
-  document.getElementById('view-responses').style.display = v==='responses' ? 'block' : 'none'
-  document.getElementById('view-waitlist').style.display = v==='waitlist' ? 'block' : 'none'
-  document.getElementById('view-analytics').style.display = v==='analytics' ? 'block' : 'none'
+  ;['responses','waitlist','loyalty','analytics'].forEach(function(n){
+    document.getElementById('view-'+n).style.display = n===v?'block':'none'
+  })
   if(v==='analytics') renderCharts()
 }
 
 function updateStats(){
-  var counts = {teen:0, young:0, pro:0, adult:0}
-  aData.forEach(function(r){ var k = r.form_version || r.age_group; if(counts[k]!==undefined) counts[k]++ })
-  var npsSum=0, npsCount=0
-  aData.forEach(function(r){ if(r.nps_score!==null && r.nps_score!==undefined){ npsSum+=r.nps_score; npsCount++ } })
-  var npsAvg = npsCount > 0 ? (npsSum/npsCount).toFixed(1) : 'N/A'
-  document.getElementById('stat-total').textContent = aData.length
-  document.getElementById('stat-waitlist').textContent = aWaitlist.length
-  document.getElementById('stat-nps').textContent = npsAvg
-  document.getElementById('stat-teen').textContent = counts.teen
-  document.getElementById('stat-young').textContent = counts.young
-  document.getElementById('stat-pro').textContent = counts.pro
-  document.getElementById('tab-waitlist').textContent = 'Waitlist ('+aWaitlist.length+')'
-  document.getElementById('tab-responses').textContent = 'Survey Responses ('+aData.length+')'
+  var counts={teen:0,young:0,pro:0,adult:0}
+  aData.forEach(function(r){ var k=r.form_version||r.age_group; if(counts[k]!==undefined) counts[k]++ })
+  var npsSum=0,npsCount=0
+  aData.forEach(function(r){ if(r.nps_score!==null&&r.nps_score!==undefined){ npsSum+=r.nps_score; npsCount++ } })
+  var npsAvg=npsCount>0?(npsSum/npsCount).toFixed(1):'N/A'
+  var totalPts=0; aLoyalty.forEach(function(r){ totalPts+=(r.points||0) })
+  document.getElementById('stat-total').textContent=aData.length
+  document.getElementById('stat-waitlist').textContent=aWaitlist.length
+  document.getElementById('stat-loyalty').textContent=aLoyalty.length
+  document.getElementById('stat-nps').textContent=npsAvg
+  document.getElementById('stat-teen').textContent=counts.teen
+  document.getElementById('stat-pro').textContent=counts.pro
+  document.getElementById('tab-responses').textContent='Survey Responses ('+aData.length+')'
+  document.getElementById('tab-waitlist').textContent='Waitlist ('+aWaitlist.length+')'
+  document.getElementById('tab-loyalty').textContent='Loyalty Members ('+aLoyalty.length+')'
 }
 
 function renderResponsesTable(){
-  var gl = {teen:'Gen Z',young:'Young Adults',pro:'Professionals',adult:'Adults'}
-  var gc = {teen:'bt',young:'by',pro:'bp',adult:'ba'}
-  var filt = aFilt==='all' ? aData : aData.filter(function(r){ return (r.form_version||r.age_group)===aFilt })
-  var html = '<div class="filtrow">'
-    + [['all','All'],['teen','Gen Z'],['young','Young Adults'],['pro','Professionals'],['adult','Adults']].map(function(v){
-        return '<button class="fbtn'+(aFilt===v[0]?' active':'')+'" onclick="setFilt(\''+v[0]+'\')">' + v[1] + '</button>'
-      }).join('')
-    + '</div>'
-  if(!filt.length){
-    html += '<div class="empty">No responses yet — share the survey link to start collecting!</div>'
-  } else {
-    html += '<div class="tblwrap"><table><thead><tr>'
-      + '<th>#</th><th>Date</th><th>Group</th><th>Age</th><th>Gender</th>'
-      + '<th>Phone/Email</th><th>Lunch Slot</th><th>Colleagues</th><th>Max Price</th><th>NPS</th>'
-      + '<th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th>'
-      + '<th>Q6</th><th>Q7</th><th>Q8</th><th>Q9</th><th>Q10</th><th>Dream Dish</th><th>Comment</th>'
-      + '</tr></thead><tbody>'
-      + filt.map(function(r,i){
-          var grp = r.form_version || r.age_group || ''
-          var npsColor = r.nps_score>=9?'#2E7D32':r.nps_score>=7?'#E65100':'#C62828'
-          return '<tr>'
-            + '<td>'+(i+1)+'</td>'
-            + '<td style="white-space:nowrap">'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td>'
-            + '<td><span class="badge '+(gc[grp]||'bt')+'">'+(gl[grp]||grp||'—')+'</span></td>'
-            + '<td>'+(r.age||'—')+'</td>'
-            + '<td>'+(r.gender||'—')+'</td>'
-            + '<td style="color:var(--navy);font-weight:700" title="'+(r.phone_email||'')+'">'+(r.phone_email||'—')+'</td>'
-            + '<td>'+(r.lunch_slot||'—')+'</td>'
-            + '<td>'+(r.colleagues_count||'—')+'</td>'
-            + '<td style="font-weight:700;color:var(--navy)">'+(r.max_price||'—')+'</td>'
-            + '<td style="text-align:center;font-weight:900;color:'+npsColor+'">'+(r.nps_score!==null&&r.nps_score!==undefined?r.nps_score:'—')+'</td>'
-            + '<td title="'+(r.q1||'')+'">'+(r.q1||'—')+'</td>'
-            + '<td title="'+(r.q2||'')+'">'+(r.q2||'—')+'</td>'
-            + '<td title="'+(r.q3||'')+'">'+(r.q3||'—')+'</td>'
-            + '<td title="'+(r.q4||'')+'">'+(r.q4||'—')+'</td>'
-            + '<td title="'+(r.q5||'')+'">'+(r.q5||'—')+'</td>'
-            + '<td title="'+(r.q6||'')+'">'+(r.q6||'—')+'</td>'
-            + '<td title="'+(r.q7||'')+'">'+(r.q7||'—')+'</td>'
-            + '<td title="'+(r.q8||'')+'">'+(r.q8||'—')+'</td>'
-            + '<td title="'+(r.q9||'')+'">'+(r.q9||'—')+'</td>'
-            + '<td title="'+(r.q10||'')+'">'+(r.q10||'—')+'</td>'
-            + '<td style="color:var(--navy)" title="'+(r.dream_dish||'')+'">'+(r.dream_dish||'—')+'</td>'
-            + '<td title="'+(r.q11||'')+'">'+(r.q11||'—')+'</td>'
-            + '</tr>'
-        }).join('')
-      + '</tbody></table></div>'
+  var gl={teen:'Gen Z',young:'Young Adults',pro:'Professionals',adult:'Adults'}
+  var gc={teen:'bt',young:'by',pro:'bp',adult:'ba'}
+  var filt=aFilt==='all'?aData:aData.filter(function(r){ return (r.form_version||r.age_group)===aFilt })
+  var html='<div class="filtrow">'
+    +[['all','All'],['teen','Gen Z'],['young','Young Adults'],['pro','Professionals'],['adult','Adults']].map(function(v){
+      return '<button class="fbtn'+(aFilt===v[0]?' active':'')+'" onclick="setFilt(\''+v[0]+'\')">'+v[1]+'</button>'
+    }).join('')+'</div>'
+  if(!filt.length){ html+='<div class="empty">No responses yet — share the link to start!</div>' }
+  else {
+    html+='<div class="tblwrap"><table><thead><tr>'
+      +'<th>#</th><th>Date</th><th>Group</th><th>Age</th><th>Gender</th>'
+      +'<th>Phone/Email</th><th>Lunch Slot</th><th>Colleagues</th><th>Max Price</th><th>NPS</th>'
+      +'<th>Q1</th><th>Q2</th><th>Q5</th><th>Q10</th><th>Dream Dish</th><th>Comment</th>'
+      +'</tr></thead><tbody>'
+      +filt.map(function(r,i){
+        var grp=r.form_version||r.age_group||''
+        var nc=r.nps_score>=9?'#2E7D32':r.nps_score>=7?'#E65100':'#C62828'
+        return '<tr>'
+          +'<td>'+(i+1)+'</td>'
+          +'<td style="white-space:nowrap">'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td>'
+          +'<td><span class="badge-pill '+(gc[grp]||'bt')+'">'+(gl[grp]||grp||'—')+'</span></td>'
+          +'<td>'+(r.age||'—')+'</td><td>'+(r.gender||'—')+'</td>'
+          +'<td style="color:var(--navy);font-weight:700" title="'+(r.phone_email||'')+'">'+(r.phone_email||'—')+'</td>'
+          +'<td>'+(r.lunch_slot||'—')+'</td>'
+          +'<td>'+(r.colleagues_count||'—')+'</td>'
+          +'<td style="font-weight:700;color:var(--navy)">'+(r.max_price||'—')+'</td>'
+          +'<td style="text-align:center;font-weight:900;color:'+nc+'">'+(r.nps_score!==null&&r.nps_score!==undefined?r.nps_score:'—')+'</td>'
+          +'<td title="'+(r.q1||'')+'">'+(r.q1||'—')+'</td>'
+          +'<td title="'+(r.q2||'')+'">'+(r.q2||'—')+'</td>'
+          +'<td title="'+(r.q5||'')+'">'+(r.q5||'—')+'</td>'
+          +'<td title="'+(r.q10||'')+'">'+(r.q10||'—')+'</td>'
+          +'<td style="color:var(--navy)" title="'+(r.dream_dish||'')+'">'+(r.dream_dish||'—')+'</td>'
+          +'<td title="'+(r.q11||'')+'">'+(r.q11||'—')+'</td>'
+          +'</tr>'
+      }).join('')+'</tbody></table></div>'
   }
-  document.getElementById('view-responses').innerHTML = html
+  document.getElementById('view-responses').innerHTML=html
 }
 
 function renderWaitlistTable(){
-  if(!aWaitlist.length){
-    document.getElementById('view-waitlist').innerHTML = '<div class="empty">No waitlist entries yet!</div>'
-    return
-  }
-  document.getElementById('view-waitlist').innerHTML =
+  if(!aWaitlist.length){ document.getElementById('view-waitlist').innerHTML='<div class="empty">No waitlist entries yet!</div>'; return }
+  document.getElementById('view-waitlist').innerHTML=
     '<div class="waitlist-tbl-wrap"><table class="waitlist-tbl"><thead><tr>'
-    + '<th>#</th><th>Name</th><th>Contact</th><th>IT Park</th><th>Date</th>'
-    + '</tr></thead><tbody>'
-    + aWaitlist.map(function(r,i){
-        return '<tr>'
-          + '<td>'+(i+1)+'</td>'
-          + '<td style="font-weight:700">'+(r.name||'—')+'</td>'
-          + '<td style="color:var(--navy);font-weight:700">'+(r.contact||'—')+'</td>'
-          + '<td>'+(r.it_park||'—')+'</td>'
-          + '<td>'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td>'
-          + '</tr>'
-      }).join('')
-    + '</tbody></table></div>'
+    +'<th>#</th><th>Name</th><th>Contact</th><th>IT Park</th><th>Date</th>'
+    +'</tr></thead><tbody>'
+    +aWaitlist.map(function(r,i){
+      return '<tr><td>'+(i+1)+'</td><td style="font-weight:700">'+(r.name||'—')+'</td>'
+        +'<td style="color:var(--navy);font-weight:700">'+(r.contact||'—')+'</td>'
+        +'<td>'+(r.it_park||'—')+'</td>'
+        +'<td>'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td></tr>'
+    }).join('')+'</tbody></table></div>'
 }
 
-var chartsBuilt = false
+function renderLoyaltyTable(){
+  if(!aLoyalty.length){ document.getElementById('view-loyalty').innerHTML='<div class="empty">No loyalty members yet!</div>'; return }
+  var total = 0; aLoyalty.forEach(function(r){ total+=(r.points||0) })
+  document.getElementById('view-loyalty').innerHTML=
+    '<div style="background:var(--navy);border-radius:8px;padding:1rem 1.3rem;margin-bottom:1.2rem;display:flex;gap:2rem;flex-wrap:wrap">'
+    +'<div><div style="font-size:10px;color:rgba(255,255,255,.5);font-weight:800;text-transform:uppercase;margin-bottom:3px">Total Members</div><div style="font-family:Bebas Neue,sans-serif;font-size:2rem;color:var(--yellow);line-height:1">'+aLoyalty.length+'</div></div>'
+    +'<div><div style="font-size:10px;color:rgba(255,255,255,.5);font-weight:800;text-transform:uppercase;margin-bottom:3px">Total Points Issued</div><div style="font-family:Bebas Neue,sans-serif;font-size:2rem;color:var(--yellow);line-height:1">'+total+'</div></div>'
+    +'</div>'
+    +'<div class="waitlist-tbl-wrap"><table class="waitlist-tbl"><thead><tr>'
+    +'<th>#</th><th>Name</th><th>Contact</th><th>IT Park</th><th>Points</th><th>Badge</th><th>Source</th><th>Date</th>'
+    +'</tr></thead><tbody>'
+    +aLoyalty.map(function(r,i){
+      var info=getPointsInfo(r.points||0)
+      return '<tr><td>'+(i+1)+'</td><td style="font-weight:700">'+(r.name||'—')+'</td>'
+        +'<td style="color:var(--navy);font-weight:700">'+(r.phone_email||'—')+'</td>'
+        +'<td>'+(r.it_park||'—')+'</td>'
+        +'<td><span style="background:var(--navy);color:var(--yellow);padding:2px 8px;border-radius:3px;font-family:Bebas Neue,sans-serif;font-size:1rem">'+(r.points||0)+' pts</span></td>'
+        +'<td>'+info.icon+' '+(r.badge||info.tier)+'</td>'
+        +'<td style="text-transform:uppercase;font-size:10px;font-weight:700;color:var(--gray)">'+(r.source||'—')+'</td>'
+        +'<td>'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td></tr>'
+    }).join('')+'</tbody></table></div>'
+  document.getElementById('view-loyalty').innerHTML += ''
+}
+
+var chartsBuilt=false
 function renderCharts(){
   if(chartsBuilt){ Object.keys(chartInst).forEach(function(k){ if(chartInst[k]) chartInst[k].destroy(); chartInst[k]=null }); chartsBuilt=false }
-  var counts = {teen:0,young:0,pro:0,adult:0}
+  var counts={teen:0,young:0,pro:0,adult:0}
   aData.forEach(function(r){ var k=r.form_version||r.age_group; if(counts[k]!==undefined) counts[k]++ })
   var spice={'Mild':0,'Medium':0,'Spicy':0,'Extra spicy':0}
   aData.forEach(function(r){ if(r.q5&&spice[r.q5]!==undefined) spice[r.q5]++ })
@@ -1148,97 +1380,92 @@ function renderCharts(){
   var disc={};aData.forEach(function(r){ if(r.q10) disc[r.q10]=(disc[r.q10]||0)+1 })
   var npsDist=Array(11).fill(0)
   aData.forEach(function(r){ if(r.nps_score!==null&&r.nps_score!==undefined) npsDist[r.nps_score]++ })
+  var srcC={};aLoyalty.forEach(function(r){ if(r.source) srcC[r.source]=(srcC[r.source]||0)+1 })
 
-  document.getElementById('view-analytics').innerHTML =
+  document.getElementById('view-analytics').innerHTML=
     '<div class="charts-grid">'
-    + '<div class="chart-card"><h3>Responses by Age Group</h3><div class="chart-wrap"><canvas id="cg"></canvas></div></div>'
-    + '<div class="chart-card"><h3>Spice Preference</h3><div class="chart-wrap"><canvas id="cs"></canvas></div></div>'
-    + '<div class="chart-card"><h3>Preferred Lunch Slot</h3><div class="chart-wrap"><canvas id="cl"></canvas></div></div>'
-    + '<div class="chart-card"><h3>Food Discovery Platform</h3><div class="chart-wrap"><canvas id="cd"></canvas></div></div>'
-    + '<div class="chart-card"><h3>NPS Distribution</h3><div class="chart-wrap"><canvas id="cn"></canvas></div></div>'
-    + '</div>'
+    +'<div class="chart-card"><h3>Responses by Age Group</h3><div class="chart-wrap"><canvas id="cg"></canvas></div></div>'
+    +'<div class="chart-card"><h3>Spice Preference</h3><div class="chart-wrap"><canvas id="cs"></canvas></div></div>'
+    +'<div class="chart-card"><h3>Preferred Lunch Slot</h3><div class="chart-wrap"><canvas id="cl"></canvas></div></div>'
+    +'<div class="chart-card"><h3>Food Discovery Platform</h3><div class="chart-wrap"><canvas id="cd"></canvas></div></div>'
+    +'<div class="chart-card"><h3>NPS Distribution</h3><div class="chart-wrap"><canvas id="cn"></canvas></div></div>'
+    +'<div class="chart-card"><h3>Loyalty Points Source</h3><div class="chart-wrap"><canvas id="cls"></canvas></div></div>'
+    +'</div>'
 
   setTimeout(function(){
-    var N='#1A2D5A',Y='#F5C518',R='#E8341A',W='#F7F7F2'
+    var N='#1A2D5A',Y='#F5C518',R='#E8341A',W='#F7F7F2',G='#25D366'
     var base={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}}
-    var c1=document.getElementById('cg')
-    if(c1) chartInst.g=new Chart(c1,{type:'bar',data:{labels:['Gen Z','Young Adults','Pros','Adults'],datasets:[{data:[counts.teen,counts.young,counts.pro,counts.adult],backgroundColor:[N,Y,R,'#8B4513'],borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false}}}})})
-    var c2=document.getElementById('cs')
-    if(c2) chartInst.s=new Chart(c2,{type:'doughnut',data:{labels:Object.keys(spice),datasets:[{data:Object.values(spice),backgroundColor:[W,'#FFD740',Y,R],borderWidth:3,borderColor:W}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10},color:N,boxWidth:12}}}}})
-    var c3=document.getElementById('cl')
-    if(c3) chartInst.l=new Chart(c3,{type:'bar',data:{labels:Object.keys(slotC),datasets:[{data:Object.values(slotC),backgroundColor:Y,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
-    var c4=document.getElementById('cd')
-    if(c4) chartInst.d=new Chart(c4,{type:'bar',data:{labels:Object.keys(disc),datasets:[{data:Object.values(disc),backgroundColor:R,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
-    var c5=document.getElementById('cn')
+    var c1=document.getElementById('cg');if(c1)chartInst.g=new Chart(c1,{type:'bar',data:{labels:['Gen Z','Young Adults','Pros','Adults'],datasets:[{data:[counts.teen,counts.young,counts.pro,counts.adult],backgroundColor:[N,Y,R,'#8B4513'],borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false}}}})})
+    var c2=document.getElementById('cs');if(c2)chartInst.s=new Chart(c2,{type:'doughnut',data:{labels:Object.keys(spice),datasets:[{data:Object.values(spice),backgroundColor:[W,'#FFD740',Y,R],borderWidth:3,borderColor:W}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10},color:N,boxWidth:12}}}}})
+    var c3=document.getElementById('cl');if(c3)chartInst.l=new Chart(c3,{type:'bar',data:{labels:Object.keys(slotC),datasets:[{data:Object.values(slotC),backgroundColor:Y,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
+    var c4=document.getElementById('cd');if(c4)chartInst.d=new Chart(c4,{type:'bar',data:{labels:Object.keys(disc),datasets:[{data:Object.values(disc),backgroundColor:R,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
     var npsColors=npsDist.map(function(_,i){ return i>=9?'#2E7D32':i>=7?Y:R })
-    if(c5) chartInst.n=new Chart(c5,{type:'bar',data:{labels:['0','1','2','3','4','5','6','7','8','9','10'],datasets:[{data:npsDist,backgroundColor:npsColors,borderRadius:4,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false}}}})})
-    chartsBuilt = true
+    var c5=document.getElementById('cn');if(c5)chartInst.n=new Chart(c5,{type:'bar',data:{labels:['0','1','2','3','4','5','6','7','8','9','10'],datasets:[{data:npsDist,backgroundColor:npsColors,borderRadius:4,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false}}}})})
+    var c6=document.getElementById('cls');if(c6)chartInst.ls=new Chart(c6,{type:'doughnut',data:{labels:Object.keys(srcC),datasets:[{data:Object.values(srcC),backgroundColor:[Y,G,R,N],borderWidth:3,borderColor:W}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10},color:N,boxWidth:12}}}}})
+    chartsBuilt=true
   },50)
 }
 
 async function loadAdmin(){
-  var statusEl = document.getElementById('admin-status')
-  if(statusEl) statusEl.textContent = 'Loading data from Supabase...'
-
-  // Fetch survey responses
-  var r1 = await _sb.from('survey_responses').select('*').order('created_at',{ascending:false})
-  if(r1.error){
-    var dbg = document.getElementById('debug-box')
-    if(dbg){ dbg.classList.add('show'); dbg.innerHTML = '❌ Error fetching survey_responses:<br>' + JSON.stringify(r1.error) }
-    if(statusEl) statusEl.textContent = 'Error: ' + r1.error.message
-    return
-  }
-  aData = r1.data || []
-
-  // Fetch waitlist
-  var r2 = await _sb.from('wokin_waitlist').select('*').order('created_at',{ascending:false})
-  if(!r2.error) aWaitlist = r2.data || []
-
-  // Update everything
-  updateStats()
-  renderResponsesTable()
-  renderWaitlistTable()
-  if(aView === 'analytics') renderCharts()
-
-  if(statusEl) statusEl.textContent = 'Last updated: ' + new Date().toLocaleTimeString('en-IN') + ' · ' + aData.length + ' responses loaded'
-
-  // Show debug info if 0 results
-  if(aData.length === 0){
-    var dbg = document.getElementById('debug-box')
-    if(dbg){ dbg.classList.add('show'); dbg.innerHTML = '⚠️ Tables exist but have 0 rows yet. Submit a test survey response and refresh to confirm it\'s working. If you submitted and still see 0, check your RLS policies in Supabase → Authentication → Policies.' }
-  } else {
-    var dbg = document.getElementById('debug-box')
-    if(dbg) dbg.classList.remove('show')
-  }
+  var s=document.getElementById('admin-status'); if(s) s.textContent='Loading data...'
+  var r1=await _sb.from('survey_responses').select('*').order('created_at',{ascending:false})
+  if(!r1.error) aData=r1.data||[]
+  var r2=await _sb.from('wokin_waitlist').select('*').order('created_at',{ascending:false}).catch(function(){ return {data:[]} })
+  if(!r2.error) aWaitlist=r2.data||[]
+  var r3=await _sb.from('wokin_loyalty').select('*').order('created_at',{ascending:false}).catch(function(){ return {data:[]} })
+  if(!r3.error) aLoyalty=r3.data||[]
+  updateStats(); renderResponsesTable(); renderWaitlistTable(); renderLoyaltyTable()
+  if(aView==='analytics') renderCharts()
+  if(s) s.textContent='Updated: '+new Date().toLocaleTimeString('en-IN')+' · '+aData.length+' responses · '+aLoyalty.length+' loyalty members'
 }
 
 function setFilt(f){ aFilt=f; renderResponsesTable() }
 
 function lockAdmin(){
-  adminUnlocked = false; pinEntry = ''
+  adminUnlocked=false; pinEntry=''
   for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.remove('filled')
-  document.getElementById('pin-error').textContent = ''
-  document.getElementById('pin-gate').style.display = 'block'
-  document.getElementById('admin-content').style.display = 'none'
+  document.getElementById('pin-error').textContent=''
+  document.getElementById('pin-gate').style.display='block'
+  document.getElementById('admin-content').style.display='none'
 }
+
+// ── WA BROADCAST ──────────────────────────────────────────────────────
+function openWA(){
+  var nums=[]
+  var seen={}
+  function addNum(n){
+    if(!n) return
+    n=n.trim().replace(/\s/g,'')
+    if(/^[6-9]\d{9}$/.test(n) && !seen[n]){ seen[n]=true; nums.push(n) }
+  }
+  aData.forEach(function(r){ addNum(r.phone_email) })
+  aWaitlist.forEach(function(r){ addNum(r.contact) })
+  aLoyalty.forEach(function(r){ addNum(r.phone_email) })
+  var el=document.getElementById('wa-nums')
+  if(nums.length){
+    el.textContent = nums.join('\n') + '\n\n── Total: '+nums.length+' valid phone numbers ──'
+  } else {
+    el.textContent = 'No valid 10-digit Indian phone numbers found yet.\nCollect more responses with phone numbers to build your broadcast list.'
+  }
+  document.getElementById('wa-modal').style.display='flex'
+}
+function closeWA(){ document.getElementById('wa-modal').style.display='none' }
+function copyWANums(){ navigator.clipboard.writeText(document.getElementById('wa-nums').textContent).then(function(){ showToast('Numbers Copied! Paste into WhatsApp Broadcast') }) }
 
 function exportCSV(){
   if(!aData.length){ alert('No data to export yet.'); return }
-  var headers = ['Date','Group','Age','Gender','Phone/Email','Lunch Slot','Colleagues','Max Price','NPS','Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8','Q9','Q10','Dream Dish','Comment']
-  var rows = aData.map(function(r){
-    return [
-      new Date(r.created_at).toLocaleDateString('en-IN'),
-      r.form_version||r.age_group||'',r.age||'',r.gender||'',
+  var headers=['Date','Group','Age','Gender','Phone/Email','Lunch Slot','Colleagues','Max Price','NPS','Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8','Q9','Q10','Dream Dish','Comment']
+  var rows=aData.map(function(r){
+    return [new Date(r.created_at).toLocaleDateString('en-IN'),r.form_version||r.age_group||'',r.age||'',r.gender||'',
       r.phone_email||'',r.lunch_slot||'',r.colleagues_count||'',r.max_price||'',
       r.nps_score!==null&&r.nps_score!==undefined?r.nps_score:'',
-      r.q1||'',r.q2||'',r.q3||'',r.q4||'',r.q5||'',r.q6||'',
-      r.q7||'',r.q8||'',r.q9||'',r.q10||'',r.dream_dish||'',r.q11||''
+      r.q1||'',r.q2||'',r.q3||'',r.q4||'',r.q5||'',r.q6||'',r.q7||'',r.q8||'',r.q9||'',r.q10||'',r.dream_dish||'',r.q11||''
     ].map(function(v){ return '"'+String(v).replace(/"/g,'""')+'"' }).join(',')
   })
-  var csv = [headers.join(',')].concat(rows).join('\n')
-  var blob = new Blob([csv],{type:'text/csv'})
-  var a = document.createElement('a'); a.href=URL.createObjectURL(blob)
-  a.download = 'wokin_responses_'+new Date().toISOString().split('T')[0]+'.csv'; a.click()
+  var csv=[headers.join(',')].concat(rows).join('\n')
+  var blob=new Blob([csv],{type:'text/csv'})
+  var a=document.createElement('a'); a.href=URL.createObjectURL(blob)
+  a.download='wokin_responses_'+new Date().toISOString().split('T')[0]+'.csv'; a.click()
   showToast('CSV Downloaded!')
 }
 </script>
