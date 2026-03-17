@@ -20,6 +20,8 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--dark);over
 .reveal-left.visible{opacity:1;transform:translateX(0)}
 .reveal-right{opacity:0;transform:translateX(50px);transition:opacity .7s ease,transform .7s ease}
 .reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-scale{opacity:0;transform:scale(.85);transition:opacity .6s ease,transform .6s ease}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
 .stagger-1{transition-delay:.1s}.stagger-2{transition-delay:.2s}.stagger-3{transition-delay:.3s}
 .stagger-4{transition-delay:.4s}.stagger-5{transition-delay:.5s}.stagger-6{transition-delay:.6s}
 
@@ -41,6 +43,7 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .mob-link{background:transparent;border:none;color:#fff;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;padding:12px 16px;border-radius:6px;text-align:left;width:100%;text-transform:uppercase;letter-spacing:.5px}
 .mob-link:hover{background:rgba(245,197,24,.15);color:var(--yellow)}
 .mob-cta{background:var(--yellow);color:var(--navy);border:none;padding:14px;border-radius:6px;font-size:14px;font-weight:900;cursor:pointer;font-family:inherit;margin-top:6px;width:100%;text-transform:uppercase;letter-spacing:1px}
+
 .page{display:none}.page.on{display:block}
 
 /* TICKER */
@@ -67,11 +70,15 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .btn-w:hover{border-color:var(--yellow);color:var(--yellow)}
 .btn-ny{background:transparent;color:var(--yellow);border:2px solid var(--yellow);padding:13px 26px;border-radius:5px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .15s;text-transform:uppercase;letter-spacing:.5px}
 .btn-ny:hover{background:var(--yellow);color:var(--navy)}
+
+/* LIVE COUNTER */
 .live-ctr{display:inline-flex;align-items:center;gap:12px;background:rgba(245,197,24,.1);border:1.5px solid rgba(245,197,24,.3);border-radius:6px;padding:12px 18px}
 .lc-dot{width:9px;height:9px;border-radius:50%;background:var(--yellow);animation:pulse 1.4s infinite;flex-shrink:0}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
 .lc-num{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--yellow);line-height:1}
 .lc-txt{font-size:11px;color:rgba(255,255,255,.65);font-weight:600;line-height:1.35}
+
+/* HERO VISUAL */
 .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;height:480px}
 .menu-card-a{background:var(--white);border-radius:10px;padding:1.8rem 1.5rem;width:230px;position:absolute;left:20px;top:20px;transform:rotate(-4deg);box-shadow:6px 6px 0 var(--yellow);z-index:2}
 .menu-card-b{background:var(--navy2);border-radius:10px;padding:1.8rem 1.5rem;width:230px;position:absolute;right:20px;top:60px;transform:rotate(4deg);box-shadow:6px 6px 0 var(--yellow3);z-index:1}
@@ -102,14 +109,12 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--navy);line-height:1}
 .stat-lbl{font-size:11px;color:var(--navy2);font-weight:800;text-transform:uppercase;letter-spacing:.06em}
 
-/* SECTIONS */
+/* WHY SECTION */
+.why-section{background:var(--off);padding:5rem 5%}
+.why-inner{max-width:1200px;margin:0 auto}
 .sec-eyebrow{display:inline-block;background:var(--yellow);color:var(--navy);font-size:10px;font-weight:900;padding:4px 12px;border-radius:3px;margin-bottom:.8rem;text-transform:uppercase;letter-spacing:.12em}
 .sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,5rem);color:var(--navy);letter-spacing:2px;line-height:.95;margin-bottom:.5rem}
 .sec-sub{font-size:14px;color:var(--gray);margin-bottom:2.5rem;max-width:500px;line-height:1.7}
-
-/* WHY */
-.why-section{background:var(--off);padding:5rem 5%}
-.why-inner{max-width:1200px;margin:0 auto}
 .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
 .why-card{background:var(--white);border:2px solid var(--light);border-radius:8px;padding:1.8rem 1.5rem;transition:all .2s;position:relative;overflow:hidden}
 .why-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--yellow)}
@@ -137,52 +142,7 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .spice-dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
 .spice-dot.off{background:rgba(255,255,255,.2)}
 
-/* DISH VOTING POLL */
-.poll-section{background:var(--yellow);padding:5rem 5%;position:relative;overflow:hidden}
-.poll-section::before{content:'VOTE';position:absolute;bottom:-2rem;right:-1rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,18vw,20rem);color:rgba(26,45,90,.07);pointer-events:none;line-height:1}
-.poll-inner{max-width:900px;margin:0 auto;position:relative;z-index:2}
-.poll-header{text-align:center;margin-bottom:2.5rem}
-.poll-header h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,5rem);color:var(--navy);letter-spacing:2px;line-height:.95;margin-bottom:.5rem}
-.poll-header p{color:var(--navy2);font-size:14px;opacity:.7}
-.poll-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-bottom:1.5rem}
-.poll-card{background:var(--white);border:3px solid transparent;border-radius:8px;padding:1.5rem 1.2rem;cursor:pointer;transition:all .2s;text-align:center;position:relative;overflow:hidden}
-.poll-card:hover{border-color:var(--navy);transform:translateY(-3px)}
-.poll-card.voted{border-color:var(--navy);background:var(--navy)}
-.poll-card.voted .poll-dish-name{color:var(--yellow)}
-.poll-card.voted .poll-dish-desc{color:rgba(255,255,255,.6)}
-.poll-card.voted .poll-vote-count{color:var(--yellow)}
-.poll-card-emoji{font-size:36px;margin-bottom:.6rem;display:block}
-.poll-dish-name{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--navy);letter-spacing:1px;margin-bottom:.3rem}
-.poll-dish-desc{font-size:11px;color:var(--gray);line-height:1.4;margin-bottom:.8rem}
-.poll-bar-wrap{background:var(--light);border-radius:3px;height:6px;margin-bottom:.5rem;overflow:hidden}
-.poll-bar{height:100%;background:var(--navy);border-radius:3px;transition:width .6s ease}
-.poll-card.voted .poll-bar{background:var(--yellow)}
-.poll-vote-count{font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--navy);letter-spacing:.5px}
-.poll-total{text-align:center;font-size:13px;color:var(--navy2);font-weight:700;opacity:.7}
-.poll-voted-msg{text-align:center;background:var(--navy);color:var(--yellow);border-radius:6px;padding:12px 20px;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:1px;display:none;margin-top:1rem}
-
-/* VIDEO SECTION */
-.video-section{background:var(--navy3);padding:5rem 5%;position:relative;overflow:hidden}
-.video-section::before{content:'BTS';position:absolute;bottom:-2rem;left:-1rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,18vw,20rem);color:rgba(245,197,24,.04);pointer-events:none;line-height:1}
-.video-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
-.video-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
-.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.video-main{grid-row:span 2}
-.video-embed{border-radius:8px;overflow:hidden;position:relative;background:var(--navy2);border:2px solid rgba(245,197,24,.2);cursor:pointer}
-.video-embed-main{aspect-ratio:9/16}
-.video-embed-sm{aspect-ratio:16/9}
-.video-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;text-align:center;min-height:200px}
-.vp-emoji{font-size:40px}
-.vp-play{width:56px;height:56px;border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;transition:transform .15s;flex-shrink:0}
-.vp-play:hover{transform:scale(1.1)}
-.vp-title{font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--white);letter-spacing:1px}
-.vp-sub{font-size:11px;color:rgba(255,255,255,.5);line-height:1.4}
-.video-embed iframe{width:100%;height:100%;border:none;display:block}
-.video-add-btn{background:rgba(245,197,24,.1);border:2px dashed rgba(245,197,24,.3);border-radius:8px;padding:1.5rem;text-align:center;cursor:pointer;transition:all .2s}
-.video-add-btn:hover{background:rgba(245,197,24,.15);border-color:rgba(245,197,24,.5)}
-.video-add-btn p{font-size:13px;color:rgba(255,255,255,.5);margin-top:.5rem}
-
-/* WAITLIST */
+/* WAITLIST SECTION */
 .waitlist-section{background:var(--yellow);padding:5rem 5%;position:relative;overflow:hidden}
 .waitlist-section::before{content:'JOIN';position:absolute;bottom:-3rem;right:-1rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,20vw,22rem);color:rgba(26,45,90,.07);pointer-events:none;line-height:1}
 .waitlist-inner{max-width:1000px;margin:0 auto;position:relative;z-index:2}
@@ -260,6 +220,7 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .cta-inner{max-width:700px;margin:0 auto;position:relative;z-index:2}
 .cta-inner h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,6vw,6rem);color:var(--navy);letter-spacing:3px;line-height:.9;margin-bottom:1rem}
 .cta-inner p{font-size:15px;color:var(--navy2);margin-bottom:2rem;line-height:1.7;font-weight:500}
+
 footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yellow)}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .footer-brand{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--yellow);letter-spacing:3px}
@@ -307,10 +268,11 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
 .rbtn:hover{border-color:var(--navy);color:var(--navy)}
 .rbtn.sel{background:var(--navy)!important;color:var(--yellow)!important;border-color:var(--navy)!important}
 .twocol{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
 .fg{display:flex;flex-direction:column;gap:5px}
 .fg label{font-size:10px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.07em}
-input[type=text],input[type=email],select,textarea{width:100%;padding:10px 12px;border:2px solid var(--light);border-radius:5px;font-family:inherit;font-size:13px;color:var(--dark);background:var(--white);outline:none;transition:border-color .15s;appearance:none;-webkit-appearance:none}
-input[type=text]:focus,input[type=email]:focus,select:focus,textarea:focus{border-color:var(--navy)}
+input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;padding:10px 12px;border:2px solid var(--light);border-radius:5px;font-family:inherit;font-size:13px;color:var(--dark);background:var(--white);outline:none;transition:border-color .15s;appearance:none;-webkit-appearance:none}
+input[type=text]:focus,input[type=email]:focus,input[type=tel]:focus,select:focus,textarea:focus{border-color:var(--navy)}
 textarea{resize:vertical;min-height:70px}
 .nps-row{display:flex;gap:5px;flex-wrap:wrap}
 .nps-btn{width:40px;height:40px;border:2px solid var(--light);border-radius:4px;background:var(--white);font-size:12px;font-weight:900;color:var(--gray);cursor:pointer;font-family:inherit;transition:all .12s;-webkit-tap-highlight-color:transparent;outline:none;flex-shrink:0}
@@ -349,19 +311,14 @@ textarea{resize:vertical;min-height:70px}
 
 /* ADMIN */
 .admin-bg{background:var(--off);min-height:100vh;padding:2rem 5%}
-.admin-inner-wrap{max-width:1200px;margin:0 auto}
+.admin-inner{max-width:1200px;margin:0 auto}
 .ahdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.8rem;flex-wrap:wrap;gap:1rem}
 .ahdr h2{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--navy);letter-spacing:2px}
 .ahdr p{font-size:13px;color:var(--gray);margin-top:3px}
 .ahdr-btns{display:flex;gap:8px;flex-wrap:wrap}
-.rfbtn{background:var(--navy);color:var(--yellow);border:none;padding:10px 20px;border-radius:5px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
-.rfbtn:hover{background:var(--navy2)}
+.rfbtn{background:var(--navy);color:var(--yellow);border:none;padding:10px 20px;border-radius:5px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px}
 .lock-btn{background:transparent;border:2px solid var(--light);color:var(--gray);padding:9px 16px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
 .lock-btn:hover{border-color:var(--navy);color:var(--navy)}
-.export-btn{background:var(--yellow);color:var(--navy);border:none;padding:10px 20px;border-radius:5px;font-size:12px;font-weight:900;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
-.export-btn:hover{background:var(--yellow3)}
-.wa-blast-btn{background:#25D366;color:#fff;border:none;padding:10px 20px;border-radius:5px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
-.wa-blast-btn:hover{background:#1ebe5d}
 .admin-tabs{display:flex;gap:8px;margin-bottom:1.5rem;border-bottom:2px solid var(--light);padding-bottom:1rem;flex-wrap:wrap}
 .admin-tab{background:transparent;border:2px solid var(--light);color:var(--gray);padding:8px 18px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
 .admin-tab.active{background:var(--navy);color:var(--yellow);border-color:var(--navy)}
@@ -374,18 +331,6 @@ textarea{resize:vertical;min-height:70px}
 .chart-card{background:var(--white);border:2px solid var(--light);border-radius:8px;padding:1.3rem}
 .chart-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--navy);margin-bottom:1rem;letter-spacing:1px}
 .chart-wrap{position:relative;height:200px}
-
-/* IT PARK HEATMAP */
-.heatmap-card{background:var(--white);border:2px solid var(--light);border-radius:8px;padding:1.3rem;margin-bottom:1.2rem}
-.heatmap-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--navy);margin-bottom:1rem;letter-spacing:1px}
-.heatmap-list{display:flex;flex-direction:column;gap:8px}
-.heatmap-row{display:flex;align-items:center;gap:12px}
-.heatmap-label{font-size:12px;font-weight:700;color:var(--navy);min-width:160px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
-.heatmap-bar-wrap{flex:1;background:var(--light);border-radius:3px;height:20px;overflow:hidden;position:relative}
-.heatmap-bar{height:100%;background:var(--navy);border-radius:3px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;transition:width .8s ease;min-width:30px}
-.heatmap-bar span{font-size:10px;font-weight:800;color:var(--yellow)}
-.heatmap-rank{width:24px;height:24px;border-radius:4px;background:var(--yellow);color:var(--navy);font-family:'Bebas Neue',sans-serif;font-size:.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-
 .filtrow{display:flex;gap:7px;margin-bottom:1.3rem;flex-wrap:wrap}
 .fbtn{padding:7px 16px;border-radius:4px;border:2px solid var(--light);background:var(--white);font-size:11px;color:var(--gray);cursor:pointer;font-family:inherit;font-weight:700;transition:all .15s;text-transform:uppercase;letter-spacing:.4px}
 .fbtn.active{background:var(--navy);color:var(--yellow);border-color:var(--navy)}
@@ -400,16 +345,7 @@ tr:hover td{background:var(--off)}
 .bp{background:#5e2000;color:#ffb77a}.ba{background:#4a1a4a;color:#e8a0e8}
 .empty{text-align:center;padding:3rem;color:var(--gray);font-size:14px;text-transform:uppercase;letter-spacing:.5px;font-weight:700}
 
-/* WA BLAST MODAL */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:500;display:flex;align-items:center;justify-content:center;padding:1rem}
-.modal-box{background:var(--white);border-radius:10px;border:3px solid var(--yellow);padding:2rem;max-width:560px;width:100%;max-height:80vh;overflow-y:auto}
-.modal-box h3{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--navy);letter-spacing:1px;margin-bottom:.5rem}
-.modal-box p{font-size:13px;color:var(--gray);margin-bottom:1.2rem;line-height:1.6}
-.modal-numbers{background:var(--off);border-radius:6px;padding:1rem;font-size:12px;color:var(--dark);font-family:monospace;white-space:pre-wrap;word-break:break-all;max-height:200px;overflow-y:auto;border:1px solid var(--light);margin-bottom:1rem;line-height:1.8}
-.modal-btns{display:flex;gap:8px;flex-wrap:wrap}
-.modal-copy-btn{background:var(--yellow);color:var(--navy);border:none;padding:11px 20px;border-radius:5px;font-size:12px;font-weight:900;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px}
-.modal-close-btn{background:transparent;border:2px solid var(--light);color:var(--gray);padding:10px 18px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px}
-
+/* WAITLIST TABLE */
 .waitlist-tbl-wrap{overflow-x:auto;border:2px solid var(--light);border-radius:8px;background:var(--white);margin-top:1rem}
 .waitlist-tbl{width:100%;border-collapse:collapse;font-size:12px;min-width:500px}
 .waitlist-tbl th{text-align:left;padding:11px 12px;background:var(--yellow);border-bottom:2px solid var(--yellow2);font-weight:900;font-size:10px;color:var(--navy);text-transform:uppercase;letter-spacing:.07em}
@@ -417,6 +353,7 @@ tr:hover td{background:var(--off)}
 .waitlist-tbl tr:last-child td{border-bottom:none}
 .waitlist-tbl tr:hover td{background:var(--off)}
 
+/* TOAST */
 .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--yellow);padding:12px 24px;border-radius:5px;font-size:12px;font-weight:800;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none;text-transform:uppercase;letter-spacing:1px;border:2px solid var(--yellow)}
 .toast.show{opacity:1}
 
@@ -427,8 +364,7 @@ tr:hover td{background:var(--off)}
   .hero h1{font-size:clamp(3.5rem,10vw,6rem)}
   .waitlist-grid{grid-template-columns:1fr}
   .waitlist-perks{order:-1}
-  .video-grid{grid-template-columns:1fr}
-  .video-main{grid-row:span 1}
+  .cta-section>div:last-child{display:none}
 }
 @media(max-width:640px){
   nav{padding:0 4%;height:60px}
@@ -440,9 +376,8 @@ tr:hover td{background:var(--off)}
   .hero-btns{flex-direction:column}
   .btn-y,.btn-w{width:100%;text-align:center}
   .live-ctr{width:100%}
-  .why-section,.menu-section,.people-section,.insta-section,.ref-section,.cta-section,.waitlist-section,.poll-section,.video-section{padding:3.5rem 4%}
+  .why-section,.menu-section,.people-section,.insta-section,.ref-section,.cta-section,.waitlist-section{padding:3.5rem 4%}
   .why-grid,.menu-grid,.people-grid{grid-template-columns:1fr 1fr;gap:.9rem}
-  .poll-grid{grid-template-columns:1fr 1fr}
   .insta-grid{grid-template-columns:repeat(3,1fr)}
   .ref-steps{grid-template-columns:1fr}
   .share-row{flex-direction:column;align-items:center}
@@ -454,6 +389,7 @@ tr:hover td{background:var(--off)}
   .form-body{padding:1rem 1.2rem 1.5rem}
   .qblock{padding:1rem 1.1rem}
   .twocol{grid-template-columns:1fr 1fr;gap:8px}
+  .threecol{grid-template-columns:1fr}
   .nps-row{gap:4px}
   .nps-btn{width:36px;height:36px;font-size:11px}
   .pin-card{padding:2rem 1.4rem}
@@ -471,7 +407,7 @@ tr:hover td{background:var(--off)}
   .stat-lbl{font-size:10px}
 }
 @media(max-width:380px){
-  .why-grid,.menu-grid,.people-grid,.poll-grid{grid-template-columns:1fr}
+  .why-grid,.menu-grid,.people-grid{grid-template-columns:1fr}
   .insta-grid{grid-template-columns:repeat(2,1fr)}
   .twocol{grid-template-columns:1fr}
   .hero h1{font-size:2.8rem}
@@ -506,7 +442,6 @@ tr:hover td{background:var(--off)}
 
 <!-- LANDING PAGE -->
 <div id="pg-landing" class="page on">
-
   <div class="ticker-wrap">
     <div class="ticker">
       <span class="ticker-item">WOK IN <span class="ticker-dot"></span></span>
@@ -515,14 +450,14 @@ tr:hover td{background:var(--off)}
       <span class="ticker-item">CHINESE WOK <span class="ticker-dot"></span></span>
       <span class="ticker-item">IT PARK FIRST <span class="ticker-dot"></span></span>
       <span class="ticker-item">JOIN WAITLIST <span class="ticker-dot"></span></span>
-      <span class="ticker-item">VOTE FOR YOUR DISH <span class="ticker-dot"></span></span>
+      <span class="ticker-item">SHAPE THE MENU <span class="ticker-dot"></span></span>
       <span class="ticker-item">WOK IN <span class="ticker-dot"></span></span>
       <span class="ticker-item">BOLD FLAVOR <span class="ticker-dot"></span></span>
       <span class="ticker-item">INDIAN SOUL <span class="ticker-dot"></span></span>
       <span class="ticker-item">CHINESE WOK <span class="ticker-dot"></span></span>
       <span class="ticker-item">IT PARK FIRST <span class="ticker-dot"></span></span>
       <span class="ticker-item">JOIN WAITLIST <span class="ticker-dot"></span></span>
-      <span class="ticker-item">VOTE FOR YOUR DISH <span class="ticker-dot"></span></span>
+      <span class="ticker-item">SHAPE THE MENU <span class="ticker-dot"></span></span>
     </div>
   </div>
 
@@ -531,7 +466,12 @@ tr:hover td{background:var(--off)}
     <div class="hero-inner">
       <div class="hero-left">
         <div class="hero-tag reveal">🌶️ New Brand · IT Parks First · Survey Open</div>
-        <h1 class="reveal stagger-1">BOLD<span class="line-yellow">FLAVOR.</span><span class="line-outline">INDIAN</span>SOUL.</h1>
+        <h1 class="reveal stagger-1">
+          BOLD
+          <span class="line-yellow">FLAVOR.</span>
+          <span class="line-outline">INDIAN</span>
+          SOUL.
+        </h1>
         <p class="hero-sub reveal stagger-2">Chinese wok cooking meets Indian spices. Fast, bold, and cooked right in front of you. Help us build the menu your IT park deserves.</p>
         <div class="hero-btns reveal stagger-3">
           <button class="btn-y" onclick="goTo('survey')">Shape the Menu →</button>
@@ -539,7 +479,10 @@ tr:hover td{background:var(--off)}
         </div>
         <div class="live-ctr reveal stagger-4">
           <div class="lc-dot"></div>
-          <div><div class="lc-num" id="hero-counter">...</div><div class="lc-txt">food lovers have<br>shared their taste</div></div>
+          <div>
+            <div class="lc-num" id="hero-counter">...</div>
+            <div class="lc-txt">food lovers have<br>shared their taste</div>
+          </div>
         </div>
       </div>
       <div class="hero-visual reveal-right stagger-2">
@@ -571,7 +514,10 @@ tr:hover td{background:var(--off)}
           <div class="mc-row-w"><span>Ginger Iced Tea</span><span>₹69</span></div>
           <div class="mc-foot-w">Made hot. Always bold.</div>
         </div>
-        <div class="hero-badge"><div class="hb-num">4</div><div class="hb-txt">Age Group<br>Surveys</div></div>
+        <div class="hero-badge">
+          <div class="hb-num">4</div>
+          <div class="hb-txt">Age Group<br>Surveys</div>
+        </div>
       </div>
     </div>
   </div>
@@ -620,106 +566,13 @@ tr:hover td{background:var(--off)}
     </div>
   </div>
 
-  <!-- DISH VOTING POLL -->
-  <div class="poll-section">
-    <div class="poll-inner">
-      <div class="poll-header reveal">
-        <span class="sec-eyebrow" style="background:rgba(26,45,90,.15);color:var(--navy)">Community Poll</span>
-        <h2>VOTE FOR THE<br>NEXT DISH</h2>
-        <p>Which dish should WOK IN add to the menu next? You decide.</p>
-      </div>
-      <div class="poll-grid" id="poll-grid">
-        <div class="empty" style="grid-column:1/-1">Loading votes...</div>
-      </div>
-      <div class="poll-total" id="poll-total"></div>
-      <div class="poll-voted-msg" id="poll-voted-msg">✓ Vote Counted! Results update live.</div>
-    </div>
-  </div>
-
-  <!-- BTS VIDEO SECTION -->
-  <div class="video-section">
-    <div class="video-inner">
-      <div class="video-header">
-        <div class="reveal-left">
-          <span class="sec-eyebrow" style="background:rgba(245,197,24,.15);color:var(--yellow)">Behind the Scenes</span>
-          <h2 class="sec-title" style="color:var(--white)">WATCH WOK IN<br>COME TO LIFE</h2>
-        </div>
-        <div class="reveal-right"><p style="color:rgba(255,255,255,.55);font-size:13px;max-width:260px;line-height:1.6">From spice sourcing to the first wok fire — follow every step of our journey.</p></div>
-      </div>
-      <div class="video-grid">
-        <div class="video-main reveal-left">
-          <div class="video-embed video-embed-main">
-            <div class="video-placeholder" id="vid-main" onclick="playVideo('main','https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1')">
-              <span class="vp-emoji">🥢</span>
-              <div class="vp-play">▶</div>
-              <div class="vp-title">WOK IN — The Story</div>
-              <div class="vp-sub">How a bold idea became India's next street food brand</div>
-            </div>
-          </div>
-        </div>
-        <div class="reveal-right stagger-1">
-          <div class="video-embed video-embed-sm" style="margin-bottom:1rem">
-            <div class="video-placeholder" id="vid-2" onclick="playVideo('2','https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1')">
-              <span class="vp-emoji">🌶️</span>
-              <div style="display:flex;align-items:center;gap:.8rem">
-                <div class="vp-play" style="width:40px;height:40px;font-size:14px">▶</div>
-                <div>
-                  <div class="vp-title">Spice Sourcing</div>
-                  <div class="vp-sub">Finding the finest Indian spices</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="video-embed video-embed-sm">
-            <div class="video-placeholder" id="vid-3" onclick="playVideo('3','https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1')">
-              <span class="vp-emoji">🔥</span>
-              <div style="display:flex;align-items:center;gap:.8rem">
-                <div class="vp-play" style="width:40px;height:40px;font-size:14px">▶</div>
-                <div>
-                  <div class="vp-title">First Wok Fire</div>
-                  <div class="vp-sub">Recipe testing — Masala Orange Chicken</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="reveal stagger-2">
-          <div class="video-embed video-embed-sm" style="margin-bottom:1rem">
-            <div class="video-placeholder" id="vid-4" onclick="playVideo('4','https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1')">
-              <span class="vp-emoji">🚚</span>
-              <div style="display:flex;align-items:center;gap:.8rem">
-                <div class="vp-play" style="width:40px;height:40px;font-size:14px">▶</div>
-                <div>
-                  <div class="vp-title">Truck Build</div>
-                  <div class="vp-sub">Designing the WOK IN food truck</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="video-embed video-embed-sm">
-            <div class="video-placeholder" id="vid-5" onclick="playVideo('5','https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1')">
-              <span class="vp-emoji">📍</span>
-              <div style="display:flex;align-items:center;gap:.8rem">
-                <div class="vp-play" style="width:40px;height:40px;font-size:14px">▶</div>
-                <div>
-                  <div class="vp-title">Location Scouting</div>
-                  <div class="vp-sub">Finding the perfect IT park spot</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- WAITLIST -->
+  <!-- WAITLIST SECTION -->
   <div class="waitlist-section" id="waitlist-anchor">
     <div class="waitlist-inner">
       <div class="waitlist-grid">
         <div class="waitlist-perks reveal-left">
           <span class="sec-eyebrow" style="background:rgba(26,45,90,.15);color:var(--navy)">Early Access</span>
-          <h3>JOIN THE<br>FOUNDING CREW</h3>
+          <h3>JOIN THE<br>FOUNDING<br>CREW</h3>
           <div class="perk-item"><div class="perk-num">1</div><div class="perk-text"><h4>Launch Day Alert</h4><p>Be the first to know when WOK IN arrives at your IT park</p></div></div>
           <div class="perk-item"><div class="perk-num">2</div><div class="perk-text"><h4>Founding Member Discount</h4><p>Get 20% off your first 5 orders exclusively for waitlist members</p></div></div>
           <div class="perk-item"><div class="perk-num">3</div><div class="perk-text"><h4>Shape the Final Menu</h4><p>Waitlist members get early access to vote on the final menu before launch</p></div></div>
@@ -747,7 +600,7 @@ tr:hover td{background:var(--off)}
     </div>
   </div>
 
-  <!-- PEOPLE -->
+  <!-- PEOPLE SECTION -->
   <div class="people-section">
     <div class="people-inner">
       <div class="reveal" style="text-align:center;margin-bottom:.5rem">
@@ -789,7 +642,7 @@ tr:hover td{background:var(--off)}
         <div class="insta-card reveal stagger-1"><div class="ic-body"><span class="ic-emoji">🥢</span><div class="ic-txt">The wok that started it all</div></div><div class="insta-overlay"><span>View Post</span></div></div>
         <div class="insta-card reveal stagger-2"><div class="ic-body"><span class="ic-emoji">🌶️</span><div class="ic-txt">Sourcing the finest Indian spices</div></div><div class="insta-overlay"><span>View Post</span></div></div>
         <div class="insta-card reveal stagger-3"><div class="ic-body"><span class="ic-emoji">🍊</span><div class="ic-txt">Masala Orange Chicken — first test!</div></div><div class="insta-overlay"><span>View Post</span></div></div>
-        <div class="insta-card reveal stagger-4"><div class="ic-body"><span class="ic-emoji">🚚</span><div class="ic-txt">Food truck wrap reveal coming soon</div></div><div class="insta-overlay"><span>View Post</span></div></div>
+        <div class="insta-card reveal stagger-4"><div class="ic-body"><span class="ic-emoji">🚚</span><div class="ic-txt">Food truck wrap reveal — coming soon</div></div><div class="insta-overlay"><span>View Post</span></div></div>
         <div class="insta-card reveal stagger-5"><div class="ic-body"><span class="ic-emoji">👨‍🍳</span><div class="ic-txt">Perfecting the tadka fried rice</div></div><div class="insta-overlay"><span>View Post</span></div></div>
         <div class="insta-card reveal stagger-6"><div class="ic-body"><span class="ic-emoji">📍</span><div class="ic-txt">Scouting IT parks in Hyderabad</div></div><div class="insta-overlay"><span>View Post</span></div></div>
       </div>
@@ -820,7 +673,7 @@ tr:hover td{background:var(--off)}
     <div class="cta-inner reveal">
       <span class="sec-eyebrow" style="background:rgba(26,45,90,.15);color:var(--navy)">Take the Survey</span>
       <h2>READY TO<br>SHAPE WOK IN?</h2>
-      <p>Takes just 3 minutes. Your taste becomes our recipe. Be the first to help launch a bold new food brand at your IT park.</p>
+      <p>Takes just 2 minutes. Your taste becomes our recipe. Be the first to help launch a bold new food brand at your IT park.</p>
       <button class="btn-y" onclick="goTo('survey')">Take Survey Now →</button>
     </div>
   </div>
@@ -875,10 +728,18 @@ tr:hover td{background:var(--off)}
           <div class="pin-dot" id="dot2"></div><div class="pin-dot" id="dot3"></div>
         </div>
         <div class="pin-grid">
-          <button class="pin-btn" onclick="pinPress('1')">1</button><button class="pin-btn" onclick="pinPress('2')">2</button><button class="pin-btn" onclick="pinPress('3')">3</button>
-          <button class="pin-btn" onclick="pinPress('4')">4</button><button class="pin-btn" onclick="pinPress('5')">5</button><button class="pin-btn" onclick="pinPress('6')">6</button>
-          <button class="pin-btn" onclick="pinPress('7')">7</button><button class="pin-btn" onclick="pinPress('8')">8</button><button class="pin-btn" onclick="pinPress('9')">9</button>
-          <button class="pin-btn pin-small" onclick="pinClear()">Clear</button><button class="pin-btn" onclick="pinPress('0')">0</button><button class="pin-btn pin-small" onclick="pinBackspace()">⌫</button>
+          <button class="pin-btn" onclick="pinPress('1')">1</button>
+          <button class="pin-btn" onclick="pinPress('2')">2</button>
+          <button class="pin-btn" onclick="pinPress('3')">3</button>
+          <button class="pin-btn" onclick="pinPress('4')">4</button>
+          <button class="pin-btn" onclick="pinPress('5')">5</button>
+          <button class="pin-btn" onclick="pinPress('6')">6</button>
+          <button class="pin-btn" onclick="pinPress('7')">7</button>
+          <button class="pin-btn" onclick="pinPress('8')">8</button>
+          <button class="pin-btn" onclick="pinPress('9')">9</button>
+          <button class="pin-btn pin-small" onclick="pinClear()">Clear</button>
+          <button class="pin-btn" onclick="pinPress('0')">0</button>
+          <button class="pin-btn pin-small" onclick="pinBackspace()">⌫</button>
         </div>
         <div class="pin-error" id="pin-error"></div>
       </div>
@@ -886,20 +747,7 @@ tr:hover td{background:var(--off)}
   </div>
   <div id="admin-content" style="display:none">
     <div class="admin-bg">
-      <div class="admin-inner-wrap" id="admin-inner"></div>
-    </div>
-  </div>
-</div>
-
-<!-- WA BLAST MODAL -->
-<div class="modal-overlay" id="wa-modal" style="display:none" onclick="if(event.target===this)closeWAModal()">
-  <div class="modal-box">
-    <h3>WHATSAPP BROADCAST LIST</h3>
-    <p>Copy these numbers and paste them into WhatsApp broadcast to reach all your survey respondents and waitlist members who provided phone numbers.</p>
-    <div class="modal-numbers" id="wa-numbers">Loading...</div>
-    <div class="modal-btns">
-      <button class="modal-copy-btn" onclick="copyWANumbers()">Copy All Numbers</button>
-      <button class="modal-close-btn" onclick="closeWAModal()">Close</button>
+      <div class="admin-inner" id="admin-inner"></div>
     </div>
   </div>
 </div>
@@ -909,28 +757,16 @@ tr:hover td{background:var(--off)}
 const _sb=supabase.createClient('https://zntdkcmgekdfdjbcyctp.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpudGRrY21nZWtkZmRqYmN5Y3RwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2MzQxNzIsImV4cCI6MjA4OTIxMDE3Mn0.GniK5lVxNMSta5uTks135vofOsy0u7kfO9jq8MyEino')
 
 // SCROLL ANIMATIONS
-var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'})
-function initReveal(){document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){obs.observe(el)})}
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12,rootMargin:'0px 0px -40px 0px'})
+function initReveal(){document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(function(el){obs.observe(el)})}
 initReveal()
 
 // SHARE
 var SURL=window.location.href.split('?')[0]
-var SMSG='Hey! I just took the WOK IN food survey — bold Indian-Chinese fusion launching at IT parks. Takes 3 mins, helps shape their menu! Fill it: '+SURL
+var SMSG='Hey! I just took the WOK IN food survey — bold Indian-Chinese fusion launching at IT parks. Takes 2 mins, helps shape their menu! Fill it: '+SURL
 function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent(SMSG),'_blank')}
 function shareEM(){window.open('mailto:?subject=Help shape WOK IN — Indo-Chinese at your IT park&body='+encodeURIComponent(SMSG),'_blank')}
-function copyLink(){navigator.clipboard.writeText(SURL).then(function(){showToast('Link Copied!')}).catch(function(){prompt('Copy:',SURL)})}
-function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2500)}
-
-// VIDEO PLAYER
-function playVideo(id,url){
-  var el=document.getElementById('vid-'+id)
-  if(!el)return
-  var iframe=document.createElement('iframe')
-  iframe.src=url;iframe.allow='autoplay;encrypted-media';iframe.allowFullscreen=true
-  iframe.style.cssText='width:100%;height:100%;border:none;border-radius:6px'
-  el.parentElement.innerHTML=''
-  el.parentElement.appendChild(iframe)
-}
+function copyLink(){navigator.clipboard.writeText(SURL).then(function(){var t=document.getElementById('toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2500)}).catch(function(){prompt('Copy:',SURL)})}
 
 // COUNTERS
 async function loadCounter(){
@@ -938,67 +774,29 @@ async function loadCounter(){
   var el=document.getElementById('hero-counter');if(el)el.textContent=(r.count||0)+'+'
 }
 async function loadWaitlistCounter(){
-  var r=await _sb.from('wokin_waitlist').select('id',{count:'exact',head:true}).catch(function(){return{count:0}})
+  var r=await _sb.from('wokin_waitlist').select('id',{count:'exact',head:true})
   var el=document.getElementById('waitlist-counter');if(el)el.textContent=(r.count||0)+'+'
 }
 loadCounter();loadWaitlistCounter()
 
-// DISH VOTING POLL
-var POLL_DISHES=[
-  {id:'butter_chicken_noodles',name:'Butter Chicken Wok Noodles',emoji:'🍜',desc:'Rich buttery sauce meets chewy wok noodles'},
-  {id:'schezwan_egg_rice',name:'Schezwan Egg Fried Rice',emoji:'🍳',desc:'Spicy Schezwan with runny egg on wok rice'},
-  {id:'paneer_65_wrap',name:'Paneer 65 Wok Wrap',emoji:'🌯',desc:'Crispy paneer 65 in a masala flatbread'},
-  {id:'keema_dumplings',name:'Keema Momo Dumplings',emoji:'🥟',desc:'Spiced minced meat dumplings with chili oil'}
-]
-var myVote=localStorage.getItem('wokin_vote')
-
-async function loadPoll(){
-  var r=await _sb.from('wokin_dish_votes').select('dish_name').catch(function(){return{data:[]}})
-  var votes={};var total=0
-  if(r.data){r.data.forEach(function(v){votes[v.dish_name]=(votes[v.dish_name]||0)+1;total++})}
-  renderPoll(votes,total)
-}
-
-function renderPoll(votes,total){
-  var grid=document.getElementById('poll-grid')
-  var totalEl=document.getElementById('poll-total')
-  if(totalEl)totalEl.textContent=total>0?total+' votes cast so far':''
-  if(!grid)return
-  grid.innerHTML=POLL_DISHES.map(function(d){
-    var v=votes[d.id]||0
-    var pct=total>0?Math.round((v/total)*100):0
-    var isVoted=myVote===d.id
-    return '<div class="poll-card'+(isVoted?' voted':'')+'" onclick="castVote(\''+d.id+'\')">'
-      +'<span class="poll-card-emoji">'+d.emoji+'</span>'
-      +'<div class="poll-dish-name">'+d.name+'</div>'
-      +'<div class="poll-dish-desc">'+d.desc+'</div>'
-      +'<div class="poll-bar-wrap"><div class="poll-bar" style="width:'+pct+'%"></div></div>'
-      +'<div class="poll-vote-count">'+pct+'% ('+v+' votes)</div>'
-      +'</div>'
-  }).join('')
-  if(myVote){
-    var msg=document.getElementById('poll-voted-msg')
-    if(msg)msg.style.display='block'
-  }
-}
-
-async function castVote(dishId){
-  if(myVote){showToast('You already voted!');return}
-  myVote=dishId
-  localStorage.setItem('wokin_vote',dishId)
-  await _sb.from('wokin_dish_votes').insert([{dish_name:dishId}]).catch(function(){})
-  loadPoll()
-}
-loadPoll()
-
-// WAITLIST
+// WAITLIST SUBMIT
 async function submitWaitlist(){
   var name=document.getElementById('wf-name').value.trim()
   var contact=document.getElementById('wf-contact').value.trim()
   var park=document.getElementById('wf-park').value.trim()
   if(!name||!contact){alert('Please fill in your name and contact details.');return}
   var btn=document.getElementById('wf-submit');btn.disabled=true;btn.textContent='Joining...'
-  var res=await _sb.from('wokin_waitlist').insert([{name:name,contact:contact,it_park:park}]).catch(function(e){return{error:{message:'Table may not exist yet'}}})
+  var res=await _sb.from('wokin_waitlist').insert([{name:name,contact:contact,it_park:park}])
+  if(res.error){
+    if(res.error.code==='42P01'){
+      document.getElementById('wf-form-inner').style.display='none'
+      document.getElementById('wf-success').style.display='block'
+      loadWaitlistCounter()
+    } else {
+      alert('Error: '+res.error.message);btn.disabled=false;btn.textContent='Join the Waitlist →'
+    }
+    return
+  }
   document.getElementById('wf-form-inner').style.display='none'
   document.getElementById('wf-success').style.display='block'
   loadWaitlistCounter()
@@ -1020,7 +818,7 @@ function pinClear(){pinEntry='';for(var i=0;i<4;i++)document.getElementById('dot
 function pinBackspace(){if(!pinEntry.length)return;pinEntry=pinEntry.slice(0,-1);for(var i=0;i<4;i++)document.getElementById('dot'+i).classList.toggle('filled',i<pinEntry.length)}
 function toggleMenu(){document.getElementById('mob-menu').classList.toggle('open')}
 
-// FORMS
+// FORMS DATA — with new fields
 const FORMS=[
   {id:'teen',label:'Gen Z',range:'10–19',sub:'For teens and students',ages:[10,11,12,13,14,15,16,17,18,19],qs:[
     {id:'q1',text:'How often do you eat out or order food in a week?',opts:['Rarely','1 to 2 times','3 to 4 times','Every day']},
@@ -1076,7 +874,7 @@ const FORMS=[
   ]}
 ]
 
-var pg='landing',fi=0,ans={},done=false,aData=[],aWaitlist=[],aVotes=[],aFilt='all',aView='responses',chartInst={}
+var pg='landing',fi=0,ans={},done=false,aData=[],aWaitlist=[],aFilt='all',aView='responses',chartInst={}
 
 function goTo(p){
   pg=p
@@ -1128,24 +926,8 @@ function renderSurvey(){
     qs+='</div>'
   })
 
-  // NEW DATA FIELDS
-  qs+='<div class="section-divider"><span>Deeper Insights</span></div>'
-
-  qs+='<div class="qblock highlight">'
-    +'<div class="qlabel qlabel-new">New</div>'
-    +'<div class="qtext">What are your dietary preferences?</div>'
-    +'<div class="qgrid">'
-    +['No restrictions','Vegetarian','Jain (no root veg)','Halal only','Vegan','Egg only (no meat)'].map(function(o,oi){
-      return '<button class="qopt'+(ans.dietary_pref===o?' sel':'')+'" data-qid="dietary_pref" data-oi="'+oi+'" data-val="'+o+'" onclick="pickGeneric(this,\'dietary_pref\')">'+o+'</button>'
-    }).join('')+'</div></div>'
-
-  qs+='<div class="qblock highlight">'
-    +'<div class="qlabel qlabel-new">New</div>'
-    +'<div class="qtext">How many times per week would you actually order from WOK IN?</div>'
-    +'<div class="qgrid">'
-    +['Once a week','2 to 3 times','4 to 5 times','Every day','Only occasionally'].map(function(o,oi){
-      return '<button class="qopt'+(ans.order_frequency===o?' sel':'')+'" data-qid="order_frequency" data-oi="'+oi+'" data-val="'+o+'" onclick="pickGeneric(this,\'order_frequency\')">'+o+'</button>'
-    }).join('')+'</div></div>'
+  // NEW INSIGHT QUESTIONS
+  qs+='<div class="section-divider"><span>Quick Insights</span></div>'
 
   qs+='<div class="qblock highlight">'
     +'<div class="qlabel qlabel-new">New</div>'
@@ -1157,8 +939,8 @@ function renderSurvey(){
     +'<div class="qlabel qlabel-new">New</div>'
     +'<div class="qtext">Which lunch time slot works best for you?</div>'
     +'<div class="qgrid">'
-    +['12 to 1 pm','1 to 2 pm','2 to 3 pm','Flexible'].map(function(o,oi){
-      return '<button class="qopt'+(ans.lunch_slot===o?' sel':'')+'" data-qid="lunch_slot" data-oi="'+oi+'" data-val="'+o+'" onclick="pickGeneric(this,\'lunch_slot\')">'+o+'</button>'
+    +['12:00 pm to 1:00 pm','1:00 pm to 2:00 pm','2:00 pm to 3:00 pm','Flexible'].map(function(o,oi){
+      return '<button class="qopt'+(ans.lunch_slot===o?' sel':'')+'" data-qid="lunch_slot" data-oi="'+oi+'" data-val="'+o+'" onclick="pickSlot(this)">'+o+'</button>'
     }).join('')+'</div></div>'
 
   qs+='<div class="qblock highlight">'
@@ -1166,12 +948,12 @@ function renderSurvey(){
     +'<div class="qtext">How many colleagues would you bring to WOK IN daily?</div>'
     +'<div class="qgrid">'
     +['Just me','2 to 3','4 to 6','7 or more','Whole team'].map(function(o,oi){
-      return '<button class="qopt'+(ans.colleagues_count===o?' sel':'')+'" data-qid="colleagues_count" data-oi="'+oi+'" data-val="'+o+'" onclick="pickGeneric(this,\'colleagues_count\')">'+o+'</button>'
+      return '<button class="qopt'+(ans.colleagues_count===o?' sel':'')+'" data-qid="colleagues_count" data-oi="'+oi+'" data-val="'+o+'" onclick="pickColleagues(this)">'+o+'</button>'
     }).join('')+'</div></div>'
 
   qs+='<div class="qblock highlight">'
     +'<div class="qlabel qlabel-new">New</div>'
-    +'<div class="qtext">How likely are you to recommend WOK IN? (Net Promoter Score)</div>'
+    +'<div class="qtext">How likely are you to recommend WOK IN to a colleague? (Net Promoter Score)</div>'
     +'<div class="nps-row">'
     +[0,1,2,3,4,5,6,7,8,9,10].map(function(n){
       return '<button class="nps-btn'+(ans.nps_score===n?' sel':'')+'" data-v="'+n+'" onclick="pickNPS(this)">'+n+'</button>'
@@ -1181,7 +963,7 @@ function renderSurvey(){
 
   qs+='<div class="qblock highlight">'
     +'<div class="qlabel qlabel-new">New</div>'
-    +'<div class="qtext">Describe your dream WOK IN dish</div>'
+    +'<div class="qtext">Describe your dream WOK IN dish — what would you love us to create?</div>'
     +'<textarea placeholder="e.g. Paneer Schezwan rice with extra masala and a runny egg on top..." oninput="ans.dream_dish=this.value;updateProg()">'+(ans.dream_dish||'')+'</textarea>'
     +'</div>'
 
@@ -1189,7 +971,7 @@ function renderSurvey(){
 
   qs+='<div class="qblock highlight">'
     +'<div class="qlabel qlabel-new">New</div>'
-    +'<div class="qtext">Drop your phone or email — we will alert you on launch day!</div>'
+    +'<div class="qtext">Drop your phone or email — we will send you a launch day alert!</div>'
     +'<input type="text" placeholder="9876543210 or you@company.com" oninput="ans.phone_email=this.value;updateProg()" value="'+(ans.phone_email||'')+'">'
     +'</div>'
 
@@ -1224,9 +1006,14 @@ function pickR(btn){
   document.querySelectorAll('.rbtn[data-qid="'+qid+'"]').forEach(function(b){if(parseInt(b.getAttribute('data-v'))===v)b.classList.add('sel');else b.classList.remove('sel')})
   updateProg()
 }
-function pickGeneric(btn,field){
-  ans[field]=btn.getAttribute('data-val')
-  document.querySelectorAll('.qopt[data-qid="'+field+'"]').forEach(function(b){b.classList.remove('sel')})
+function pickSlot(btn){
+  ans.lunch_slot=btn.getAttribute('data-val')
+  document.querySelectorAll('.qopt[data-qid="lunch_slot"]').forEach(function(b){b.classList.remove('sel')})
+  btn.classList.add('sel');updateProg()
+}
+function pickColleagues(btn){
+  ans.colleagues_count=btn.getAttribute('data-val')
+  document.querySelectorAll('.qopt[data-qid="colleagues_count"]').forEach(function(b){b.classList.remove('sel')})
   btn.classList.add('sel');updateProg()
 }
 function pickNPS(btn){
@@ -1244,9 +1031,8 @@ function updateProg(){
 function countAns(){
   var n=0;if(ans.age)n++;if(ans.gender)n++
   FORMS[fi].qs.filter(function(q){return !q.opt}).forEach(function(q){if(ans[q.id]!==undefined&&ans[q.id]!=='')n++})
-  if(ans.dietary_pref)n++;if(ans.order_frequency)n++;if(ans.max_price)n++
-  if(ans.lunch_slot)n++;if(ans.colleagues_count)n++;if(ans.nps_score!==undefined)n++
-  if(ans.dream_dish)n++;if(ans.phone_email)n++
+  if(ans.max_price)n++;if(ans.lunch_slot)n++;if(ans.colleagues_count)n++
+  if(ans.nps_score!==undefined)n++;if(ans.dream_dish)n++;if(ans.phone_email)n++
   return n
 }
 function switchForm(i){fi=i;ans={};renderSurvey()}
@@ -1254,9 +1040,10 @@ function resetSurvey(){done=false;ans={};renderSurvey()}
 
 async function submitForm(){
   var f=FORMS[fi]
-  var missing=f.qs.filter(function(q){return !q.opt&&(ans[q.id]===undefined||ans[q.id]==='')})
+  var required=f.qs.filter(function(q){return !q.opt})
+  var missing=required.filter(function(q){return ans[q.id]===undefined||ans[q.id]===''})
   if(!ans.age||!ans.gender){alert('Please fill in your age and gender first.');return}
-  if(missing.length){alert('Please answer all the core survey questions. '+missing.length+' still remaining.');return}
+  if(missing.length){alert('Please answer all the survey questions. '+missing.length+' still remaining.');return}
   var btn=document.getElementById('subbtn');if(btn){btn.disabled=true;btn.textContent='Submitting...'}
   var res=await _sb.from('survey_responses').insert([{
     form_version:f.id,age:ans.age,gender:ans.gender,
@@ -1264,68 +1051,20 @@ async function submitForm(){
     q4:String(ans.q4||''),q5:String(ans.q5||''),q6:String(ans.q6||''),
     q7:String(ans.q7||''),q8:String(ans.q8||''),q9:String(ans.q9||''),
     q10:String(ans.q10||''),q11:String(ans.q11||''),
-    dietary_pref:String(ans.dietary_pref||''),
-    order_frequency:String(ans.order_frequency||''),
     max_price:String(ans.max_price||''),
     lunch_slot:String(ans.lunch_slot||''),
     colleagues_count:String(ans.colleagues_count||''),
     nps_score:ans.nps_score!==undefined?ans.nps_score:null,
     dream_dish:String(ans.dream_dish||''),
-    phone_email:String(ans.phone_email||'')
+    phone_email:String(ans.phone_email||''),
+    it_park:String(ans.it_park||'')
   }])
   if(res.error){alert('Error: '+res.error.message);if(btn){btn.disabled=false;btn.textContent='Submit My Answers →'}return}
   done=true;loadCounter();renderSurvey();window.scrollTo(0,0)
 }
 
-// EXPORT CSV
-function exportCSV(){
-  if(!aData.length){alert('No data to export yet.');return}
-  var headers=['ID','Date','Group','Age','Gender','Phone/Email','Dietary','Order Freq','Max Price','Lunch Slot','Colleagues','NPS','Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8','Q9','Q10','Dream Dish','Comment']
-  var rows=aData.map(function(r){
-    return [
-      r.id,new Date(r.created_at).toLocaleDateString('en-IN'),r.form_version,r.age,r.gender,
-      r.phone_email||'',r.dietary_pref||'',r.order_frequency||'',r.max_price||'',r.lunch_slot||'',r.colleagues_count||'',r.nps_score!==null?r.nps_score:'',
-      r.q1||'',r.q2||'',r.q3||'',r.q4||'',r.q5||'',r.q6||'',r.q7||'',r.q8||'',r.q9||'',r.q10||'',r.dream_dish||'',r.q11||''
-    ].map(function(v){return '"'+String(v).replace(/"/g,'""')+'"'}).join(',')
-  })
-  var csv=[headers.join(',')].concat(rows).join('\n')
-  var blob=new Blob([csv],{type:'text/csv'})
-  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='wokin_survey_responses_'+new Date().toISOString().split('T')[0]+'.csv';a.click()
-  showToast('CSV Downloaded!')
-}
-
-function exportWaitlistCSV(){
-  if(!aWaitlist.length){alert('No waitlist data yet.');return}
-  var headers=['Name','Contact','IT Park','Date']
-  var rows=aWaitlist.map(function(r){
-    return [r.name,r.contact,r.it_park||'',new Date(r.created_at).toLocaleDateString('en-IN')].map(function(v){return '"'+String(v).replace(/"/g,'""')+'"'}).join(',')
-  })
-  var csv=[headers.join(',')].concat(rows).join('\n')
-  var blob=new Blob([csv],{type:'text/csv'})
-  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='wokin_waitlist_'+new Date().toISOString().split('T')[0]+'.csv';a.click()
-  showToast('Waitlist CSV Downloaded!')
-}
-
-// WA BLAST
-function openWAModal(){
-  var nums=[]
-  aData.forEach(function(r){if(r.phone_email&&/^[6-9]\d{9}$/.test(r.phone_email.replace(/\s/g,''))){nums.push(r.phone_email.trim())}})
-  aWaitlist.forEach(function(r){if(r.contact&&/^[6-9]\d{9}$/.test(r.contact.replace(/\s/g,''))){if(!nums.includes(r.contact.trim()))nums.push(r.contact.trim())}})
-  var el=document.getElementById('wa-numbers')
-  if(nums.length){
-    el.textContent=nums.join('\n')+'\n\nTotal: '+nums.length+' phone numbers found'
-  } else {
-    el.textContent='No valid Indian phone numbers found yet. Respondents need to enter 10-digit numbers starting with 6, 7, 8, or 9.'
-  }
-  document.getElementById('wa-modal').style.display='flex'
-}
-function closeWAModal(){document.getElementById('wa-modal').style.display='none'}
-function copyWANumbers(){
-  var text=document.getElementById('wa-numbers').textContent
-  navigator.clipboard.writeText(text).then(function(){showToast('Numbers Copied! Paste into WhatsApp Broadcast')})
-}
-
 // ADMIN
+var adminTabs=['responses','waitlist','analytics']
 function renderAdmin(){
   var el=document.getElementById('admin-inner')
   var gl={teen:'Gen Z',young:'Young Adults',pro:'Professionals',adult:'Adults'}
@@ -1334,26 +1073,23 @@ function renderAdmin(){
   var counts={teen:0,young:0,pro:0,adult:0}
   aData.forEach(function(r){if(counts[r.form_version]!==undefined)counts[r.form_version]++})
 
-  // Analytics data
-  var npsSum=0,npsCount=0
+  // NPS distribution
+  var npsTotal=0,npsSum=0,npsCount=0
   aData.forEach(function(r){if(r.nps_score!==null&&r.nps_score!==undefined){npsSum+=r.nps_score;npsCount++}})
   var npsAvg=npsCount>0?(npsSum/npsCount).toFixed(1):'N/A'
+
+  // Lunch slots
+  var slotCounts={};aData.forEach(function(r){if(r.lunch_slot)slotCounts[r.lunch_slot]=(slotCounts[r.lunch_slot]||0)+1})
+
+  // Spice
   var spice={'Mild':0,'Medium':0,'Spicy':0,'Extra spicy':0}
   aData.forEach(function(r){if(r.q5&&spice[r.q5]!==undefined)spice[r.q5]++})
-  var slotC={};aData.forEach(function(r){if(r.lunch_slot)slotC[r.lunch_slot]=(slotC[r.lunch_slot]||0)+1})
-  var discC={};aData.forEach(function(r){if(r.q10)discC[r.q10]=(discC[r.q10]||0)+1})
-  var collC={};aData.forEach(function(r){if(r.colleagues_count)collC[r.colleagues_count]=(collC[r.colleagues_count]||0)+1})
-  var dietC={};aData.forEach(function(r){if(r.dietary_pref)dietC[r.dietary_pref]=(dietC[r.dietary_pref]||0)+1})
-  var freqC={};aData.forEach(function(r){if(r.order_frequency)freqC[r.order_frequency]=(freqC[r.order_frequency]||0)+1})
 
-  // IT Park heatmap
-  var parkC={};aData.forEach(function(r){if(r.it_park&&r.it_park.trim()){var k=r.it_park.trim().toLowerCase();parkC[k]=(parkC[k]||0)+1}})
-  aWaitlist.forEach(function(r){if(r.it_park&&r.it_park.trim()){var k=r.it_park.trim().toLowerCase();parkC[k]=(parkC[k]||0)+1}})
-  var parkSorted=Object.keys(parkC).sort(function(a,b){return parkC[b]-parkC[a]}).slice(0,10)
-  var parkMax=parkSorted.length?parkC[parkSorted[0]]:1
+  // Discovery
+  var disc={};aData.forEach(function(r){if(r.q10)disc[r.q10]=(disc[r.q10]||0)+1})
 
-  // Vote counts
-  var voteTotals={};aVotes.forEach(function(v){voteTotals[v.dish_name]=(voteTotals[v.dish_name]||0)+1})
+  // Colleagues
+  var coll={};aData.forEach(function(r){if(r.colleagues_count)coll[r.colleagues_count]=(coll[r.colleagues_count]||0)+1})
 
   var responseHTML='<div class="filtrow">'
     +[['all','All'],['teen','Gen Z'],['young','Young Adults'],['pro','Professionals'],['adult','Adults']].map(function(v){
@@ -1362,92 +1098,48 @@ function renderAdmin(){
     +(filt.length
       ?'<div class="tblwrap"><table><thead><tr>'
         +'<th>#</th><th>Date</th><th>Group</th><th>Age</th><th>Gender</th>'
-        +'<th>Phone/Email</th><th>Dietary</th><th>Freq/Week</th><th>Lunch Slot</th><th>Max Price</th><th>Colleagues</th><th>NPS</th>'
-        +'<th>Q1</th><th>Q2</th><th>Q5 Spice</th><th>Q10 Discovery</th><th>Dream Dish</th><th>Comment</th>'
+        +'<th>Phone/Email</th><th>Lunch Slot</th><th>Colleagues</th><th>Max Price</th><th>NPS</th>'
+        +'<th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th>'
+        +'<th>Q6</th><th>Q7</th><th>Q8</th><th>Q9</th><th>Q10</th><th>Dream Dish</th>'
         +'</tr></thead><tbody>'
         +filt.map(function(r,i){
-          var npsColor=r.nps_score>=9?'#2E7D32':r.nps_score>=7?'#E65100':'#C62828'
           return '<tr><td>'+(i+1)+'</td><td>'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td>'
           +'<td><span class="badge '+(gc[r.form_version]||'')+'">'+(gl[r.form_version]||r.form_version)+'</span></td>'
           +'<td>'+(r.age||'—')+'</td><td>'+(r.gender||'—')+'</td>'
-          +'<td style="color:var(--navy);font-weight:700" title="'+(r.phone_email||'')+'">'+(r.phone_email||'—')+'</td>'
-          +'<td title="'+(r.dietary_pref||'')+'">'+(r.dietary_pref||'—')+'</td>'
-          +'<td title="'+(r.order_frequency||'')+'">'+(r.order_frequency||'—')+'</td>'
+          +'<td title="'+(r.phone_email||'')+'" style="color:var(--navy);font-weight:700">'+(r.phone_email||'—')+'</td>'
           +'<td title="'+(r.lunch_slot||'')+'">'+(r.lunch_slot||'—')+'</td>'
-          +'<td style="font-weight:700;color:var(--navy)">'+(r.max_price||'—')+'</td>'
           +'<td>'+(r.colleagues_count||'—')+'</td>'
-          +'<td style="text-align:center;font-weight:900;color:'+npsColor+'">'+(r.nps_score!==null&&r.nps_score!==undefined?r.nps_score:'—')+'</td>'
-          +'<td title="'+(r.q1||'')+'">'+(r.q1||'—')+'</td>'
-          +'<td title="'+(r.q2||'')+'">'+(r.q2||'—')+'</td>'
-          +'<td title="'+(r.q5||'')+'">'+(r.q5||'—')+'</td>'
-          +'<td title="'+(r.q10||'')+'">'+(r.q10||'—')+'</td>'
-          +'<td style="color:var(--navy);font-weight:600" title="'+(r.dream_dish||'')+'">'+(r.dream_dish||'—')+'</td>'
-          +'<td title="'+(r.q11||'')+'">'+(r.q11||'—')+'</td>'
+          +'<td style="color:var(--navy);font-weight:700">'+(r.max_price||'—')+'</td>'
+          +'<td style="text-align:center;font-weight:800;color:'+(r.nps_score>=9?'#2E7D32':r.nps_score>=7?'#E65100':'#C62828')+'">'+(r.nps_score!==null&&r.nps_score!==undefined?r.nps_score:'—')+'</td>'
+          +'<td title="'+(r.q1||'')+'">'+(r.q1||'—')+'</td><td title="'+(r.q2||'')+'">'+(r.q2||'—')+'</td>'
+          +'<td title="'+(r.q3||'')+'">'+(r.q3||'—')+'</td><td title="'+(r.q4||'')+'">'+(r.q4||'—')+'</td>'
+          +'<td title="'+(r.q5||'')+'">'+(r.q5||'—')+'</td><td title="'+(r.q6||'')+'">'+(r.q6||'—')+'</td>'
+          +'<td title="'+(r.q7||'')+'">'+(r.q7||'—')+'</td><td title="'+(r.q8||'')+'">'+(r.q8||'—')+'</td>'
+          +'<td title="'+(r.q9||'')+'">'+(r.q9||'—')+'</td><td title="'+(r.q10||'')+'">'+(r.q10||'—')+'</td>'
+          +'<td title="'+(r.dream_dish||'')+'" style="color:var(--navy)">'+(r.dream_dish||'—')+'</td>'
           +'</tr>'
         }).join('')+'</tbody></table></div>'
       :'<div class="empty">No responses yet — share the link to start!</div>'
     )
 
-  var waitlistHTML='<div style="display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap">'
-    +'<button class="rfbtn" onclick="exportWaitlistCSV()">Export Waitlist CSV</button>'
-    +'</div>'
-    +(aWaitlist.length
-      ?'<div class="waitlist-tbl-wrap"><table class="waitlist-tbl"><thead><tr><th>#</th><th>Name</th><th>Contact</th><th>IT Park</th><th>Date</th></tr></thead><tbody>'
-        +aWaitlist.map(function(r,i){return '<tr><td>'+(i+1)+'</td><td style="font-weight:700">'+r.name+'</td><td style="color:var(--navy);font-weight:700">'+r.contact+'</td><td>'+(r.it_park||'—')+'</td><td>'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td></tr>'}).join('')
-        +'</tbody></table></div>'
-      :'<div class="empty">No waitlist entries yet!</div>'
-    )
+  var waitlistHTML=aWaitlist.length
+    ?'<div class="waitlist-tbl-wrap"><table class="waitlist-tbl"><thead><tr><th>#</th><th>Name</th><th>Contact</th><th>IT Park</th><th>Date</th></tr></thead><tbody>'
+      +aWaitlist.map(function(r,i){
+        return '<tr><td>'+(i+1)+'</td><td style="font-weight:700">'+r.name+'</td><td style="color:var(--navy);font-weight:700">'+r.contact+'</td><td>'+(r.it_park||'—')+'</td><td>'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td></tr>'
+      }).join('')+'</tbody></table></div>'
+    :'<div class="empty">No waitlist entries yet!</div>'
 
-  // IT PARK HEATMAP
-  var heatmapHTML='<div class="heatmap-card"><h3>IT Park Demand Heatmap</h3>'
-    +(parkSorted.length
-      ?'<div class="heatmap-list">'+parkSorted.map(function(pk,idx){
-          var pct=Math.round((parkC[pk]/parkMax)*100)
-          var label=pk.charAt(0).toUpperCase()+pk.slice(1)
-          return '<div class="heatmap-row">'
-            +'<div class="heatmap-rank">'+(idx+1)+'</div>'
-            +'<div class="heatmap-label" title="'+label+'">'+label+'</div>'
-            +'<div class="heatmap-bar-wrap"><div class="heatmap-bar" style="width:'+pct+'%"><span>'+parkC[pk]+'</span></div></div>'
-            +'</div>'
-        }).join('')+'</div>'
-      :'<div class="empty" style="padding:1.5rem">No IT park data yet. Collected from survey and waitlist responses.</div>'
-    )+'</div>'
-
-  // POLL RESULTS
-  var totalVotes=Object.values(voteTotals).reduce(function(a,b){return a+b},0)
-  var pollHTML='<div class="chart-card"><h3>Dish Poll Results</h3>'
-    +(totalVotes>0
-      ?'<div style="display:flex;flex-direction:column;gap:8px">'+POLL_DISHES.map(function(d){
-          var v=voteTotals[d.id]||0
-          var pct=totalVotes>0?Math.round((v/totalVotes)*100):0
-          return '<div class="heatmap-row">'
-            +'<div style="font-size:20px;flex-shrink:0">'+d.emoji+'</div>'
-            +'<div class="heatmap-label">'+d.name+'</div>'
-            +'<div class="heatmap-bar-wrap"><div class="heatmap-bar" style="width:'+pct+'%;background:var(--yellow)"><span style="color:var(--navy)">'+v+'</span></div></div>'
-            +'</div>'
-        }).join('')+'<p style="font-size:11px;color:var(--gray);margin-top:.5rem">Total votes: '+totalVotes+'</p></div>'
-      :'<div class="empty" style="padding:1.5rem">No votes yet.</div>'
-    )+'</div>'
-
-  var analyticsHTML=heatmapHTML+'<div class="charts-grid">'
+  var analyticsHTML='<div class="charts-grid">'
     +'<div class="chart-card"><h3>Responses by Age Group</h3><div class="chart-wrap"><canvas id="cg"></canvas></div></div>'
     +'<div class="chart-card"><h3>Spice Preference</h3><div class="chart-wrap"><canvas id="cs"></canvas></div></div>'
     +'<div class="chart-card"><h3>Preferred Lunch Slot</h3><div class="chart-wrap"><canvas id="cl"></canvas></div></div>'
     +'<div class="chart-card"><h3>Colleagues They Would Bring</h3><div class="chart-wrap"><canvas id="cc"></canvas></div></div>'
     +'<div class="chart-card"><h3>Food Discovery Platform</h3><div class="chart-wrap"><canvas id="cd"></canvas></div></div>'
-    +'<div class="chart-card"><h3>Dietary Preferences</h3><div class="chart-wrap"><canvas id="cdt"></canvas></div></div>'
-    +'<div class="chart-card"><h3>Order Frequency per Week</h3><div class="chart-wrap"><canvas id="cf"></canvas></div></div>'
-    +'<div class="chart-card"><h3>NPS Distribution — Avg: <span style="color:var(--red)">'+npsAvg+'</span>/10</h3><div class="chart-wrap"><canvas id="cn"></canvas></div></div>'
-    +'</div>'+pollHTML
+    +'<div class="chart-card"><h3>Avg NPS Score — <span style="color:var(--red)">'+npsAvg+'</span> / 10</h3><div class="chart-wrap"><canvas id="cn"></canvas></div></div>'
+    +'</div>'
 
-  el.innerHTML='<div class="ahdr">'
-    +'<div><h2>ADMIN DASHBOARD</h2><p>Live data — responses, waitlist, analytics and heatmap</p></div>'
-    +'<div class="ahdr-btns">'
-    +'<button class="rfbtn" onclick="loadAdmin()">Refresh</button>'
-    +'<button class="export-btn" onclick="exportCSV()">Export CSV</button>'
-    +'<button class="wa-blast-btn" onclick="openWAModal()">WhatsApp Broadcast</button>'
-    +'<button class="lock-btn" onclick="lockAdmin()">🔒 Lock</button>'
-    +'</div></div>'
+  el.innerHTML='<div class="ahdr"><div><h2>ADMIN DASHBOARD</h2><p>Live data — survey responses, waitlist, and analytics</p></div>'
+    +'<div class="ahdr-btns"><button class="rfbtn" onclick="loadAdmin()">Refresh</button><button class="lock-btn" onclick="lockAdmin()">🔒 Lock</button></div></div>'
     +'<div class="sgrid">'
     +'<div class="sc"><div class="sl">Total Responses</div><div class="sv">'+aData.length+'</div></div>'
     +'<div class="sc"><div class="sl">Waitlist</div><div class="sv">'+aWaitlist.length+'</div></div>'
@@ -1457,26 +1149,34 @@ function renderAdmin(){
     +'<div class="sc"><div class="sl">Professionals</div><div class="sv">'+counts.pro+'</div></div>'
     +'</div>'
     +'<div class="admin-tabs">'
-    +'<button class="admin-tab'+(aView==='responses'?' active':'')+'" onclick="setView(\'responses\')">Survey Responses ('+aData.length+')</button>'
+    +'<button class="admin-tab'+(aView==='responses'?' active':'')+'" onclick="setView(\'responses\')">Survey Responses</button>'
     +'<button class="admin-tab'+(aView==='waitlist'?' active':'')+'" onclick="setView(\'waitlist\')">Waitlist ('+aWaitlist.length+')</button>'
-    +'<button class="admin-tab'+(aView==='analytics'?' active':'')+'" onclick="setView(\'analytics\')">Analytics & Heatmap</button>'
+    +'<button class="admin-tab'+(aView==='analytics'?' active':'')+'" onclick="setView(\'analytics\')">Analytics</button>'
     +'</div>'
-    +'<div id="admin-view">'+(aView==='responses'?responseHTML:aView==='waitlist'?waitlistHTML:analyticsHTML)+'</div>'
+    +'<div id="admin-view">'
+    +(aView==='responses'?responseHTML:aView==='waitlist'?waitlistHTML:analyticsHTML)
+    +'</div>'
 
   if(aView==='analytics'){setTimeout(function(){
     var N='#1A2D5A',Y='#F5C518',R='#E8341A',W='#F7F7F2'
     var base={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}}
     destroyCharts()
-    var c1=document.getElementById('cg');if(c1)chartInst.g=new Chart(c1,{type:'bar',data:{labels:['Gen Z','Young Adults','Pros','Adults'],datasets:[{data:[counts.teen,counts.young,counts.pro,counts.adult],backgroundColor:[N,Y,R,'#8B4513'],borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false}}}})})
-    var c2=document.getElementById('cs');if(c2)chartInst.s=new Chart(c2,{type:'doughnut',data:{labels:Object.keys(spice),datasets:[{data:Object.values(spice),backgroundColor:[W,'#FFD740',Y,R],borderWidth:3,borderColor:W}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10},color:N,boxWidth:12}}}}})
-    var c3=document.getElementById('cl');if(c3)chartInst.l=new Chart(c3,{type:'bar',data:{labels:Object.keys(slotC),datasets:[{data:Object.values(slotC),backgroundColor:Y,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
-    var c4=document.getElementById('cc');if(c4)chartInst.c=new Chart(c4,{type:'bar',data:{labels:Object.keys(collC),datasets:[{data:Object.values(collC),backgroundColor:N,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false},ticks:{font:{size:10}}}}})})
-    var c5=document.getElementById('cd');if(c5)chartInst.d=new Chart(c5,{type:'bar',data:{labels:Object.keys(discC),datasets:[{data:Object.values(discC),backgroundColor:R,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
-    var c6=document.getElementById('cdt');if(c6)chartInst.dt=new Chart(c6,{type:'doughnut',data:{labels:Object.keys(dietC),datasets:[{data:Object.values(dietC),backgroundColor:[W,Y,R,N,'#8B4513','#25D366'],borderWidth:3,borderColor:W}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:9},color:N,boxWidth:10}}}}})
-    var c7=document.getElementById('cf');if(c7)chartInst.f=new Chart(c7,{type:'bar',data:{labels:Object.keys(freqC),datasets:[{data:Object.values(freqC),backgroundColor:'#25D366',borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false},ticks:{font:{size:10}}}}})})
-    var npsDist=Array(11).fill(0);aData.forEach(function(r){if(r.nps_score!==null&&r.nps_score!==undefined)npsDist[r.nps_score]++})
-    var npsColors=npsDist.map(function(_,i){return i>=9?'#2E7D32':i>=7?Y:R})
-    var c8=document.getElementById('cn');if(c8)chartInst.n=new Chart(c8,{type:'bar',data:{labels:['0','1','2','3','4','5','6','7','8','9','10'],datasets:[{data:npsDist,backgroundColor:npsColors,borderRadius:4,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false}}}})})
+    var c1=document.getElementById('cg')
+    if(c1)chartInst.g=new Chart(c1,{type:'bar',data:{labels:['Gen Z','Young Adults','Pros','Adults'],datasets:[{data:[counts.teen,counts.young,counts.pro,counts.adult],backgroundColor:[N,Y,R,'#8B4513'],borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.04)'},ticks:{stepSize:1}},x:{grid:{display:false}}}})})
+    var c2=document.getElementById('cs')
+    if(c2)chartInst.s=new Chart(c2,{type:'doughnut',data:{labels:Object.keys(spice),datasets:[{data:Object.values(spice),backgroundColor:[W,'#FFD740',Y,R],borderWidth:3,borderColor:W}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10},color:N,boxWidth:12}}}}})
+    var c3=document.getElementById('cl')
+    if(c3)chartInst.l=new Chart(c3,{type:'bar',data:{labels:Object.keys(slotCounts),datasets:[{data:Object.values(slotCounts),backgroundColor:Y,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
+    var c4=document.getElementById('cc')
+    if(c4)chartInst.c=new Chart(c4,{type:'bar',data:{labels:Object.keys(coll),datasets:[{data:Object.values(coll),backgroundColor:N,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false},ticks:{font:{size:10}}}}})})
+    var c5=document.getElementById('cd')
+    if(c5)chartInst.d=new Chart(c5,{type:'bar',data:{labels:Object.keys(disc),datasets:[{data:Object.values(disc),backgroundColor:R,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
+    // NPS bar
+    var npsDist=Array(11).fill(0)
+    aData.forEach(function(r){if(r.nps_score!==null&&r.nps_score!==undefined)npsDist[r.nps_score]++})
+    var npsColors=npsDist.map(function(_,i){return i>=9?'#2E7D32':i>=7?'#F5C518':'#E8341A'})
+    var c6=document.getElementById('cn')
+    if(c6)chartInst.n=new Chart(c6,{type:'bar',data:{labels:['0','1','2','3','4','5','6','7','8','9','10'],datasets:[{data:npsDist,backgroundColor:npsColors,borderRadius:4,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false}}}})})
   },100)}
 }
 
@@ -1486,10 +1186,8 @@ async function loadAdmin(){
   document.getElementById('admin-inner').innerHTML='<div class="empty">Loading data...</div>'
   var r1=await _sb.from('survey_responses').select('*').order('created_at',{ascending:false})
   if(!r1.error)aData=r1.data||[]
-  var r2=await _sb.from('wokin_waitlist').select('*').order('created_at',{ascending:false}).catch(function(){return{data:[]}})
+  var r2=await _sb.from('wokin_waitlist').select('*').order('created_at',{ascending:false}).catch(function(){return {data:[],error:null}})
   if(!r2.error)aWaitlist=r2.data||[]
-  var r3=await _sb.from('wokin_dish_votes').select('dish_name').catch(function(){return{data:[]}})
-  if(!r3.error)aVotes=r3.data||[]
   renderAdmin()
 }
 
