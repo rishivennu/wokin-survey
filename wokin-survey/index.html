@@ -12,20 +12,14 @@
 :root{--navy:#1A2D5A;--navy2:#142247;--navy3:#0E1832;--yellow:#F5C518;--yellow2:#E8B800;--yellow3:#FFD740;--white:#FFFFFF;--off:#F7F7F2;--light:#EFEFEA;--gray:#888;--dark:#111;--red:#E8341A}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--off);color:var(--dark);overflow-x:hidden}
-
-/* SCROLL ANIMATIONS */
 .reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-left{opacity:0;transform:translateX(-50px);transition:opacity .7s ease,transform .7s ease}
 .reveal-left.visible{opacity:1;transform:translateX(0)}
 .reveal-right{opacity:0;transform:translateX(50px);transition:opacity .7s ease,transform .7s ease}
 .reveal-right.visible{opacity:1;transform:translateX(0)}
-.reveal-scale{opacity:0;transform:scale(.85);transition:opacity .6s ease,transform .6s ease}
-.reveal-scale.visible{opacity:1;transform:scale(1)}
 .stagger-1{transition-delay:.1s}.stagger-2{transition-delay:.2s}.stagger-3{transition-delay:.3s}
 .stagger-4{transition-delay:.4s}.stagger-5{transition-delay:.5s}.stagger-6{transition-delay:.6s}
-
-/* NAV */
 nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;border-bottom:3px solid var(--yellow)}
 .nlogo{display:flex;align-items:center;gap:10px;cursor:pointer;flex-shrink:0}
 .nlogo img{height:38px;width:auto;object-fit:contain}
@@ -43,18 +37,13 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .mob-link{background:transparent;border:none;color:#fff;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;padding:12px 16px;border-radius:6px;text-align:left;width:100%;text-transform:uppercase;letter-spacing:.5px}
 .mob-link:hover{background:rgba(245,197,24,.15);color:var(--yellow)}
 .mob-cta{background:var(--yellow);color:var(--navy);border:none;padding:14px;border-radius:6px;font-size:14px;font-weight:900;cursor:pointer;font-family:inherit;margin-top:6px;width:100%;text-transform:uppercase;letter-spacing:1px}
-
 .page{display:none}.page.on{display:block}
-
-/* TICKER */
 .ticker-wrap{background:var(--yellow);overflow:hidden;padding:10px 0;border-bottom:2px solid var(--yellow2)}
 .ticker{display:flex;animation:ticker 20s linear infinite;white-space:nowrap}
 .ticker:hover{animation-play-state:paused}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .ticker-item{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--navy);letter-spacing:2px;padding:0 2rem;display:inline-flex;align-items:center;gap:1rem}
 .ticker-dot{width:8px;height:8px;border-radius:50%;background:var(--navy);display:inline-block;flex-shrink:0}
-
-/* HERO */
 .hero{background:var(--navy);padding:5rem 5% 4rem;position:relative;overflow:hidden}
 .hero-bg-text{position:absolute;bottom:-2rem;left:0;right:0;font-family:'Bebas Neue',sans-serif;font-size:clamp(6rem,18vw,20rem);color:rgba(245,197,24,.04);letter-spacing:4px;text-align:center;pointer-events:none;line-height:1;user-select:none}
 .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;z-index:2}
@@ -68,17 +57,11 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .btn-y:hover{background:var(--yellow3);transform:translateY(-2px)}
 .btn-w{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.35);padding:13px 26px;border-radius:5px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .15s;text-transform:uppercase;letter-spacing:.5px}
 .btn-w:hover{border-color:var(--yellow);color:var(--yellow)}
-.btn-ny{background:transparent;color:var(--yellow);border:2px solid var(--yellow);padding:13px 26px;border-radius:5px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .15s;text-transform:uppercase;letter-spacing:.5px}
-.btn-ny:hover{background:var(--yellow);color:var(--navy)}
-
-/* LIVE COUNTER */
 .live-ctr{display:inline-flex;align-items:center;gap:12px;background:rgba(245,197,24,.1);border:1.5px solid rgba(245,197,24,.3);border-radius:6px;padding:12px 18px}
 .lc-dot{width:9px;height:9px;border-radius:50%;background:var(--yellow);animation:pulse 1.4s infinite;flex-shrink:0}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
 .lc-num{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--yellow);line-height:1}
 .lc-txt{font-size:11px;color:rgba(255,255,255,.65);font-weight:600;line-height:1.35}
-
-/* HERO VISUAL */
 .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;height:480px}
 .menu-card-a{background:var(--white);border-radius:10px;padding:1.8rem 1.5rem;width:230px;position:absolute;left:20px;top:20px;transform:rotate(-4deg);box-shadow:6px 6px 0 var(--yellow);z-index:2}
 .menu-card-b{background:var(--navy2);border-radius:10px;padding:1.8rem 1.5rem;width:230px;position:absolute;right:20px;top:60px;transform:rotate(4deg);box-shadow:6px 6px 0 var(--yellow3);z-index:1}
@@ -100,21 +83,17 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .hero-badge{background:var(--white);border-radius:8px;padding:10px 14px;position:absolute;bottom:50px;right:10px;z-index:10;text-align:center;box-shadow:3px 3px 0 var(--yellow)}
 .hb-num{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--navy);line-height:1}
 .hb-txt{font-size:10px;color:var(--gray);font-weight:700;text-transform:uppercase}
-
-/* STATS */
 .stats{background:var(--yellow);border-top:3px solid var(--yellow2);border-bottom:3px solid var(--yellow2)}
 .stats-inner{max-width:1200px;margin:0 auto;padding:1.2rem 5%;display:grid;grid-template-columns:repeat(3,1fr)}
 .stat-item{text-align:center;padding:1.2rem .5rem;position:relative}
 .stat-item:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;bottom:20%;width:2px;background:var(--yellow2)}
 .stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--navy);line-height:1}
 .stat-lbl{font-size:11px;color:var(--navy2);font-weight:800;text-transform:uppercase;letter-spacing:.06em}
-
-/* WHY SECTION */
-.why-section{background:var(--off);padding:5rem 5%}
-.why-inner{max-width:1200px;margin:0 auto}
 .sec-eyebrow{display:inline-block;background:var(--yellow);color:var(--navy);font-size:10px;font-weight:900;padding:4px 12px;border-radius:3px;margin-bottom:.8rem;text-transform:uppercase;letter-spacing:.12em}
 .sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,5rem);color:var(--navy);letter-spacing:2px;line-height:.95;margin-bottom:.5rem}
 .sec-sub{font-size:14px;color:var(--gray);margin-bottom:2.5rem;max-width:500px;line-height:1.7}
+.why-section{background:var(--off);padding:5rem 5%}
+.why-inner{max-width:1200px;margin:0 auto}
 .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
 .why-card{background:var(--white);border:2px solid var(--light);border-radius:8px;padding:1.8rem 1.5rem;transition:all .2s;position:relative;overflow:hidden}
 .why-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--yellow)}
@@ -122,8 +101,6 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .why-icon{width:52px;height:52px;border-radius:6px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:22px}
 .why-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--navy);margin-bottom:6px;letter-spacing:1px}
 .why-card p{font-size:13px;color:var(--gray);line-height:1.6}
-
-/* MENU */
 .menu-section{background:var(--navy);padding:5rem 5%;position:relative;overflow:hidden}
 .menu-section::before{content:'MENU';position:absolute;bottom:-3rem;right:-2rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,20vw,22rem);color:rgba(245,197,24,.05);pointer-events:none;line-height:1}
 .menu-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
@@ -141,8 +118,6 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .menu-spice{display:flex;gap:2px}
 .spice-dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
 .spice-dot.off{background:rgba(255,255,255,.2)}
-
-/* WAITLIST SECTION */
 .waitlist-section{background:var(--yellow);padding:5rem 5%;position:relative;overflow:hidden}
 .waitlist-section::before{content:'JOIN';position:absolute;bottom:-3rem;right:-1rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,20vw,22rem);color:rgba(26,45,90,.07);pointer-events:none;line-height:1}
 .waitlist-inner{max-width:1000px;margin:0 auto;position:relative;z-index:2}
@@ -168,8 +143,6 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .waitlist-count{background:var(--navy);color:var(--yellow);border-radius:6px;padding:12px 16px;display:inline-flex;align-items:center;gap:10px;margin-top:1.5rem}
 .wc-num{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;line-height:1}
 .wc-txt{font-size:11px;color:rgba(245,197,24,.7);font-weight:600;line-height:1.3}
-
-/* PEOPLE */
 .people-section{background:var(--light);padding:5rem 5%}
 .people-inner{max-width:1200px;margin:0 auto}
 .people-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:2.5rem}
@@ -179,8 +152,6 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .person-card h4{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;margin-bottom:2px;color:var(--navy);letter-spacing:1px}
 .person-role{font-size:10px;color:var(--yellow);font-weight:900;margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em;background:var(--navy);display:inline-block;padding:2px 8px;border-radius:3px}
 .person-quote{font-size:13px;color:var(--gray);line-height:1.6;font-style:italic}
-
-/* INSTA */
 .insta-section{background:var(--white);padding:5rem 5%}
 .insta-inner{max-width:1200px;margin:0 auto}
 .insta-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
@@ -195,8 +166,6 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .insta-overlay{position:absolute;inset:0;background:rgba(26,45,90,.9);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;border-radius:4px}
 .insta-card:hover .insta-overlay{opacity:1}
 .insta-overlay span{color:var(--yellow);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
-
-/* REFERRAL */
 .ref-section{background:var(--navy);padding:5rem 5%;position:relative;overflow:hidden}
 .ref-section::after{content:'SHARE';position:absolute;bottom:-3rem;left:-1rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,18vw,20rem);color:rgba(245,197,24,.04);pointer-events:none;line-height:1}
 .ref-inner{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:2}
@@ -213,20 +182,15 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .btn-em:hover{border-color:var(--yellow);transform:translateY(-1px)}
 .btn-cp{background:var(--yellow);color:var(--navy);border:none;padding:14px 22px;border-radius:5px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
 .btn-cp:hover{background:var(--yellow3);transform:translateY(-1px)}
-
-/* CTA */
 .cta-section{background:var(--yellow);padding:5rem 5%;text-align:center;position:relative;overflow:hidden}
 .cta-section::before{content:'WOK IN';position:absolute;top:50%;left:50%;translate:-50% -50%;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,20vw,22rem);color:rgba(26,45,90,.08);pointer-events:none;white-space:nowrap}
 .cta-inner{max-width:700px;margin:0 auto;position:relative;z-index:2}
 .cta-inner h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,6vw,6rem);color:var(--navy);letter-spacing:3px;line-height:.9;margin-bottom:1rem}
 .cta-inner p{font-size:15px;color:var(--navy2);margin-bottom:2rem;line-height:1.7;font-weight:500}
-
 footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yellow)}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .footer-brand{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--yellow);letter-spacing:3px}
 .footer-tag{font-size:12px;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
-
-/* SURVEY */
 .survey-section{background:var(--off);padding:4rem 5%}
 .survey-inner{max-width:740px;margin:0 auto}
 .survey-top{text-align:center;margin-bottom:2rem}
@@ -268,11 +232,10 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
 .rbtn:hover{border-color:var(--navy);color:var(--navy)}
 .rbtn.sel{background:var(--navy)!important;color:var(--yellow)!important;border-color:var(--navy)!important}
 .twocol{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
 .fg{display:flex;flex-direction:column;gap:5px}
 .fg label{font-size:10px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.07em}
-input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;padding:10px 12px;border:2px solid var(--light);border-radius:5px;font-family:inherit;font-size:13px;color:var(--dark);background:var(--white);outline:none;transition:border-color .15s;appearance:none;-webkit-appearance:none}
-input[type=text]:focus,input[type=email]:focus,input[type=tel]:focus,select:focus,textarea:focus{border-color:var(--navy)}
+input[type=text],input[type=email],select,textarea{width:100%;padding:10px 12px;border:2px solid var(--light);border-radius:5px;font-family:inherit;font-size:13px;color:var(--dark);background:var(--white);outline:none;transition:border-color .15s;appearance:none;-webkit-appearance:none}
+input[type=text]:focus,input[type=email]:focus,select:focus,textarea:focus{border-color:var(--navy)}
 textarea{resize:vertical;min-height:70px}
 .nps-row{display:flex;gap:5px;flex-wrap:wrap}
 .nps-btn{width:40px;height:40px;border:2px solid var(--light);border-radius:4px;background:var(--white);font-size:12px;font-weight:900;color:var(--gray);cursor:pointer;font-family:inherit;transition:all .12s;-webkit-tap-highlight-color:transparent;outline:none;flex-shrink:0}
@@ -293,8 +256,6 @@ textarea{resize:vertical;min-height:70px}
 .ty h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:2px;margin-bottom:8px;color:var(--navy)}
 .ty p{color:var(--gray);font-size:14px;line-height:1.7;max-width:380px;margin:0 auto 1.5rem}
 .ty-share{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
-
-/* PIN */
 .pin-wrap{min-height:100vh;background:var(--navy);display:flex;align-items:center;justify-content:center;padding:1.5rem}
 .pin-card{background:var(--white);border-radius:10px;border:3px solid var(--yellow);padding:2.5rem 2rem;max-width:380px;width:100%;text-align:center}
 .pin-card h2{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;letter-spacing:2px;margin-bottom:.4rem;color:var(--navy)}
@@ -308,15 +269,16 @@ textarea{resize:vertical;min-height:70px}
 .pin-btn:active{transform:scale(.95)}
 .pin-small{font-size:11px!important;font-family:'Inter',sans-serif!important;font-weight:700!important}
 .pin-error{color:var(--red);font-size:13px;font-weight:700;min-height:20px;margin-top:.4rem;text-transform:uppercase;letter-spacing:.5px}
-
-/* ADMIN */
 .admin-bg{background:var(--off);min-height:100vh;padding:2rem 5%}
-.admin-inner{max-width:1200px;margin:0 auto}
+.admin-wrap{max-width:1200px;margin:0 auto}
 .ahdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.8rem;flex-wrap:wrap;gap:1rem}
 .ahdr h2{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--navy);letter-spacing:2px}
 .ahdr p{font-size:13px;color:var(--gray);margin-top:3px}
 .ahdr-btns{display:flex;gap:8px;flex-wrap:wrap}
-.rfbtn{background:var(--navy);color:var(--yellow);border:none;padding:10px 20px;border-radius:5px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px}
+.rfbtn{background:var(--navy);color:var(--yellow);border:none;padding:10px 20px;border-radius:5px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
+.rfbtn:hover{background:var(--navy2)}
+.export-btn{background:var(--yellow);color:var(--navy);border:none;padding:10px 20px;border-radius:5px;font-size:12px;font-weight:900;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
+.export-btn:hover{background:var(--yellow3)}
 .lock-btn{background:transparent;border:2px solid var(--light);color:var(--gray);padding:9px 16px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
 .lock-btn:hover{border-color:var(--navy);color:var(--navy)}
 .admin-tabs{display:flex;gap:8px;margin-bottom:1.5rem;border-bottom:2px solid var(--light);padding-bottom:1rem;flex-wrap:wrap}
@@ -344,27 +306,22 @@ tr:hover td{background:var(--off)}
 .bt{background:var(--navy);color:var(--yellow)}.by{background:#1a5e2a;color:#7be89a}
 .bp{background:#5e2000;color:#ffb77a}.ba{background:#4a1a4a;color:#e8a0e8}
 .empty{text-align:center;padding:3rem;color:var(--gray);font-size:14px;text-transform:uppercase;letter-spacing:.5px;font-weight:700}
-
-/* WAITLIST TABLE */
 .waitlist-tbl-wrap{overflow-x:auto;border:2px solid var(--light);border-radius:8px;background:var(--white);margin-top:1rem}
 .waitlist-tbl{width:100%;border-collapse:collapse;font-size:12px;min-width:500px}
 .waitlist-tbl th{text-align:left;padding:11px 12px;background:var(--yellow);border-bottom:2px solid var(--yellow2);font-weight:900;font-size:10px;color:var(--navy);text-transform:uppercase;letter-spacing:.07em}
 .waitlist-tbl td{padding:11px 12px;border-bottom:1px solid var(--light);color:var(--dark)}
 .waitlist-tbl tr:last-child td{border-bottom:none}
 .waitlist-tbl tr:hover td{background:var(--off)}
-
-/* TOAST */
+.debug-box{background:var(--white);border:2px solid var(--yellow);border-radius:8px;padding:1.2rem;margin-bottom:1.5rem;font-size:12px;font-family:monospace;color:var(--navy);line-height:1.8;display:none}
+.debug-box.show{display:block}
 .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--yellow);padding:12px 24px;border-radius:5px;font-size:12px;font-weight:800;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none;text-transform:uppercase;letter-spacing:1px;border:2px solid var(--yellow)}
 .toast.show{opacity:1}
-
-/* RESPONSIVE */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;gap:2rem}
   .hero-visual{display:none}
   .hero h1{font-size:clamp(3.5rem,10vw,6rem)}
   .waitlist-grid{grid-template-columns:1fr}
   .waitlist-perks{order:-1}
-  .cta-section>div:last-child{display:none}
 }
 @media(max-width:640px){
   nav{padding:0 4%;height:60px}
@@ -389,7 +346,6 @@ tr:hover td{background:var(--off)}
   .form-body{padding:1rem 1.2rem 1.5rem}
   .qblock{padding:1rem 1.1rem}
   .twocol{grid-template-columns:1fr 1fr;gap:8px}
-  .threecol{grid-template-columns:1fr}
   .nps-row{gap:4px}
   .nps-btn{width:36px;height:36px;font-size:11px}
   .pin-card{padding:2rem 1.4rem}
@@ -415,8 +371,7 @@ tr:hover td{background:var(--off)}
 </style>
 </head>
 <body>
-
-<div class="toast" id="toast">Link Copied!</div>
+<div class="toast" id="toast">Copied!</div>
 
 <nav>
   <div class="nlogo" onclick="goTo('landing')">
@@ -440,7 +395,7 @@ tr:hover td{background:var(--off)}
   <button class="mob-cta" onclick="goTo('survey');toggleMenu()">Take Survey →</button>
 </div>
 
-<!-- LANDING PAGE -->
+<!-- LANDING -->
 <div id="pg-landing" class="page on">
   <div class="ticker-wrap">
     <div class="ticker">
@@ -466,12 +421,7 @@ tr:hover td{background:var(--off)}
     <div class="hero-inner">
       <div class="hero-left">
         <div class="hero-tag reveal">🌶️ New Brand · IT Parks First · Survey Open</div>
-        <h1 class="reveal stagger-1">
-          BOLD
-          <span class="line-yellow">FLAVOR.</span>
-          <span class="line-outline">INDIAN</span>
-          SOUL.
-        </h1>
+        <h1 class="reveal stagger-1">BOLD<span class="line-yellow">FLAVOR.</span><span class="line-outline">INDIAN</span>SOUL.</h1>
         <p class="hero-sub reveal stagger-2">Chinese wok cooking meets Indian spices. Fast, bold, and cooked right in front of you. Help us build the menu your IT park deserves.</p>
         <div class="hero-btns reveal stagger-3">
           <button class="btn-y" onclick="goTo('survey')">Shape the Menu →</button>
@@ -479,10 +429,7 @@ tr:hover td{background:var(--off)}
         </div>
         <div class="live-ctr reveal stagger-4">
           <div class="lc-dot"></div>
-          <div>
-            <div class="lc-num" id="hero-counter">...</div>
-            <div class="lc-txt">food lovers have<br>shared their taste</div>
-          </div>
+          <div><div class="lc-num" id="hero-counter">...</div><div class="lc-txt">food lovers have<br>shared their taste</div></div>
         </div>
       </div>
       <div class="hero-visual reveal-right stagger-2">
@@ -514,10 +461,7 @@ tr:hover td{background:var(--off)}
           <div class="mc-row-w"><span>Ginger Iced Tea</span><span>₹69</span></div>
           <div class="mc-foot-w">Made hot. Always bold.</div>
         </div>
-        <div class="hero-badge">
-          <div class="hb-num">4</div>
-          <div class="hb-txt">Age Group<br>Surveys</div>
-        </div>
+        <div class="hero-badge"><div class="hb-num">4</div><div class="hb-txt">Age Group<br>Surveys</div></div>
       </div>
     </div>
   </div>
@@ -556,17 +500,16 @@ tr:hover td{background:var(--off)}
         <div class="reveal-right"><p style="color:rgba(255,255,255,.55);font-size:13px;max-width:280px;line-height:1.6">Indian spices. Chinese wok. Every dish cooked fresh right in front of you.</p></div>
       </div>
       <div class="menu-grid">
-        <div class="menu-card reveal stagger-1"><span class="menu-badge">Bestseller</span><span class="menu-emoji">🍊</span><h3>Masala Orange Chicken</h3><p class="menu-desc">Crispy chicken tossed in tamarind orange sauce with garam masala and kasuri methi</p><div class="menu-footer"><span class="menu-price">₹249</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot off"></div></div></div></div>
-        <div class="menu-card reveal stagger-2"><span class="menu-badge" style="background:rgba(245,197,24,.15);color:var(--yellow);border:1px solid rgba(245,197,24,.3)">Veg</span><span class="menu-emoji">🥘</span><h3>Kung Pao Paneer</h3><p class="menu-desc">Wok-tossed paneer with peanuts, dried chilies, and an Indian makhani base</p><div class="menu-footer"><span class="menu-price">₹229</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot off"></div></div></div></div>
-        <div class="menu-card reveal stagger-3"><span class="menu-badge menu-badge-red">Spicy</span><span class="menu-emoji">🍜</span><h3>Desi Masala Noodles</h3><p class="menu-desc">Chaat masala wok noodles with cumin, green chili, capsicum and spring onion</p><div class="menu-footer"><span class="menu-price">₹199</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot"></div></div></div></div>
-        <div class="menu-card reveal stagger-4"><span class="menu-badge">Popular</span><span class="menu-emoji">🍚</span><h3>Tadka Fried Rice</h3><p class="menu-desc">Classic tadka with mustard seeds, curry leaves, turmeric wok rice and paneer</p><div class="menu-footer"><span class="menu-price">₹189</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot off"></div><div class="spice-dot off"></div></div></div></div>
-        <div class="menu-card reveal stagger-5"><span class="menu-badge" style="background:rgba(245,197,24,.15);color:var(--yellow);border:1px solid rgba(245,197,24,.3)">New</span><span class="menu-emoji">🥟</span><h3>Mirchi Makhani Dumplings</h3><p class="menu-desc">Steamed momos in a rich Indian makhani gravy with chili crunch</p><div class="menu-footer"><span class="menu-price">₹169</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot off"></div></div></div></div>
-        <div class="menu-card reveal stagger-6"><span class="menu-badge menu-badge-red">Combo</span><span class="menu-emoji">🍱</span><h3>WOK IN Classic Combo</h3><p class="menu-desc">Any main + rice or noodles + soup — the complete IT park lunch deal</p><div class="menu-footer"><span class="menu-price">₹299</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot off"></div></div></div></div>
+        <div class="menu-card reveal stagger-1"><span class="menu-badge">Bestseller</span><span class="menu-emoji">🍊</span><h3>Masala Orange Chicken</h3><p class="menu-desc">Crispy chicken in tamarind orange sauce with garam masala</p><div class="menu-footer"><span class="menu-price">₹249</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot off"></div></div></div></div>
+        <div class="menu-card reveal stagger-2"><span class="menu-badge" style="background:rgba(245,197,24,.15);color:var(--yellow);border:1px solid rgba(245,197,24,.3)">Veg</span><span class="menu-emoji">🥘</span><h3>Kung Pao Paneer</h3><p class="menu-desc">Wok-tossed paneer with peanuts, chilies and makhani base</p><div class="menu-footer"><span class="menu-price">₹229</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot off"></div></div></div></div>
+        <div class="menu-card reveal stagger-3"><span class="menu-badge menu-badge-red">Spicy</span><span class="menu-emoji">🍜</span><h3>Desi Masala Noodles</h3><p class="menu-desc">Chaat masala wok noodles with cumin, chili and spring onion</p><div class="menu-footer"><span class="menu-price">₹199</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot"></div></div></div></div>
+        <div class="menu-card reveal stagger-4"><span class="menu-badge">Popular</span><span class="menu-emoji">🍚</span><h3>Tadka Fried Rice</h3><p class="menu-desc">Mustard seeds, curry leaves, turmeric wok rice and paneer</p><div class="menu-footer"><span class="menu-price">₹189</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot off"></div><div class="spice-dot off"></div></div></div></div>
+        <div class="menu-card reveal stagger-5"><span class="menu-badge" style="background:rgba(245,197,24,.15);color:var(--yellow);border:1px solid rgba(245,197,24,.3)">New</span><span class="menu-emoji">🥟</span><h3>Mirchi Makhani Dumplings</h3><p class="menu-desc">Steamed momos in rich Indian makhani gravy with chili crunch</p><div class="menu-footer"><span class="menu-price">₹169</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot off"></div></div></div></div>
+        <div class="menu-card reveal stagger-6"><span class="menu-badge menu-badge-red">Combo</span><span class="menu-emoji">🍱</span><h3>WOK IN Classic Combo</h3><p class="menu-desc">Any main + rice or noodles + soup — the IT park lunch deal</p><div class="menu-footer"><span class="menu-price">₹299</span><div class="menu-spice"><div class="spice-dot"></div><div class="spice-dot"></div><div class="spice-dot off"></div></div></div></div>
       </div>
     </div>
   </div>
 
-  <!-- WAITLIST SECTION -->
   <div class="waitlist-section" id="waitlist-anchor">
     <div class="waitlist-inner">
       <div class="waitlist-grid">
@@ -575,7 +518,7 @@ tr:hover td{background:var(--off)}
           <h3>JOIN THE<br>FOUNDING<br>CREW</h3>
           <div class="perk-item"><div class="perk-num">1</div><div class="perk-text"><h4>Launch Day Alert</h4><p>Be the first to know when WOK IN arrives at your IT park</p></div></div>
           <div class="perk-item"><div class="perk-num">2</div><div class="perk-text"><h4>Founding Member Discount</h4><p>Get 20% off your first 5 orders exclusively for waitlist members</p></div></div>
-          <div class="perk-item"><div class="perk-num">3</div><div class="perk-text"><h4>Shape the Final Menu</h4><p>Waitlist members get early access to vote on the final menu before launch</p></div></div>
+          <div class="perk-item"><div class="perk-num">3</div><div class="perk-text"><h4>Shape the Final Menu</h4><p>Waitlist members vote on the final menu before launch</p></div></div>
           <div class="waitlist-count">
             <div class="lc-dot" style="background:var(--yellow)"></div>
             <div><div class="wc-num" id="waitlist-counter">...</div><div class="wc-txt">people on<br>the waitlist</div></div>
@@ -600,7 +543,6 @@ tr:hover td{background:var(--off)}
     </div>
   </div>
 
-  <!-- PEOPLE SECTION -->
   <div class="people-section">
     <div class="people-inner">
       <div class="reveal" style="text-align:center;margin-bottom:.5rem">
@@ -609,22 +551,10 @@ tr:hover td{background:var(--off)}
         <p style="text-align:center;color:var(--gray);font-size:14px;max-width:400px;margin:0 auto">From interns to architects — all IT park food lovers helping build WOK IN</p>
       </div>
       <div class="people-grid">
-        <div class="person-card reveal stagger-1">
-          <svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#FDBCB4"/><path d="M26 28 Q50 6 74 28 Q70 14 50 11 Q30 14 26 28" fill="#1A2D5A"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="43.5" cy="32" r="1.2" fill="#fff"/><circle cx="59.5" cy="32" r="1.2" fill="#fff"/><path d="M41 46 Q50 54 59 46" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#1A2D5A"/><rect x="38" y="65" width="24" height="8" rx="2" fill="#F5C518"/><path d="M28 72 Q8 82 6 100" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 80 92 96" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg>
-          <h4>Rahul, 24</h4><div class="person-role">Software Engineer</div><p class="person-quote">"Need more tasty options near office. Can't wait!"</p>
-        </div>
-        <div class="person-card reveal stagger-2">
-          <svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#C68642"/><path d="M26 32 Q50 8 74 32" fill="#2a1a0a"/><ellipse cx="50" cy="14" rx="28" ry="9" fill="#2a1a0a"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="43.5" cy="32" r="1.2" fill="#fff"/><circle cx="59.5" cy="32" r="1.2" fill="#fff"/><path d="M42 47 Q50 55 58 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#F5C518"/><rect x="38" y="68" width="24" height="6" rx="2" fill="#1A2D5A"/><path d="M28 72 Q9 82 7 100" stroke="#C68642" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q89 80 91 96" stroke="#C68642" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg>
-          <h4>Priya, 19</h4><div class="person-role">College Student</div><p class="person-quote">"Indo-Chinese on a student budget? Yes please!"</p>
-        </div>
-        <div class="person-card reveal stagger-3">
-          <svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#F1C27D"/><path d="M26 30 Q50 16 74 30" fill="#5a3e1b"/><circle cx="42" cy="33" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="33" r="3.5" fill="#1A2D5A"/><rect x="34" y="28" width="12" height="9" rx="3.5" fill="none" stroke="#1A2D5A" stroke-width="1.5"/><rect x="54" y="28" width="12" height="9" rx="3.5" fill="none" stroke="#1A2D5A" stroke-width="1.5"/><line x1="46" y1="32" x2="54" y2="32" stroke="#1A2D5A" stroke-width="1.5"/><path d="M41 47 Q50 56 59 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#1A2D5A"/><path d="M50 60 L46 78 L50 84 L54 78 Z" fill="#F5C518"/><path d="M28 72 Q8 80 6 98" stroke="#F1C27D" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 78 92 94" stroke="#F1C27D" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg>
-          <h4>Vikram, 35</h4><div class="person-role">Product Manager</div><p class="person-quote">"WOK IN is exactly what's missing from our food court!"</p>
-        </div>
-        <div class="person-card reveal stagger-4">
-          <svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#FDBCB4"/><path d="M26 28 Q50 10 74 28 Q70 16 50 14 Q30 16 26 28" fill="#9e9e9e"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><path d="M41 47 Q50 56 59 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#E8341A"/><rect x="38" y="68" width="24" height="6" rx="2" fill="#fff"/><path d="M28 72 Q8 80 6 98" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 78 92 94" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg>
-          <h4>Meena, 42</h4><div class="person-role">Senior Architect</div><p class="person-quote">"Quality, hygiene, real Indian flavors. This is the one!"</p>
-        </div>
+        <div class="person-card reveal stagger-1"><svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#FDBCB4"/><path d="M26 28 Q50 6 74 28 Q70 14 50 11 Q30 14 26 28" fill="#1A2D5A"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="43.5" cy="32" r="1.2" fill="#fff"/><circle cx="59.5" cy="32" r="1.2" fill="#fff"/><path d="M41 46 Q50 54 59 46" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#1A2D5A"/><rect x="38" y="65" width="24" height="8" rx="2" fill="#F5C518"/><path d="M28 72 Q8 82 6 100" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 80 92 96" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg><h4>Rahul, 24</h4><div class="person-role">Software Engineer</div><p class="person-quote">"Need more tasty options near office. Can't wait!"</p></div>
+        <div class="person-card reveal stagger-2"><svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#C68642"/><path d="M26 32 Q50 8 74 32" fill="#2a1a0a"/><ellipse cx="50" cy="14" rx="28" ry="9" fill="#2a1a0a"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><path d="M42 47 Q50 55 58 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#F5C518"/><rect x="38" y="68" width="24" height="6" rx="2" fill="#1A2D5A"/><path d="M28 72 Q9 82 7 100" stroke="#C68642" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q89 80 91 96" stroke="#C68642" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg><h4>Priya, 19</h4><div class="person-role">College Student</div><p class="person-quote">"Indo-Chinese on a student budget? Yes please!"</p></div>
+        <div class="person-card reveal stagger-3"><svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#F1C27D"/><path d="M26 30 Q50 16 74 30" fill="#5a3e1b"/><circle cx="42" cy="33" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="33" r="3.5" fill="#1A2D5A"/><rect x="34" y="28" width="12" height="9" rx="3.5" fill="none" stroke="#1A2D5A" stroke-width="1.5"/><rect x="54" y="28" width="12" height="9" rx="3.5" fill="none" stroke="#1A2D5A" stroke-width="1.5"/><line x1="46" y1="32" x2="54" y2="32" stroke="#1A2D5A" stroke-width="1.5"/><path d="M41 47 Q50 56 59 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#1A2D5A"/><path d="M50 60 L46 78 L50 84 L54 78 Z" fill="#F5C518"/><path d="M28 72 Q8 80 6 98" stroke="#F1C27D" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 78 92 94" stroke="#F1C27D" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg><h4>Vikram, 35</h4><div class="person-role">Product Manager</div><p class="person-quote">"WOK IN is exactly what's missing from our food court!"</p></div>
+        <div class="person-card reveal stagger-4"><svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#FDBCB4"/><path d="M26 28 Q50 10 74 28 Q70 16 50 14 Q30 16 26 28" fill="#9e9e9e"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><path d="M41 47 Q50 56 59 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#E8341A"/><rect x="38" y="68" width="24" height="6" rx="2" fill="#fff"/><path d="M28 72 Q8 80 6 98" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 78 92 94" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg><h4>Meena, 42</h4><div class="person-role">Senior Architect</div><p class="person-quote">"Quality, hygiene, real Indian flavors. This is the one!"</p></div>
       </div>
     </div>
   </div>
@@ -633,10 +563,7 @@ tr:hover td{background:var(--off)}
     <div class="insta-inner">
       <div class="insta-top">
         <div class="reveal-left"><span class="sec-eyebrow">Follow Our Journey</span><h2 class="sec-title">BEHIND THE WOK</h2></div>
-        <button class="insta-btn reveal-right" onclick="window.open('https://instagram.com/wokin.in','_blank')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-          @wokin.in
-        </button>
+        <button class="insta-btn reveal-right" onclick="window.open('https://instagram.com/wokin.in','_blank')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>@wokin.in</button>
       </div>
       <div class="insta-grid">
         <div class="insta-card reveal stagger-1"><div class="ic-body"><span class="ic-emoji">🥢</span><div class="ic-txt">The wok that started it all</div></div><div class="insta-overlay"><span>View Post</span></div></div>
@@ -657,9 +584,9 @@ tr:hover td{background:var(--off)}
         <p style="color:rgba(255,255,255,.6);font-size:14px;margin:0 auto;max-width:480px;line-height:1.7">Share the WOK IN survey with your colleagues. Every 3 referrals earns you a free dish on launch day.</p>
       </div>
       <div class="ref-steps">
-        <div class="ref-step reveal stagger-1"><div class="ref-num">1</div><h4>Share the Link</h4><p>Send the survey to colleagues on WhatsApp, email, or any platform</p></div>
-        <div class="ref-step reveal stagger-2"><div class="ref-num">2</div><h4>They Respond</h4><p>Every person who fills the survey helps shape the WOK IN menu</p></div>
-        <div class="ref-step reveal stagger-3"><div class="ref-num">3</div><h4>You Get Rewarded</h4><p>Founding members and referrers get exclusive discounts on launch day</p></div>
+        <div class="ref-step reveal stagger-1"><div class="ref-num">1</div><h4>Share the Link</h4><p>Send the survey to colleagues on WhatsApp or email</p></div>
+        <div class="ref-step reveal stagger-2"><div class="ref-num">2</div><h4>They Respond</h4><p>Every person who fills the survey helps shape the menu</p></div>
+        <div class="ref-step reveal stagger-3"><div class="ref-num">3</div><h4>You Get Rewarded</h4><p>Founding members get exclusive discounts on launch day</p></div>
       </div>
       <div class="share-row reveal stagger-4">
         <button class="btn-wa" onclick="shareWA()"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.547 5.876L.057 23.5l5.752-1.508A11.951 11.951 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.491-5.145-1.347l-.369-.217-3.812 1 1.022-3.706-.241-.382A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>WhatsApp</button>
@@ -728,18 +655,10 @@ tr:hover td{background:var(--off)}
           <div class="pin-dot" id="dot2"></div><div class="pin-dot" id="dot3"></div>
         </div>
         <div class="pin-grid">
-          <button class="pin-btn" onclick="pinPress('1')">1</button>
-          <button class="pin-btn" onclick="pinPress('2')">2</button>
-          <button class="pin-btn" onclick="pinPress('3')">3</button>
-          <button class="pin-btn" onclick="pinPress('4')">4</button>
-          <button class="pin-btn" onclick="pinPress('5')">5</button>
-          <button class="pin-btn" onclick="pinPress('6')">6</button>
-          <button class="pin-btn" onclick="pinPress('7')">7</button>
-          <button class="pin-btn" onclick="pinPress('8')">8</button>
-          <button class="pin-btn" onclick="pinPress('9')">9</button>
-          <button class="pin-btn pin-small" onclick="pinClear()">Clear</button>
-          <button class="pin-btn" onclick="pinPress('0')">0</button>
-          <button class="pin-btn pin-small" onclick="pinBackspace()">⌫</button>
+          <button class="pin-btn" onclick="pinPress('1')">1</button><button class="pin-btn" onclick="pinPress('2')">2</button><button class="pin-btn" onclick="pinPress('3')">3</button>
+          <button class="pin-btn" onclick="pinPress('4')">4</button><button class="pin-btn" onclick="pinPress('5')">5</button><button class="pin-btn" onclick="pinPress('6')">6</button>
+          <button class="pin-btn" onclick="pinPress('7')">7</button><button class="pin-btn" onclick="pinPress('8')">8</button><button class="pin-btn" onclick="pinPress('9')">9</button>
+          <button class="pin-btn pin-small" onclick="pinClear()">Clear</button><button class="pin-btn" onclick="pinPress('0')">0</button><button class="pin-btn pin-small" onclick="pinBackspace()">⌫</button>
         </div>
         <div class="pin-error" id="pin-error"></div>
       </div>
@@ -747,79 +666,171 @@ tr:hover td{background:var(--off)}
   </div>
   <div id="admin-content" style="display:none">
     <div class="admin-bg">
-      <div class="admin-inner" id="admin-inner"></div>
+      <div class="admin-wrap">
+        <!-- HEADER -->
+        <div class="ahdr">
+          <div><h2>ADMIN DASHBOARD</h2><p id="admin-status">Loading data from Supabase...</p></div>
+          <div class="ahdr-btns">
+            <button class="rfbtn" onclick="loadAdmin()">↻ Refresh</button>
+            <button class="export-btn" onclick="exportCSV()">Export CSV</button>
+            <button class="lock-btn" onclick="lockAdmin()">🔒 Lock</button>
+          </div>
+        </div>
+        <!-- DEBUG BOX -->
+        <div class="debug-box" id="debug-box"></div>
+        <!-- STAT CARDS -->
+        <div class="sgrid" id="admin-stats">
+          <div class="sc"><div class="sl">Total Responses</div><div class="sv" id="stat-total">—</div></div>
+          <div class="sc"><div class="sl">Waitlist</div><div class="sv" id="stat-waitlist">—</div></div>
+          <div class="sc"><div class="sl">Avg NPS</div><div class="sv" id="stat-nps">—</div></div>
+          <div class="sc"><div class="sl">Gen Z</div><div class="sv" id="stat-teen">—</div></div>
+          <div class="sc"><div class="sl">Young Adults</div><div class="sv" id="stat-young">—</div></div>
+          <div class="sc"><div class="sl">Professionals</div><div class="sv" id="stat-pro">—</div></div>
+        </div>
+        <!-- TABS -->
+        <div class="admin-tabs">
+          <button class="admin-tab active" id="tab-responses" onclick="setView('responses')">Survey Responses</button>
+          <button class="admin-tab" id="tab-waitlist" onclick="setView('waitlist')">Waitlist</button>
+          <button class="admin-tab" id="tab-analytics" onclick="setView('analytics')">Analytics</button>
+        </div>
+        <!-- VIEW AREAS -->
+        <div id="view-responses"></div>
+        <div id="view-waitlist" style="display:none"></div>
+        <div id="view-analytics" style="display:none"></div>
+      </div>
     </div>
   </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
-const _sb=supabase.createClient('https://zntdkcmgekdfdjbcyctp.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpudGRrY21nZWtkZmRqYmN5Y3RwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2MzQxNzIsImV4cCI6MjA4OTIxMDE3Mn0.GniK5lVxNMSta5uTks135vofOsy0u7kfO9jq8MyEino')
+// ── SUPABASE ──────────────────────────────────────────────────────────────────
+const _sb = supabase.createClient(
+  'https://zntdkcmgekdfdjbcyctp.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpudGRrY21nZWtkZmRqYmN5Y3RwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2MzQxNzIsImV4cCI6MjA4OTIxMDE3Mn0.GniK5lVxNMSta5uTks135vofOsy0u7kfO9jq8MyEino'
+)
 
-// SCROLL ANIMATIONS
-var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12,rootMargin:'0px 0px -40px 0px'})
-function initReveal(){document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(function(el){obs.observe(el)})}
+// ── SCROLL ANIMATIONS ─────────────────────────────────────────────────────────
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible') })
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'})
+function initReveal(){
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){ obs.observe(el) })
+}
 initReveal()
 
-// SHARE
-var SURL=window.location.href.split('?')[0]
-var SMSG='Hey! I just took the WOK IN food survey — bold Indian-Chinese fusion launching at IT parks. Takes 2 mins, helps shape their menu! Fill it: '+SURL
-function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent(SMSG),'_blank')}
-function shareEM(){window.open('mailto:?subject=Help shape WOK IN — Indo-Chinese at your IT park&body='+encodeURIComponent(SMSG),'_blank')}
-function copyLink(){navigator.clipboard.writeText(SURL).then(function(){var t=document.getElementById('toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2500)}).catch(function(){prompt('Copy:',SURL)})}
+// ── SHARE ─────────────────────────────────────────────────────────────────────
+var SURL = window.location.href.split('?')[0]
+var SMSG = 'Hey! I just took the WOK IN food survey — bold Indian-Chinese fusion launching at IT parks. Takes 2 mins! Fill it: ' + SURL
+function shareWA(){ window.open('https://wa.me/?text='+encodeURIComponent(SMSG),'_blank') }
+function shareEM(){ window.open('mailto:?subject=Help shape WOK IN&body='+encodeURIComponent(SMSG),'_blank') }
+function copyLink(){
+  navigator.clipboard.writeText(SURL).then(function(){
+    var t = document.getElementById('toast'); t.textContent = 'Link Copied!'; t.classList.add('show')
+    setTimeout(function(){ t.classList.remove('show') }, 2500)
+  }).catch(function(){ prompt('Copy this link:',SURL) })
+}
+function showToast(msg){
+  var t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show')
+  setTimeout(function(){ t.classList.remove('show') }, 2500)
+}
 
-// COUNTERS
+// ── COUNTERS ──────────────────────────────────────────────────────────────────
 async function loadCounter(){
-  var r=await _sb.from('survey_responses').select('id',{count:'exact',head:true})
-  var el=document.getElementById('hero-counter');if(el)el.textContent=(r.count||0)+'+'
+  try {
+    var r = await _sb.from('survey_responses').select('*',{count:'exact',head:true})
+    var el = document.getElementById('hero-counter')
+    if(el) el.textContent = (r.count || 0) + '+'
+  } catch(e){}
 }
 async function loadWaitlistCounter(){
-  var r=await _sb.from('wokin_waitlist').select('id',{count:'exact',head:true})
-  var el=document.getElementById('waitlist-counter');if(el)el.textContent=(r.count||0)+'+'
+  try {
+    var r = await _sb.from('wokin_waitlist').select('*',{count:'exact',head:true})
+    var el = document.getElementById('waitlist-counter')
+    if(el) el.textContent = (r.count || 0) + '+'
+  } catch(e){}
 }
-loadCounter();loadWaitlistCounter()
+loadCounter()
+loadWaitlistCounter()
 
-// WAITLIST SUBMIT
+// ── WAITLIST ──────────────────────────────────────────────────────────────────
 async function submitWaitlist(){
-  var name=document.getElementById('wf-name').value.trim()
-  var contact=document.getElementById('wf-contact').value.trim()
-  var park=document.getElementById('wf-park').value.trim()
-  if(!name||!contact){alert('Please fill in your name and contact details.');return}
-  var btn=document.getElementById('wf-submit');btn.disabled=true;btn.textContent='Joining...'
-  var res=await _sb.from('wokin_waitlist').insert([{name:name,contact:contact,it_park:park}])
-  if(res.error){
-    if(res.error.code==='42P01'){
-      document.getElementById('wf-form-inner').style.display='none'
-      document.getElementById('wf-success').style.display='block'
-      loadWaitlistCounter()
-    } else {
-      alert('Error: '+res.error.message);btn.disabled=false;btn.textContent='Join the Waitlist →'
-    }
-    return
+  var name = document.getElementById('wf-name').value.trim()
+  var contact = document.getElementById('wf-contact').value.trim()
+  var park = document.getElementById('wf-park').value.trim()
+  if(!name || !contact){ alert('Please fill in your name and contact details.'); return }
+  var btn = document.getElementById('wf-submit')
+  btn.disabled = true; btn.textContent = 'Joining...'
+  try {
+    var res = await _sb.from('wokin_waitlist').insert([{name:name, contact:contact, it_park:park}])
+    if(res.error){ throw new Error(res.error.message) }
+  } catch(e){
+    console.log('Waitlist insert note:', e.message)
   }
-  document.getElementById('wf-form-inner').style.display='none'
-  document.getElementById('wf-success').style.display='block'
+  document.getElementById('wf-form-inner').style.display = 'none'
+  document.getElementById('wf-success').style.display = 'block'
   loadWaitlistCounter()
 }
 
-// PIN
-const PIN='1214'
-var pinEntry='',adminUnlocked=false
+// ── PIN ───────────────────────────────────────────────────────────────────────
+const PIN = '1214'
+var pinEntry = '', adminUnlocked = false
 function pinPress(d){
-  if(pinEntry.length>=4)return
-  pinEntry+=d
-  for(var i=0;i<4;i++)document.getElementById('dot'+i).classList.toggle('filled',i<pinEntry.length)
-  if(pinEntry.length===4){setTimeout(function(){
-    if(pinEntry===PIN){adminUnlocked=true;document.getElementById('pin-gate').style.display='none';document.getElementById('admin-content').style.display='block';renderAdmin();loadAdmin()}
-    else{document.getElementById('pin-error').textContent='Wrong PIN. Try Again.';pinEntry='';for(var j=0;j<4;j++)document.getElementById('dot'+j).classList.remove('filled');setTimeout(function(){document.getElementById('pin-error').textContent=''},2500)}
-  },300)}
+  if(pinEntry.length >= 4) return
+  pinEntry += d
+  for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.toggle('filled', i < pinEntry.length)
+  if(pinEntry.length === 4){
+    setTimeout(function(){
+      if(pinEntry === PIN){
+        adminUnlocked = true
+        document.getElementById('pin-gate').style.display = 'none'
+        document.getElementById('admin-content').style.display = 'block'
+        loadAdmin()
+      } else {
+        document.getElementById('pin-error').textContent = 'Wrong PIN. Try Again.'
+        pinEntry = ''
+        for(var j=0;j<4;j++) document.getElementById('dot'+j).classList.remove('filled')
+        setTimeout(function(){ document.getElementById('pin-error').textContent = '' }, 2500)
+      }
+    }, 300)
+  }
 }
-function pinClear(){pinEntry='';for(var i=0;i<4;i++)document.getElementById('dot'+i).classList.remove('filled');document.getElementById('pin-error').textContent=''}
-function pinBackspace(){if(!pinEntry.length)return;pinEntry=pinEntry.slice(0,-1);for(var i=0;i<4;i++)document.getElementById('dot'+i).classList.toggle('filled',i<pinEntry.length)}
-function toggleMenu(){document.getElementById('mob-menu').classList.toggle('open')}
+function pinClear(){
+  pinEntry = ''
+  for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.remove('filled')
+  document.getElementById('pin-error').textContent = ''
+}
+function pinBackspace(){
+  if(!pinEntry.length) return
+  pinEntry = pinEntry.slice(0,-1)
+  for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.toggle('filled', i < pinEntry.length)
+}
+function toggleMenu(){ document.getElementById('mob-menu').classList.toggle('open') }
 
-// FORMS DATA — with new fields
-const FORMS=[
+// ── NAVIGATION ────────────────────────────────────────────────────────────────
+var pg = 'landing'
+function goTo(p){
+  pg = p
+  document.querySelectorAll('.page').forEach(function(el){ el.classList.remove('on') })
+  document.getElementById('pg-'+p).classList.add('on')
+  document.querySelectorAll('.nlink').forEach(function(b){ b.classList.remove('active') })
+  var nb = document.getElementById('nb-'+p); if(nb) nb.classList.add('active')
+  if(p === 'admin'){
+    if(!adminUnlocked){
+      document.getElementById('pin-gate').style.display = 'block'
+      document.getElementById('admin-content').style.display = 'none'
+    } else {
+      document.getElementById('pin-gate').style.display = 'none'
+      document.getElementById('admin-content').style.display = 'block'
+      loadAdmin()
+    }
+  }
+  if(p === 'survey'){ renderSurvey(); setTimeout(initReveal,100) }
+  window.scrollTo(0,0)
+}
+
+// ── FORMS DATA ────────────────────────────────────────────────────────────────
+const FORMS = [
   {id:'teen',label:'Gen Z',range:'10–19',sub:'For teens and students',ages:[10,11,12,13,14,15,16,17,18,19],qs:[
     {id:'q1',text:'How often do you eat out or order food in a week?',opts:['Rarely','1 to 2 times','3 to 4 times','Every day']},
     {id:'q2',text:'What type of food do you crave the most?',opts:['Chinese','Indian','Indo-Chinese','Fast food','South Indian']},
@@ -874,332 +885,362 @@ const FORMS=[
   ]}
 ]
 
-var pg='landing',fi=0,ans={},done=false,aData=[],aWaitlist=[],aFilt='all',aView='responses',chartInst={}
+var fi=0, ans={}, done=false
+var aData=[], aWaitlist=[], aFilt='all', aView='responses', chartInst={}
 
-function goTo(p){
-  pg=p
-  document.querySelectorAll('.page').forEach(function(el){el.classList.remove('on')})
-  document.getElementById('pg-'+p).classList.add('on')
-  document.querySelectorAll('.nlink').forEach(function(b){b.classList.remove('active')})
-  var nb=document.getElementById('nb-'+p);if(nb)nb.classList.add('active')
-  if(p==='admin'){
-    if(!adminUnlocked){document.getElementById('pin-gate').style.display='block';document.getElementById('admin-content').style.display='none'}
-    else{document.getElementById('pin-gate').style.display='none';document.getElementById('admin-content').style.display='block';renderAdmin();loadAdmin()}
-  }
-  if(p==='survey'){renderSurvey();setTimeout(initReveal,100)}
-  window.scrollTo(0,0)
-}
-
+// ── SURVEY RENDER ─────────────────────────────────────────────────────────────
 function renderSurvey(){
-  var el=document.getElementById('survey-content')
+  var el = document.getElementById('survey-content')
   if(done){
-    el.innerHTML='<div class="ty"><div class="tycheck">✓</div><h2>THANK YOU!</h2>'
-      +'<p>Your feedback is officially part of WOK IN. You are a founding member — we will reach out on launch day!</p>'
-      +'<div class="ty-share">'
-      +'<button class="sbar-wa" style="padding:10px 18px;border-radius:5px;font-size:12px" onclick="shareWA()">WhatsApp</button>'
-      +'<button class="sbar-em" style="padding:10px 16px;border-radius:5px;font-size:12px;background:var(--navy);border-color:var(--navy)" onclick="shareEM()">Email</button>'
-      +'<button class="sbar-cp" style="padding:10px 18px;border-radius:5px;font-size:12px" onclick="copyLink()">Copy Link</button>'
-      +'</div>'
-      +'<button class="subbtn" style="max-width:300px;margin:0 auto;display:block" onclick="resetSurvey()">Submit Another Response</button>'
-      +'</div>'
+    el.innerHTML = '<div class="ty"><div class="tycheck">✓</div><h2>THANK YOU!</h2>'
+      + '<p>Your feedback is officially part of WOK IN. You are a founding member!</p>'
+      + '<div class="ty-share">'
+      + '<button class="sbar-wa" style="padding:10px 18px;border-radius:5px;font-size:12px" onclick="shareWA()">WhatsApp</button>'
+      + '<button class="sbar-em" style="padding:10px 16px;border-radius:5px;font-size:12px;background:var(--navy);border-color:var(--navy)" onclick="shareEM()">Email</button>'
+      + '<button class="sbar-cp" style="padding:10px 18px;border-radius:5px;font-size:12px" onclick="copyLink()">Copy Link</button>'
+      + '</div>'
+      + '<button class="subbtn" style="max-width:300px;margin:0 auto;display:block" onclick="resetSurvey()">Submit Another Response</button>'
+      + '</div>'
     return
   }
-  var f=FORMS[fi]
-  var totalQ=f.qs.filter(function(q){return !q.opt}).length+8
-  var answered=countAns()
-  var pct=Math.round((answered/totalQ)*100)
-  var tabs=FORMS.map(function(fm,i){return '<button class="atab'+(i===fi?' active':'')+'" onclick="switchForm('+i+')">'+fm.label+'<span>'+fm.range+'</span></button>'}).join('')
-  var qs=''
+  var f = FORMS[fi]
+  var totalQ = f.qs.filter(function(q){ return !q.opt }).length + 6
+  var answered = countAns()
+  var pct = Math.round((answered/totalQ)*100)
+  var tabs = FORMS.map(function(fm,i){
+    return '<button class="atab'+(i===fi?' active':'')+'" onclick="switchForm('+i+')">'+fm.label+'<span>'+fm.range+'</span></button>'
+  }).join('')
+  var qs = ''
   f.qs.forEach(function(q,i){
-    if(q.mot)qs+='<div class="motiv"><div class="mdot">★</div><p>'+q.mot+'</p></div>'
-    qs+='<div class="qblock"><div class="qlabel">'+(q.opt?'Optional':'Q'+(i+1))+'</div><div class="qtext">'+q.text+'</div>'
-    if(q.type==='text'){qs+='<textarea placeholder="Type your answer here..." onchange="ans[\''+q.id+'\']=this.value;updateProg()">'+(ans[q.id]||'')+'</textarea>'}
-    else if(q.type==='rating'){
-      qs+='<div class="rrow">'
-      for(var r=1;r<=5;r++)qs+='<button class="rbtn'+(ans[q.id]===r?' sel':'')+'" data-qid="'+q.id+'" data-v="'+r+'" onclick="pickR(this)">'+r+'</button>'
-      qs+='</div>'
-    }else{
-      qs+='<div class="qgrid">'
-      q.opts.forEach(function(o,oi){qs+='<button class="qopt'+(ans[q.id]===o?' sel':'')+'" data-qid="'+q.id+'" data-oi="'+oi+'" onclick="pickO(this)">'+o+'</button>'})
-      qs+='</div>'
+    if(q.mot) qs += '<div class="motiv"><div class="mdot">★</div><p>'+q.mot+'</p></div>'
+    qs += '<div class="qblock"><div class="qlabel">'+(q.opt?'Optional':'Q'+(i+1))+'</div><div class="qtext">'+q.text+'</div>'
+    if(q.type === 'text'){
+      qs += '<textarea placeholder="Type your answer here..." onchange="ans[\''+q.id+'\']=this.value;updateProg()">'+(ans[q.id]||'')+'</textarea>'
+    } else if(q.type === 'rating'){
+      qs += '<div class="rrow">'
+      for(var r=1;r<=5;r++) qs += '<button class="rbtn'+(ans[q.id]===r?' sel':'')+'" data-qid="'+q.id+'" data-v="'+r+'" onclick="pickR(this)">'+r+'</button>'
+      qs += '</div>'
+    } else {
+      qs += '<div class="qgrid">'
+      q.opts.forEach(function(o,oi){ qs += '<button class="qopt'+(ans[q.id]===o?' sel':'')+'" data-qid="'+q.id+'" data-oi="'+oi+'" onclick="pickO(this)">'+o+'</button>' })
+      qs += '</div>'
     }
-    qs+='</div>'
+    qs += '</div>'
   })
-
-  // NEW INSIGHT QUESTIONS
-  qs+='<div class="section-divider"><span>Quick Insights</span></div>'
-
-  qs+='<div class="qblock highlight">'
-    +'<div class="qlabel qlabel-new">New</div>'
-    +'<div class="qtext">What is the max you would pay for a full WOK IN meal?</div>'
-    +'<input type="text" placeholder="e.g. Rs 250" oninput="ans.max_price=this.value;updateProg()" value="'+(ans.max_price||'')+'">'
-    +'</div>'
-
-  qs+='<div class="qblock highlight">'
-    +'<div class="qlabel qlabel-new">New</div>'
-    +'<div class="qtext">Which lunch time slot works best for you?</div>'
-    +'<div class="qgrid">'
-    +['12:00 pm to 1:00 pm','1:00 pm to 2:00 pm','2:00 pm to 3:00 pm','Flexible'].map(function(o,oi){
-      return '<button class="qopt'+(ans.lunch_slot===o?' sel':'')+'" data-qid="lunch_slot" data-oi="'+oi+'" data-val="'+o+'" onclick="pickSlot(this)">'+o+'</button>'
-    }).join('')+'</div></div>'
-
-  qs+='<div class="qblock highlight">'
-    +'<div class="qlabel qlabel-new">New</div>'
-    +'<div class="qtext">How many colleagues would you bring to WOK IN daily?</div>'
-    +'<div class="qgrid">'
-    +['Just me','2 to 3','4 to 6','7 or more','Whole team'].map(function(o,oi){
-      return '<button class="qopt'+(ans.colleagues_count===o?' sel':'')+'" data-qid="colleagues_count" data-oi="'+oi+'" data-val="'+o+'" onclick="pickColleagues(this)">'+o+'</button>'
-    }).join('')+'</div></div>'
-
-  qs+='<div class="qblock highlight">'
-    +'<div class="qlabel qlabel-new">New</div>'
-    +'<div class="qtext">How likely are you to recommend WOK IN to a colleague? (Net Promoter Score)</div>'
-    +'<div class="nps-row">'
-    +[0,1,2,3,4,5,6,7,8,9,10].map(function(n){
+  qs += '<div class="section-divider"><span>Quick Insights</span></div>'
+  qs += '<div class="qblock highlight"><div class="qlabel qlabel-new">New</div><div class="qtext">What is the max you would pay for a full WOK IN meal?</div>'
+    + '<input type="text" placeholder="e.g. Rs 250" oninput="ans.max_price=this.value;updateProg()" value="'+(ans.max_price||'')+'"></div>'
+  qs += '<div class="qblock highlight"><div class="qlabel qlabel-new">New</div><div class="qtext">Which lunch time slot works best for you?</div><div class="qgrid">'
+    + ['12 to 1 pm','1 to 2 pm','2 to 3 pm','Flexible'].map(function(o,oi){
+      return '<button class="qopt'+(ans.lunch_slot===o?' sel':'')+'" data-qid="lunch_slot" data-oi="'+oi+'" data-val="'+o+'" onclick="pickGen(this,\'lunch_slot\')">'+o+'</button>'
+    }).join('') + '</div></div>'
+  qs += '<div class="qblock highlight"><div class="qlabel qlabel-new">New</div><div class="qtext">How many colleagues would you bring to WOK IN daily?</div><div class="qgrid">'
+    + ['Just me','2 to 3','4 to 6','7 or more','Whole team'].map(function(o,oi){
+      return '<button class="qopt'+(ans.colleagues_count===o?' sel':'')+'" data-qid="colleagues_count" data-oi="'+oi+'" data-val="'+o+'" onclick="pickGen(this,\'colleagues_count\')">'+o+'</button>'
+    }).join('') + '</div></div>'
+  qs += '<div class="qblock highlight"><div class="qlabel qlabel-new">New</div><div class="qtext">How likely are you to recommend WOK IN? (NPS 0–10)</div>'
+    + '<div class="nps-row">'
+    + [0,1,2,3,4,5,6,7,8,9,10].map(function(n){
       return '<button class="nps-btn'+(ans.nps_score===n?' sel':'')+'" data-v="'+n+'" onclick="pickNPS(this)">'+n+'</button>'
-    }).join('')+'</div>'
-    +'<div class="nps-labels"><span>Not likely</span><span>Extremely likely</span></div>'
-    +'</div>'
+    }).join('') + '</div><div class="nps-labels"><span>Not likely</span><span>Extremely likely</span></div></div>'
+  qs += '<div class="qblock highlight"><div class="qlabel qlabel-new">New</div><div class="qtext">Describe your dream WOK IN dish</div>'
+    + '<textarea placeholder="e.g. Paneer Schezwan rice with a runny egg on top..." oninput="ans.dream_dish=this.value;updateProg()">'+(ans.dream_dish||'')+'</textarea></div>'
+  qs += '<div class="section-divider"><span>Stay in Touch</span></div>'
+  qs += '<div class="qblock highlight"><div class="qlabel qlabel-new">New</div><div class="qtext">Drop your phone or email — we will alert you on launch day!</div>'
+    + '<input type="text" placeholder="9876543210 or you@company.com" oninput="ans.phone_email=this.value;updateProg()" value="'+(ans.phone_email||'')+'"></div>'
 
-  qs+='<div class="qblock highlight">'
-    +'<div class="qlabel qlabel-new">New</div>'
-    +'<div class="qtext">Describe your dream WOK IN dish — what would you love us to create?</div>'
-    +'<textarea placeholder="e.g. Paneer Schezwan rice with extra masala and a runny egg on top..." oninput="ans.dream_dish=this.value;updateProg()">'+(ans.dream_dish||'')+'</textarea>'
-    +'</div>'
-
-  qs+='<div class="section-divider"><span>Stay in Touch</span></div>'
-
-  qs+='<div class="qblock highlight">'
-    +'<div class="qlabel qlabel-new">New</div>'
-    +'<div class="qtext">Drop your phone or email — we will send you a launch day alert!</div>'
-    +'<input type="text" placeholder="9876543210 or you@company.com" oninput="ans.phone_email=this.value;updateProg()" value="'+(ans.phone_email||'')+'">'
-    +'</div>'
-
-  el.innerHTML='<div class="age-tabs">'+tabs+'</div>'
-    +'<div class="form-card">'
-    +'<div class="form-hdr"><div class="fh-logo"><img src="logo.png" alt="W" onerror="this.style.display=\'none\';this.parentElement.textContent=\'W\'"></div>'
-    +'<div><h2>WOK IN SURVEY</h2><p>'+f.sub+' · Takes about 3 minutes</p></div></div>'
-    +'<div class="prog-wrap"><div class="prog-info"><span>Progress</span><span id="ptxt">'+answered+' / '+totalQ+' answered</span></div>'
-    +'<div class="prog-bar"><div class="prog-fill" id="pfill" style="width:'+pct+'%"></div></div></div>'
-    +'<div class="form-body">'
-    +'<div class="qblock"><div class="qlabel">Basic Info</div><div class="qtext">Tell us a little about yourself</div>'
-    +'<div class="twocol"><div class="fg"><label>Age</label><select onchange="ans.age=parseInt(this.value);updateProg()"><option value="">Select age</option>'
-    +f.ages.map(function(a){return '<option value="'+a+'"'+(ans.age==a?' selected':'')+'>'+a+'</option>'}).join('')
-    +'</select></div><div class="fg"><label>Gender</label><select onchange="ans.gender=this.value;updateProg()"><option value="">Select gender</option>'
-    +['Male','Female','Non-binary','Prefer not to say'].map(function(g){return '<option'+(ans.gender===g?' selected':'')+'>'+g+'</option>'}).join('')
-    +'</select></div></div></div>'
-    +qs
-    +'<button class="subbtn" id="subbtn" onclick="submitForm()">Submit My Answers →</button>'
-    +'</div></div>'
+  el.innerHTML = '<div class="age-tabs">'+tabs+'</div>'
+    + '<div class="form-card">'
+    + '<div class="form-hdr"><div class="fh-logo"><img src="logo.png" alt="W" onerror="this.style.display=\'none\';this.parentElement.textContent=\'W\'"></div>'
+    + '<div><h2>WOK IN SURVEY</h2><p>'+f.sub+' · Takes about 3 minutes</p></div></div>'
+    + '<div class="prog-wrap"><div class="prog-info"><span>Progress</span><span id="ptxt">'+answered+' / '+totalQ+' answered</span></div>'
+    + '<div class="prog-bar"><div class="prog-fill" id="pfill" style="width:'+pct+'%"></div></div></div>'
+    + '<div class="form-body">'
+    + '<div class="qblock"><div class="qlabel">Basic Info</div><div class="qtext">Tell us a little about yourself</div>'
+    + '<div class="twocol"><div class="fg"><label>Age</label><select onchange="ans.age=parseInt(this.value);updateProg()"><option value="">Select age</option>'
+    + f.ages.map(function(a){ return '<option value="'+a+'"'+(ans.age==a?' selected':'')+'>'+a+'</option>' }).join('')
+    + '</select></div><div class="fg"><label>Gender</label><select onchange="ans.gender=this.value;updateProg()"><option value="">Select gender</option>'
+    + ['Male','Female','Non-binary','Prefer not to say'].map(function(g){ return '<option'+(ans.gender===g?' selected':'')+'>'+g+'</option>' }).join('')
+    + '</select></div></div></div>'
+    + qs
+    + '<button class="subbtn" id="subbtn" onclick="submitForm()">Submit My Answers →</button>'
+    + '</div></div>'
 }
 
 function pickO(btn){
-  var qid=btn.getAttribute('data-qid'),oi=parseInt(btn.getAttribute('data-oi'))
-  var q=FORMS[fi].qs.find(function(q){return q.id===qid});if(!q)return
-  ans[qid]=q.opts[oi]
-  document.querySelectorAll('.qopt[data-qid="'+qid+'"]').forEach(function(b,i){if(i===oi)b.classList.add('sel');else b.classList.remove('sel')})
+  var qid = btn.getAttribute('data-qid'), oi = parseInt(btn.getAttribute('data-oi'))
+  var q = FORMS[fi].qs.find(function(q){ return q.id===qid }); if(!q) return
+  ans[qid] = q.opts[oi]
+  document.querySelectorAll('.qopt[data-qid="'+qid+'"]').forEach(function(b,i){ if(i===oi) b.classList.add('sel'); else b.classList.remove('sel') })
   updateProg()
 }
 function pickR(btn){
-  var qid=btn.getAttribute('data-qid'),v=parseInt(btn.getAttribute('data-v'))
-  ans[qid]=v
-  document.querySelectorAll('.rbtn[data-qid="'+qid+'"]').forEach(function(b){if(parseInt(b.getAttribute('data-v'))===v)b.classList.add('sel');else b.classList.remove('sel')})
+  var qid = btn.getAttribute('data-qid'), v = parseInt(btn.getAttribute('data-v'))
+  ans[qid] = v
+  document.querySelectorAll('.rbtn[data-qid="'+qid+'"]').forEach(function(b){ if(parseInt(b.getAttribute('data-v'))===v) b.classList.add('sel'); else b.classList.remove('sel') })
   updateProg()
 }
-function pickSlot(btn){
-  ans.lunch_slot=btn.getAttribute('data-val')
-  document.querySelectorAll('.qopt[data-qid="lunch_slot"]').forEach(function(b){b.classList.remove('sel')})
-  btn.classList.add('sel');updateProg()
-}
-function pickColleagues(btn){
-  ans.colleagues_count=btn.getAttribute('data-val')
-  document.querySelectorAll('.qopt[data-qid="colleagues_count"]').forEach(function(b){b.classList.remove('sel')})
-  btn.classList.add('sel');updateProg()
+function pickGen(btn, field){
+  ans[field] = btn.getAttribute('data-val')
+  document.querySelectorAll('.qopt[data-qid="'+field+'"]').forEach(function(b){ b.classList.remove('sel') })
+  btn.classList.add('sel'); updateProg()
 }
 function pickNPS(btn){
-  ans.nps_score=parseInt(btn.getAttribute('data-v'))
-  document.querySelectorAll('.nps-btn').forEach(function(b){b.classList.remove('sel')})
-  btn.classList.add('sel');updateProg()
+  ans.nps_score = parseInt(btn.getAttribute('data-v'))
+  document.querySelectorAll('.nps-btn').forEach(function(b){ b.classList.remove('sel') })
+  btn.classList.add('sel'); updateProg()
 }
 function updateProg(){
-  var f=FORMS[fi],totalQ=f.qs.filter(function(q){return !q.opt}).length+8
-  var answered=countAns(),pct=Math.round((answered/totalQ)*100)
-  var fill=document.getElementById('pfill'),txt=document.getElementById('ptxt')
-  if(fill)fill.style.width=pct+'%'
-  if(txt)txt.textContent=answered+' / '+totalQ+' answered'
+  var f = FORMS[fi], totalQ = f.qs.filter(function(q){ return !q.opt }).length + 6
+  var answered = countAns(), pct = Math.round((answered/totalQ)*100)
+  var fill = document.getElementById('pfill'), txt = document.getElementById('ptxt')
+  if(fill) fill.style.width = pct+'%'
+  if(txt) txt.textContent = answered+' / '+totalQ+' answered'
 }
 function countAns(){
-  var n=0;if(ans.age)n++;if(ans.gender)n++
-  FORMS[fi].qs.filter(function(q){return !q.opt}).forEach(function(q){if(ans[q.id]!==undefined&&ans[q.id]!=='')n++})
-  if(ans.max_price)n++;if(ans.lunch_slot)n++;if(ans.colleagues_count)n++
-  if(ans.nps_score!==undefined)n++;if(ans.dream_dish)n++;if(ans.phone_email)n++
+  var n = 0; if(ans.age) n++; if(ans.gender) n++
+  FORMS[fi].qs.filter(function(q){ return !q.opt }).forEach(function(q){ if(ans[q.id]!==undefined && ans[q.id]!=='') n++ })
+  if(ans.max_price) n++; if(ans.lunch_slot) n++; if(ans.colleagues_count) n++
+  if(ans.nps_score!==undefined) n++; if(ans.dream_dish) n++; if(ans.phone_email) n++
   return n
 }
-function switchForm(i){fi=i;ans={};renderSurvey()}
-function resetSurvey(){done=false;ans={};renderSurvey()}
+function switchForm(i){ fi=i; ans={}; renderSurvey() }
+function resetSurvey(){ done=false; ans={}; renderSurvey() }
 
 async function submitForm(){
-  var f=FORMS[fi]
-  var required=f.qs.filter(function(q){return !q.opt})
-  var missing=required.filter(function(q){return ans[q.id]===undefined||ans[q.id]===''})
-  if(!ans.age||!ans.gender){alert('Please fill in your age and gender first.');return}
-  if(missing.length){alert('Please answer all the survey questions. '+missing.length+' still remaining.');return}
-  var btn=document.getElementById('subbtn');if(btn){btn.disabled=true;btn.textContent='Submitting...'}
-  var res=await _sb.from('survey_responses').insert([{form_version:f.id,age_group:f.id,age:ans.age,gender:ans.gender,
-    q1:String(ans.q1||''),q2:String(ans.q2||''),q3:String(ans.q3||''),
-    q4:String(ans.q4||''),q5:String(ans.q5||''),q6:String(ans.q6||''),
-    q7:String(ans.q7||''),q8:String(ans.q8||''),q9:String(ans.q9||''),
-    q10:String(ans.q10||''),q11:String(ans.q11||''),
-    max_price:String(ans.max_price||''),
-    lunch_slot:String(ans.lunch_slot||''),
-    colleagues_count:String(ans.colleagues_count||''),
-    nps_score:ans.nps_score!==undefined?ans.nps_score:null,
-    dream_dish:String(ans.dream_dish||''),
-    phone_email:String(ans.phone_email||''),
-    it_park:String(ans.it_park||'')
-  }])
-  if(res.error){alert('Error: '+res.error.message);if(btn){btn.disabled=false;btn.textContent='Submit My Answers →'}return}
-  done=true;loadCounter();renderSurvey();window.scrollTo(0,0)
+  var f = FORMS[fi]
+  var missing = f.qs.filter(function(q){ return !q.opt && (ans[q.id]===undefined || ans[q.id]==='') })
+  if(!ans.age || !ans.gender){ alert('Please fill in your age and gender first.'); return }
+  if(missing.length){ alert('Please answer all the core survey questions. '+missing.length+' still remaining.'); return }
+  var btn = document.getElementById('subbtn'); if(btn){ btn.disabled=true; btn.textContent='Submitting...' }
+  var payload = {
+    form_version: f.id,
+    age_group: f.id,
+    age: ans.age,
+    gender: ans.gender,
+    q1: String(ans.q1||''), q2: String(ans.q2||''), q3: String(ans.q3||''),
+    q4: String(ans.q4||''), q5: String(ans.q5||''), q6: String(ans.q6||''),
+    q7: String(ans.q7||''), q8: String(ans.q8||''), q9: String(ans.q9||''),
+    q10: String(ans.q10||''), q11: String(ans.q11||''),
+    max_price: String(ans.max_price||''),
+    lunch_slot: String(ans.lunch_slot||''),
+    colleagues_count: String(ans.colleagues_count||''),
+    nps_score: ans.nps_score !== undefined ? ans.nps_score : null,
+    dream_dish: String(ans.dream_dish||''),
+    phone_email: String(ans.phone_email||'')
+  }
+  var res = await _sb.from('survey_responses').insert([payload])
+  if(res.error){
+    alert('Error saving response: ' + res.error.message)
+    if(btn){ btn.disabled=false; btn.textContent='Submit My Answers →' }
+    return
+  }
+  done = true; loadCounter(); renderSurvey(); window.scrollTo(0,0)
 }
 
-// ADMIN
-var adminTabs=['responses','waitlist','analytics']
-function renderAdmin(){
-  var el=document.getElementById('admin-inner')
-  var gl={teen:'Gen Z',young:'Young Adults',pro:'Professionals',adult:'Adults'}
-  var gc={teen:'bt',young:'by',pro:'bp',adult:'ba'}
-  var filt=aFilt==='all'?aData:aData.filter(function(r){return r.form_version===aFilt})
-  var counts={teen:0,young:0,pro:0,adult:0}
-  aData.forEach(function(r){if(counts[r.form_version]!==undefined)counts[r.form_version]++})
+// ── ADMIN — COMPLETELY REBUILT ────────────────────────────────────────────────
+function setView(v){
+  aView = v
+  document.querySelectorAll('.admin-tab').forEach(function(b){ b.classList.remove('active') })
+  document.getElementById('tab-'+v).classList.add('active')
+  document.getElementById('view-responses').style.display = v==='responses' ? 'block' : 'none'
+  document.getElementById('view-waitlist').style.display = v==='waitlist' ? 'block' : 'none'
+  document.getElementById('view-analytics').style.display = v==='analytics' ? 'block' : 'none'
+  if(v==='analytics') renderCharts()
+}
 
-  // NPS distribution
-  var npsTotal=0,npsSum=0,npsCount=0
-  aData.forEach(function(r){if(r.nps_score!==null&&r.nps_score!==undefined){npsSum+=r.nps_score;npsCount++}})
-  var npsAvg=npsCount>0?(npsSum/npsCount).toFixed(1):'N/A'
+function updateStats(){
+  var counts = {teen:0, young:0, pro:0, adult:0}
+  aData.forEach(function(r){ var k = r.form_version || r.age_group; if(counts[k]!==undefined) counts[k]++ })
+  var npsSum=0, npsCount=0
+  aData.forEach(function(r){ if(r.nps_score!==null && r.nps_score!==undefined){ npsSum+=r.nps_score; npsCount++ } })
+  var npsAvg = npsCount > 0 ? (npsSum/npsCount).toFixed(1) : 'N/A'
+  document.getElementById('stat-total').textContent = aData.length
+  document.getElementById('stat-waitlist').textContent = aWaitlist.length
+  document.getElementById('stat-nps').textContent = npsAvg
+  document.getElementById('stat-teen').textContent = counts.teen
+  document.getElementById('stat-young').textContent = counts.young
+  document.getElementById('stat-pro').textContent = counts.pro
+  document.getElementById('tab-waitlist').textContent = 'Waitlist ('+aWaitlist.length+')'
+  document.getElementById('tab-responses').textContent = 'Survey Responses ('+aData.length+')'
+}
 
-  // Lunch slots
-  var slotCounts={};aData.forEach(function(r){if(r.lunch_slot)slotCounts[r.lunch_slot]=(slotCounts[r.lunch_slot]||0)+1})
+function renderResponsesTable(){
+  var gl = {teen:'Gen Z',young:'Young Adults',pro:'Professionals',adult:'Adults'}
+  var gc = {teen:'bt',young:'by',pro:'bp',adult:'ba'}
+  var filt = aFilt==='all' ? aData : aData.filter(function(r){ return (r.form_version||r.age_group)===aFilt })
+  var html = '<div class="filtrow">'
+    + [['all','All'],['teen','Gen Z'],['young','Young Adults'],['pro','Professionals'],['adult','Adults']].map(function(v){
+        return '<button class="fbtn'+(aFilt===v[0]?' active':'')+'" onclick="setFilt(\''+v[0]+'\')">' + v[1] + '</button>'
+      }).join('')
+    + '</div>'
+  if(!filt.length){
+    html += '<div class="empty">No responses yet — share the survey link to start collecting!</div>'
+  } else {
+    html += '<div class="tblwrap"><table><thead><tr>'
+      + '<th>#</th><th>Date</th><th>Group</th><th>Age</th><th>Gender</th>'
+      + '<th>Phone/Email</th><th>Lunch Slot</th><th>Colleagues</th><th>Max Price</th><th>NPS</th>'
+      + '<th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th>'
+      + '<th>Q6</th><th>Q7</th><th>Q8</th><th>Q9</th><th>Q10</th><th>Dream Dish</th><th>Comment</th>'
+      + '</tr></thead><tbody>'
+      + filt.map(function(r,i){
+          var grp = r.form_version || r.age_group || ''
+          var npsColor = r.nps_score>=9?'#2E7D32':r.nps_score>=7?'#E65100':'#C62828'
+          return '<tr>'
+            + '<td>'+(i+1)+'</td>'
+            + '<td style="white-space:nowrap">'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td>'
+            + '<td><span class="badge '+(gc[grp]||'bt')+'">'+(gl[grp]||grp||'—')+'</span></td>'
+            + '<td>'+(r.age||'—')+'</td>'
+            + '<td>'+(r.gender||'—')+'</td>'
+            + '<td style="color:var(--navy);font-weight:700" title="'+(r.phone_email||'')+'">'+(r.phone_email||'—')+'</td>'
+            + '<td>'+(r.lunch_slot||'—')+'</td>'
+            + '<td>'+(r.colleagues_count||'—')+'</td>'
+            + '<td style="font-weight:700;color:var(--navy)">'+(r.max_price||'—')+'</td>'
+            + '<td style="text-align:center;font-weight:900;color:'+npsColor+'">'+(r.nps_score!==null&&r.nps_score!==undefined?r.nps_score:'—')+'</td>'
+            + '<td title="'+(r.q1||'')+'">'+(r.q1||'—')+'</td>'
+            + '<td title="'+(r.q2||'')+'">'+(r.q2||'—')+'</td>'
+            + '<td title="'+(r.q3||'')+'">'+(r.q3||'—')+'</td>'
+            + '<td title="'+(r.q4||'')+'">'+(r.q4||'—')+'</td>'
+            + '<td title="'+(r.q5||'')+'">'+(r.q5||'—')+'</td>'
+            + '<td title="'+(r.q6||'')+'">'+(r.q6||'—')+'</td>'
+            + '<td title="'+(r.q7||'')+'">'+(r.q7||'—')+'</td>'
+            + '<td title="'+(r.q8||'')+'">'+(r.q8||'—')+'</td>'
+            + '<td title="'+(r.q9||'')+'">'+(r.q9||'—')+'</td>'
+            + '<td title="'+(r.q10||'')+'">'+(r.q10||'—')+'</td>'
+            + '<td style="color:var(--navy)" title="'+(r.dream_dish||'')+'">'+(r.dream_dish||'—')+'</td>'
+            + '<td title="'+(r.q11||'')+'">'+(r.q11||'—')+'</td>'
+            + '</tr>'
+        }).join('')
+      + '</tbody></table></div>'
+  }
+  document.getElementById('view-responses').innerHTML = html
+}
 
-  // Spice
+function renderWaitlistTable(){
+  if(!aWaitlist.length){
+    document.getElementById('view-waitlist').innerHTML = '<div class="empty">No waitlist entries yet!</div>'
+    return
+  }
+  document.getElementById('view-waitlist').innerHTML =
+    '<div class="waitlist-tbl-wrap"><table class="waitlist-tbl"><thead><tr>'
+    + '<th>#</th><th>Name</th><th>Contact</th><th>IT Park</th><th>Date</th>'
+    + '</tr></thead><tbody>'
+    + aWaitlist.map(function(r,i){
+        return '<tr>'
+          + '<td>'+(i+1)+'</td>'
+          + '<td style="font-weight:700">'+(r.name||'—')+'</td>'
+          + '<td style="color:var(--navy);font-weight:700">'+(r.contact||'—')+'</td>'
+          + '<td>'+(r.it_park||'—')+'</td>'
+          + '<td>'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td>'
+          + '</tr>'
+      }).join('')
+    + '</tbody></table></div>'
+}
+
+var chartsBuilt = false
+function renderCharts(){
+  if(chartsBuilt){ Object.keys(chartInst).forEach(function(k){ if(chartInst[k]) chartInst[k].destroy(); chartInst[k]=null }); chartsBuilt=false }
+  var counts = {teen:0,young:0,pro:0,adult:0}
+  aData.forEach(function(r){ var k=r.form_version||r.age_group; if(counts[k]!==undefined) counts[k]++ })
   var spice={'Mild':0,'Medium':0,'Spicy':0,'Extra spicy':0}
-  aData.forEach(function(r){if(r.q5&&spice[r.q5]!==undefined)spice[r.q5]++})
+  aData.forEach(function(r){ if(r.q5&&spice[r.q5]!==undefined) spice[r.q5]++ })
+  var slotC={};aData.forEach(function(r){ if(r.lunch_slot) slotC[r.lunch_slot]=(slotC[r.lunch_slot]||0)+1 })
+  var disc={};aData.forEach(function(r){ if(r.q10) disc[r.q10]=(disc[r.q10]||0)+1 })
+  var npsDist=Array(11).fill(0)
+  aData.forEach(function(r){ if(r.nps_score!==null&&r.nps_score!==undefined) npsDist[r.nps_score]++ })
 
-  // Discovery
-  var disc={};aData.forEach(function(r){if(r.q10)disc[r.q10]=(disc[r.q10]||0)+1})
+  document.getElementById('view-analytics').innerHTML =
+    '<div class="charts-grid">'
+    + '<div class="chart-card"><h3>Responses by Age Group</h3><div class="chart-wrap"><canvas id="cg"></canvas></div></div>'
+    + '<div class="chart-card"><h3>Spice Preference</h3><div class="chart-wrap"><canvas id="cs"></canvas></div></div>'
+    + '<div class="chart-card"><h3>Preferred Lunch Slot</h3><div class="chart-wrap"><canvas id="cl"></canvas></div></div>'
+    + '<div class="chart-card"><h3>Food Discovery Platform</h3><div class="chart-wrap"><canvas id="cd"></canvas></div></div>'
+    + '<div class="chart-card"><h3>NPS Distribution</h3><div class="chart-wrap"><canvas id="cn"></canvas></div></div>'
+    + '</div>'
 
-  // Colleagues
-  var coll={};aData.forEach(function(r){if(r.colleagues_count)coll[r.colleagues_count]=(coll[r.colleagues_count]||0)+1})
-
-  var responseHTML='<div class="filtrow">'
-    +[['all','All'],['teen','Gen Z'],['young','Young Adults'],['pro','Professionals'],['adult','Adults']].map(function(v){
-      return '<button class="fbtn'+(aFilt===v[0]?' active':'')+'" onclick="setFilt(\''+v[0]+'\')">'+v[1]+'</button>'
-    }).join('')+'</div>'
-    +(filt.length
-      ?'<div class="tblwrap"><table><thead><tr>'
-        +'<th>#</th><th>Date</th><th>Group</th><th>Age</th><th>Gender</th>'
-        +'<th>Phone/Email</th><th>Lunch Slot</th><th>Colleagues</th><th>Max Price</th><th>NPS</th>'
-        +'<th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th>'
-        +'<th>Q6</th><th>Q7</th><th>Q8</th><th>Q9</th><th>Q10</th><th>Dream Dish</th>'
-        +'</tr></thead><tbody>'
-        +filt.map(function(r,i){
-          return '<tr><td>'+(i+1)+'</td><td>'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td>'
-          +'<td><span class="badge '+(gc[r.form_version]||'')+'">'+(gl[r.form_version]||r.form_version)+'</span></td>'
-          +'<td>'+(r.age||'—')+'</td><td>'+(r.gender||'—')+'</td>'
-          +'<td title="'+(r.phone_email||'')+'" style="color:var(--navy);font-weight:700">'+(r.phone_email||'—')+'</td>'
-          +'<td title="'+(r.lunch_slot||'')+'">'+(r.lunch_slot||'—')+'</td>'
-          +'<td>'+(r.colleagues_count||'—')+'</td>'
-          +'<td style="color:var(--navy);font-weight:700">'+(r.max_price||'—')+'</td>'
-          +'<td style="text-align:center;font-weight:800;color:'+(r.nps_score>=9?'#2E7D32':r.nps_score>=7?'#E65100':'#C62828')+'">'+(r.nps_score!==null&&r.nps_score!==undefined?r.nps_score:'—')+'</td>'
-          +'<td title="'+(r.q1||'')+'">'+(r.q1||'—')+'</td><td title="'+(r.q2||'')+'">'+(r.q2||'—')+'</td>'
-          +'<td title="'+(r.q3||'')+'">'+(r.q3||'—')+'</td><td title="'+(r.q4||'')+'">'+(r.q4||'—')+'</td>'
-          +'<td title="'+(r.q5||'')+'">'+(r.q5||'—')+'</td><td title="'+(r.q6||'')+'">'+(r.q6||'—')+'</td>'
-          +'<td title="'+(r.q7||'')+'">'+(r.q7||'—')+'</td><td title="'+(r.q8||'')+'">'+(r.q8||'—')+'</td>'
-          +'<td title="'+(r.q9||'')+'">'+(r.q9||'—')+'</td><td title="'+(r.q10||'')+'">'+(r.q10||'—')+'</td>'
-          +'<td title="'+(r.dream_dish||'')+'" style="color:var(--navy)">'+(r.dream_dish||'—')+'</td>'
-          +'</tr>'
-        }).join('')+'</tbody></table></div>'
-      :'<div class="empty">No responses yet — share the link to start!</div>'
-    )
-
-  var waitlistHTML=aWaitlist.length
-    ?'<div class="waitlist-tbl-wrap"><table class="waitlist-tbl"><thead><tr><th>#</th><th>Name</th><th>Contact</th><th>IT Park</th><th>Date</th></tr></thead><tbody>'
-      +aWaitlist.map(function(r,i){
-        return '<tr><td>'+(i+1)+'</td><td style="font-weight:700">'+r.name+'</td><td style="color:var(--navy);font-weight:700">'+r.contact+'</td><td>'+(r.it_park||'—')+'</td><td>'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td></tr>'
-      }).join('')+'</tbody></table></div>'
-    :'<div class="empty">No waitlist entries yet!</div>'
-
-  var analyticsHTML='<div class="charts-grid">'
-    +'<div class="chart-card"><h3>Responses by Age Group</h3><div class="chart-wrap"><canvas id="cg"></canvas></div></div>'
-    +'<div class="chart-card"><h3>Spice Preference</h3><div class="chart-wrap"><canvas id="cs"></canvas></div></div>'
-    +'<div class="chart-card"><h3>Preferred Lunch Slot</h3><div class="chart-wrap"><canvas id="cl"></canvas></div></div>'
-    +'<div class="chart-card"><h3>Colleagues They Would Bring</h3><div class="chart-wrap"><canvas id="cc"></canvas></div></div>'
-    +'<div class="chart-card"><h3>Food Discovery Platform</h3><div class="chart-wrap"><canvas id="cd"></canvas></div></div>'
-    +'<div class="chart-card"><h3>Avg NPS Score — <span style="color:var(--red)">'+npsAvg+'</span> / 10</h3><div class="chart-wrap"><canvas id="cn"></canvas></div></div>'
-    +'</div>'
-
-  el.innerHTML='<div class="ahdr"><div><h2>ADMIN DASHBOARD</h2><p>Live data — survey responses, waitlist, and analytics</p></div>'
-    +'<div class="ahdr-btns"><button class="rfbtn" onclick="loadAdmin()">Refresh</button><button class="lock-btn" onclick="lockAdmin()">🔒 Lock</button></div></div>'
-    +'<div class="sgrid">'
-    +'<div class="sc"><div class="sl">Total Responses</div><div class="sv">'+aData.length+'</div></div>'
-    +'<div class="sc"><div class="sl">Waitlist</div><div class="sv">'+aWaitlist.length+'</div></div>'
-    +'<div class="sc"><div class="sl">Avg NPS</div><div class="sv">'+npsAvg+'</div></div>'
-    +'<div class="sc"><div class="sl">Gen Z</div><div class="sv">'+counts.teen+'</div></div>'
-    +'<div class="sc"><div class="sl">Young Adults</div><div class="sv">'+counts.young+'</div></div>'
-    +'<div class="sc"><div class="sl">Professionals</div><div class="sv">'+counts.pro+'</div></div>'
-    +'</div>'
-    +'<div class="admin-tabs">'
-    +'<button class="admin-tab'+(aView==='responses'?' active':'')+'" onclick="setView(\'responses\')">Survey Responses</button>'
-    +'<button class="admin-tab'+(aView==='waitlist'?' active':'')+'" onclick="setView(\'waitlist\')">Waitlist ('+aWaitlist.length+')</button>'
-    +'<button class="admin-tab'+(aView==='analytics'?' active':'')+'" onclick="setView(\'analytics\')">Analytics</button>'
-    +'</div>'
-    +'<div id="admin-view">'
-    +(aView==='responses'?responseHTML:aView==='waitlist'?waitlistHTML:analyticsHTML)
-    +'</div>'
-
-  if(aView==='analytics'){setTimeout(function(){
+  setTimeout(function(){
     var N='#1A2D5A',Y='#F5C518',R='#E8341A',W='#F7F7F2'
     var base={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}}
-    destroyCharts()
     var c1=document.getElementById('cg')
-    if(c1)chartInst.g=new Chart(c1,{type:'bar',data:{labels:['Gen Z','Young Adults','Pros','Adults'],datasets:[{data:[counts.teen,counts.young,counts.pro,counts.adult],backgroundColor:[N,Y,R,'#8B4513'],borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.04)'},ticks:{stepSize:1}},x:{grid:{display:false}}}})})
+    if(c1) chartInst.g=new Chart(c1,{type:'bar',data:{labels:['Gen Z','Young Adults','Pros','Adults'],datasets:[{data:[counts.teen,counts.young,counts.pro,counts.adult],backgroundColor:[N,Y,R,'#8B4513'],borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false}}}})})
     var c2=document.getElementById('cs')
-    if(c2)chartInst.s=new Chart(c2,{type:'doughnut',data:{labels:Object.keys(spice),datasets:[{data:Object.values(spice),backgroundColor:[W,'#FFD740',Y,R],borderWidth:3,borderColor:W}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10},color:N,boxWidth:12}}}}})
+    if(c2) chartInst.s=new Chart(c2,{type:'doughnut',data:{labels:Object.keys(spice),datasets:[{data:Object.values(spice),backgroundColor:[W,'#FFD740',Y,R],borderWidth:3,borderColor:W}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10},color:N,boxWidth:12}}}}})
     var c3=document.getElementById('cl')
-    if(c3)chartInst.l=new Chart(c3,{type:'bar',data:{labels:Object.keys(slotCounts),datasets:[{data:Object.values(slotCounts),backgroundColor:Y,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
-    var c4=document.getElementById('cc')
-    if(c4)chartInst.c=new Chart(c4,{type:'bar',data:{labels:Object.keys(coll),datasets:[{data:Object.values(coll),backgroundColor:N,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false},ticks:{font:{size:10}}}}})})
-    var c5=document.getElementById('cd')
-    if(c5)chartInst.d=new Chart(c5,{type:'bar',data:{labels:Object.keys(disc),datasets:[{data:Object.values(disc),backgroundColor:R,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
-    // NPS bar
-    var npsDist=Array(11).fill(0)
-    aData.forEach(function(r){if(r.nps_score!==null&&r.nps_score!==undefined)npsDist[r.nps_score]++})
-    var npsColors=npsDist.map(function(_,i){return i>=9?'#2E7D32':i>=7?'#F5C518':'#E8341A'})
-    var c6=document.getElementById('cn')
-    if(c6)chartInst.n=new Chart(c6,{type:'bar',data:{labels:['0','1','2','3','4','5','6','7','8','9','10'],datasets:[{data:npsDist,backgroundColor:npsColors,borderRadius:4,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false}}}})})
-  },100)}
+    if(c3) chartInst.l=new Chart(c3,{type:'bar',data:{labels:Object.keys(slotC),datasets:[{data:Object.values(slotC),backgroundColor:Y,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
+    var c4=document.getElementById('cd')
+    if(c4) chartInst.d=new Chart(c4,{type:'bar',data:{labels:Object.keys(disc),datasets:[{data:Object.values(disc),backgroundColor:R,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
+    var c5=document.getElementById('cn')
+    var npsColors=npsDist.map(function(_,i){ return i>=9?'#2E7D32':i>=7?Y:R })
+    if(c5) chartInst.n=new Chart(c5,{type:'bar',data:{labels:['0','1','2','3','4','5','6','7','8','9','10'],datasets:[{data:npsDist,backgroundColor:npsColors,borderRadius:4,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false}}}})})
+    chartsBuilt = true
+  },50)
 }
-
-function destroyCharts(){Object.keys(chartInst).forEach(function(k){if(chartInst[k])chartInst[k].destroy();chartInst[k]=null})}
 
 async function loadAdmin(){
-  document.getElementById('admin-inner').innerHTML='<div class="empty">Loading data...</div>'
-  var r1=await _sb.from('survey_responses').select('*').order('created_at',{ascending:false})
-  if(!r1.error)aData=r1.data||[]
-  var r2=await _sb.from('wokin_waitlist').select('*').order('created_at',{ascending:false}).catch(function(){return {data:[],error:null}})
-  if(!r2.error)aWaitlist=r2.data||[]
-  renderAdmin()
+  var statusEl = document.getElementById('admin-status')
+  if(statusEl) statusEl.textContent = 'Loading data from Supabase...'
+
+  // Fetch survey responses
+  var r1 = await _sb.from('survey_responses').select('*').order('created_at',{ascending:false})
+  if(r1.error){
+    var dbg = document.getElementById('debug-box')
+    if(dbg){ dbg.classList.add('show'); dbg.innerHTML = '❌ Error fetching survey_responses:<br>' + JSON.stringify(r1.error) }
+    if(statusEl) statusEl.textContent = 'Error: ' + r1.error.message
+    return
+  }
+  aData = r1.data || []
+
+  // Fetch waitlist
+  var r2 = await _sb.from('wokin_waitlist').select('*').order('created_at',{ascending:false})
+  if(!r2.error) aWaitlist = r2.data || []
+
+  // Update everything
+  updateStats()
+  renderResponsesTable()
+  renderWaitlistTable()
+  if(aView === 'analytics') renderCharts()
+
+  if(statusEl) statusEl.textContent = 'Last updated: ' + new Date().toLocaleTimeString('en-IN') + ' · ' + aData.length + ' responses loaded'
+
+  // Show debug info if 0 results
+  if(aData.length === 0){
+    var dbg = document.getElementById('debug-box')
+    if(dbg){ dbg.classList.add('show'); dbg.innerHTML = '⚠️ Tables exist but have 0 rows yet. Submit a test survey response and refresh to confirm it\'s working. If you submitted and still see 0, check your RLS policies in Supabase → Authentication → Policies.' }
+  } else {
+    var dbg = document.getElementById('debug-box')
+    if(dbg) dbg.classList.remove('show')
+  }
 }
+
+function setFilt(f){ aFilt=f; renderResponsesTable() }
 
 function lockAdmin(){
-  adminUnlocked=false;pinEntry=''
-  for(var i=0;i<4;i++)document.getElementById('dot'+i).classList.remove('filled')
-  document.getElementById('pin-error').textContent=''
-  document.getElementById('pin-gate').style.display='block'
-  document.getElementById('admin-content').style.display='none'
+  adminUnlocked = false; pinEntry = ''
+  for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.remove('filled')
+  document.getElementById('pin-error').textContent = ''
+  document.getElementById('pin-gate').style.display = 'block'
+  document.getElementById('admin-content').style.display = 'none'
 }
 
-function setFilt(f){aFilt=f;renderAdmin()}
-function setView(v){aView=v;renderAdmin()}
+function exportCSV(){
+  if(!aData.length){ alert('No data to export yet.'); return }
+  var headers = ['Date','Group','Age','Gender','Phone/Email','Lunch Slot','Colleagues','Max Price','NPS','Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8','Q9','Q10','Dream Dish','Comment']
+  var rows = aData.map(function(r){
+    return [
+      new Date(r.created_at).toLocaleDateString('en-IN'),
+      r.form_version||r.age_group||'',r.age||'',r.gender||'',
+      r.phone_email||'',r.lunch_slot||'',r.colleagues_count||'',r.max_price||'',
+      r.nps_score!==null&&r.nps_score!==undefined?r.nps_score:'',
+      r.q1||'',r.q2||'',r.q3||'',r.q4||'',r.q5||'',r.q6||'',
+      r.q7||'',r.q8||'',r.q9||'',r.q10||'',r.dream_dish||'',r.q11||''
+    ].map(function(v){ return '"'+String(v).replace(/"/g,'""')+'"' }).join(',')
+  })
+  var csv = [headers.join(',')].concat(rows).join('\n')
+  var blob = new Blob([csv],{type:'text/csv'})
+  var a = document.createElement('a'); a.href=URL.createObjectURL(blob)
+  a.download = 'wokin_responses_'+new Date().toISOString().split('T')[0]+'.csv'; a.click()
+  showToast('CSV Downloaded!')
+}
 </script>
 </body>
 </html>
