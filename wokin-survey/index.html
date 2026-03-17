@@ -1045,8 +1045,7 @@ async function submitForm(){
   if(!ans.age||!ans.gender){alert('Please fill in your age and gender first.');return}
   if(missing.length){alert('Please answer all the survey questions. '+missing.length+' still remaining.');return}
   var btn=document.getElementById('subbtn');if(btn){btn.disabled=true;btn.textContent='Submitting...'}
-  var res=await _sb.from('survey_responses').insert([{
-    form_version:f.id,age:ans.age,gender:ans.gender,
+  var res=await _sb.from('survey_responses').insert([{form_version:f.id,age_group:f.id,age:ans.age,gender:ans.gender,
     q1:String(ans.q1||''),q2:String(ans.q2||''),q3:String(ans.q3||''),
     q4:String(ans.q4||''),q5:String(ans.q5||''),q6:String(ans.q6||''),
     q7:String(ans.q7||''),q8:String(ans.q8||''),q9:String(ans.q9||''),
