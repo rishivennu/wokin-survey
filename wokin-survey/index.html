@@ -20,8 +20,6 @@ body{font-family:'Inter',sans-serif;background:var(--off);color:var(--dark);over
 .reveal-right.visible{opacity:1;transform:translateX(0)}
 .stagger-1{transition-delay:.1s}.stagger-2{transition-delay:.2s}.stagger-3{transition-delay:.3s}
 .stagger-4{transition-delay:.4s}.stagger-5{transition-delay:.5s}.stagger-6{transition-delay:.6s}
-
-/* NAV */
 nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;border-bottom:3px solid var(--yellow)}
 .nlogo{display:flex;align-items:center;gap:10px;cursor:pointer;flex-shrink:0}
 .nlogo img{height:38px;width:auto;object-fit:contain}
@@ -40,26 +38,20 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .mob-link:hover{background:rgba(245,197,24,.15);color:var(--yellow)}
 .mob-cta{background:var(--yellow);color:var(--navy);border:none;padding:14px;border-radius:6px;font-size:14px;font-weight:900;cursor:pointer;font-family:inherit;margin-top:6px;width:100%;text-transform:uppercase;letter-spacing:1px}
 .page{display:none}.page.on{display:block}
-
-/* SOCIAL PROOF TICKER - NEW */
-.proof-bar{background:var(--navy2);border-bottom:1px solid rgba(245,197,24,.2);padding:8px 0;overflow:hidden;position:relative}
-.proof-ticker{display:flex;gap:0;animation:pticker 25s linear infinite;white-space:nowrap}
+.proof-bar{background:var(--navy2);border-bottom:1px solid rgba(245,197,24,.2);padding:8px 0;overflow:hidden}
+.proof-ticker{display:flex;animation:pticker 25s linear infinite;white-space:nowrap}
 .proof-ticker:hover{animation-play-state:paused}
 @keyframes pticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .proof-item{display:inline-flex;align-items:center;gap:8px;padding:0 2rem;font-size:12px;color:rgba(255,255,255,.7);font-weight:500}
 .proof-dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;animation:pulse 1.4s infinite}
 .proof-name{color:var(--yellow);font-weight:700}
 .proof-sep{color:rgba(255,255,255,.2);margin:0 .5rem}
-
-/* TICKER */
 .ticker-wrap{background:var(--yellow);overflow:hidden;padding:10px 0;border-bottom:2px solid var(--yellow2)}
 .ticker{display:flex;animation:ticker 20s linear infinite;white-space:nowrap}
 .ticker:hover{animation-play-state:paused}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .ticker-item{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--navy);letter-spacing:2px;padding:0 2rem;display:inline-flex;align-items:center;gap:1rem}
 .ticker-dot{width:8px;height:8px;border-radius:50%;background:var(--navy);display:inline-block;flex-shrink:0}
-
-/* HERO */
 .hero{background:var(--navy);padding:5rem 5% 4rem;position:relative;overflow:hidden}
 .hero-bg-text{position:absolute;bottom:-2rem;left:0;right:0;font-family:'Bebas Neue',sans-serif;font-size:clamp(6rem,18vw,20rem);color:rgba(245,197,24,.04);letter-spacing:4px;text-align:center;pointer-events:none;line-height:1;user-select:none}
 .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;z-index:2}
@@ -99,21 +91,15 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .hero-badge{background:var(--white);border-radius:8px;padding:10px 14px;position:absolute;bottom:50px;right:10px;z-index:10;text-align:center;box-shadow:3px 3px 0 var(--yellow)}
 .hb-num{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--navy);line-height:1}
 .hb-txt{font-size:10px;color:var(--gray);font-weight:700;text-transform:uppercase}
-
-/* STATS */
 .stats{background:var(--yellow);border-top:3px solid var(--yellow2);border-bottom:3px solid var(--yellow2)}
 .stats-inner{max-width:1200px;margin:0 auto;padding:1.2rem 5%;display:grid;grid-template-columns:repeat(3,1fr)}
 .stat-item{text-align:center;padding:1.2rem .5rem;position:relative}
 .stat-item:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;bottom:20%;width:2px;background:var(--yellow2)}
 .stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--navy);line-height:1}
 .stat-lbl{font-size:11px;color:var(--navy2);font-weight:800;text-transform:uppercase;letter-spacing:.06em}
-
-/* SECTIONS */
 .sec-eyebrow{display:inline-block;background:var(--yellow);color:var(--navy);font-size:10px;font-weight:900;padding:4px 12px;border-radius:3px;margin-bottom:.8rem;text-transform:uppercase;letter-spacing:.12em}
 .sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,5rem);color:var(--navy);letter-spacing:2px;line-height:.95;margin-bottom:.5rem}
 .sec-sub{font-size:14px;color:var(--gray);margin-bottom:2.5rem;max-width:500px;line-height:1.7}
-
-/* WHY */
 .why-section{background:var(--off);padding:5rem 5%}
 .why-inner{max-width:1200px;margin:0 auto}
 .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
@@ -123,8 +109,6 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .why-icon{width:52px;height:52px;border-radius:6px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:22px}
 .why-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--navy);margin-bottom:6px;letter-spacing:1px}
 .why-card p{font-size:13px;color:var(--gray);line-height:1.6}
-
-/* MENU */
 .menu-section{background:var(--navy);padding:5rem 5%;position:relative;overflow:hidden}
 .menu-section::before{content:'MENU';position:absolute;bottom:-3rem;right:-2rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,20vw,22rem);color:rgba(245,197,24,.05);pointer-events:none;line-height:1}
 .menu-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
@@ -142,8 +126,6 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .menu-spice{display:flex;gap:2px}
 .spice-dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
 .spice-dot.off{background:rgba(255,255,255,.2)}
-
-/* LOYALTY SECTION - NEW */
 .loyalty-section{background:var(--navy3);padding:5rem 5%;position:relative;overflow:hidden}
 .loyalty-section::before{content:'POINTS';position:absolute;bottom:-2rem;right:-1rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(6rem,15vw,18rem);color:rgba(245,197,24,.04);pointer-events:none;line-height:1}
 .loyalty-inner{max-width:1100px;margin:0 auto;position:relative;z-index:2}
@@ -171,8 +153,6 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .lf-btn{width:100%;background:var(--yellow);color:var(--navy);border:none;padding:14px;border-radius:5px;font-size:13px;font-weight:900;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:1px;transition:all .15s;margin-top:.5rem}
 .lf-btn:hover{background:var(--yellow3);transform:translateY(-1px)}
 .lf-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
-
-/* BADGE SCREEN - NEW */
 .badge-screen{text-align:center;padding:2rem 1rem;display:none}
 .badge-card{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);border:3px solid var(--yellow);border-radius:16px;padding:2rem;max-width:360px;margin:0 auto;position:relative;overflow:hidden}
 .badge-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(245,197,24,.08) 0%,transparent 60%);pointer-events:none}
@@ -185,8 +165,6 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .badge-share-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 .badge-wa{background:var(--green);color:#fff;border:none;padding:10px 18px;border-radius:5px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px}
 .badge-cp{background:var(--yellow);color:var(--navy);border:none;padding:10px 18px;border-radius:5px;font-size:12px;font-weight:900;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px}
-
-/* WAITLIST */
 .waitlist-section{background:var(--yellow);padding:5rem 5%;position:relative;overflow:hidden}
 .waitlist-section::before{content:'JOIN';position:absolute;bottom:-3rem;right:-1rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,20vw,22rem);color:rgba(26,45,90,.07);pointer-events:none;line-height:1}
 .waitlist-inner{max-width:1000px;margin:0 auto;position:relative;z-index:2}
@@ -212,8 +190,6 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .waitlist-count{background:var(--navy);color:var(--yellow);border-radius:6px;padding:12px 16px;display:inline-flex;align-items:center;gap:10px;margin-top:1.5rem}
 .wc-num{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;line-height:1}
 .wc-txt{font-size:11px;color:rgba(245,197,24,.7);font-weight:600;line-height:1.3}
-
-/* PEOPLE */
 .people-section{background:var(--light);padding:5rem 5%}
 .people-inner{max-width:1200px;margin:0 auto}
 .people-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:2.5rem}
@@ -223,8 +199,6 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .person-card h4{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;margin-bottom:2px;color:var(--navy);letter-spacing:1px}
 .person-role{font-size:10px;color:var(--yellow);font-weight:900;margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em;background:var(--navy);display:inline-block;padding:2px 8px;border-radius:3px}
 .person-quote{font-size:13px;color:var(--gray);line-height:1.6;font-style:italic}
-
-/* INSTA */
 .insta-section{background:var(--white);padding:5rem 5%}
 .insta-inner{max-width:1200px;margin:0 auto}
 .insta-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
@@ -239,8 +213,6 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .insta-overlay{position:absolute;inset:0;background:rgba(26,45,90,.9);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;border-radius:4px}
 .insta-card:hover .insta-overlay{opacity:1}
 .insta-overlay span{color:var(--yellow);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
-
-/* REF */
 .ref-section{background:var(--navy);padding:5rem 5%;position:relative;overflow:hidden}
 .ref-section::after{content:'SHARE';position:absolute;bottom:-3rem;left:-1rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,18vw,20rem);color:rgba(245,197,24,.04);pointer-events:none;line-height:1}
 .ref-inner{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:2}
@@ -257,8 +229,6 @@ nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-
 .btn-em:hover{border-color:var(--yellow);transform:translateY(-1px)}
 .btn-cp{background:var(--yellow);color:var(--navy);border:none;padding:14px 22px;border-radius:5px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
 .btn-cp:hover{background:var(--yellow3);transform:translateY(-1px)}
-
-/* CTA */
 .cta-section{background:var(--yellow);padding:5rem 5%;text-align:center;position:relative;overflow:hidden}
 .cta-section::before{content:'WOK IN';position:absolute;top:50%;left:50%;translate:-50% -50%;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,20vw,22rem);color:rgba(26,45,90,.08);pointer-events:none;white-space:nowrap}
 .cta-inner{max-width:700px;margin:0 auto;position:relative;z-index:2}
@@ -268,7 +238,6 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .footer-brand{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--yellow);letter-spacing:3px}
 .footer-tag{font-size:12px;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
-
 /* SURVEY */
 .survey-section{background:var(--off);padding:4rem 5%}
 .survey-inner{max-width:740px;margin:0 auto}
@@ -299,8 +268,9 @@ footer{background:var(--navy3);padding:2.5rem 5%;border-top:3px solid var(--yell
 .form-body{padding:1.2rem 1.6rem 1.8rem}
 .qblock{margin-bottom:1rem;padding:1.2rem 1.4rem;background:var(--off);border-radius:7px;border:1.5px solid var(--light)}
 .qblock.highlight{border-color:var(--yellow);background:rgba(245,197,24,.04)}
+.qblock.earn-block{border-color:var(--yellow);background:rgba(245,197,24,.08);border-width:2px}
 .qlabel{font-size:9px;font-weight:900;color:var(--yellow);background:var(--navy);display:inline-block;padding:2px 8px;border-radius:3px;margin-bottom:6px;text-transform:uppercase;letter-spacing:.1em}
-.qlabel-new{background:var(--red)}
+.qlabel-pts{background:var(--yellow);color:var(--navy)}
 .qtext{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;color:var(--navy);margin-bottom:.85rem;line-height:1.2;letter-spacing:.5px}
 .qgrid{display:flex;flex-wrap:wrap;gap:7px}
 .qopt{padding:8px 16px;border:2px solid var(--light);border-radius:4px;background:var(--white);font-size:12px;font-weight:700;color:var(--gray);cursor:pointer;font-family:inherit;transition:all .15s;-webkit-tap-highlight-color:transparent;user-select:none;outline:none;touch-action:manipulation;text-transform:uppercase;letter-spacing:.3px}
@@ -330,8 +300,6 @@ textarea{resize:vertical;min-height:70px}
 .subbtn{width:100%;background:var(--yellow);color:var(--navy);border:none;border-radius:6px;padding:16px;font-size:14px;font-weight:900;cursor:pointer;font-family:inherit;transition:all .15s;letter-spacing:1px;text-transform:uppercase;touch-action:manipulation}
 .subbtn:hover{background:var(--yellow3);transform:translateY(-1px)}
 .subbtn:disabled{opacity:.6;cursor:not-allowed;transform:none}
-
-/* THANK YOU + BADGE UNLOCK */
 .ty{text-align:center;padding:3rem 1.5rem;background:var(--white);border-radius:10px;border:2px solid var(--light)}
 .tycheck{width:76px;height:76px;border-radius:6px;background:var(--navy);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 1rem}
 .ty h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:2px;margin-bottom:8px;color:var(--navy)}
@@ -347,7 +315,6 @@ textarea{resize:vertical;min-height:70px}
 .ty-pts-num{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1}
 .ty-pts-break{font-size:11px;color:var(--navy2);font-weight:700;text-align:right;line-height:1.4}
 .ty-share{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:1rem}
-
 /* PIN */
 .pin-wrap{min-height:100vh;background:var(--navy);display:flex;align-items:center;justify-content:center;padding:1.5rem}
 .pin-card{background:var(--white);border-radius:10px;border:3px solid var(--yellow);padding:2.5rem 2rem;max-width:380px;width:100%;text-align:center}
@@ -362,7 +329,6 @@ textarea{resize:vertical;min-height:70px}
 .pin-btn:active{transform:scale(.95)}
 .pin-small{font-size:11px!important;font-family:'Inter',sans-serif!important;font-weight:700!important}
 .pin-error{color:var(--red);font-size:13px;font-weight:700;min-height:20px;margin-top:.4rem;text-transform:uppercase;letter-spacing:.5px}
-
 /* ADMIN */
 .admin-bg{background:var(--off);min-height:100vh;padding:2rem 5%}
 .admin-wrap{max-width:1200px;margin:0 auto}
@@ -372,9 +338,9 @@ textarea{resize:vertical;min-height:70px}
 .ahdr-btns{display:flex;gap:8px;flex-wrap:wrap}
 .rfbtn{background:var(--navy);color:var(--yellow);border:none;padding:10px 20px;border-radius:5px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
 .rfbtn:hover{background:var(--navy2)}
-.export-btn{background:var(--yellow);color:var(--navy);border:none;padding:10px 20px;border-radius:5px;font-size:12px;font-weight:900;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
+.export-btn{background:var(--yellow);color:var(--navy);border:none;padding:10px 20px;border-radius:5px;font-size:12px;font-weight:900;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px}
 .export-btn:hover{background:var(--yellow3)}
-.wa-btn{background:var(--green);color:#fff;border:none;padding:10px 20px;border-radius:5px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
+.wa-btn{background:var(--green);color:#fff;border:none;padding:10px 20px;border-radius:5px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px}
 .wa-btn:hover{background:#1ebe5d}
 .lock-btn{background:transparent;border:2px solid var(--light);color:var(--gray);padding:9px 16px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;transition:all .15s}
 .lock-btn:hover{border-color:var(--navy);color:var(--navy)}
@@ -409,8 +375,6 @@ tr:hover td{background:var(--off)}
 .waitlist-tbl td{padding:11px 12px;border-bottom:1px solid var(--light);color:var(--dark)}
 .waitlist-tbl tr:last-child td{border-bottom:none}
 .waitlist-tbl tr:hover td{background:var(--off)}
-
-/* WA MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:500;display:flex;align-items:center;justify-content:center;padding:1rem}
 .modal-box{background:var(--white);border-radius:10px;border:3px solid var(--yellow);padding:2rem;max-width:560px;width:100%;max-height:80vh;overflow-y:auto}
 .modal-box h3{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--navy);letter-spacing:1px;margin-bottom:.5rem}
@@ -419,16 +383,13 @@ tr:hover td{background:var(--off)}
 .modal-btns{display:flex;gap:8px;flex-wrap:wrap}
 .modal-copy{background:var(--yellow);color:var(--navy);border:none;padding:11px 20px;border-radius:5px;font-size:12px;font-weight:900;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px}
 .modal-close{background:transparent;border:2px solid var(--light);color:var(--gray);padding:10px 18px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:.5px}
-
 .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--yellow);padding:12px 24px;border-radius:5px;font-size:12px;font-weight:800;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none;text-transform:uppercase;letter-spacing:1px;border:2px solid var(--yellow)}
 .toast.show{opacity:1}
-
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;gap:2rem}
   .hero-visual{display:none}
   .hero h1{font-size:clamp(3.5rem,10vw,6rem)}
-  .waitlist-grid{grid-template-columns:1fr}
-  .waitlist-perks{order:-1}
+  .waitlist-grid{grid-template-columns:1fr}.waitlist-perks{order:-1}
   .loyalty-grid{grid-template-columns:1fr}
 }
 @media(max-width:640px){
@@ -468,8 +429,7 @@ tr:hover td{background:var(--off)}
   footer{padding:1.8rem 4%}
   .footer-inner{flex-direction:column;text-align:center}
   .stats-inner{grid-template-columns:repeat(3,1fr)}
-  .stat-num{font-size:2rem}
-  .stat-lbl{font-size:10px}
+  .stat-num{font-size:2rem}.stat-lbl{font-size:10px}
 }
 @media(max-width:380px){
   .why-grid,.menu-grid,.people-grid{grid-template-columns:1fr}
@@ -480,12 +440,11 @@ tr:hover td{background:var(--off)}
 </style>
 </head>
 <body>
-
 <div class="toast" id="toast">Copied!</div>
 <div class="modal-overlay" id="wa-modal" style="display:none" onclick="if(event.target===this)closeWA()">
   <div class="modal-box">
     <h3>📲 WHATSAPP BROADCAST LIST</h3>
-    <p>All phone numbers from survey responses and waitlist. Copy and paste into WhatsApp Broadcast to reach your entire audience at once.</p>
+    <p>All phone numbers from survey responses, waitlist and loyalty signups. Copy and paste directly into WhatsApp Broadcast.</p>
     <div class="modal-nums" id="wa-nums">Loading...</div>
     <div class="modal-btns">
       <button class="modal-copy" onclick="copyWANums()">Copy All Numbers</button>
@@ -508,7 +467,6 @@ tr:hover td{background:var(--off)}
   </div>
   <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
-
 <div class="mob-menu" id="mob-menu">
   <button class="mob-link" onclick="goTo('landing');toggleMenu()">Home</button>
   <button class="mob-link" onclick="goTo('survey');toggleMenu()">Survey</button>
@@ -516,31 +474,28 @@ tr:hover td{background:var(--off)}
   <button class="mob-cta" onclick="goTo('survey');toggleMenu()">Take Survey →</button>
 </div>
 
-<!-- LANDING PAGE -->
+<!-- LANDING -->
 <div id="pg-landing" class="page on">
-
-  <!-- SOCIAL PROOF BAR -->
   <div class="proof-bar">
-    <div class="proof-ticker" id="proof-ticker">
+    <div class="proof-ticker">
       <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Rahul</span> from Hitech City just responded<span class="proof-sep">·</span></span>
       <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Priya</span> from Gachibowli joined the waitlist<span class="proof-sep">·</span></span>
-      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Vikram</span> from Financial District just responded<span class="proof-sep">·</span></span>
-      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Ananya</span> from Madhapur earned 150 WOK IN points<span class="proof-sep">·</span></span>
-      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Kiran</span> from KPHB just responded<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Vikram</span> from Financial District earned 100 points<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Ananya</span> from Madhapur just responded<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Kiran</span> from KPHB earned 150 WOK IN points<span class="proof-sep">·</span></span>
       <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Sneha</span> from Kondapur joined the waitlist<span class="proof-sep">·</span></span>
       <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Arjun</span> from Banjara Hills just responded<span class="proof-sep">·</span></span>
       <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Meena</span> from Jubilee Hills earned 200 points<span class="proof-sep">·</span></span>
       <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Rahul</span> from Hitech City just responded<span class="proof-sep">·</span></span>
       <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Priya</span> from Gachibowli joined the waitlist<span class="proof-sep">·</span></span>
-      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Vikram</span> from Financial District just responded<span class="proof-sep">·</span></span>
-      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Ananya</span> from Madhapur earned 150 WOK IN points<span class="proof-sep">·</span></span>
-      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Kiran</span> from KPHB just responded<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Vikram</span> from Financial District earned 100 points<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Ananya</span> from Madhapur just responded<span class="proof-sep">·</span></span>
+      <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Kiran</span> from KPHB earned 150 WOK IN points<span class="proof-sep">·</span></span>
       <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Sneha</span> from Kondapur joined the waitlist<span class="proof-sep">·</span></span>
       <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Arjun</span> from Banjara Hills just responded<span class="proof-sep">·</span></span>
       <span class="proof-item"><span class="proof-dot"></span><span class="proof-name">Meena</span> from Jubilee Hills earned 200 points<span class="proof-sep">·</span></span>
     </div>
   </div>
-
   <div class="ticker-wrap">
     <div class="ticker">
       <span class="ticker-item">WOK IN <span class="ticker-dot"></span></span>
@@ -559,7 +514,6 @@ tr:hover td{background:var(--off)}
       <span class="ticker-item">IT PARK FIRST <span class="ticker-dot"></span></span>
     </div>
   </div>
-
   <div class="hero">
     <div class="hero-bg-text">WOK IN</div>
     <div class="hero-inner">
@@ -579,9 +533,7 @@ tr:hover td{background:var(--off)}
       <div class="hero-visual reveal-right stagger-2">
         <div class="hero-sticker">STREET<br>BOLD<br>FLAVOR</div>
         <div class="menu-card-a">
-          <div class="mc-bold-label">Bold Flavor</div>
-          <div class="mc-title">MENU</div>
-          <div class="mc-brand">WOK IN</div>
+          <div class="mc-bold-label">Bold Flavor</div><div class="mc-title">MENU</div><div class="mc-brand">WOK IN</div>
           <div class="mc-sec">Signature Woks</div>
           <div class="mc-row"><span>Masala Orange Chicken</span><span>₹249</span></div>
           <div class="mc-row"><span>Kung Pao Paneer</span><span>₹229</span></div>
@@ -593,9 +545,7 @@ tr:hover td{background:var(--off)}
           <div class="mc-foot">Cooked fresh. Served bold.</div>
         </div>
         <div class="menu-card-b">
-          <div class="mc-bold-label">WOK IN</div>
-          <div class="mc-title-w">MENU</div>
-          <div class="mc-brand-w">Where Chinese meets Indian</div>
+          <div class="mc-bold-label">WOK IN</div><div class="mc-title-w">MENU</div><div class="mc-brand-w">Where Chinese meets Indian</div>
           <div class="mc-sec">Combo Deals</div>
           <div class="mc-row-w"><span>IT Lunch Special</span><span>₹199</span></div>
           <div class="mc-row-w"><span>Double Protein Wok</span><span>₹299</span></div>
@@ -609,7 +559,6 @@ tr:hover td{background:var(--off)}
       </div>
     </div>
   </div>
-
   <div class="stats">
     <div class="stats-inner">
       <div class="stat-item reveal stagger-1"><div class="stat-num">10+</div><div class="stat-lbl">Signature Dishes</div></div>
@@ -617,7 +566,6 @@ tr:hover td{background:var(--off)}
       <div class="stat-item reveal stagger-3"><div class="stat-num">IT</div><div class="stat-lbl">Park First Launch</div></div>
     </div>
   </div>
-
   <div class="why-section">
     <div class="why-inner">
       <div class="reveal-left">
@@ -626,14 +574,13 @@ tr:hover td{background:var(--off)}
         <p class="sec-sub">Every answer shapes what WOK IN serves at your IT park. Bold flavors start with your feedback.</p>
       </div>
       <div class="why-grid">
-        <div class="why-card reveal stagger-1"><div class="why-icon">🥢</div><h3>2 Minutes</h3><p>Quick questions tailored for your age group</p></div>
+        <div class="why-card reveal stagger-1"><div class="why-icon">🥢</div><h3>10 Questions</h3><p>Quick focused questions tailored specifically for your age group</p></div>
         <div class="why-card reveal stagger-2"><div class="why-icon">🌶️</div><h3>Shape the Menu</h3><p>Your answers influence our dishes, spice levels, and pricing</p></div>
-        <div class="why-card reveal stagger-3"><div class="why-icon">🏆</div><h3>Earn Points</h3><p>Get WOK IN loyalty points before we even launch — redeem on day one</p></div>
+        <div class="why-card reveal stagger-3"><div class="why-icon">🏆</div><h3>Earn Points</h3><p>Get 100 WOK IN loyalty points — redeem for free dishes on launch day</p></div>
         <div class="why-card reveal stagger-4"><div class="why-icon">📍</div><h3>IT Park First</h3><p>Your feedback decides where our food truck parks next</p></div>
       </div>
     </div>
   </div>
-
   <div class="menu-section" id="menu-anchor">
     <div class="menu-inner">
       <div class="menu-header">
@@ -653,19 +600,17 @@ tr:hover td{background:var(--off)}
       </div>
     </div>
   </div>
-
-  <!-- LOYALTY POINTS SECTION -->
   <div class="loyalty-section" id="loyalty-anchor">
     <div class="loyalty-inner">
       <div class="loyalty-grid">
         <div class="loyalty-info reveal-left">
           <span class="sec-eyebrow" style="background:rgba(245,197,24,.15);color:var(--yellow)">Earn Before Launch</span>
           <h2>CLAIM YOUR<br>WOK IN<br>POINTS NOW</h2>
-          <p>Don't wait for launch day to start earning. Claim free loyalty points right now just for being an early supporter — redeem them for free dishes, discounts, and exclusive combos when WOK IN opens.</p>
+          <p>Don't wait for launch day. Claim free loyalty points right now just for being an early supporter — redeem them for free dishes and discounts when WOK IN opens.</p>
           <div class="pts-grid">
-            <div class="pts-card"><div class="pts-val">100</div><div class="pts-lbl">Points for taking the survey</div></div>
-            <div class="pts-card"><div class="pts-val">50</div><div class="pts-lbl">Points for joining waitlist</div></div>
-            <div class="pts-card"><div class="pts-val">75</div><div class="pts-lbl">Points for sharing with 3 friends</div></div>
+            <div class="pts-card"><div class="pts-val">100</div><div class="pts-lbl">Points for completing the survey</div></div>
+            <div class="pts-card"><div class="pts-val">50</div><div class="pts-lbl">Points for joining the waitlist</div></div>
+            <div class="pts-card"><div class="pts-val">75</div><div class="pts-lbl">Points for each friend you refer</div></div>
             <div class="pts-card"><div class="pts-val">25</div><div class="pts-lbl">Points just for signing up here</div></div>
           </div>
           <div class="loyalty-tiers">
@@ -680,20 +625,15 @@ tr:hover td{background:var(--off)}
             <p>Sign up below to lock in your pre-launch loyalty points. We'll credit them to your account on launch day.</p>
             <div class="lf-field"><label>Your Name</label><input type="text" id="lf-name" class="lf-input" placeholder="Rahul Kumar"></div>
             <div class="lf-field"><label>Phone or Email</label><input type="text" id="lf-contact" class="lf-input" placeholder="9876543210 or rahul@company.com"></div>
-            <div class="lf-field"><label>Your IT Park</label><input type="text" id="lf-park" class="lf-input" placeholder="Hitech City, Hyderabad" list="park-suggestions">
-              <datalist id="park-suggestions">
-                <option value="Hitech City, Hyderabad">
-                <option value="Gachibowli, Hyderabad">
-                <option value="Financial District, Hyderabad">
-                <option value="Madhapur, Hyderabad">
-                <option value="Kondapur, Hyderabad">
-                <option value="KPHB, Hyderabad">
-                <option value="Banjara Hills, Hyderabad">
-                <option value="Jubilee Hills, Hyderabad">
-                <option value="Begumpet, Hyderabad">
-                <option value="Secunderabad, Hyderabad">
-                <option value="Nallagandla, Hyderabad">
-                <option value="Manikonda, Hyderabad">
+            <div class="lf-field"><label>Your IT Park</label>
+              <input type="text" id="lf-park" class="lf-input" placeholder="Hitech City, Hyderabad" list="park-list">
+              <datalist id="park-list">
+                <option value="Hitech City, Hyderabad"><option value="Gachibowli, Hyderabad">
+                <option value="Financial District, Hyderabad"><option value="Madhapur, Hyderabad">
+                <option value="Kondapur, Hyderabad"><option value="KPHB, Hyderabad">
+                <option value="Banjara Hills, Hyderabad"><option value="Jubilee Hills, Hyderabad">
+                <option value="Begumpet, Hyderabad"><option value="Secunderabad, Hyderabad">
+                <option value="Nallagandla, Hyderabad"><option value="Manikonda, Hyderabad">
               </datalist>
             </div>
             <button class="lf-btn" id="lf-btn" onclick="claimPoints()">Claim 25 Points Free →</button>
@@ -704,10 +644,10 @@ tr:hover td{background:var(--off)}
               <div class="badge-title">WOK IN LOYALTY</div>
               <div class="badge-name" id="lf-badge-name">FOUNDING MEMBER</div>
               <div class="badge-pts" id="lf-badge-pts">25 POINTS</div>
-              <div class="badge-sub" id="lf-badge-sub">You are officially a WOK IN founding member! Your points will be credited on launch day. Share with colleagues to earn more!</div>
+              <div class="badge-sub" id="lf-badge-sub">You are officially a WOK IN founding member! Points credited on launch day. Take the survey to earn 100 more!</div>
               <div class="badge-share-row">
                 <button class="badge-wa" onclick="shareLoyaltyWA()">Share on WhatsApp</button>
-                <button class="badge-cp" onclick="copyLoyaltyLink()">Copy Link</button>
+                <button class="badge-cp" onclick="copyLink()">Copy Link</button>
               </div>
             </div>
           </div>
@@ -715,7 +655,6 @@ tr:hover td{background:var(--off)}
       </div>
     </div>
   </div>
-
   <div class="waitlist-section" id="waitlist-anchor">
     <div class="waitlist-inner">
       <div class="waitlist-grid">
@@ -736,26 +675,26 @@ tr:hover td{background:var(--off)}
             <p>Drop your details and we'll reach out when WOK IN lands at your IT park. Also earns you 50 loyalty points!</p>
             <div class="wf-field"><label>Your Name</label><input type="text" id="wf-name" class="wf-input" placeholder="Rahul Kumar"></div>
             <div class="wf-field"><label>Phone or Email</label><input type="text" id="wf-contact" class="wf-input" placeholder="9876543210 or rahul@company.com"></div>
-            <div class="wf-field"><label>Your IT Park / Workplace</label><input type="text" id="wf-park" class="wf-input" placeholder="Hitech City, Hyderabad" list="park-suggestions2">
-              <datalist id="park-suggestions2">
+            <div class="wf-field"><label>Your IT Park / Workplace</label>
+              <input type="text" id="wf-park" class="wf-input" placeholder="Hitech City, Hyderabad" list="park-list2">
+              <datalist id="park-list2">
                 <option value="Hitech City, Hyderabad"><option value="Gachibowli, Hyderabad">
                 <option value="Financial District, Hyderabad"><option value="Madhapur, Hyderabad">
                 <option value="Kondapur, Hyderabad"><option value="KPHB, Hyderabad">
                 <option value="Banjara Hills, Hyderabad"><option value="Jubilee Hills, Hyderabad">
               </datalist>
             </div>
-            <button class="wf-btn" id="wf-submit" onclick="submitWaitlist()">Join the Waitlist + Earn 50 Points →</button>
+            <button class="wf-btn" id="wf-submit" onclick="submitWaitlist()">Join Waitlist + Earn 50 Points →</button>
           </div>
           <div class="wf-success" id="wf-success">
             <div style="font-size:2.5rem;margin-bottom:.5rem">🎉</div>
             <h4>YOU'RE IN!</h4>
-            <p>50 loyalty points credited! We'll send your launch day alert directly to you. Welcome to the WOK IN founding crew!</p>
+            <p>50 loyalty points credited! We'll send your launch day alert directly to you.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-
   <div class="people-section">
     <div class="people-inner">
       <div class="reveal" style="text-align:center;margin-bottom:.5rem">
@@ -764,14 +703,13 @@ tr:hover td{background:var(--off)}
         <p style="text-align:center;color:var(--gray);font-size:14px;max-width:400px;margin:0 auto">From interns to architects — all IT park food lovers helping build WOK IN</p>
       </div>
       <div class="people-grid">
-        <div class="person-card reveal stagger-1"><svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#FDBCB4"/><path d="M26 28 Q50 6 74 28 Q70 14 50 11 Q30 14 26 28" fill="#1A2D5A"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="43.5" cy="32" r="1.2" fill="#fff"/><circle cx="59.5" cy="32" r="1.2" fill="#fff"/><path d="M41 46 Q50 54 59 46" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#1A2D5A"/><rect x="38" y="65" width="24" height="8" rx="2" fill="#F5C518"/><path d="M28 72 Q8 82 6 100" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 80 92 96" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg><h4>Rahul, 24</h4><div class="person-role">Software Engineer</div><p class="person-quote">"Earned 100 points just for taking the survey. Brilliant!"</p></div>
+        <div class="person-card reveal stagger-1"><svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#FDBCB4"/><path d="M26 28 Q50 6 74 28 Q70 14 50 11 Q30 14 26 28" fill="#1A2D5A"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="43.5" cy="32" r="1.2" fill="#fff"/><circle cx="59.5" cy="32" r="1.2" fill="#fff"/><path d="M41 46 Q50 54 59 46" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#1A2D5A"/><rect x="38" y="65" width="24" height="8" rx="2" fill="#F5C518"/><path d="M28 72 Q8 82 6 100" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 80 92 96" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg><h4>Rahul, 24</h4><div class="person-role">Software Engineer</div><p class="person-quote">"Earned 100 points just for answering 10 questions!"</p></div>
         <div class="person-card reveal stagger-2"><svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#C68642"/><path d="M26 32 Q50 8 74 32" fill="#2a1a0a"/><ellipse cx="50" cy="14" rx="28" ry="9" fill="#2a1a0a"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><path d="M42 47 Q50 55 58 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#F5C518"/><rect x="38" y="68" width="24" height="6" rx="2" fill="#1A2D5A"/><path d="M28 72 Q9 82 7 100" stroke="#C68642" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q89 80 91 96" stroke="#C68642" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg><h4>Priya, 19</h4><div class="person-role">College Student</div><p class="person-quote">"Indo-Chinese on a student budget? Yes please!"</p></div>
         <div class="person-card reveal stagger-3"><svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#F1C27D"/><path d="M26 30 Q50 16 74 30" fill="#5a3e1b"/><circle cx="42" cy="33" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="33" r="3.5" fill="#1A2D5A"/><rect x="34" y="28" width="12" height="9" rx="3.5" fill="none" stroke="#1A2D5A" stroke-width="1.5"/><rect x="54" y="28" width="12" height="9" rx="3.5" fill="none" stroke="#1A2D5A" stroke-width="1.5"/><line x1="46" y1="32" x2="54" y2="32" stroke="#1A2D5A" stroke-width="1.5"/><path d="M41 47 Q50 56 59 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#1A2D5A"/><path d="M50 60 L46 78 L50 84 L54 78 Z" fill="#F5C518"/><path d="M28 72 Q8 80 6 98" stroke="#F1C27D" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 78 92 94" stroke="#F1C27D" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg><h4>Vikram, 35</h4><div class="person-role">Product Manager</div><p class="person-quote">"WOK IN is exactly what's missing from our food court!"</p></div>
         <div class="person-card reveal stagger-4"><svg width="90" height="115" viewBox="0 0 100 130"><circle cx="50" cy="36" r="24" fill="#FDBCB4"/><path d="M26 28 Q50 10 74 28 Q70 16 50 14 Q30 16 26 28" fill="#9e9e9e"/><circle cx="42" cy="34" r="3.5" fill="#1A2D5A"/><circle cx="58" cy="34" r="3.5" fill="#1A2D5A"/><path d="M41 47 Q50 56 59 47" stroke="#1A2D5A" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="28" y="60" width="44" height="52" rx="6" fill="#E8341A"/><rect x="38" y="68" width="24" height="6" rx="2" fill="#fff"/><path d="M28 72 Q8 80 6 98" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><path d="M72 72 Q90 78 92 94" stroke="#FDBCB4" stroke-width="14" stroke-linecap="round" fill="none"/><rect x="36" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/><rect x="52" y="110" width="14" height="18" rx="5" fill="#1A2D5A"/></svg><h4>Meena, 42</h4><div class="person-role">Senior Architect</div><p class="person-quote">"Quality, hygiene, real Indian flavors. This is the one!"</p></div>
       </div>
     </div>
   </div>
-
   <div class="insta-section">
     <div class="insta-inner">
       <div class="insta-top">
@@ -788,18 +726,17 @@ tr:hover td{background:var(--off)}
       </div>
     </div>
   </div>
-
   <div class="ref-section">
     <div class="ref-inner">
       <div class="reveal">
         <span class="sec-eyebrow" style="background:rgba(245,197,24,.15);color:var(--yellow)">Refer & Earn</span>
         <h2 class="sec-title" style="color:var(--white);text-align:center">SHARE WOK IN.<br><span style="color:var(--yellow)">EARN MORE POINTS.</span></h2>
-        <p style="color:rgba(255,255,255,.6);font-size:14px;margin:0 auto;max-width:480px;line-height:1.7">Every colleague you refer earns you 75 bonus points. Get 3 friends to join and unlock Wok Master tier before launch.</p>
+        <p style="color:rgba(255,255,255,.6);font-size:14px;margin:0 auto;max-width:480px;line-height:1.7">Every colleague you refer earns you 75 bonus points. Get 3 to join and unlock Wok Master tier before launch.</p>
       </div>
       <div class="ref-steps">
         <div class="ref-step reveal stagger-1"><div class="ref-num">1</div><h4>Share the Link</h4><p>Send the survey to colleagues on WhatsApp or email</p></div>
         <div class="ref-step reveal stagger-2"><div class="ref-num">2</div><h4>They Sign Up</h4><p>Each friend who joins earns you 75 bonus WOK IN points</p></div>
-        <div class="ref-step reveal stagger-3"><div class="ref-num">3</div><h4>Unlock Rewards</h4><p>Hit 300 points to become a Wok Master — free dish on launch day</p></div>
+        <div class="ref-step reveal stagger-3"><div class="ref-num">3</div><h4>Unlock Rewards</h4><p>Hit 300 points to become Wok Master — free dish on launch day</p></div>
       </div>
       <div class="share-row reveal stagger-4">
         <button class="btn-wa" onclick="shareWA()"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.564 4.14 1.547 5.876L.057 23.5l5.752-1.508A11.951 11.951 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.63-.491-5.145-1.347l-.369-.217-3.812 1 1.022-3.706-.241-.382A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>WhatsApp</button>
@@ -808,16 +745,14 @@ tr:hover td{background:var(--off)}
       </div>
     </div>
   </div>
-
   <div class="cta-section">
     <div class="cta-inner reveal">
       <span class="sec-eyebrow" style="background:rgba(26,45,90,.15);color:var(--navy)">Take the Survey</span>
       <h2>READY TO<br>SHAPE WOK IN?</h2>
-      <p>Takes just 2 minutes. Earn 100 points. Your taste becomes our recipe.</p>
+      <p>10 quick questions. Earn 100 loyalty points. Your taste becomes our recipe.</p>
       <button class="btn-y" onclick="goTo('survey')">Take Survey + Earn 100 Points →</button>
     </div>
   </div>
-
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">WOK IN</div>
@@ -834,7 +769,7 @@ tr:hover td{background:var(--off)}
       <div class="survey-top">
         <span class="sec-eyebrow">WOK IN Survey</span>
         <h2>TELL US YOUR TASTE</h2>
-        <p>Complete the survey to earn <strong>100 WOK IN loyalty points</strong> 🏆</p>
+        <p>10 questions · Complete to earn <strong>100 WOK IN loyalty points</strong> 🏆</p>
       </div>
       <div class="share-bar">
         <p>🌶️ Love WOK IN? Share the survey!</p>
@@ -914,372 +849,324 @@ tr:hover td{background:var(--off)}
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
-const _sb = supabase.createClient(
-  'https://zntdkcmgekdfdjbcyctp.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpudGRrY21nZWtkZmRqYmN5Y3RwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2MzQxNzIsImV4cCI6MjA4OTIxMDE3Mn0.GniK5lVxNMSta5uTks135vofOsy0u7kfO9jq8MyEino'
-)
+const _sb=supabase.createClient('https://zntdkcmgekdfdjbcyctp.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpudGRrY21nZWtkZmRqYmN5Y3RwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2MzQxNzIsImV4cCI6MjA4OTIxMDE3Mn0.GniK5lVxNMSta5uTks135vofOsy0u7kfO9jq8MyEino')
 
-// ── SCROLL ANIMATIONS ─────────────────────────────────────────────────
-var obs = new IntersectionObserver(function(e){ e.forEach(function(x){ if(x.isIntersecting) x.target.classList.add('visible') }) },{threshold:.1,rootMargin:'0px 0px -40px 0px'})
-function initReveal(){ document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){ obs.observe(el) }) }
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'})
+function initReveal(){document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){obs.observe(el)})}
 initReveal()
 
-// ── SHARE ─────────────────────────────────────────────────────────────
-var SURL = window.location.href.split('?')[0]
-var SMSG = 'Hey! I just took the WOK IN food survey — bold Indian-Chinese fusion launching at IT parks. Takes 2 mins + earn FREE loyalty points! Fill it: ' + SURL
-function shareWA(){ window.open('https://wa.me/?text='+encodeURIComponent(SMSG),'_blank') }
-function shareEM(){ window.open('mailto:?subject=Earn WOK IN loyalty points + shape the menu&body='+encodeURIComponent(SMSG),'_blank') }
-function copyLink(){ navigator.clipboard.writeText(SURL).then(function(){ showToast('Link Copied!') }).catch(function(){ prompt('Copy:',SURL) }) }
-function showToast(m){ var t=document.getElementById('toast'); t.textContent=m; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show') },2500) }
+var SURL=window.location.href.split('?')[0]
+var SMSG='Hey! I just took the WOK IN food survey — bold Indian-Chinese fusion launching at IT parks. 10 questions + earn FREE loyalty points! Fill it: '+SURL
+function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent(SMSG),'_blank')}
+function shareEM(){window.open('mailto:?subject=Earn WOK IN loyalty points + shape the menu&body='+encodeURIComponent(SMSG),'_blank')}
+function copyLink(){navigator.clipboard.writeText(SURL).then(function(){showToast('Link Copied!')}).catch(function(){prompt('Copy:',SURL)})}
+function showToast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2500)}
 
-// ── COUNTERS ──────────────────────────────────────────────────────────
 async function loadCounter(){
-  var r = await _sb.from('survey_responses').select('*',{count:'exact',head:true}).catch(function(){ return {count:0} })
-  var el = document.getElementById('hero-counter'); if(el) el.textContent = (r.count||0)+'+'
+  var r=await _sb.from('survey_responses').select('*',{count:'exact',head:true}).catch(function(){return{count:0}})
+  var el=document.getElementById('hero-counter');if(el)el.textContent=(r.count||0)+'+'
 }
 async function loadWaitlistCounter(){
-  var r = await _sb.from('wokin_waitlist').select('*',{count:'exact',head:true}).catch(function(){ return {count:0} })
-  var el = document.getElementById('waitlist-counter'); if(el) el.textContent = (r.count||0)+'+'
+  var r=await _sb.from('wokin_waitlist').select('*',{count:'exact',head:true}).catch(function(){return{count:0}})
+  var el=document.getElementById('waitlist-counter');if(el)el.textContent=(r.count||0)+'+'
 }
-loadCounter(); loadWaitlistCounter()
+loadCounter();loadWaitlistCounter()
 
-// ── LOYALTY POINTS ────────────────────────────────────────────────────
 function getPointsInfo(pts){
-  if(pts >= 300) return {tier:'Wok Master', icon:'🔥', badge:'WOKMASTER'}
-  if(pts >= 100) return {tier:'Spice Lover', icon:'🌶️', badge:'SPICE LOVER'}
-  return {tier:'Wok Rookie', icon:'🥢', badge:'WOK ROOKIE'}
+  if(pts>=300)return{tier:'Wok Master',icon:'🔥',badge:'WOKMASTER'}
+  if(pts>=100)return{tier:'Spice Lover',icon:'🌶️',badge:'SPICE LOVER'}
+  return{tier:'Wok Rookie',icon:'🥢',badge:'WOK ROOKIE'}
 }
 
 async function claimPoints(){
-  var name = document.getElementById('lf-name').value.trim()
-  var contact = document.getElementById('lf-contact').value.trim()
-  var park = document.getElementById('lf-park').value.trim()
-  if(!name || !contact){ alert('Please fill in your name and contact details.'); return }
-  var btn = document.getElementById('lf-btn'); btn.disabled = true; btn.textContent = 'Claiming...'
-  var pts = 25
-  var info = getPointsInfo(pts)
-  try {
-    await _sb.from('wokin_loyalty').insert([{ name:name, phone_email:contact, it_park:park, points:pts, source:'direct_signup', badge:info.badge }])
-  } catch(e){ console.log('loyalty insert:', e) }
-  // Show badge
-  document.getElementById('lf-form-wrap').style.display = 'none'
-  var bs = document.getElementById('lf-badge'); bs.style.display = 'block'
-  document.getElementById('lf-badge-icon').textContent = info.icon
-  document.getElementById('lf-badge-name').textContent = name.toUpperCase()
-  document.getElementById('lf-badge-pts').textContent = pts + ' POINTS'
-  document.getElementById('lf-badge-sub').textContent = 'You are a '+info.tier+'! Your points will be credited on launch day. Take the survey to earn 100 more points!'
+  var name=document.getElementById('lf-name').value.trim()
+  var contact=document.getElementById('lf-contact').value.trim()
+  var park=document.getElementById('lf-park').value.trim()
+  if(!name||!contact){alert('Please fill in your name and contact details.');return}
+  var btn=document.getElementById('lf-btn');btn.disabled=true;btn.textContent='Claiming...'
+  var pts=25,info=getPointsInfo(pts)
+  try{await _sb.from('wokin_loyalty').insert([{name:name,phone_email:contact,it_park:park,points:pts,source:'direct_signup',badge:info.badge}])}catch(e){}
+  document.getElementById('lf-form-wrap').style.display='none'
+  var bs=document.getElementById('lf-badge');bs.style.display='block'
+  document.getElementById('lf-badge-icon').textContent=info.icon
+  document.getElementById('lf-badge-name').textContent=name.toUpperCase()
+  document.getElementById('lf-badge-pts').textContent=pts+' POINTS'
+  document.getElementById('lf-badge-sub').textContent='You are a '+info.tier+'! Take the survey to earn 100 more points on launch day!'
 }
+function shareLoyaltyWA(){window.open('https://wa.me/?text='+encodeURIComponent('Just claimed my WOK IN loyalty points! 🏆 Bold Indian-Chinese fusion food truck launching at IT parks. Earn FREE points before launch → '+SURL),'_blank')}
 
-function shareLoyaltyWA(){
-  var name = document.getElementById('lf-badge-name').textContent
-  var msg = 'Just claimed my WOK IN loyalty points! 🏆 Bold Indian-Chinese fusion food truck launching at IT parks in Hyderabad. Earn FREE points before launch → ' + SURL
-  window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank')
-}
-function copyLoyaltyLink(){ navigator.clipboard.writeText(SURL).then(function(){ showToast('Link Copied!') }) }
-
-// ── WAITLIST ──────────────────────────────────────────────────────────
 async function submitWaitlist(){
-  var name = document.getElementById('wf-name').value.trim()
-  var contact = document.getElementById('wf-contact').value.trim()
-  var park = document.getElementById('wf-park').value.trim()
-  if(!name || !contact){ alert('Please fill in your name and contact details.'); return }
-  var btn = document.getElementById('wf-submit'); btn.disabled = true; btn.textContent = 'Joining...'
-  try {
-    await _sb.from('wokin_waitlist').insert([{name:name, contact:contact, it_park:park}])
-    await _sb.from('wokin_loyalty').insert([{name:name, phone_email:contact, it_park:park, points:50, source:'waitlist', badge:'WOK ROOKIE'}])
-  } catch(e){ console.log('waitlist:', e) }
-  document.getElementById('wf-form-inner').style.display = 'none'
-  document.getElementById('wf-success').style.display = 'block'
+  var name=document.getElementById('wf-name').value.trim()
+  var contact=document.getElementById('wf-contact').value.trim()
+  var park=document.getElementById('wf-park').value.trim()
+  if(!name||!contact){alert('Please fill in your name and contact details.');return}
+  var btn=document.getElementById('wf-submit');btn.disabled=true;btn.textContent='Joining...'
+  try{
+    await _sb.from('wokin_waitlist').insert([{name:name,contact:contact,it_park:park}])
+    await _sb.from('wokin_loyalty').insert([{name:name,phone_email:contact,it_park:park,points:50,source:'waitlist',badge:'WOK ROOKIE'}])
+  }catch(e){}
+  document.getElementById('wf-form-inner').style.display='none'
+  document.getElementById('wf-success').style.display='block'
   loadWaitlistCounter()
 }
 
-// ── PIN ───────────────────────────────────────────────────────────────
-const PIN = '1214'
-var pinEntry = '', adminUnlocked = false
+const PIN='1214'
+var pinEntry='',adminUnlocked=false
 function pinPress(d){
-  if(pinEntry.length >= 4) return
-  pinEntry += d
-  for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.toggle('filled', i<pinEntry.length)
-  if(pinEntry.length === 4){
-    setTimeout(function(){
-      if(pinEntry === PIN){
-        adminUnlocked = true
-        document.getElementById('pin-gate').style.display = 'none'
-        document.getElementById('admin-content').style.display = 'block'
-        loadAdmin()
-      } else {
-        document.getElementById('pin-error').textContent = 'Wrong PIN. Try Again.'
-        pinEntry = ''
-        for(var j=0;j<4;j++) document.getElementById('dot'+j).classList.remove('filled')
-        setTimeout(function(){ document.getElementById('pin-error').textContent = '' }, 2500)
-      }
-    }, 300)
-  }
+  if(pinEntry.length>=4)return
+  pinEntry+=d
+  for(var i=0;i<4;i++)document.getElementById('dot'+i).classList.toggle('filled',i<pinEntry.length)
+  if(pinEntry.length===4){setTimeout(function(){
+    if(pinEntry===PIN){adminUnlocked=true;document.getElementById('pin-gate').style.display='none';document.getElementById('admin-content').style.display='block';loadAdmin()}
+    else{document.getElementById('pin-error').textContent='Wrong PIN. Try Again.';pinEntry='';for(var j=0;j<4;j++)document.getElementById('dot'+j).classList.remove('filled');setTimeout(function(){document.getElementById('pin-error').textContent=''},2500)}
+  },300)}
 }
-function pinClear(){ pinEntry = ''; for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.remove('filled'); document.getElementById('pin-error').textContent = '' }
-function pinBackspace(){ if(!pinEntry.length) return; pinEntry = pinEntry.slice(0,-1); for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.toggle('filled', i<pinEntry.length) }
-function toggleMenu(){ document.getElementById('mob-menu').classList.toggle('open') }
+function pinClear(){pinEntry='';for(var i=0;i<4;i++)document.getElementById('dot'+i).classList.remove('filled');document.getElementById('pin-error').textContent=''}
+function pinBackspace(){if(!pinEntry.length)return;pinEntry=pinEntry.slice(0,-1);for(var i=0;i<4;i++)document.getElementById('dot'+i).classList.toggle('filled',i<pinEntry.length)}
+function toggleMenu(){document.getElementById('mob-menu').classList.toggle('open')}
 
-// ── NAV ───────────────────────────────────────────────────────────────
-var pg = 'landing'
+var pg='landing'
 function goTo(p){
-  pg = p
-  document.querySelectorAll('.page').forEach(function(el){ el.classList.remove('on') })
+  pg=p
+  document.querySelectorAll('.page').forEach(function(el){el.classList.remove('on')})
   document.getElementById('pg-'+p).classList.add('on')
-  document.querySelectorAll('.nlink').forEach(function(b){ b.classList.remove('active') })
-  var nb = document.getElementById('nb-'+p); if(nb) nb.classList.add('active')
-  if(p === 'admin'){
-    if(!adminUnlocked){ document.getElementById('pin-gate').style.display='block'; document.getElementById('admin-content').style.display='none' }
-    else { document.getElementById('pin-gate').style.display='none'; document.getElementById('admin-content').style.display='block'; loadAdmin() }
+  document.querySelectorAll('.nlink').forEach(function(b){b.classList.remove('active')})
+  var nb=document.getElementById('nb-'+p);if(nb)nb.classList.add('active')
+  if(p==='admin'){
+    if(!adminUnlocked){document.getElementById('pin-gate').style.display='block';document.getElementById('admin-content').style.display='none'}
+    else{document.getElementById('pin-gate').style.display='none';document.getElementById('admin-content').style.display='block';loadAdmin()}
   }
-  if(p === 'survey'){ renderSurvey(); setTimeout(initReveal,100) }
+  if(p==='survey'){renderSurvey();setTimeout(initReveal,100)}
   window.scrollTo(0,0)
 }
 
-// ── FORMS ─────────────────────────────────────────────────────────────
-const FORMS = [
+// ── FORMS: exactly 10 questions + 1 optional recommendation + dream dish + earn points ──
+const FORMS=[
   {id:'teen',label:'Gen Z',range:'10–19',sub:'For teens and students',ages:[10,11,12,13,14,15,16,17,18,19],qs:[
     {id:'q1',text:'How often do you eat out or order food in a week?',opts:['Rarely','1 to 2 times','3 to 4 times','Every day']},
     {id:'q2',text:'What type of food do you crave the most?',opts:['Chinese','Indian','Indo-Chinese','Fast food','South Indian']},
-    {id:'q3',text:'Where do you usually eat or order from?',opts:['Zomato or Swiggy','Food court','Street food','Restaurant','Food truck'],mot:"You're doing great! Just a few more — promise they're easy."},
+    {id:'q3',text:'Where do you usually eat or order from?',opts:['Zomato or Swiggy','Food court','Street food','Restaurant','Food truck'],mot:"You're doing great! 7 more to go — promise they're quick."},
     {id:'q4',text:'What is your usual budget for a meal?',opts:['Under Rs 100','Rs 100 to 200','Rs 200 to 350','Above Rs 350']},
     {id:'q5',text:'How spicy do you like your food?',opts:['Mild','Medium','Spicy','Extra spicy']},
-    {id:'q6',text:'What is most important when choosing a food place?',opts:['Taste','Price','Speed','Vibe','Hygiene'],mot:'Halfway there! You are helping shape a real food brand.'},
-    {id:'q7',text:'Would you try a food truck serving Indian-style wok dishes?',opts:['Definitely yes','Maybe','Probably not','No']},
-    {id:'q8',text:'Do you prefer veg or non-veg in Indo-Chinese food?',opts:['Always veg','Mostly veg','Mostly non-veg','Both equally']},
-    {id:'q9',text:'Which existing brand does this remind you of?',opts:['Wow Momo','Faasos','KFC or McDonalds','Local Chinese stall','None totally new'],mot:'2 more to go — you are almost a WOK IN founding member!'},
-    {id:'q10',text:'Would you follow a food brand on Instagram for deals?',opts:['Yes definitely','If content is good','Only for discounts','No']},
+    {id:'q6',text:'What is most important when choosing a food place?',opts:['Taste','Price','Speed','Vibe','Hygiene'],mot:'Halfway! 4 more and you unlock your badge.'},
+    {id:'q7',text:'What is the max you would pay for a full WOK IN meal?',opts:['Under Rs 150','Rs 150 to 200','Rs 200 to 300','Above Rs 300']},
+    {id:'q8',text:'Which lunch time slot works best for you?',opts:['12 to 1 pm','1 to 2 pm','2 to 3 pm','Flexible'],mot:'Almost there! Just 2 more questions left.'},
+    {id:'q9',text:'How many colleagues or friends would you bring to WOK IN daily?',opts:['Just me','2 to 3 people','4 to 6 people','Whole group']},
+    {id:'q10',text:'How likely are you to recommend WOK IN to a friend? (0 = not likely, 10 = definitely)',type:'nps'},
     {id:'q11',text:'Any dish you would love to see on our menu?',type:'text',opt:true}
   ]},
   {id:'young',label:'Young Adults',range:'20–28',sub:'For college and early career',ages:[20,21,22,23,24,25,26,27,28],qs:[
     {id:'q1',text:'What is your current situation?',opts:['College student','Working professional','Freelancer','Job seeking']},
     {id:'q2',text:'How often do you eat outside in a week?',opts:['1 to 2 times','3 to 4 times','5 or more times','Daily']},
-    {id:'q3',text:'What do you look for most in a quick lunch?',opts:['Fast delivery','Value for money','Taste and quality','Healthy options','Variety'],mot:"3 questions in — you are already helping shape something delicious!"},
-    {id:'q4',text:'How much do you spend on a weekday lunch?',opts:['Under Rs 150','Rs 150 to 250','Rs 250 to 400','Above Rs 400']},
-    {id:'q5',text:'Have you tried Indo-Chinese food before?',opts:['Yes love it','Yes its okay','Rarely','Never tried']},
-    {id:'q6',text:'What disappoints you about existing food brands?',opts:['Too pricey','Inconsistent taste','Small portions','Boring menu','Slow service'],mot:'Halfway! Just 5 more and your taste becomes our recipe.'},
-    {id:'q7',text:'Rate your excitement for a fresh Indian-spiced wok brand (1 to 5)',type:'rating'},
-    {id:'q8',text:'Would a loyalty rewards program make you come back more?',opts:['Yes definitely','Depends on rewards','Rarely use them','No']},
-    {id:'q9',text:'Which meal do you prefer from a food truck?',opts:['Breakfast','Lunch','Evening snack','Dinner'],mot:'2 more! You are basically on the founding panel of WOK IN now.'},
-    {id:'q10',text:'Which platform do you use most for food discovery?',opts:['Instagram','Zomato or Swiggy','YouTube or Reels','Word of mouth']},
-    {id:'q11',text:'Any suggestion for WOK IN to stand out?',type:'text',opt:true}
+    {id:'q3',text:'What do you look for most in a quick lunch?',opts:['Fast delivery','Value for money','Taste and quality','Healthy options','Variety'],mot:"3 down! 7 more to shape a bold new brand."},
+    {id:'q4',text:'Have you tried Indo-Chinese food before?',opts:['Yes love it','Yes its okay','Rarely','Never tried']},
+    {id:'q5',text:'What disappoints you most about existing food brands?',opts:['Too pricey','Inconsistent taste','Small portions','Boring menu','Slow service']},
+    {id:'q6',text:'Would you visit a food truck at your IT park for lunch?',opts:['Yes regularly','Occasionally','If food looks good','Unlikely'],mot:'Halfway there! 4 more and your badge is unlocked.'},
+    {id:'q7',text:'What is the max you would spend on a WOK IN lunch?',opts:['Under Rs 150','Rs 150 to 250','Rs 250 to 350','Above Rs 350']},
+    {id:'q8',text:'Which lunch time slot works best for you?',opts:['12 to 1 pm','1 to 2 pm','2 to 3 pm','Flexible'],mot:'Almost done! Just 2 more questions.'},
+    {id:'q9',text:'How many colleagues would you bring to WOK IN daily?',opts:['Just me','2 to 3 people','4 to 6 people','Whole team']},
+    {id:'q10',text:'How likely are you to recommend WOK IN to a colleague? (0 = not likely, 10 = definitely)',type:'nps'},
+    {id:'q11',text:'Any suggestion for WOK IN to stand out from Wow Momo or Faasos?',type:'text',opt:true}
   ]},
   {id:'pro',label:'Professionals',range:'29–38',sub:'For working professionals',ages:[29,30,31,32,33,34,35,36,37,38],qs:[
     {id:'q1',text:'How many days a week do you eat lunch outside?',opts:['1 to 2 days','3 to 4 days','Almost every day','I bring my own']},
-    {id:'q2',text:'Biggest frustration with existing quick lunch options?',opts:['Long wait times','Overpriced','Unhealthy options','Same boring menu','Poor hygiene']},
-    {id:'q3',text:'Comfortable spending for a full office lunch?',opts:['Rs 150 to 200','Rs 200 to 300','Rs 300 to 450','Above Rs 450'],mot:'Only 8 more to go — your feedback shapes where we set up next!'},
-    {id:'q4',text:'How important is a healthy meal at lunch? (1 to 5)',type:'rating'},
-    {id:'q5',text:'Would you visit a food truck at your IT park during lunch?',opts:['Yes regularly','Occasionally','If food looks good','Unlikely']},
-    {id:'q6',text:'Do you prefer bowl-style meals or traditional plate meals?',opts:['Bowl style','Traditional plate','Wraps or rolls','Does not matter'],mot:'More than halfway! Your answers are gold for us.'},
-    {id:'q7',text:'How do you typically discover new food places?',opts:['Colleague recommendation','Zomato or Swiggy','Instagram or Reels','Walking past it']},
-    {id:'q8',text:'Which protein do you prefer in an Indo-Chinese dish?',opts:['Chicken','Paneer','Egg','Mixed or both','Tofu']},
-    {id:'q9',text:'Would pre-order and quick pickup make you choose us over others?',opts:['Absolutely yes','Would be nice','Does not matter','No'],mot:'Last 2 questions — you have basically co-built WOK IN with us!'},
-    {id:'q10',text:'What would make WOK IN your first choice over Wow Momo?',opts:['Better taste','Better price','Faster service','Unique menu','Clean and hygienic']},
-    {id:'q11',text:'Any other feedback or suggestion?',type:'text',opt:true}
+    {id:'q2',text:'What is your biggest frustration with current lunch options?',opts:['Long wait times','Overpriced','Unhealthy options','Same boring menu','Poor hygiene']},
+    {id:'q3',text:'How important is a healthy meal at lunch? (1 = not important, 5 = very important)',type:'rating',mot:'3 down! 7 more and your WOK IN badge is yours.'},
+    {id:'q4',text:'Do you prefer bowl-style meals or traditional plate meals?',opts:['Bowl style','Traditional plate','Wraps or rolls','Does not matter']},
+    {id:'q5',text:'Which protein do you prefer in an Indo-Chinese dish?',opts:['Chicken','Paneer','Egg','Mixed','Tofu']},
+    {id:'q6',text:'Would pre-order and quick pickup make you choose us over others?',opts:['Absolutely yes','Would be nice','Does not matter','No'],mot:'Halfway there! 4 more to complete your survey.'},
+    {id:'q7',text:'What is the max you would spend on a full WOK IN office lunch?',opts:['Rs 150 to 200','Rs 200 to 300','Rs 300 to 400','Above Rs 400']},
+    {id:'q8',text:'Which lunch time slot works best at your office?',opts:['12 to 1 pm','1 to 2 pm','2 to 3 pm','Flexible'],mot:'Almost there! Last 2 questions.'},
+    {id:'q9',text:'How many colleagues would you bring to WOK IN for lunch daily?',opts:['Just me','2 to 3','4 to 6','7 or more','Whole team']},
+    {id:'q10',text:'How likely are you to recommend WOK IN at your workplace? (0 = not likely, 10 = definitely)',type:'nps'},
+    {id:'q11',text:'Any feedback or suggestion that would make WOK IN your regular lunch spot?',type:'text',opt:true}
   ]},
   {id:'adult',label:'Adults',range:'39–45',sub:'For experienced food lovers',ages:[39,40,41,42,43,44,45],qs:[
     {id:'q1',text:'How often do you eat outside in a typical week?',opts:['Rarely','1 to 2 times','3 to 4 times','Daily']},
     {id:'q2',text:'What food category do you prefer when eating out?',opts:['Indian','Chinese or Indo-Chinese','South Indian','Continental','Mixed']},
-    {id:'q3',text:'How health-conscious are you when choosing a meal? (1 to 5)',type:'rating',mot:'Just 8 more — your food lover experience is exactly what we need!'},
-    {id:'q4',text:'Acceptable spend for a satisfying meal?',opts:['Rs 200 to 300','Rs 300 to 450','Rs 450 to 600','Above Rs 600']},
-    {id:'q5',text:'Do you typically eat out alone or with others?',opts:['Alone','With colleagues','With family','Varies']},
-    {id:'q6',text:'How important is hygiene when choosing a food outlet? (1 to 5)',type:'rating',mot:'Halfway done — your perspective as an experienced foodie matters a lot.'},
-    {id:'q7',text:'What would make you trust a new food brand immediately?',opts:['Good reviews online','Clean visible kitchen','Friend recommendation','Professional branding','Free sample']},
-    {id:'q8',text:'Would you bring your family or team to an Indo-Chinese food truck?',opts:['Yes definitely','Maybe if kids enjoy it','For team lunch yes','Probably not']},
-    {id:'q9',text:'What is missing in fast-casual Chinese food in India?',opts:['Authentic flavour','Better pricing','Consistent quality','Indian spice integration','Wider variety'],mot:'Almost there — 2 final questions and you are done!'},
-    {id:'q10',text:'How likely are you to try WOK IN at your workplace? (1 to 5)',type:'rating'},
+    {id:'q3',text:'How health-conscious are you when choosing a meal? (1 = not at all, 5 = very much)',type:'rating',mot:'3 down! 7 more and you earn your founding member badge.'},
+    {id:'q4',text:'How important is hygiene when choosing a food outlet? (1 = not important, 5 = very important)',type:'rating'},
+    {id:'q5',text:'What would make you trust a new food brand immediately?',opts:['Good reviews online','Clean visible kitchen','Friend recommendation','Professional branding','Free sample']},
+    {id:'q6',text:'Would you bring your family or team to an Indo-Chinese food truck?',opts:['Yes definitely','Maybe if they enjoy it','For team lunch yes','Probably not'],mot:'Halfway! 4 more to unlock your WOK IN badge.'},
+    {id:'q7',text:'What is the max you would spend on a satisfying WOK IN meal?',opts:['Rs 200 to 300','Rs 300 to 400','Rs 400 to 500','Above Rs 500']},
+    {id:'q8',text:'Which lunch time slot works best for you?',opts:['12 to 1 pm','1 to 2 pm','2 to 3 pm','Flexible'],mot:'Almost done! Just 2 more questions.'},
+    {id:'q9',text:'How many people would you typically bring to WOK IN?',opts:['Just me','2 to 3 people','4 to 6 people','Large group']},
+    {id:'q10',text:'How likely are you to try WOK IN at your workplace? (0 = not likely, 10 = definitely)',type:'nps'},
     {id:'q11',text:'What one thing would make WOK IN your regular lunch spot?',type:'text',opt:true}
   ]}
 ]
 
-var fi=0, ans={}, done=false
-var aData=[], aWaitlist=[], aLoyalty=[], aFilt='all', aView='responses', chartInst={}
+var fi=0,ans={},done=false
+var aData=[],aWaitlist=[],aLoyalty=[],aFilt='all',aView='responses',chartInst={}
 
-// ── SURVEY RENDER ─────────────────────────────────────────────────────
 function renderSurvey(){
-  var el = document.getElementById('survey-content')
+  var el=document.getElementById('survey-content')
   if(done){
-    var pts = 100
-    var contact = ans.phone_email || ''
-    var name = ans._name || 'Food Lover'
-    var info = getPointsInfo(pts)
-    el.innerHTML = '<div class="ty">'
-      + '<div class="tycheck">✓</div>'
-      + '<h2>THANK YOU!</h2>'
-      + '<p>Your feedback is officially part of WOK IN. You have earned your founding member badge!</p>'
-      + '<div class="ty-badge-unlock">'
-      + '<div class="ty-badge-unlock-inner">'
-      + '<div class="ty-badge-row">'
-      + '<span class="badge-icon" style="font-size:48px;animation:bounceIn .5s ease">'+info.icon+'</span>'
-      + '<div class="ty-badge-info"><h3>🏆 BADGE UNLOCKED</h3><p>You earned the <strong style="color:var(--yellow)">'+info.tier+'</strong> badge for completing the WOK IN survey!</p></div>'
-      + '</div>'
-      + '<div class="ty-pts-display">'
-      + '<div><div style="font-size:11px;font-weight:800;color:var(--navy2);text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Points Earned</div><div class="ty-pts-num">'+pts+' pts</div></div>'
-      + '<div class="ty-pts-break"><span style="font-size:10px">Survey</span><br>+100 pts<br><span style="color:var(--navy3);font-size:9px">Redeemable on launch day</span></div>'
-      + '</div>'
-      + '<p style="font-size:12px;color:rgba(255,255,255,.5);text-align:center;margin-bottom:.8rem">Share with colleagues to earn 75 more points each!</p>'
-      + '</div></div>'
-      + '<div class="ty-share">'
-      + '<button class="sbar-wa" style="padding:10px 18px;border-radius:5px;font-size:12px" onclick="shareWA()">📲 Share on WhatsApp</button>'
-      + '<button class="sbar-em" style="padding:10px 16px;border-radius:5px;font-size:12px;background:var(--navy);border-color:var(--navy)" onclick="shareEM()">📧 Email</button>'
-      + '<button class="sbar-cp" style="padding:10px 18px;border-radius:5px;font-size:12px" onclick="copyLink()">🔗 Copy Link</button>'
-      + '</div>'
-      + '<button class="subbtn" style="max-width:300px;margin:1rem auto 0;display:block" onclick="resetSurvey()">Submit Another Response</button>'
-      + '</div>'
+    var info=getPointsInfo(100)
+    el.innerHTML='<div class="ty">'
+      +'<div class="tycheck">✓</div>'
+      +'<h2>THANK YOU!</h2>'
+      +'<p>Your feedback is officially part of WOK IN. You have earned your founding member badge!</p>'
+      +'<div class="ty-badge-unlock"><div class="ty-badge-unlock-inner">'
+      +'<div class="ty-badge-row">'
+      +'<span class="ty-badge-icon">'+info.icon+'</span>'
+      +'<div class="ty-badge-info"><h3>🏆 BADGE UNLOCKED</h3><p>You earned the <strong style="color:var(--yellow)">'+info.tier+'</strong> badge for completing the WOK IN survey!</p></div>'
+      +'</div>'
+      +'<div class="ty-pts-display">'
+      +'<div><div style="font-size:11px;font-weight:800;color:var(--navy2);text-transform:uppercase;margin-bottom:2px">Points Earned</div><div class="ty-pts-num">100 pts</div></div>'
+      +'<div class="ty-pts-break">Survey Complete<br>+100 pts<br><span style="color:var(--navy3);font-size:9px">Redeemable on launch day</span></div>'
+      +'</div>'
+      +'<p style="font-size:12px;color:rgba(255,255,255,.5);text-align:center;margin-bottom:.8rem">Share with colleagues to earn 75 more points each!</p>'
+      +'</div></div>'
+      +'<div class="ty-share">'
+      +'<button class="sbar-wa" style="padding:10px 18px;border-radius:5px;font-size:12px" onclick="shareWA()">📲 WhatsApp</button>'
+      +'<button class="sbar-em" style="padding:10px 16px;border-radius:5px;font-size:12px;background:var(--navy);border-color:var(--navy)" onclick="shareEM()">📧 Email</button>'
+      +'<button class="sbar-cp" style="padding:10px 18px;border-radius:5px;font-size:12px" onclick="copyLink()">🔗 Copy Link</button>'
+      +'</div>'
+      +'<button class="subbtn" style="max-width:300px;margin:1rem auto 0;display:block" onclick="resetSurvey()">Submit Another Response</button>'
+      +'</div>'
     return
   }
-  var f = FORMS[fi]
-  var totalQ = f.qs.filter(function(q){ return !q.opt }).length + 6
-  var answered = countAns()
-  var pct = Math.round((answered/totalQ)*100)
-  var tabs = FORMS.map(function(fm,i){
-    return '<button class="atab'+(i===fi?' active':'')+'" onclick="switchForm('+i+')">'+fm.label+'<span>'+fm.range+'</span></button>'
-  }).join('')
-  var qs = ''
+  var f=FORMS[fi]
+  // Total = age + gender + 10 required qs = 12
+  var totalQ=12
+  var answered=countAns()
+  var pct=Math.round((answered/totalQ)*100)
+  var tabs=FORMS.map(function(fm,i){return '<button class="atab'+(i===fi?' active':'')+'" onclick="switchForm('+i+')">'+fm.label+'<span>'+fm.range+'</span></button>'}).join('')
+  var qs=''
   f.qs.forEach(function(q,i){
-    if(q.mot) qs += '<div class="motiv"><div class="mdot">★</div><p>'+q.mot+'</p></div>'
-    qs += '<div class="qblock"><div class="qlabel">'+(q.opt?'Optional':'Q'+(i+1))+'</div><div class="qtext">'+q.text+'</div>'
-    if(q.type === 'text'){
-      qs += '<textarea placeholder="Type your answer here..." onchange="ans[\''+q.id+'\']=this.value;updateProg()">'+(ans[q.id]||'')+'</textarea>'
-    } else if(q.type === 'rating'){
-      qs += '<div class="rrow">'
-      for(var r=1;r<=5;r++) qs += '<button class="rbtn'+(ans[q.id]===r?' sel':'')+'" data-qid="'+q.id+'" data-v="'+r+'" onclick="pickR(this)">'+r+'</button>'
-      qs += '</div>'
-    } else {
-      qs += '<div class="qgrid">'
-      q.opts.forEach(function(o,oi){ qs += '<button class="qopt'+(ans[q.id]===o?' sel':'')+'" data-qid="'+q.id+'" data-oi="'+oi+'" onclick="pickO(this)">'+o+'</button>' })
-      qs += '</div>'
+    if(q.mot)qs+='<div class="motiv"><div class="mdot">★</div><p>'+q.mot+'</p></div>'
+    var qNum=q.opt?'Optional':'Q'+(i+1)
+    qs+='<div class="qblock'+(q.opt?' highlight':'')+'"><div class="qlabel">'+qNum+'</div><div class="qtext">'+q.text+'</div>'
+    if(q.type==='text'){
+      qs+='<textarea placeholder="Type your answer here..." onchange="ans[\''+q.id+'\']=this.value;updateProg()">'+(ans[q.id]||'')+'</textarea>'
+    }else if(q.type==='nps'){
+      qs+='<div class="nps-row">'
+      +[0,1,2,3,4,5,6,7,8,9,10].map(function(n){return '<button class="nps-btn'+(ans[q.id]===n?' sel':'')+'" data-qid="'+q.id+'" data-v="'+n+'" onclick="pickNPS(this)">'+n+'</button>'}).join('')
+      +'</div><div class="nps-labels"><span>Not likely</span><span>Definitely yes</span></div>'
+    }else if(q.type==='rating'){
+      qs+='<div class="rrow">'
+      for(var r=1;r<=5;r++)qs+='<button class="rbtn'+(ans[q.id]===r?' sel':'')+'" data-qid="'+q.id+'" data-v="'+r+'" onclick="pickR(this)">'+r+'</button>'
+      qs+='</div>'
+    }else{
+      qs+='<div class="qgrid">'
+      q.opts.forEach(function(o,oi){qs+='<button class="qopt'+(ans[q.id]===o?' sel':'')+'" data-qid="'+q.id+'" data-oi="'+oi+'" onclick="pickO(this)">'+o+'</button>'})
+      qs+='</div>'
     }
-    qs += '</div>'
+    qs+='</div>'
   })
-  qs += '<div class="section-divider"><span>Quick Insights</span></div>'
-  qs += '<div class="qblock highlight"><div class="qlabel qlabel-new">New</div><div class="qtext">What is the max you would pay for a full WOK IN meal?</div>'
-    + '<input type="text" placeholder="e.g. Rs 250" oninput="ans.max_price=this.value;updateProg()" value="'+(ans.max_price||'')+'"></div>'
-  qs += '<div class="qblock highlight"><div class="qlabel qlabel-new">New</div><div class="qtext">Which lunch time slot works best for you?</div><div class="qgrid">'
-    + ['12 to 1 pm','1 to 2 pm','2 to 3 pm','Flexible'].map(function(o,oi){
-      return '<button class="qopt'+(ans.lunch_slot===o?' sel':'')+'" data-qid="lunch_slot" data-oi="'+oi+'" data-val="'+o+'" onclick="pickGen(this,\'lunch_slot\')">'+o+'</button>'
-    }).join('') + '</div></div>'
-  qs += '<div class="qblock highlight"><div class="qlabel qlabel-new">New</div><div class="qtext">How many colleagues would you bring to WOK IN daily?</div><div class="qgrid">'
-    + ['Just me','2 to 3','4 to 6','7 or more','Whole team'].map(function(o,oi){
-      return '<button class="qopt'+(ans.colleagues_count===o?' sel':'')+'" data-qid="colleagues_count" data-oi="'+oi+'" data-val="'+o+'" onclick="pickGen(this,\'colleagues_count\')">'+o+'</button>'
-    }).join('') + '</div></div>'
-  qs += '<div class="qblock highlight"><div class="qlabel qlabel-new">New</div><div class="qtext">How likely are you to recommend WOK IN? (NPS 0–10)</div>'
-    + '<div class="nps-row">'
-    + [0,1,2,3,4,5,6,7,8,9,10].map(function(n){
-        return '<button class="nps-btn'+(ans.nps_score===n?' sel':'')+'" data-v="'+n+'" onclick="pickNPS(this)">'+n+'</button>'
-      }).join('')
-    + '</div><div class="nps-labels"><span>Not likely</span><span>Extremely likely</span></div></div>'
-  qs += '<div class="qblock highlight"><div class="qlabel qlabel-new">New</div><div class="qtext">Describe your dream WOK IN dish</div>'
-    + '<textarea placeholder="e.g. Paneer Schezwan rice with a runny egg on top..." oninput="ans.dream_dish=this.value;updateProg()">'+(ans.dream_dish||'')+'</textarea></div>'
-  qs += '<div class="section-divider"><span>Stay in Touch + Earn 100 Points 🏆</span></div>'
-  qs += '<div class="qblock highlight" style="border-color:var(--yellow);background:rgba(245,197,24,.06)">'
-    + '<div class="qlabel" style="background:var(--yellow);color:var(--navy)">Earn Points</div>'
-    + '<div class="qtext">Drop your phone or email — earn 100 WOK IN loyalty points!</div>'
-    + '<input type="text" placeholder="9876543210 or you@company.com" oninput="ans.phone_email=this.value;updateProg()" value="'+(ans.phone_email||'')+'"></div>'
 
-  el.innerHTML = '<div class="age-tabs">'+tabs+'</div>'
-    + '<div class="form-card">'
-    + '<div class="form-hdr"><div class="fh-logo"><img src="logo.png" alt="W" onerror="this.style.display=\'none\';this.parentElement.textContent=\'W\'"></div>'
-    + '<div><h2>WOK IN SURVEY</h2><p>'+f.sub+' · Complete to earn 100 loyalty points 🏆</p></div></div>'
-    + '<div class="prog-wrap"><div class="prog-info"><span>Progress</span><span id="ptxt">'+answered+' / '+totalQ+' answered</span></div>'
-    + '<div class="prog-bar"><div class="prog-fill" id="pfill" style="width:'+pct+'%"></div></div></div>'
-    + '<div class="form-body">'
-    + '<div class="qblock"><div class="qlabel">Basic Info</div><div class="qtext">Tell us a little about yourself</div>'
-    + '<div class="twocol"><div class="fg"><label>Age</label><select onchange="ans.age=parseInt(this.value);updateProg()"><option value="">Select age</option>'
-    + f.ages.map(function(a){ return '<option value="'+a+'"'+(ans.age==a?' selected':'')+'>'+a+'</option>' }).join('')
-    + '</select></div><div class="fg"><label>Gender</label><select onchange="ans.gender=this.value;updateProg()"><option value="">Select gender</option>'
-    + ['Male','Female','Non-binary','Prefer not to say'].map(function(g){ return '<option'+(ans.gender===g?' selected':'')+'>'+g+'</option>' }).join('')
-    + '</select></div></div></div>'
-    + qs
-    + '<button class="subbtn" id="subbtn" onclick="submitForm()">Submit + Earn 100 Points →</button>'
-    + '</div></div>'
+  // Dream dish question (always shown, separate from q11)
+  qs+='<div class="section-divider"><span>Dream Dish</span></div>'
+  qs+='<div class="qblock highlight">'
+    +'<div class="qlabel">New</div>'
+    +'<div class="qtext">Describe your dream WOK IN dish</div>'
+    +'<textarea placeholder="e.g. Paneer Schezwan rice with extra masala and a runny egg on top..." oninput="ans.dream_dish=this.value;updateProg()">'+(ans.dream_dish||'')+'</textarea>'
+    +'</div>'
+
+  // Earn points contact field
+  qs+='<div class="section-divider"><span>Stay in Touch + Earn 100 Points 🏆</span></div>'
+  qs+='<div class="qblock earn-block">'
+    +'<div class="qlabel qlabel-pts">Earn Points</div>'
+    +'<div class="qtext">Drop your phone or email — earn 100 WOK IN loyalty points!</div>'
+    +'<input type="text" placeholder="9876543210 or you@company.com" oninput="ans.phone_email=this.value;updateProg()" value="'+(ans.phone_email||'')+'"></div>'
+
+  el.innerHTML='<div class="age-tabs">'+tabs+'</div>'
+    +'<div class="form-card">'
+    +'<div class="form-hdr"><div class="fh-logo"><img src="logo.png" alt="W" onerror="this.style.display=\'none\';this.parentElement.textContent=\'W\'"></div>'
+    +'<div><h2>WOK IN SURVEY</h2><p>'+f.sub+' · 10 questions · Earn 100 points 🏆</p></div></div>'
+    +'<div class="prog-wrap"><div class="prog-info"><span>Progress</span><span id="ptxt">'+answered+' / '+totalQ+' answered</span></div>'
+    +'<div class="prog-bar"><div class="prog-fill" id="pfill" style="width:'+pct+'%"></div></div></div>'
+    +'<div class="form-body">'
+    +'<div class="qblock"><div class="qlabel">Basic Info</div><div class="qtext">Tell us a little about yourself</div>'
+    +'<div class="twocol"><div class="fg"><label>Age</label><select onchange="ans.age=parseInt(this.value);updateProg()"><option value="">Select age</option>'
+    +f.ages.map(function(a){return '<option value="'+a+'"'+(ans.age==a?' selected':'')+'>'+a+'</option>'}).join('')
+    +'</select></div><div class="fg"><label>Gender</label><select onchange="ans.gender=this.value;updateProg()"><option value="">Select gender</option>'
+    +['Male','Female','Non-binary','Prefer not to say'].map(function(g){return '<option'+(ans.gender===g?' selected':'')+'>'+g+'</option>'}).join('')
+    +'</select></div></div></div>'
+    +qs
+    +'<button class="subbtn" id="subbtn" onclick="submitForm()">Submit + Earn 100 Points →</button>'
+    +'</div></div>'
 }
 
 function pickO(btn){
-  var qid=btn.getAttribute('data-qid'), oi=parseInt(btn.getAttribute('data-oi'))
-  var q=FORMS[fi].qs.find(function(q){ return q.id===qid }); if(!q) return
+  var qid=btn.getAttribute('data-qid'),oi=parseInt(btn.getAttribute('data-oi'))
+  var q=FORMS[fi].qs.find(function(q){return q.id===qid});if(!q)return
   ans[qid]=q.opts[oi]
-  document.querySelectorAll('.qopt[data-qid="'+qid+'"]').forEach(function(b,i){ if(i===oi) b.classList.add('sel'); else b.classList.remove('sel') })
+  document.querySelectorAll('.qopt[data-qid="'+qid+'"]').forEach(function(b,i){if(i===oi)b.classList.add('sel');else b.classList.remove('sel')})
   updateProg()
 }
 function pickR(btn){
-  var qid=btn.getAttribute('data-qid'), v=parseInt(btn.getAttribute('data-v'))
+  var qid=btn.getAttribute('data-qid'),v=parseInt(btn.getAttribute('data-v'))
   ans[qid]=v
-  document.querySelectorAll('.rbtn[data-qid="'+qid+'"]').forEach(function(b){ if(parseInt(b.getAttribute('data-v'))===v) b.classList.add('sel'); else b.classList.remove('sel') })
+  document.querySelectorAll('.rbtn[data-qid="'+qid+'"]').forEach(function(b){if(parseInt(b.getAttribute('data-v'))===v)b.classList.add('sel');else b.classList.remove('sel')})
   updateProg()
 }
-function pickGen(btn, field){
-  ans[field]=btn.getAttribute('data-val')
-  document.querySelectorAll('.qopt[data-qid="'+field+'"]').forEach(function(b){ b.classList.remove('sel') })
-  btn.classList.add('sel'); updateProg()
-}
 function pickNPS(btn){
-  ans.nps_score=parseInt(btn.getAttribute('data-v'))
-  document.querySelectorAll('.nps-btn').forEach(function(b){ b.classList.remove('sel') })
-  btn.classList.add('sel'); updateProg()
+  var qid=btn.getAttribute('data-qid'),v=parseInt(btn.getAttribute('data-v'))
+  ans[qid]=v
+  document.querySelectorAll('.nps-btn[data-qid="'+qid+'"]').forEach(function(b){b.classList.remove('sel')})
+  btn.classList.add('sel');updateProg()
 }
 function updateProg(){
-  var f=FORMS[fi], totalQ=f.qs.filter(function(q){ return !q.opt }).length+6
-  var answered=countAns(), pct=Math.round((answered/totalQ)*100)
-  var fill=document.getElementById('pfill'), txt=document.getElementById('ptxt')
-  if(fill) fill.style.width=pct+'%'
-  if(txt) txt.textContent=answered+' / '+totalQ+' answered'
+  var answered=countAns(),pct=Math.round((answered/12)*100)
+  var fill=document.getElementById('pfill'),txt=document.getElementById('ptxt')
+  if(fill)fill.style.width=pct+'%'
+  if(txt)txt.textContent=answered+' / 12 answered'
 }
 function countAns(){
-  var n=0; if(ans.age) n++; if(ans.gender) n++
-  FORMS[fi].qs.filter(function(q){ return !q.opt }).forEach(function(q){ if(ans[q.id]!==undefined && ans[q.id]!=='') n++ })
-  if(ans.max_price) n++; if(ans.lunch_slot) n++; if(ans.colleagues_count) n++
-  if(ans.nps_score!==undefined) n++; if(ans.dream_dish) n++; if(ans.phone_email) n++
+  var n=0;if(ans.age)n++;if(ans.gender)n++
+  FORMS[fi].qs.filter(function(q){return !q.opt}).forEach(function(q){if(ans[q.id]!==undefined&&ans[q.id]!=='')n++})
   return n
 }
-function switchForm(i){ fi=i; ans={}; renderSurvey() }
-function resetSurvey(){ done=false; ans={}; renderSurvey() }
+function switchForm(i){fi=i;ans={};renderSurvey()}
+function resetSurvey(){done=false;ans={};renderSurvey()}
 
 async function submitForm(){
-  var f = FORMS[fi]
-  var missing = f.qs.filter(function(q){ return !q.opt && (ans[q.id]===undefined || ans[q.id]==='') })
-  if(!ans.age || !ans.gender){ alert('Please fill in your age and gender first.'); return }
-  if(missing.length){ alert('Please answer all the core survey questions. '+missing.length+' still remaining.'); return }
-  var btn = document.getElementById('subbtn'); if(btn){ btn.disabled=true; btn.textContent='Submitting...' }
-  var payload = {
-    form_version:f.id, age_group:f.id, age:ans.age, gender:ans.gender,
-    q1:String(ans.q1||''), q2:String(ans.q2||''), q3:String(ans.q3||''),
-    q4:String(ans.q4||''), q5:String(ans.q5||''), q6:String(ans.q6||''),
-    q7:String(ans.q7||''), q8:String(ans.q8||''), q9:String(ans.q9||''),
-    q10:String(ans.q10||''), q11:String(ans.q11||''),
-    max_price:String(ans.max_price||''), lunch_slot:String(ans.lunch_slot||''),
-    colleagues_count:String(ans.colleagues_count||''),
-    nps_score:ans.nps_score!==undefined?ans.nps_score:null,
-    dream_dish:String(ans.dream_dish||''), phone_email:String(ans.phone_email||'')
+  var f=FORMS[fi]
+  var missing=f.qs.filter(function(q){return !q.opt&&(ans[q.id]===undefined||ans[q.id]==='')})
+  if(!ans.age||!ans.gender){alert('Please fill in your age and gender first.');return}
+  if(missing.length){alert('Please answer all 10 questions. '+missing.length+' still remaining.');return}
+  var btn=document.getElementById('subbtn');if(btn){btn.disabled=true;btn.textContent='Submitting...'}
+  var payload={
+    form_version:f.id,age_group:f.id,age:ans.age,gender:ans.gender,
+    q1:String(ans.q1||''),q2:String(ans.q2||''),q3:String(ans.q3||''),
+    q4:String(ans.q4||''),q5:String(ans.q5||''),q6:String(ans.q6||''),
+    q7:String(ans.q7||''),q8:String(ans.q8||''),q9:String(ans.q9||''),
+    q10:String(ans.q10!==undefined?ans.q10:''),q11:String(ans.q11||''),
+    max_price:String(ans.q7||''),
+    lunch_slot:String(ans.q8||''),
+    colleagues_count:String(ans.q9||''),
+    nps_score:ans.q10!==undefined?ans.q10:null,
+    dream_dish:String(ans.dream_dish||''),
+    phone_email:String(ans.phone_email||'')
   }
-  var res = await _sb.from('survey_responses').insert([payload])
-  if(res.error){ alert('Error: '+res.error.message); if(btn){ btn.disabled=false; btn.textContent='Submit + Earn 100 Points →' }; return }
-  // Save loyalty points if they gave contact
+  var res=await _sb.from('survey_responses').insert([payload])
+  if(res.error){alert('Error: '+res.error.message);if(btn){btn.disabled=false;btn.textContent='Submit + Earn 100 Points →'}return}
   if(ans.phone_email){
-    var info = getPointsInfo(100)
-    await _sb.from('wokin_loyalty').insert([{name:'Survey Respondent', phone_email:ans.phone_email, points:100, source:'survey', badge:info.badge}]).catch(function(){})
+    var info=getPointsInfo(100)
+    await _sb.from('wokin_loyalty').insert([{name:'Survey Respondent',phone_email:ans.phone_email,points:100,source:'survey',badge:info.badge}]).catch(function(){})
   }
-  done=true; loadCounter(); renderSurvey(); window.scrollTo(0,0)
+  done=true;loadCounter();renderSurvey();window.scrollTo(0,0)
 }
 
 // ── ADMIN ─────────────────────────────────────────────────────────────
 function setView(v){
   aView=v
-  document.querySelectorAll('.admin-tab').forEach(function(b){ b.classList.remove('active') })
+  document.querySelectorAll('.admin-tab').forEach(function(b){b.classList.remove('active')})
   document.getElementById('tab-'+v).classList.add('active')
   ;['responses','waitlist','loyalty','analytics'].forEach(function(n){
-    document.getElementById('view-'+n).style.display = n===v?'block':'none'
+    document.getElementById('view-'+n).style.display=n===v?'block':'none'
   })
-  if(v==='analytics') renderCharts()
+  if(v==='analytics')renderCharts()
 }
 
 function updateStats(){
   var counts={teen:0,young:0,pro:0,adult:0}
-  aData.forEach(function(r){ var k=r.form_version||r.age_group; if(counts[k]!==undefined) counts[k]++ })
+  aData.forEach(function(r){var k=r.form_version||r.age_group;if(counts[k]!==undefined)counts[k]++})
   var npsSum=0,npsCount=0
-  aData.forEach(function(r){ if(r.nps_score!==null&&r.nps_score!==undefined){ npsSum+=r.nps_score; npsCount++ } })
+  aData.forEach(function(r){if(r.nps_score!==null&&r.nps_score!==undefined){npsSum+=r.nps_score;npsCount++}})
   var npsAvg=npsCount>0?(npsSum/npsCount).toFixed(1):'N/A'
-  var totalPts=0; aLoyalty.forEach(function(r){ totalPts+=(r.points||0) })
   document.getElementById('stat-total').textContent=aData.length
   document.getElementById('stat-waitlist').textContent=aWaitlist.length
   document.getElementById('stat-loyalty').textContent=aLoyalty.length
@@ -1294,17 +1181,18 @@ function updateStats(){
 function renderResponsesTable(){
   var gl={teen:'Gen Z',young:'Young Adults',pro:'Professionals',adult:'Adults'}
   var gc={teen:'bt',young:'by',pro:'bp',adult:'ba'}
-  var filt=aFilt==='all'?aData:aData.filter(function(r){ return (r.form_version||r.age_group)===aFilt })
+  var filt=aFilt==='all'?aData:aData.filter(function(r){return(r.form_version||r.age_group)===aFilt})
   var html='<div class="filtrow">'
     +[['all','All'],['teen','Gen Z'],['young','Young Adults'],['pro','Professionals'],['adult','Adults']].map(function(v){
       return '<button class="fbtn'+(aFilt===v[0]?' active':'')+'" onclick="setFilt(\''+v[0]+'\')">'+v[1]+'</button>'
     }).join('')+'</div>'
-  if(!filt.length){ html+='<div class="empty">No responses yet — share the link to start!</div>' }
-  else {
+  if(!filt.length){html+='<div class="empty">No responses yet — share the survey link to start!</div>'}
+  else{
     html+='<div class="tblwrap"><table><thead><tr>'
       +'<th>#</th><th>Date</th><th>Group</th><th>Age</th><th>Gender</th>'
-      +'<th>Phone/Email</th><th>Lunch Slot</th><th>Colleagues</th><th>Max Price</th><th>NPS</th>'
-      +'<th>Q1</th><th>Q2</th><th>Q5</th><th>Q10</th><th>Dream Dish</th><th>Comment</th>'
+      +'<th>Phone/Email</th><th>Q7 Max Price</th><th>Q8 Lunch Slot</th><th>Q9 Colleagues</th><th>Q10 NPS</th>'
+      +'<th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th><th>Q6</th>'
+      +'<th>Dream Dish</th><th>Recommendation</th>'
       +'</tr></thead><tbody>'
       +filt.map(function(r,i){
         var grp=r.form_version||r.age_group||''
@@ -1315,14 +1203,16 @@ function renderResponsesTable(){
           +'<td><span class="badge-pill '+(gc[grp]||'bt')+'">'+(gl[grp]||grp||'—')+'</span></td>'
           +'<td>'+(r.age||'—')+'</td><td>'+(r.gender||'—')+'</td>'
           +'<td style="color:var(--navy);font-weight:700" title="'+(r.phone_email||'')+'">'+(r.phone_email||'—')+'</td>'
-          +'<td>'+(r.lunch_slot||'—')+'</td>'
-          +'<td>'+(r.colleagues_count||'—')+'</td>'
-          +'<td style="font-weight:700;color:var(--navy)">'+(r.max_price||'—')+'</td>'
+          +'<td style="font-weight:700;color:var(--navy)">'+(r.max_price||r.q7||'—')+'</td>'
+          +'<td>'+(r.lunch_slot||r.q8||'—')+'</td>'
+          +'<td>'+(r.colleagues_count||r.q9||'—')+'</td>'
           +'<td style="text-align:center;font-weight:900;color:'+nc+'">'+(r.nps_score!==null&&r.nps_score!==undefined?r.nps_score:'—')+'</td>'
           +'<td title="'+(r.q1||'')+'">'+(r.q1||'—')+'</td>'
           +'<td title="'+(r.q2||'')+'">'+(r.q2||'—')+'</td>'
+          +'<td title="'+(r.q3||'')+'">'+(r.q3||'—')+'</td>'
+          +'<td title="'+(r.q4||'')+'">'+(r.q4||'—')+'</td>'
           +'<td title="'+(r.q5||'')+'">'+(r.q5||'—')+'</td>'
-          +'<td title="'+(r.q10||'')+'">'+(r.q10||'—')+'</td>'
+          +'<td title="'+(r.q6||'')+'">'+(r.q6||'—')+'</td>'
           +'<td style="color:var(--navy)" title="'+(r.dream_dish||'')+'">'+(r.dream_dish||'—')+'</td>'
           +'<td title="'+(r.q11||'')+'">'+(r.q11||'—')+'</td>'
           +'</tr>'
@@ -1332,7 +1222,7 @@ function renderResponsesTable(){
 }
 
 function renderWaitlistTable(){
-  if(!aWaitlist.length){ document.getElementById('view-waitlist').innerHTML='<div class="empty">No waitlist entries yet!</div>'; return }
+  if(!aWaitlist.length){document.getElementById('view-waitlist').innerHTML='<div class="empty">No waitlist entries yet!</div>';return}
   document.getElementById('view-waitlist').innerHTML=
     '<div class="waitlist-tbl-wrap"><table class="waitlist-tbl"><thead><tr>'
     +'<th>#</th><th>Name</th><th>Contact</th><th>IT Park</th><th>Date</th>'
@@ -1346,8 +1236,8 @@ function renderWaitlistTable(){
 }
 
 function renderLoyaltyTable(){
-  if(!aLoyalty.length){ document.getElementById('view-loyalty').innerHTML='<div class="empty">No loyalty members yet!</div>'; return }
-  var total = 0; aLoyalty.forEach(function(r){ total+=(r.points||0) })
+  if(!aLoyalty.length){document.getElementById('view-loyalty').innerHTML='<div class="empty">No loyalty members yet!</div>';return}
+  var total=0;aLoyalty.forEach(function(r){total+=(r.points||0)})
   document.getElementById('view-loyalty').innerHTML=
     '<div style="background:var(--navy);border-radius:8px;padding:1rem 1.3rem;margin-bottom:1.2rem;display:flex;gap:2rem;flex-wrap:wrap">'
     +'<div><div style="font-size:10px;color:rgba(255,255,255,.5);font-weight:800;text-transform:uppercase;margin-bottom:3px">Total Members</div><div style="font-family:Bebas Neue,sans-serif;font-size:2rem;color:var(--yellow);line-height:1">'+aLoyalty.length+'</div></div>'
@@ -1362,33 +1252,29 @@ function renderLoyaltyTable(){
         +'<td style="color:var(--navy);font-weight:700">'+(r.phone_email||'—')+'</td>'
         +'<td>'+(r.it_park||'—')+'</td>'
         +'<td><span style="background:var(--navy);color:var(--yellow);padding:2px 8px;border-radius:3px;font-family:Bebas Neue,sans-serif;font-size:1rem">'+(r.points||0)+' pts</span></td>'
-        +'<td>'+info.icon+' '+(r.badge||info.tier)+'</td>'
+        +'<td>'+info.icon+' '+info.tier+'</td>'
         +'<td style="text-transform:uppercase;font-size:10px;font-weight:700;color:var(--gray)">'+(r.source||'—')+'</td>'
         +'<td>'+new Date(r.created_at).toLocaleDateString('en-IN')+'</td></tr>'
     }).join('')+'</tbody></table></div>'
-  document.getElementById('view-loyalty').innerHTML += ''
 }
 
 var chartsBuilt=false
 function renderCharts(){
-  if(chartsBuilt){ Object.keys(chartInst).forEach(function(k){ if(chartInst[k]) chartInst[k].destroy(); chartInst[k]=null }); chartsBuilt=false }
+  if(chartsBuilt){Object.keys(chartInst).forEach(function(k){if(chartInst[k])chartInst[k].destroy();chartInst[k]=null});chartsBuilt=false}
   var counts={teen:0,young:0,pro:0,adult:0}
-  aData.forEach(function(r){ var k=r.form_version||r.age_group; if(counts[k]!==undefined) counts[k]++ })
-  var spice={'Mild':0,'Medium':0,'Spicy':0,'Extra spicy':0}
-  aData.forEach(function(r){ if(r.q5&&spice[r.q5]!==undefined) spice[r.q5]++ })
-  var slotC={};aData.forEach(function(r){ if(r.lunch_slot) slotC[r.lunch_slot]=(slotC[r.lunch_slot]||0)+1 })
-  var disc={};aData.forEach(function(r){ if(r.q10) disc[r.q10]=(disc[r.q10]||0)+1 })
+  aData.forEach(function(r){var k=r.form_version||r.age_group;if(counts[k]!==undefined)counts[k]++})
+  var slotC={};aData.forEach(function(r){var s=r.lunch_slot||r.q8;if(s)slotC[s]=(slotC[s]||0)+1})
+  var collC={};aData.forEach(function(r){var c=r.colleagues_count||r.q9;if(c)collC[c]=(collC[c]||0)+1})
   var npsDist=Array(11).fill(0)
-  aData.forEach(function(r){ if(r.nps_score!==null&&r.nps_score!==undefined) npsDist[r.nps_score]++ })
-  var srcC={};aLoyalty.forEach(function(r){ if(r.source) srcC[r.source]=(srcC[r.source]||0)+1 })
+  aData.forEach(function(r){if(r.nps_score!==null&&r.nps_score!==undefined)npsDist[r.nps_score]++})
+  var srcC={};aLoyalty.forEach(function(r){if(r.source)srcC[r.source]=(srcC[r.source]||0)+1})
 
   document.getElementById('view-analytics').innerHTML=
     '<div class="charts-grid">'
     +'<div class="chart-card"><h3>Responses by Age Group</h3><div class="chart-wrap"><canvas id="cg"></canvas></div></div>'
-    +'<div class="chart-card"><h3>Spice Preference</h3><div class="chart-wrap"><canvas id="cs"></canvas></div></div>'
-    +'<div class="chart-card"><h3>Preferred Lunch Slot</h3><div class="chart-wrap"><canvas id="cl"></canvas></div></div>'
-    +'<div class="chart-card"><h3>Food Discovery Platform</h3><div class="chart-wrap"><canvas id="cd"></canvas></div></div>'
-    +'<div class="chart-card"><h3>NPS Distribution</h3><div class="chart-wrap"><canvas id="cn"></canvas></div></div>'
+    +'<div class="chart-card"><h3>Preferred Lunch Slot (Q8)</h3><div class="chart-wrap"><canvas id="cl"></canvas></div></div>'
+    +'<div class="chart-card"><h3>Colleagues They Bring (Q9)</h3><div class="chart-wrap"><canvas id="cc"></canvas></div></div>'
+    +'<div class="chart-card"><h3>NPS Distribution (Q10)</h3><div class="chart-wrap"><canvas id="cn"></canvas></div></div>'
     +'<div class="chart-card"><h3>Loyalty Points Source</h3><div class="chart-wrap"><canvas id="cls"></canvas></div></div>'
     +'</div>'
 
@@ -1396,10 +1282,9 @@ function renderCharts(){
     var N='#1A2D5A',Y='#F5C518',R='#E8341A',W='#F7F7F2',G='#25D366'
     var base={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}}
     var c1=document.getElementById('cg');if(c1)chartInst.g=new Chart(c1,{type:'bar',data:{labels:['Gen Z','Young Adults','Pros','Adults'],datasets:[{data:[counts.teen,counts.young,counts.pro,counts.adult],backgroundColor:[N,Y,R,'#8B4513'],borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false}}}})})
-    var c2=document.getElementById('cs');if(c2)chartInst.s=new Chart(c2,{type:'doughnut',data:{labels:Object.keys(spice),datasets:[{data:Object.values(spice),backgroundColor:[W,'#FFD740',Y,R],borderWidth:3,borderColor:W}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10},color:N,boxWidth:12}}}}})
     var c3=document.getElementById('cl');if(c3)chartInst.l=new Chart(c3,{type:'bar',data:{labels:Object.keys(slotC),datasets:[{data:Object.values(slotC),backgroundColor:Y,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
-    var c4=document.getElementById('cd');if(c4)chartInst.d=new Chart(c4,{type:'bar',data:{labels:Object.keys(disc),datasets:[{data:Object.values(disc),backgroundColor:R,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{indexAxis:'y',scales:{x:{beginAtZero:true,ticks:{stepSize:1}},y:{grid:{display:false},ticks:{font:{size:10}}}}})})
-    var npsColors=npsDist.map(function(_,i){ return i>=9?'#2E7D32':i>=7?Y:R })
+    var c4=document.getElementById('cc');if(c4)chartInst.c=new Chart(c4,{type:'bar',data:{labels:Object.keys(collC),datasets:[{data:Object.values(collC),backgroundColor:N,borderRadius:6,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false},ticks:{font:{size:10}}}}})})
+    var npsColors=npsDist.map(function(_,i){return i>=9?'#2E7D32':i>=7?Y:R})
     var c5=document.getElementById('cn');if(c5)chartInst.n=new Chart(c5,{type:'bar',data:{labels:['0','1','2','3','4','5','6','7','8','9','10'],datasets:[{data:npsDist,backgroundColor:npsColors,borderRadius:4,borderSkipped:false}]},options:Object.assign({},base,{scales:{y:{beginAtZero:true,ticks:{stepSize:1}},x:{grid:{display:false}}}})})
     var c6=document.getElementById('cls');if(c6)chartInst.ls=new Chart(c6,{type:'doughnut',data:{labels:Object.keys(srcC),datasets:[{data:Object.values(srcC),backgroundColor:[Y,G,R,N],borderWidth:3,borderColor:W}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10},color:N,boxWidth:12}}}}})
     chartsBuilt=true
@@ -1407,65 +1292,55 @@ function renderCharts(){
 }
 
 async function loadAdmin(){
-  var s=document.getElementById('admin-status'); if(s) s.textContent='Loading data...'
+  var s=document.getElementById('admin-status');if(s)s.textContent='Loading data...'
   var r1=await _sb.from('survey_responses').select('*').order('created_at',{ascending:false})
-  if(!r1.error) aData=r1.data||[]
-  var r2=await _sb.from('wokin_waitlist').select('*').order('created_at',{ascending:false}).catch(function(){ return {data:[]} })
-  if(!r2.error) aWaitlist=r2.data||[]
-  var r3=await _sb.from('wokin_loyalty').select('*').order('created_at',{ascending:false}).catch(function(){ return {data:[]} })
-  if(!r3.error) aLoyalty=r3.data||[]
-  updateStats(); renderResponsesTable(); renderWaitlistTable(); renderLoyaltyTable()
-  if(aView==='analytics') renderCharts()
-  if(s) s.textContent='Updated: '+new Date().toLocaleTimeString('en-IN')+' · '+aData.length+' responses · '+aLoyalty.length+' loyalty members'
+  if(!r1.error)aData=r1.data||[]
+  var r2=await _sb.from('wokin_waitlist').select('*').order('created_at',{ascending:false}).catch(function(){return{data:[]}})
+  if(!r2.error)aWaitlist=r2.data||[]
+  var r3=await _sb.from('wokin_loyalty').select('*').order('created_at',{ascending:false}).catch(function(){return{data:[]}})
+  if(!r3.error)aLoyalty=r3.data||[]
+  updateStats();renderResponsesTable();renderWaitlistTable();renderLoyaltyTable()
+  if(aView==='analytics')renderCharts()
+  if(s)s.textContent='Updated: '+new Date().toLocaleTimeString('en-IN')+' · '+aData.length+' responses · '+aLoyalty.length+' loyalty members'
 }
 
-function setFilt(f){ aFilt=f; renderResponsesTable() }
+function setFilt(f){aFilt=f;renderResponsesTable()}
 
 function lockAdmin(){
-  adminUnlocked=false; pinEntry=''
-  for(var i=0;i<4;i++) document.getElementById('dot'+i).classList.remove('filled')
+  adminUnlocked=false;pinEntry=''
+  for(var i=0;i<4;i++)document.getElementById('dot'+i).classList.remove('filled')
   document.getElementById('pin-error').textContent=''
   document.getElementById('pin-gate').style.display='block'
   document.getElementById('admin-content').style.display='none'
 }
 
-// ── WA BROADCAST ──────────────────────────────────────────────────────
 function openWA(){
-  var nums=[]
-  var seen={}
-  function addNum(n){
-    if(!n) return
-    n=n.trim().replace(/\s/g,'')
-    if(/^[6-9]\d{9}$/.test(n) && !seen[n]){ seen[n]=true; nums.push(n) }
-  }
-  aData.forEach(function(r){ addNum(r.phone_email) })
-  aWaitlist.forEach(function(r){ addNum(r.contact) })
-  aLoyalty.forEach(function(r){ addNum(r.phone_email) })
+  var nums=[],seen={}
+  function add(n){if(!n)return;n=n.trim().replace(/\s/g,'');if(/^[6-9]\d{9}$/.test(n)&&!seen[n]){seen[n]=true;nums.push(n)}}
+  aData.forEach(function(r){add(r.phone_email)})
+  aWaitlist.forEach(function(r){add(r.contact)})
+  aLoyalty.forEach(function(r){add(r.phone_email)})
   var el=document.getElementById('wa-nums')
-  if(nums.length){
-    el.textContent = nums.join('\n') + '\n\n── Total: '+nums.length+' valid phone numbers ──'
-  } else {
-    el.textContent = 'No valid 10-digit Indian phone numbers found yet.\nCollect more responses with phone numbers to build your broadcast list.'
-  }
+  el.textContent=nums.length?nums.join('\n')+'\n\n── Total: '+nums.length+' valid phone numbers ──':'No valid 10-digit Indian phone numbers found yet.'
   document.getElementById('wa-modal').style.display='flex'
 }
-function closeWA(){ document.getElementById('wa-modal').style.display='none' }
-function copyWANums(){ navigator.clipboard.writeText(document.getElementById('wa-nums').textContent).then(function(){ showToast('Numbers Copied! Paste into WhatsApp Broadcast') }) }
+function closeWA(){document.getElementById('wa-modal').style.display='none'}
+function copyWANums(){navigator.clipboard.writeText(document.getElementById('wa-nums').textContent).then(function(){showToast('Numbers Copied!')})}
 
 function exportCSV(){
-  if(!aData.length){ alert('No data to export yet.'); return }
-  var headers=['Date','Group','Age','Gender','Phone/Email','Lunch Slot','Colleagues','Max Price','NPS','Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8','Q9','Q10','Dream Dish','Comment']
+  if(!aData.length){alert('No data to export yet.');return}
+  var headers=['Date','Group','Age','Gender','Phone/Email','Q1','Q2','Q3','Q4','Q5','Q6','Q7 Max Price','Q8 Lunch Slot','Q9 Colleagues','Q10 NPS','Dream Dish','Recommendation']
   var rows=aData.map(function(r){
     return [new Date(r.created_at).toLocaleDateString('en-IN'),r.form_version||r.age_group||'',r.age||'',r.gender||'',
-      r.phone_email||'',r.lunch_slot||'',r.colleagues_count||'',r.max_price||'',
-      r.nps_score!==null&&r.nps_score!==undefined?r.nps_score:'',
-      r.q1||'',r.q2||'',r.q3||'',r.q4||'',r.q5||'',r.q6||'',r.q7||'',r.q8||'',r.q9||'',r.q10||'',r.dream_dish||'',r.q11||''
-    ].map(function(v){ return '"'+String(v).replace(/"/g,'""')+'"' }).join(',')
+      r.phone_email||'',r.q1||'',r.q2||'',r.q3||'',r.q4||'',r.q5||'',r.q6||'',
+      r.max_price||r.q7||'',r.lunch_slot||r.q8||'',r.colleagues_count||r.q9||'',
+      r.nps_score!==null&&r.nps_score!==undefined?r.nps_score:'',r.dream_dish||'',r.q11||''
+    ].map(function(v){return '"'+String(v).replace(/"/g,'""')+'"'}).join(',')
   })
   var csv=[headers.join(',')].concat(rows).join('\n')
   var blob=new Blob([csv],{type:'text/csv'})
-  var a=document.createElement('a'); a.href=URL.createObjectURL(blob)
-  a.download='wokin_responses_'+new Date().toISOString().split('T')[0]+'.csv'; a.click()
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob)
+  a.download='wokin_responses_'+new Date().toISOString().split('T')[0]+'.csv';a.click()
   showToast('CSV Downloaded!')
 }
 </script>
